@@ -2,37 +2,67 @@ name: Daily Tech & Health Digest Pipeline
 
 on:
   schedule:
-      - cron: '0 0 * * *'
-        workflow_dispatch:
+    - cron: '30 23 * * *'  # 매일 KST 08:30 (UTC 23:30)
+  workflow_dispatch:      # 수동 실행 트리거
 
-        jobs:
-          build:
-              runs-on: ubuntu-latest
-                  permissions:
-                        contents: write
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
-                            steps:
-                                  - name: Checkout repository
-                                          uses: actions/checkout@v4
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
-                                                - name: Set up Python
-                                                        uses: actions/setup-python@v5
-                                                                with:
-                                                                          python-version: '3.10'
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-                                                                                - name: Install dependencies
-                                                                                        run: |
-                                                                                                  python -m pip install --upgrade pip
-                                                                                                            pip install -r requirements.txt
-                                                                                                            
-                                                                                                                  - name: Run generation script
-                                                                                                                          env:
-                                                                                                                                    GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-                                                                                                                                            run: python generate_digest.py
-                                                                                                                                            
-                                                                                                                                                  - name: Commit and push changes
-                                                                                                                                                          run: |
-                                                                                                                                                                    git config --global user.name "github-actions[bot]"
-                                                                                                                                                                              git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                                                                                                                                                                                        git add index.html
-                                                                                                                                                                                                  git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update daily digest index.html" && git push)
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate Daily Digest
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python generate_digest.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html history.json || true
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto: Update Daily Tech & Health Digest [$(date +'%Y-%m-%d')]"
+            git push
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
