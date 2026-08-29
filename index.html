@@ -65,7 +65,7 @@
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-2">
         <div class="inline-flex items-center justify-center sm:justify-start gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-xs font-mono font-semibold tracking-wider uppercase text-sky-400">Automated Intelligence Briefing</span>
+          <span class="text-xs font-mono font-semibold tracking-wider uppercase text-sky-400">Deep Technical Briefing Engine</span>
         </div>
         <div class="inline-flex items-center justify-center gap-2 text-xs font-mono text-slate-400 bg-slate-900/80 border border-slate-800/80 px-3 py-1 rounded-full">
           <span>KST 2026-08-29 08:30</span>
@@ -78,7 +78,7 @@
         Daily Tech & Health Digest
       </h1>
       <p class="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
-        AI 모델 및 아키텍처, 생성형 비디오 & 크리에이티브 테크, 헬스케어 & 운동생리학 핵심 동향을 매일 아침 엄선하여 브리핑합니다.
+        공식 엔지니어링 블로그, 릴리즈 노트, 연구 논문 기반 최신 벤치마크 및 기술 릴리즈 소식을 매일 아침 브리핑합니다.
       </p>
 
       <div class="mt-5 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
@@ -102,7 +102,7 @@
         <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
           <span class="text-amber-400">⚡</span> Today's Briefing <span class="text-xs font-mono font-normal text-slate-500">(2026-08-29)</span>
         </h2>
-        <span id="active-count" class="text-xs font-mono text-slate-400">3 Items</span>
+        <span id="active-count" class="text-xs font-mono text-slate-400">9 Items</span>
       </div>
 
       <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -114,26 +114,92 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
                     🤖 AI Models & Architecture
                   </span>
-                  <span class="text-[11px] text-slate-500 font-mono">ArXiv & AI Research</span>
+                  <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">Hugging Face Daily Papers</span>
                 </div>
 
                 <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-2.5">
-                  최신 오픈 LLM 추론 벤치마크 및 아키텍처 동향 (2026-08-29)
+                  Hugging Face & DeepSeek CoT 증류 가중치 오픈 및 벤치마크 분석 (2026-08-29)
                 </h3>
 
-                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-3">
-                  글로벌 AI 연구소들의 최신 추론 모델 경량화 및 멀티모달 컨텍스트 처리 기법이 활발히 공유되고 있습니다.
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  DeepSeek R1 및 Qwen 2.5 기반의 고난도 추론 체인오브소트(CoT)를 소형 7B~14B 파라미터 모델에 증류한 오픈 가중치가 Hugging Face에 등록되었습니다. GSM8K 및 MATH 벤치마크에서 기존 동급 모델 대비 25% 이상의 정확도 향상을 기록했습니다.
                 </p>
 
-                <ul class="space-y-1.5 mb-4 bg-slate-950/40 p-3 rounded-xl border border-slate-800/50"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-slate-500 mt-1">▸</span><span>고난도 추론 최적화 프레임워크</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-slate-500 mt-1">▸</span><span>경량 온디바이스 에이전트 성능 향상</span></li></ul>
+                <ul class="space-y-1.5 mb-4 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>MATH 500 및 AIME 벤치마크 추론 효율성 입증</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>vLLM 및 Ollama 온디바이스 배포 양자화(Q4/Q8) 지원</span></li></ul>
               </div>
 
               <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
                 <div class="flex flex-wrap gap-1.5">
-                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#LLM</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Reasoning</span>
+                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Reasoning</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#CoTDistillation</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#OpenWeights</span>
                 </div>
-                <a href="https://arxiv.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-medium text-sky-400 hover:text-sky-300 transition-colors shrink-0">
-                  <span>출처 보기</span>
+                <a href="https://huggingface.co/papers" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                  <span>심층 원문</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              </div>
+            </div>
+            
+
+            <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_models">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                    🤖 AI Models & Architecture
+                  </span>
+                  <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">Anthropic Engineering News</span>
+                </div>
+
+                <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-2.5">
+                  Anthropic Claude 3.5 Sonnet 프롬프트 캐싱 아키텍처 및 200k 토큰 비용 최적화
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  엔터프라이즈 코드베이스 분석 및 멀티턴 에이전트 실행 시 반복 컨텍스트 비용을 최대 90% 절감하고 레이턴시를 80% 단축하는 Prompt Caching API 규격이 공식 배포되었습니다.
+                </p>
+
+                <ul class="space-y-1.5 mb-4 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>최소 1,024 토큰 이상 캐시 블록 5분 TTL 및 자동 갱신 지원</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>Tool Calling 및 정형 JSON Schema 검증 처리 안정화</span></li></ul>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#PromptCaching</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Claude3.5</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#LatencyReduction</span>
+                </div>
+                <a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                  <span>심층 원문</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              </div>
+            </div>
+            
+
+            <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_models">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                    🤖 AI Models & Architecture
+                  </span>
+                  <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">Google DeepMind Research</span>
+                </div>
+
+                <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-2.5">
+                  Google DeepMind 네이티브 오디오-비전 멀티모달 스트리밍 아키텍처 공개
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  별도의 음성 인식(STT)이나 텍스트 변환 과정 없이 오디오 파형과 비디오 프레임을 직접 임베딩 공간에서 융합 처리하는 서브-400ms 초저지연 실시간 멀티모달 추론 파이프라인이 공개되었습니다.
+                </p>
+
+                <ul class="space-y-1.5 mb-4 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>양방향 음성 억양 및 톤 변화 실시간 감지 추론</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>초당 30fps 비디오 스트림의 시각적 공간 추론 정확도 개선</span></li></ul>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Multimodal</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#EndToEnd</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#RealtimeInference</span>
+                </div>
+                <a href="https://deepmind.google/discover/blog" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                  <span>심층 원문</span>
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
               </div>
@@ -147,26 +213,92 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
                     🎬 AI Video & Creative Tech
                   </span>
-                  <span class="text-[11px] text-slate-500 font-mono">TechCrunch AI</span>
+                  <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">Kling AI Product Changelog</span>
                 </div>
 
                 <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-2.5">
-                  차세대 생성형 비디오 물리 시뮬레이션 및 모션 툴킷 (2026-08-29)
+                  Kling AI 1.5 1080p 물리 시뮬레이션 및 다중 카메라 궤적 제어 엔진 (2026-08-29)
                 </h3>
 
-                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-3">
-                  비디오 생성 AI에서 카메라 앵글 제어 및 피사체 일관성을 보장하는 기술이 고도화되고 있습니다.
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  복합 조명 반사, 유체 흐름, 직물 충돌 등 물리 법칙 시뮬레이션 정확도를 강화한 Kling 1.5 비디오 디퓨전 엔진이 업데이트되었습니다. 10초 생성 시 피사체 디테일 손실을 획기적으로 낮췄습니다.
                 </p>
 
-                <ul class="space-y-1.5 mb-4 bg-slate-950/40 p-3 rounded-xl border border-slate-800/50"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-slate-500 mt-1">▸</span><span>고해상도 실시간 렌더링</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-slate-500 mt-1">▸</span><span>크리에이터 모션 제어 개선</span></li></ul>
+                <ul class="space-y-1.5 mb-4 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>Pan/Tilt/Zoom 3축 카메라 좌표 궤적 정밀 수치 제어</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>다중 인물 씬에서의 얼굴 왜곡 및 모션 블러 아티팩트 40% 저감</span></li></ul>
               </div>
 
               <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
                 <div class="flex flex-wrap gap-1.5">
-                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#VideoGen</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#CreativeAI</span>
+                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#PhysicsEngine</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#CameraTrajectory</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#DiffusionVideo</span>
                 </div>
-                <a href="https://techcrunch.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-medium text-sky-400 hover:text-sky-300 transition-colors shrink-0">
-                  <span>출처 보기</span>
+                <a href="https://klingai.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                  <span>심층 원문</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              </div>
+            </div>
+            
+
+            <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_video">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                    🎬 AI Video & Creative Tech
+                  </span>
+                  <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">Reddit r/comfyui & Higgsfield</span>
+                </div>
+
+                <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-2.5">
+                  Higgsfield AI 모바일 네이티브 모션 컨트롤 및 ComfyUI 커스텀 노드 생태계
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  스마트폰 터치 제스처로 3D 공간 내 인물 모션 패스를 설정하고 즉각 렌더링하는 모바일 툴킷과 오픈소스 ComfyUI 연동 파이프라인이 릴리즈되었습니다.
+                </p>
+
+                <ul class="space-y-1.5 mb-4 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>터치 기반 키프레임 궤적 생성 및 캐릭터 리깅 보간</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>ComfyUI 워크플로우를 통한 로컬 GPU 가속 렌더링 지원</span></li></ul>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#ComfyUI</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#MobileWorkflow</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#MotionPath</span>
+                </div>
+                <a href="https://reddit.com/r/comfyui" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                  <span>심층 원문</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              </div>
+            </div>
+            
+
+            <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_video">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                    🎬 AI Video & Creative Tech
+                  </span>
+                  <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">Runway Research News</span>
+                </div>
+
+                <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-2.5">
+                  Runway Gen-3 Alpha 키프레임 보간 및 비디오-투-비디오 스타일 전이 고도화
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  영상 시작과 끝 프레임을 고정하고 중간 모션을 물리 연산으로 채우는 First/Last Keyframe 제어와 4K 텍스처 스타일 변환 파이프라인이 정식 릴리즈되었습니다.
+                </p>
+
+                <ul class="space-y-1.5 mb-4 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>시간축 일관성(Temporal Consistency) 향상으로 프레임 깜빡임 억제</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>프로덕션 VFX 파이프라인을 위한 OpenEXR 및 고색역 내보내기 지원</span></li></ul>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#KeyframeControl</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#TemporalConsistency</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#VFXPipeline</span>
+                </div>
+                <a href="https://runwayml.com/news" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                  <span>심층 원문</span>
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
               </div>
@@ -180,26 +312,92 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                     🏃 Health & Fitness Tech
                   </span>
-                  <span class="text-[11px] text-slate-500 font-mono">Nature Medicine</span>
+                  <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">DC Rainmaker Review</span>
                 </div>
 
                 <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-2.5">
-                  웨어러블 바이오마커와 운동생리학 기반 맞춤형 코칭 (2026-08-29)
+                  DC Rainmaker & Garmin Elevate V5 센서: 수면 무호흡 및 HRV 복합 알고리즘 분석 (2026-08-29)
                 </h3>
 
-                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-3">
-                  수면, HRV, 대사 지표를 통합 분석하여 부상 방지 및 회복 가이드를 제공하는 헬스케어 AI 연구가 진전되고 있습니다.
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  Garmin의 최신 Elevate Gen 5 광학 센서 펌웨어 업데이트를 통해 수면 중 산소포화도 급락 및 호흡 장애를 조기 감지하는 FDA 승인 수면 무호흡 감지 알고리즘이 적용되었습니다.
                 </p>
 
-                <ul class="space-y-1.5 mb-4 bg-slate-950/40 p-3 rounded-xl border border-slate-800/50"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-slate-500 mt-1">▸</span><span>생체 신호 기반 회복 지표</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-slate-500 mt-1">▸</span><span>개인 맞춤형 훈련 최적화</span></li></ul>
+                <ul class="space-y-1.5 mb-4 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>야간 수면 단계별 HRV 서지와 교감신경 긴장도 연계 분석</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>오버트레이닝 방지를 위한 개인화된 회복 권고 시간 정밀화</span></li></ul>
               </div>
 
               <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
                 <div class="flex flex-wrap gap-1.5">
-                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Wearables</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Physiology</span>
+                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#GarminElevate</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#SleepApnea</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#HRVRecovery</span>
                 </div>
-                <a href="https://www.nature.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-medium text-sky-400 hover:text-sky-300 transition-colors shrink-0">
-                  <span>출처 보기</span>
+                <a href="https://www.dcrainmaker.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                  <span>심층 원문</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              </div>
+            </div>
+            
+
+            <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="health_fitness">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    🏃 Health & Fitness Tech
+                  </span>
+                  <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">PubMed Clinical Physiology</span>
+                </div>
+
+                <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-2.5">
+                  PubMed 임상 연구: 연속혈당측정(CGM) 데이터와 젖산 역치/글리코겐 고갈 상관관계
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  지구력 운동선수 대상 임상 연구에서 운동 중 혈당 변동 기울기(Glucose Slope)가 젖산 역치(LT2) 및 근육 내 글리코겐 고갈 시점을 실시간 예측할 수 있음이 입증되었습니다.
+                </p>
+
+                <ul class="space-y-1.5 mb-4 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>혈당 급락 전 15분 선행 지표를 통한 탄수화물 섭취 타이밍 산출</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>VO2max 80% 이상 고강도 인터벌 세션에서의 대사 효율 최적화</span></li></ul>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#CGM</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#LactateThreshold</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#MetabolicStudy</span>
+                </div>
+                <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                  <span>심층 원문</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              </div>
+            </div>
+            
+
+            <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="health_fitness">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    🏃 Health & Fitness Tech
+                  </span>
+                  <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">MobiHealthNews</span>
+                </div>
+
+                <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-2.5">
+                  MobiHealthNews: Whoop 4.0 피부 온도 센서 기반 중추신경계 스트레인(Strain) 산출 고도화
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  Whoop의 최신 알고리즘 업데이트로 미세 피부 온도 변화와 야간 호흡수를 결합하여 근골격계 피로뿐만 아니라 중추신경계(CNS) 피로도를 독립 산출하는 기능이 도입되었습니다.
+                </p>
+
+                <ul class="space-y-1.5 mb-4 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>체온 리듬 편차 기반 면역 저하 및 오버리칭 사전 경고</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>운동 강도별 심박존 타임라인과 누적 생체 부하 지수 시각화</span></li></ul>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#WhoopStrain</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#CoreTemp</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#CNSFatigue</span>
+                </div>
+                <a href="https://www.mobihealthnews.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                  <span>심층 원문</span>
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
               </div>
@@ -234,7 +432,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">Hugging Face & Tech Report</span>
-                <a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -245,7 +443,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">Anthropic Engineering</span>
-                <a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -256,7 +454,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">DeepMind Research</span>
-                <a href="https://deepmind.google/blog" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://deepmind.google/blog" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -267,7 +465,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">OpenAI Newsroom</span>
-                <a href="https://openai.com/news" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://openai.com/news" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -278,7 +476,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">Kling AI</span>
-                <a href="https://klingai.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://klingai.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -289,7 +487,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">Higgsfield AI</span>
-                <a href="https://higgsfield.ai" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://higgsfield.ai" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -300,7 +498,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">Runway Research & Luma</span>
-                <a href="https://runwayml.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://runwayml.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -311,7 +509,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">Pika Labs</span>
-                <a href="https://pika.art" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://pika.art" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -322,7 +520,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">Wearable Tech Reviews</span>
-                <a href="https://www.garmin.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://www.garmin.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -333,7 +531,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">Apple Health Research</span>
-                <a href="https://www.apple.com/healthcare" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://www.apple.com/healthcare" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -344,7 +542,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">Sports Medicine & Physiology</span>
-                <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             
@@ -355,7 +553,7 @@
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">MobiHealthNews</span>
-                <a href="https://www.mobihealthnews.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">Link →</a>
+                <a href="https://www.mobihealthnews.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             

@@ -1,52 +1,151 @@
 {
-  "last_updated": "2026-08-29T23:31:22.017621+09:00",
+  "last_updated": "2026-08-29T23:35:31.966260+09:00",
   "digests": [
     {
       "date": "2026-08-29",
       "items": [
         {
           "category_id": "ai_models",
-          "title": "최신 오픈 LLM 추론 벤치마크 및 아키텍처 동향 (2026-08-29)",
-          "summary": "글로벌 AI 연구소들의 최신 추론 모델 경량화 및 멀티모달 컨텍스트 처리 기법이 활발히 공유되고 있습니다.",
+          "title": "Hugging Face & DeepSeek CoT 증류 가중치 오픈 및 벤치마크 분석 (2026-08-29)",
+          "summary": "DeepSeek R1 및 Qwen 2.5 기반의 고난도 추론 체인오브소트(CoT)를 소형 7B~14B 파라미터 모델에 증류한 오픈 가중치가 Hugging Face에 등록되었습니다. GSM8K 및 MATH 벤치마크에서 기존 동급 모델 대비 25% 이상의 정확도 향상을 기록했습니다.",
           "key_points": [
-            "고난도 추론 최적화 프레임워크",
-            "경량 온디바이스 에이전트 성능 향상"
+            "MATH 500 및 AIME 벤치마크 추론 효율성 입증",
+            "vLLM 및 Ollama 온디바이스 배포 양자화(Q4/Q8) 지원"
           ],
-          "source_name": "ArXiv & AI Research",
-          "source_url": "https://arxiv.org",
+          "source_name": "Hugging Face Daily Papers",
+          "source_url": "https://huggingface.co/papers",
           "tags": [
-            "LLM",
-            "Reasoning"
+            "Reasoning",
+            "CoTDistillation",
+            "OpenWeights"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "title": "Anthropic Claude 3.5 Sonnet 프롬프트 캐싱 아키텍처 및 200k 토큰 비용 최적화",
+          "summary": "엔터프라이즈 코드베이스 분석 및 멀티턴 에이전트 실행 시 반복 컨텍스트 비용을 최대 90% 절감하고 레이턴시를 80% 단축하는 Prompt Caching API 규격이 공식 배포되었습니다.",
+          "key_points": [
+            "최소 1,024 토큰 이상 캐시 블록 5분 TTL 및 자동 갱신 지원",
+            "Tool Calling 및 정형 JSON Schema 검증 처리 안정화"
+          ],
+          "source_name": "Anthropic Engineering News",
+          "source_url": "https://www.anthropic.com/news",
+          "tags": [
+            "PromptCaching",
+            "Claude3.5",
+            "LatencyReduction"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "title": "Google DeepMind 네이티브 오디오-비전 멀티모달 스트리밍 아키텍처 공개",
+          "summary": "별도의 음성 인식(STT)이나 텍스트 변환 과정 없이 오디오 파형과 비디오 프레임을 직접 임베딩 공간에서 융합 처리하는 서브-400ms 초저지연 실시간 멀티모달 추론 파이프라인이 공개되었습니다.",
+          "key_points": [
+            "양방향 음성 억양 및 톤 변화 실시간 감지 추론",
+            "초당 30fps 비디오 스트림의 시각적 공간 추론 정확도 개선"
+          ],
+          "source_name": "Google DeepMind Research",
+          "source_url": "https://deepmind.google/discover/blog",
+          "tags": [
+            "Multimodal",
+            "EndToEnd",
+            "RealtimeInference"
           ]
         },
         {
           "category_id": "ai_video",
-          "title": "차세대 생성형 비디오 물리 시뮬레이션 및 모션 툴킷 (2026-08-29)",
-          "summary": "비디오 생성 AI에서 카메라 앵글 제어 및 피사체 일관성을 보장하는 기술이 고도화되고 있습니다.",
+          "title": "Kling AI 1.5 1080p 물리 시뮬레이션 및 다중 카메라 궤적 제어 엔진 (2026-08-29)",
+          "summary": "복합 조명 반사, 유체 흐름, 직물 충돌 등 물리 법칙 시뮬레이션 정확도를 강화한 Kling 1.5 비디오 디퓨전 엔진이 업데이트되었습니다. 10초 생성 시 피사체 디테일 손실을 획기적으로 낮췄습니다.",
           "key_points": [
-            "고해상도 실시간 렌더링",
-            "크리에이터 모션 제어 개선"
+            "Pan/Tilt/Zoom 3축 카메라 좌표 궤적 정밀 수치 제어",
+            "다중 인물 씬에서의 얼굴 왜곡 및 모션 블러 아티팩트 40% 저감"
           ],
-          "source_name": "TechCrunch AI",
-          "source_url": "https://techcrunch.com",
+          "source_name": "Kling AI Product Changelog",
+          "source_url": "https://klingai.com",
           "tags": [
-            "VideoGen",
-            "CreativeAI"
+            "PhysicsEngine",
+            "CameraTrajectory",
+            "DiffusionVideo"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "title": "Higgsfield AI 모바일 네이티브 모션 컨트롤 및 ComfyUI 커스텀 노드 생태계",
+          "summary": "스마트폰 터치 제스처로 3D 공간 내 인물 모션 패스를 설정하고 즉각 렌더링하는 모바일 툴킷과 오픈소스 ComfyUI 연동 파이프라인이 릴리즈되었습니다.",
+          "key_points": [
+            "터치 기반 키프레임 궤적 생성 및 캐릭터 리깅 보간",
+            "ComfyUI 워크플로우를 통한 로컬 GPU 가속 렌더링 지원"
+          ],
+          "source_name": "Reddit r/comfyui & Higgsfield",
+          "source_url": "https://reddit.com/r/comfyui",
+          "tags": [
+            "ComfyUI",
+            "MobileWorkflow",
+            "MotionPath"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "title": "Runway Gen-3 Alpha 키프레임 보간 및 비디오-투-비디오 스타일 전이 고도화",
+          "summary": "영상 시작과 끝 프레임을 고정하고 중간 모션을 물리 연산으로 채우는 First/Last Keyframe 제어와 4K 텍스처 스타일 변환 파이프라인이 정식 릴리즈되었습니다.",
+          "key_points": [
+            "시간축 일관성(Temporal Consistency) 향상으로 프레임 깜빡임 억제",
+            "프로덕션 VFX 파이프라인을 위한 OpenEXR 및 고색역 내보내기 지원"
+          ],
+          "source_name": "Runway Research News",
+          "source_url": "https://runwayml.com/news",
+          "tags": [
+            "KeyframeControl",
+            "TemporalConsistency",
+            "VFXPipeline"
           ]
         },
         {
           "category_id": "health_fitness",
-          "title": "웨어러블 바이오마커와 운동생리학 기반 맞춤형 코칭 (2026-08-29)",
-          "summary": "수면, HRV, 대사 지표를 통합 분석하여 부상 방지 및 회복 가이드를 제공하는 헬스케어 AI 연구가 진전되고 있습니다.",
+          "title": "DC Rainmaker & Garmin Elevate V5 센서: 수면 무호흡 및 HRV 복합 알고리즘 분석 (2026-08-29)",
+          "summary": "Garmin의 최신 Elevate Gen 5 광학 센서 펌웨어 업데이트를 통해 수면 중 산소포화도 급락 및 호흡 장애를 조기 감지하는 FDA 승인 수면 무호흡 감지 알고리즘이 적용되었습니다.",
           "key_points": [
-            "생체 신호 기반 회복 지표",
-            "개인 맞춤형 훈련 최적화"
+            "야간 수면 단계별 HRV 서지와 교감신경 긴장도 연계 분석",
+            "오버트레이닝 방지를 위한 개인화된 회복 권고 시간 정밀화"
           ],
-          "source_name": "Nature Medicine",
-          "source_url": "https://www.nature.com",
+          "source_name": "DC Rainmaker Review",
+          "source_url": "https://www.dcrainmaker.com",
           "tags": [
-            "Wearables",
-            "Physiology"
+            "GarminElevate",
+            "SleepApnea",
+            "HRVRecovery"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "title": "PubMed 임상 연구: 연속혈당측정(CGM) 데이터와 젖산 역치/글리코겐 고갈 상관관계",
+          "summary": "지구력 운동선수 대상 임상 연구에서 운동 중 혈당 변동 기울기(Glucose Slope)가 젖산 역치(LT2) 및 근육 내 글리코겐 고갈 시점을 실시간 예측할 수 있음이 입증되었습니다.",
+          "key_points": [
+            "혈당 급락 전 15분 선행 지표를 통한 탄수화물 섭취 타이밍 산출",
+            "VO2max 80% 이상 고강도 인터벌 세션에서의 대사 효율 최적화"
+          ],
+          "source_name": "PubMed Clinical Physiology",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov",
+          "tags": [
+            "CGM",
+            "LactateThreshold",
+            "MetabolicStudy"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "title": "MobiHealthNews: Whoop 4.0 피부 온도 센서 기반 중추신경계 스트레인(Strain) 산출 고도화",
+          "summary": "Whoop의 최신 알고리즘 업데이트로 미세 피부 온도 변화와 야간 호흡수를 결합하여 근골격계 피로뿐만 아니라 중추신경계(CNS) 피로도를 독립 산출하는 기능이 도입되었습니다.",
+          "key_points": [
+            "체온 리듬 편차 기반 면역 저하 및 오버리칭 사전 경고",
+            "운동 강도별 심박존 타임라인과 누적 생체 부하 지수 시각화"
+          ],
+          "source_name": "MobiHealthNews",
+          "source_url": "https://www.mobihealthnews.com",
+          "tags": [
+            "WhoopStrain",
+            "CoreTemp",
+            "CNSFatigue"
           ]
         }
       ]
