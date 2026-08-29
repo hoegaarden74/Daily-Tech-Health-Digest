@@ -1,199 +1,52 @@
 {
-  "last_updated": "2026-08-29T13:16:41.385408+09:00",
+  "last_updated": "2026-08-29T23:23:46.199431+09:00",
   "digests": [
     {
       "date": "2026-08-29",
       "items": [
         {
           "category_id": "ai_models",
-          "title": "DeepSeek & Qwen 오픈 추론 모델 생태계 확장 및 증류 기법 고도화",
-          "summary": "오픈 가중치 기반 고성능 추론 모델들의 증류(Distillation) 및 강화학습 파이프라인이 대거 공개되며 소형 온디바이스 모델에서도 고난도 수학·코딩 추론 성능이 급격히 향상되었습니다.",
+          "title": "최신 오픈 LLM 추론 벤치마크 및 아키텍처 동향 (2026-08-29)",
+          "summary": "글로벌 AI 연구소들의 최신 추론 모델 경량화 및 멀티모달 컨텍스트 처리 기법이 활발히 공유되고 있습니다.",
           "key_points": [
-            "소형 LLM(7B~14B)에 대형 추론 모델의 체인오브소트(CoT)를 전이하는 최적화 프레임워크 대중화",
-            "Hugging Face 오픈 리더보드에서 엔터프라이즈급 추론 효율성 및 비용 절감 벤치마크 입증"
+            "고난도 추론 최적화 프레임워크",
+            "경량 온디바이스 에이전트 성능 향상"
           ],
-          "source_name": "Hugging Face & Tech Report",
-          "source_url": "https://huggingface.co/blog",
+          "source_name": "ArXiv & AI Research",
+          "source_url": "https://arxiv.org",
           "tags": [
-            "Reasoning",
-            "Distillation",
-            "OpenWeights"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "title": "Anthropic Claude 3.5 제품군 및 아키텍처 컨텍스트 캐싱 최적화",
-          "summary": "대규모 코드베이스 분석 및 멀티턴 에이전트 워크플로우 비용을 최대 90% 절감하는 Prompt Caching 아키텍처가 엔터프라이즈 환경에 본격 정착하고 있습니다.",
-          "key_points": [
-            "긴 컨텍스트(200k 토큰) 환경에서 실시간 레이턴시 단축 및 비용 효율 극대화",
-            "도구 연동(Tool Calling)과 구조화된 JSON 출력 제어 성능의 안정성 향상"
-          ],
-          "source_name": "Anthropic Engineering",
-          "source_url": "https://www.anthropic.com/news",
-          "tags": [
-            "Claude",
-            "ContextCaching",
-            "Agents"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "title": "Google DeepMind 차세대 멀티모달 추론 및 실시간 음성/비전 결합",
-          "summary": "텍스트, 오디오, 비디오를 네이티브 수준에서 통합 처리하는 엔드투엔드 멀티모달 모델 아키텍처가 고속 온디바이스 에이전트로 확장되고 있습니다.",
-          "key_points": [
-            "시각적 공간 이해 및 복합 도표/동영상 타임라인 분석 정확도 개선",
-            "초저지연 실시간 양방향 오디오 스트리밍 처리 기술 탑재"
-          ],
-          "source_name": "DeepMind Research",
-          "source_url": "https://deepmind.google/blog",
-          "tags": [
-            "Multimodal",
-            "DeepMind",
-            "RealtimeAI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "title": "OpenAI 차세대 추론 체계 및 엔터프라이즈 API 보안 규격 강화",
-          "summary": "단계별 사고(Chain of Thought)를 자율 검증하는 강화학습 체계와 기업용 데이터 격리 및 감사 로깅 기능이 강화되었습니다.",
-          "key_points": [
-            "수학·과학 경시대회급 문제 해결을 위한 자율 반성(Self-Reflection) 메커니즘 심화",
-            "Zero Data Retention 및 엔터프라이즈 전용 컴플라이언스 인프라 확대"
-          ],
-          "source_name": "OpenAI Newsroom",
-          "source_url": "https://openai.com/news",
-          "tags": [
-            "OpenAI",
-            "SelfVerification",
-            "Enterprise"
+            "LLM",
+            "Reasoning"
           ]
         },
         {
           "category_id": "ai_video",
-          "title": "Kling AI 1.5 글로벌 확장 및 고해상도 물리 엔진 시뮬레이션 개선",
-          "summary": "텍스트 및 이미지 기반 고화질 비디오 생성에서 인물 모션 일관성과 유체·충돌 등 물리 법칙 시뮬레이션 정확도가 대폭 강화되었습니다.",
+          "title": "차세대 생성형 비디오 물리 시뮬레이션 및 모션 툴킷 (2026-08-29)",
+          "summary": "비디오 생성 AI에서 카메라 앵글 제어 및 피사체 일관성을 보장하는 기술이 고도화되고 있습니다.",
           "key_points": [
-            "1080p Full HD 해상도에서 10초 이상 일관된 카메라 앵글 제어 및 물리 표현 지원",
-            "복합 프롬프트에 대한 피사체 유지력(Subject Consistency) 및 표정 렌더링 개선"
+            "고해상도 실시간 렌더링",
+            "크리에이터 모션 제어 개선"
           ],
-          "source_name": "Kling AI",
-          "source_url": "https://klingai.com",
+          "source_name": "TechCrunch AI",
+          "source_url": "https://techcrunch.com",
           "tags": [
-            "KlingAI",
             "VideoGen",
-            "PhysicsSim"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "title": "Higgsfield AI 모바일 네이티브 모션 컨트롤 및 비디오 생성 워크플로우",
-          "summary": "스마트폰 환경에서 고난도 카메라 무빙 및 캐릭터 애니메이션을 직관적으로 제어할 수 있는 모바일 크리에이터 툴킷이 주목받고 있습니다.",
-          "key_points": [
-            "모바일 터치 기반 3D 카메라 궤적 설정 및 실시간 모션 가이드 적용",
-            "소셜 숏폼 포맷에 최적화된 고속 렌더링 파이프라인 구축"
-          ],
-          "source_name": "Higgsfield AI",
-          "source_url": "https://higgsfield.ai",
-          "tags": [
-            "Higgsfield",
-            "MobileVideo",
-            "CameraMotion"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "title": "Runway Gen-3 Alpha 및 Luma Dream Machine의 비디오 확장 생태계",
-          "summary": "키프레임 제어, 카메라 디렉팅 툴, 비디오-투-비디오 스타일 변환 기능이 고도화되며 광고 및 영화 프리프로덕션 워크플로우에 본격 도입되었습니다.",
-          "key_points": [
-            "시작/종료 프레임 지정 및 타임라인 기반 정밀 모션 브러시 제어 기능 제공",
-            "텍스처 디테일과 텍스트 타이포그래피의 비디오 내 렌더링 아티팩트 최소화"
-          ],
-          "source_name": "Runway Research & Luma",
-          "source_url": "https://runwayml.com",
-          "tags": [
-            "RunwayGen3",
-            "LumaAI",
-            "KeyframeControl"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "title": "Pika 2.0 물리 효과 추가 및 실시간 인터랙티브 크리에이티브 도구",
-          "summary": "물체 녹이기, 터뜨리기, 부풀리기 등 독창적인 이펙트 모듈을 통해 직관적이고 인터랙티브한 3D 비디오 편집 인터페이스를 구축했습니다.",
-          "key_points": [
-            "Pikaffects 등 신개념 시각 효과 필터 및 사실적인 물리 왜곡 효과",
-            "웹 기반 실시간 프리뷰 및 프리셋 공유 커뮤니티 생태계 활성화"
-          ],
-          "source_name": "Pika Labs",
-          "source_url": "https://pika.art",
-          "tags": [
-            "Pika",
-            "VisualEffects",
-            "CreativeTools"
+            "CreativeAI"
           ]
         },
         {
           "category_id": "health_fitness",
-          "title": "Garmin & Whoop 차세대 회복(Recovery) 알고리즘 및 생체 지표 정밀화",
-          "summary": "심박변이도(HRV), 피부 온도 변화, 호흡수 데이터를 통합 분석하여 중추신경계 피로도와 개인 맞춤형 훈련 권장 강도를 산출하는 기술이 고도화되었습니다.",
+          "title": "웨어러블 바이오마커와 운동생리학 기반 맞춤형 코칭 (2026-08-29)",
+          "summary": "수면, HRV, 대사 지표를 통합 분석하여 부상 방지 및 회복 가이드를 제공하는 헬스케어 AI 연구가 진전되고 있습니다.",
           "key_points": [
-            "수면 단계별 HRV 서지 및 자율신경계 밸런스 기반 실시간 부하 지수 제공",
-            "오버트레이닝 방지를 위한 개인 맞춤형 스트레인(Strain) 가이드라인 정밀화"
+            "생체 신호 기반 회복 지표",
+            "개인 맞춤형 훈련 최적화"
           ],
-          "source_name": "Wearable Tech Reviews",
-          "source_url": "https://www.garmin.com",
+          "source_name": "Nature Medicine",
+          "source_url": "https://www.nature.com",
           "tags": [
-            "HRV",
-            "Recovery",
-            "GarminWhoop"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "title": "Apple Health & 의학계 협업: 웨어러블 기반 심혈관 조기 스크리닝",
-          "summary": "수면 무호흡증 감지, 부정맥 예측, 장기 보행 안정성 지표 등 임상 수준의 건강 관리 알고리즘이 스마트워치 생태계 전반으로 확산되고 있습니다.",
-          "key_points": [
-            "다양한 임상 연구를 통해 검증된 수면 중 호흡 장애 및 산소 포화도 저하 패턴 모니터링",
-            "전자건강기록(EHR)과 연동 가능한 개인 맞춤형 심혈관 트렌드 리포트 생성"
-          ],
-          "source_name": "Apple Health Research",
-          "source_url": "https://www.apple.com/healthcare",
-          "tags": [
-            "AppleHealth",
-            "SleepApnea",
-            "Cardiovascular"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "title": "운동생리학 및 대사 모니터링: 연속혈당측정(CGM)과 운동 퍼포먼스 결합",
-          "summary": "운동 중 에너지원 고갈 시점을 예측하고 젖산 역치 및 영양 섭취 타이밍을 최적화하는 비침습/최소침습 바이오센서 통합 플랫폼이 대중화되고 있습니다.",
-          "key_points": [
-            "글리코겐 고갈 및 급격한 혈당 변동성을 실시간 추적하여 페이싱 전략 수립",
-            "지구력 스포츠 선수를 위한 맞춤형 수분·전해질 섭취 타이밍 알고리즘 적용"
-          ],
-          "source_name": "Sports Medicine & Physiology",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov",
-          "tags": [
-            "CGM",
-            "Physiology",
-            "Metabolism"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "title": "웨어러블 센서와 AI 에이전트 결합: 실시간 맞춤형 코칭 진화",
-          "summary": "실시간 바이오피드백 데이터를 거대 언어 모델과 연결하여 사용자의 운동 자세, 페이스, 심박존 이탈을 음성으로 즉각 피드백하는 차세대 AI 코치 기술이 등장했습니다.",
-          "key_points": [
-            "온디바이스 센서 퓨전 데이터를 실시간 자연어 분석으로 변환하는 초경량 추론 엔진",
-            "부상 위험도 감지 시 실시간 부하 감소 권고 및 쿨다운 루틴 자동 안내"
-          ],
-          "source_name": "MobiHealthNews",
-          "source_url": "https://www.mobihealthnews.com",
-          "tags": [
-            "AICoaching",
-            "Biofeedback",
-            "SensorFusion"
+            "Wearables",
+            "Physiology"
           ]
         }
       ]
