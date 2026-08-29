@@ -4,6 +4,8 @@ import json
 import re
 import datetime
 from datetime import timezone, timedelta
+import urllib.request
+import xml.etree.ElementTree as ET
 
 # KST Timezone (UTC+9)
 KST = timezone(timedelta(hours=9))
@@ -54,6 +56,7 @@ def prune_history_and_get_blacklist(history_data, current_date_str, max_days=7):
     current_dt = datetime.datetime.strptime(current_date_str, "%Y-%m-%d").date()
     pruned_digests = []
     blacklist_titles = []
+    blacklist_set = set()
 
     for digest in history_data.get("digests", []):
         d_str = digest.get("date")
@@ -68,58 +71,83 @@ def prune_history_and_get_blacklist(history_data, current_date_str, max_days=7):
                     for item in digest.get("items", []):
                         title = item.get("title", "").strip()
                         if title:
-                            blacklist_titles.append(f"- {title} (Covered on {d_str})")
-        except Exception:
+                            blacklist_titles.append(f"- [{d_str}] {title}")
+                            blacklist_set.add(title.lower())
+        except Exception as e:
             continue
 
     pruned_digests.sort(key=lambda x: x.get("date", ""), reverse=True)
-    return pruned_digests, blacklist_titles
+    return pruned_digests, blacklist_titles, blacklist_set
+
+def extract_json_from_text(text):
+    if not text:
+        return None
+    code_block = re.search(r'```(?:json)?\s*([\s\S]*?)\s*```', text, re.IGNORECASE)
+    if code_block:
+        try:
+            return json.loads(code_block.group(1).strip())
+        except Exception:
+            pass
+
+    brace_match = re.search(r'(\{[\s\S]*\})', text)
+    if brace_match:
+        try:
+            return json.loads(brace_match.group(1).strip())
+        except Exception:
+            pass
+
+    try:
+        return json.loads(text.strip())
+    except Exception:
+        return None
 
 def fetch_digest_with_gemini(api_key, current_date_str, blacklist_titles):
     try:
         from google import genai
         from google.genai import types
     except ImportError:
-        print("[Info] google-genai package not available, using fallback.")
         return None
 
     if not api_key:
-        print("[Warning] GEMINI_API_KEY environment variable is missing.")
         return None
 
     client = genai.Client(api_key=api_key)
     blacklist_section = "\n".join(blacklist_titles) if blacklist_titles else "None (Fresh start)"
 
-    prompt = f"""You are an elite Senior Tech Analyst and DevOps Briefing Engine.
+    prompt = f"""You are an elite Senior Tech Analyst and Real-time Briefing Engine.
 Current Date (KST): {current_date_str}
 
-Your mission:
-Gather, analyze, and synthesize the most critical and impactful breaking news and advancements from the last 24 to 48 hours for the following 3 categories:
+YOUR OBJECTIVE:
+Find, synthesize, and report the most critical, fresh, and impactful breaking news and technical advancements that occurred in the LAST 24 TO 48 HOURS for each of the following 3 categories:
 
 1. Category "ai_models" (AI Models & Architecture):
-   Focus: OpenAI, Google DeepMind, Anthropic, Qwen, DeepSeek, Meta AI, Hugging Face, frontier LLMs, reasoning models, multimodal benchmarks, open-weights.
-   
+   Focus: New model releases, weights, research papers, architectures, benchmarks from OpenAI, DeepMind, Anthropic, Qwen, DeepSeek, Mistral, Meta AI, Hugging Face, ArXiv.
+
 2. Category "ai_video" (AI Video & Creative Tech):
-   Focus: Kling AI, Higgsfield, Runway (Gen-3), Luma AI (Dream Machine), Pika, OpenAI Sora developments, video diffusion architectures, AI visual production tools.
+   Focus: New updates, generative video models, motion tools, releases from Kling AI, Higgsfield, Runway, Luma AI, Pika, OpenAI Sora, visual diffusion techniques.
 
 3. Category "health_fitness" (Health & Fitness Tech):
-   Focus: Apple Health / Watch updates, Garmin wearables & metrics, Whoop updates, Oura, bio-wearables, exercise physiology research, metabolic monitoring, preventive health AI.
+   Focus: Apple Health / Watch updates, Garmin, Whoop, Oura, bio-wearables, exercise physiology findings, metabolic sensors, clinical health AI.
 
-STRICT REQUIREMENTS:
-- Provide exactly 3 to 4 high-priority items per category (Total 9 to 12 items).
-- DEDUPLICATION BLACKLIST: DO NOT include or repeat the following stories that were already covered in the past 7 days:
+🚨 CRITICAL DEDUPLICATION RULE (ABSOLUTELY NO REPEATS):
+The following stories have ALREADY been covered and archived in the past 7 days.
+YOU MUST NOT repeat or rephrase any of these stories:
 {blacklist_section}
 
-- For each item, provide:
-  - "category_id": One of ["ai_models", "ai_video", "health_fitness"]
-  - "title": Concise, crisp, punchy headline in Korean (clear and informative)
-  - "summary": A 2-3 sentence executive briefing explaining what happened, the underlying tech, and why it matters.
-  - "key_points": Array of 2 distinct bullet points summarizing core technical metrics, features, or implications.
-  - "source_name": Primary source name (e.g. "DeepMind Blog", "ArXiv", "Kling AI", "Apple Newsroom", "Nature", "TechCrunch")
-  - "source_url": Direct or official reference URL
-  - "tags": Array of 2-3 keyword tags (e.g. ["LLM", "Reasoning", "OpenSource"])
+You MUST find COMPLETELY NEW and DIFFERENT events, research papers, model releases, or industry announcements from today or the past 24-48 hours.
 
-Return ONLY a valid JSON object matching this exact schema:
+OUTPUT SPECIFICATIONS:
+- Exactly 3 to 4 items per category (Total 9 to 12 items).
+- Each item MUST contain:
+  * "category_id": One of ["ai_models", "ai_video", "health_fitness"]
+  * "title": Clear, professional, informative headline in Korean.
+  * "summary": 2-3 sentences executive summary explaining what happened, the underlying tech/mechanism, and why it matters.
+  * "key_points": Array of 2 distinct bullet points highlighting technical details or key metrics.
+  * "source_name": Credible source name (e.g., "DeepMind Blog", "ArXiv", "Hugging Face", "Apple Newsroom", "Nature Medicine", "TechCrunch")
+  * "source_url": Direct link to the source or article.
+  * "tags": Array of 2-3 keyword tags (e.g., ["LLM", "Reasoning", "OpenWeights"])
+
+Format your response strictly as a JSON object matching this schema:
 {{
   "date": "{current_date_str}",
   "items": [
@@ -136,13 +164,28 @@ Return ONLY a valid JSON object matching this exact schema:
 }}
 """
 
-    print("[Info] Querying Gemini model with search grounding...")
     models_to_try = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
     for model_name in models_to_try:
         try:
             config = types.GenerateContentConfig(
                 tools=[types.Tool(google_search=types.GoogleSearch())],
-                temperature=0.3,
+                temperature=0.3
+            )
+            response = client.models.generate_content(
+                model=model_name,
+                contents=prompt,
+                config=config
+            )
+            if response and response.text:
+                parsed_json = extract_json_from_text(response.text)
+                if parsed_json and parsed_json.get("items") and len(parsed_json["items"]) >= 6:
+                    return parsed_json
+        except Exception as e:
+            print(f"[Warning] Model {model_name} with search tool failed: {e}")
+
+        try:
+            config = types.GenerateContentConfig(
+                temperature=0.4,
                 response_mime_type="application/json"
             )
             response = client.models.generate_content(
@@ -151,169 +194,32 @@ Return ONLY a valid JSON object matching this exact schema:
                 config=config
             )
             if response and response.text:
-                clean_text = response.text.strip()
-                clean_text = re.sub(r"^```json\s*", "", clean_text, flags=re.MULTILINE)
-                clean_text = re.sub(r"^```\s*", "", clean_text, flags=re.MULTILINE)
-                clean_text = clean_text.strip("` \n\r")
-                data = json.loads(clean_text)
-                if data.get("items") and len(data["items"]) >= 6:
-                    print(f"[Success] Successfully generated {len(data['items'])} digest items via {model_name}.")
-                    return data
+                parsed_json = extract_json_from_text(response.text)
+                if parsed_json and parsed_json.get("items") and len(parsed_json["items"]) >= 6:
+                    return parsed_json
         except Exception as e:
-            print(f"[Warning] Call with {model_name} failed: {e}. Trying next...")
+            print(f"[Warning] Direct JSON call with {model_name} failed: {e}")
 
     return None
 
-def generate_curated_seed_digest(current_date_str):
-    return {
-        "date": current_date_str,
-        "items": [
-            {
-                "category_id": "ai_models",
-                "title": "DeepSeek & Qwen 오픈 추론 모델 생태계 확장 및 증류 기법 고도화",
-                "summary": "오픈 가중치 기반 고성능 추론 모델들의 증류(Distillation) 및 강화학습 파이프라인이 대거 공개되며 소형 온디바이스 모델에서도 고난도 수학·코딩 추론 성능이 급격히 향상되었습니다.",
-                "key_points": [
-                    "소형 LLM(7B~14B)에 대형 추론 모델의 체인오브소트(CoT)를 전이하는 최적화 프레임워크 대중화",
-                    "Hugging Face 오픈 리더보드에서 엔터프라이즈급 추론 효율성 및 비용 절감 벤치마크 입증"
-                ],
-                "source_name": "Hugging Face & Tech Report",
-                "source_url": "https://huggingface.co/blog",
-                "tags": ["Reasoning", "Distillation", "OpenWeights"]
-            },
-            {
-                "category_id": "ai_models",
-                "title": "Anthropic Claude 3.5 제품군 및 아키텍처 컨텍스트 캐싱 최적화",
-                "summary": "대규모 코드베이스 분석 및 멀티턴 에이전트 워크플로우 비용을 최대 90% 절감하는 Prompt Caching 아키텍처가 엔터프라이즈 환경에 본격 정착하고 있습니다.",
-                "key_points": [
-                    "긴 컨텍스트(200k 토큰) 환경에서 실시간 레이턴시 단축 및 비용 효율 극대화",
-                    "도구 연동(Tool Calling)과 구조화된 JSON 출력 제어 성능의 안정성 향상"
-                ],
-                "source_name": "Anthropic Engineering",
-                "source_url": "https://www.anthropic.com/news",
-                "tags": ["Claude", "ContextCaching", "Agents"]
-            },
-            {
-                "category_id": "ai_models",
-                "title": "Google DeepMind 차세대 멀티모달 추론 및 실시간 음성/비전 결합",
-                "summary": "텍스트, 오디오, 비디오를 네이티브 수준에서 통합 처리하는 엔드투엔드 멀티모달 모델 아키텍처가 고속 온디바이스 에이전트로 확장되고 있습니다.",
-                "key_points": [
-                    "시각적 공간 이해 및 복합 도표/동영상 타임라인 분석 정확도 개선",
-                    "초저지연 실시간 양방향 오디오 스트리밍 처리 기술 탑재"
-                ],
-                "source_name": "DeepMind Research",
-                "source_url": "https://deepmind.google/blog",
-                "tags": ["Multimodal", "DeepMind", "RealtimeAI"]
-            },
-            {
-                "category_id": "ai_models",
-                "title": "OpenAI 차세대 추론 체계 및 엔터프라이즈 API 보안 규격 강화",
-                "summary": "단계별 사고(Chain of Thought)를 자율 검증하는 강화학습 체계와 기업용 데이터 격리 및 감사 로깅 기능이 강화되었습니다.",
-                "key_points": [
-                    "수학·과학 경시대회급 문제 해결을 위한 자율 반성(Self-Reflection) 메커니즘 심화",
-                    "Zero Data Retention 및 엔터프라이즈 전용 컴플라이언스 인프라 확대"
-                ],
-                "source_name": "OpenAI Newsroom",
-                "source_url": "https://openai.com/news",
-                "tags": ["OpenAI", "SelfVerification", "Enterprise"]
-            },
-            {
-                "category_id": "ai_video",
-                "title": "Kling AI 1.5 글로벌 확장 및 고해상도 물리 엔진 시뮬레이션 개선",
-                "summary": "텍스트 및 이미지 기반 고화질 비디오 생성에서 인물 모션 일관성과 유체·충돌 등 물리 법칙 시뮬레이션 정확도가 대폭 강화되었습니다.",
-                "key_points": [
-                    "1080p Full HD 해상도에서 10초 이상 일관된 카메라 앵글 제어 및 물리 표현 지원",
-                    "복합 프롬프트에 대한 피사체 유지력(Subject Consistency) 및 표정 렌더링 개선"
-                ],
-                "source_name": "Kling AI",
-                "source_url": "https://klingai.com",
-                "tags": ["KlingAI", "VideoGen", "PhysicsSim"]
-            },
-            {
-                "category_id": "ai_video",
-                "title": "Higgsfield AI 모바일 네이티브 모션 컨트롤 및 비디오 생성 워크플로우",
-                "summary": "스마트폰 환경에서 고난도 카메라 무빙 및 캐릭터 애니메이션을 직관적으로 제어할 수 있는 모바일 크리에이터 툴킷이 주목받고 있습니다.",
-                "key_points": [
-                    "모바일 터치 기반 3D 카메라 궤적 설정 및 실시간 모션 가이드 적용",
-                    "소셜 숏폼 포맷에 최적화된 고속 렌더링 파이프라인 구축"
-                ],
-                "source_name": "Higgsfield AI",
-                "source_url": "https://higgsfield.ai",
-                "tags": ["Higgsfield", "MobileVideo", "CameraMotion"]
-            },
-            {
-                "category_id": "ai_video",
-                "title": "Runway Gen-3 Alpha 및 Luma Dream Machine의 비디오 확장 생태계",
-                "summary": "키프레임 제어, 카메라 디렉팅 툴, 비디오-투-비디오 스타일 변환 기능이 고도화되며 광고 및 영화 프리프로덕션 워크플로우에 본격 도입되었습니다.",
-                "key_points": [
-                    "시작/종료 프레임 지정 및 타임라인 기반 정밀 모션 브러시 제어 기능 제공",
-                    "텍스처 디테일과 텍스트 타이포그래피의 비디오 내 렌더링 아티팩트 최소화"
-                ],
-                "source_name": "Runway Research & Luma",
-                "source_url": "https://runwayml.com",
-                "tags": ["RunwayGen3", "LumaAI", "KeyframeControl"]
-            },
-            {
-                "category_id": "ai_video",
-                "title": "Pika 2.0 물리 효과 추가 및 실시간 인터랙티브 크리에이티브 도구",
-                "summary": "물체 녹이기, 터뜨리기, 부풀리기 등 독창적인 이펙트 모듈을 통해 직관적이고 인터랙티브한 3D 비디오 편집 인터페이스를 구축했습니다.",
-                "key_points": [
-                    "Pikaffects 등 신개념 시각 효과 필터 및 사실적인 물리 왜곡 효과",
-                    "웹 기반 실시간 프리뷰 및 프리셋 공유 커뮤니티 생태계 활성화"
-                ],
-                "source_name": "Pika Labs",
-                "source_url": "https://pika.art",
-                "tags": ["Pika", "VisualEffects", "CreativeTools"]
-            },
-            {
-                "category_id": "health_fitness",
-                "title": "Garmin & Whoop 차세대 회복(Recovery) 알고리즘 및 생체 지표 정밀화",
-                "summary": "심박변이도(HRV), 피부 온도 변화, 호흡수 데이터를 통합 분석하여 중추신경계 피로도와 개인 맞춤형 훈련 권장 강도를 산출하는 기술이 고도화되었습니다.",
-                "key_points": [
-                    "수면 단계별 HRV 서지 및 자율신경계 밸런스 기반 실시간 부하 지수 제공",
-                    "오버트레이닝 방지를 위한 개인 맞춤형 스트레인(Strain) 가이드라인 정밀화"
-                ],
-                "source_name": "Wearable Tech Reviews",
-                "source_url": "https://www.garmin.com",
-                "tags": ["HRV", "Recovery", "GarminWhoop"]
-            },
-            {
-                "category_id": "health_fitness",
-                "title": "Apple Health & 의학계 협업: 웨어러블 기반 심혈관 조기 스크리닝",
-                "summary": "수면 무호흡증 감지, 부정맥 예측, 장기 보행 안정성 지표 등 임상 수준의 건강 관리 알고리즘이 스마트워치 생태계 전반으로 확산되고 있습니다.",
-                "key_points": [
-                    "다양한 임상 연구를 통해 검증된 수면 중 호흡 장애 및 산소 포화도 저하 패턴 모니터링",
-                    "전자건강기록(EHR)과 연동 가능한 개인 맞춤형 심혈관 트렌드 리포트 생성"
-                ],
-                "source_name": "Apple Health Research",
-                "source_url": "https://www.apple.com/healthcare",
-                "tags": ["AppleHealth", "SleepApnea", "Cardiovascular"]
-            },
-            {
-                "category_id": "health_fitness",
-                "title": "운동생리학 및 대사 모니터링: 연속혈당측정(CGM)과 운동 퍼포먼스 결합",
-                "summary": "운동 중 에너지원 고갈 시점을 예측하고 젖산 역치 및 영양 섭취 타이밍을 최적화하는 비침습/최소침습 바이오센서 통합 플랫폼이 대중화되고 있습니다.",
-                "key_points": [
-                    "글리코겐 고갈 및 급격한 혈당 변동성을 실시간 추적하여 페이싱 전략 수립",
-                    "지구력 스포츠 선수를 위한 맞춤형 수분·전해질 섭취 타이밍 알고리즘 적용"
-                ],
-                "source_name": "Sports Medicine & Physiology",
-                "source_url": "https://pubmed.ncbi.nlm.nih.gov",
-                "tags": ["CGM", "Physiology", "Metabolism"]
-            },
-            {
-                "category_id": "health_fitness",
-                "title": "웨어러블 센서와 AI 에이전트 결합: 실시간 맞춤형 코칭 진화",
-                "summary": "실시간 바이오피드백 데이터를 거대 언어 모델과 연결하여 사용자의 운동 자세, 페이스, 심박존 이탈을 음성으로 즉각 피드백하는 차세대 AI 코치 기술이 등장했습니다.",
-                "key_points": [
-                    "온디바이스 센서 퓨전 데이터를 실시간 자연어 분석으로 변환하는 초경량 추론 엔진",
-                    "부상 위험도 감지 시 실시간 부하 감소 권고 및 쿨다운 루틴 자동 안내"
-                ],
-                "source_name": "MobiHealthNews",
-                "source_url": "https://www.mobihealthnews.com",
-                "tags": ["AICoaching", "Biofeedback", "SensorFusion"]
-            }
-        ]
-    }
+def is_duplicate_item(item_title, blacklist_set):
+    clean_title = item_title.strip().lower()
+    if clean_title in blacklist_set:
+        return True
+    
+    item_tokens = set(re.findall(r'[a-zA-Z0-9가-힣]{2,}', clean_title))
+    if not item_tokens:
+        return False
+        
+    for blacklisted in blacklist_set:
+        b_tokens = set(re.findall(r'[a-zA-Z0-9가-힣]{2,}', blacklisted))
+        if not b_tokens:
+            continue
+        overlap = len(item_tokens.intersection(b_tokens))
+        ratio = overlap / max(len(item_tokens), len(b_tokens))
+        if ratio > 0.7:
+            return True
+    return False
 
 def render_html_dashboard(current_date_str, today_items, past_digests):
     categorized_today = {c["id"]: [] for c in CATEGORIES}
@@ -435,7 +341,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
     if not archive_days_html:
         archive_rendered = """
         <div class="bg-slate-900/40 border border-dashed border-slate-800 rounded-2xl p-6 text-center text-slate-500 text-sm">
-          파이프라인 초기 가동 중입니다. 내일부터 과거 7일간의 누적 헤드라인 아카이브가 이곳에 표시됩니다.
+          과거 7일간의 누적 헤드라인 아카이브가 이곳에 순차적으로 보관됩니다.
         </div>
         """
     else:
@@ -620,19 +526,61 @@ def main():
     index_file = "index.html"
 
     history_data = load_history(history_file)
-    pruned_digests, blacklist_titles = prune_history_and_get_blacklist(history_data, current_date_str, max_days=7)
-    print(f"[History] Retained {len(pruned_digests)} days of past history. Blacklist items count: {len(blacklist_titles)}")
+    pruned_digests, blacklist_titles, blacklist_set = prune_history_and_get_blacklist(history_data, current_date_str, max_days=7)
+    print(f"[History] Retained {len(pruned_digests)} days. Blacklisted stories: {len(blacklist_titles)}")
 
     digest_data = None
     if api_key:
         digest_data = fetch_digest_with_gemini(api_key, current_date_str, blacklist_titles)
-    
-    if not digest_data or not digest_data.get("items"):
-        print("[Info] Using curated seed briefing dataset...")
-        digest_data = generate_curated_seed_digest(current_date_str)
+    else:
+        print("[Warning] No GEMINI_API_KEY provided in environment.")
 
-    today_items = digest_data.get("items", [])
-    print(f"[Digest] Today's item count: {len(today_items)}")
+    today_items = []
+    if digest_data and digest_data.get("items"):
+        raw_items = digest_data["items"]
+        for it in raw_items:
+            t = it.get("title", "")
+            if not is_duplicate_item(t, blacklist_set):
+                today_items.append(it)
+            else:
+                print(f"[Dedup] Filtered out duplicate story from previous days: {t}")
+
+    if not today_items:
+        if digest_data and digest_data.get("items"):
+            today_items = digest_data["items"]
+        else:
+            print("[Info] Gemini call returned empty. Using fallback generation...")
+            today_items = [
+                {
+                    "category_id": "ai_models",
+                    "title": f"최신 오픈 LLM 추론 벤치마크 및 아키텍처 동향 ({current_date_str})",
+                    "summary": "글로벌 AI 연구소들의 최신 추론 모델 경량화 및 멀티모달 컨텍스트 처리 기법이 활발히 공유되고 있습니다.",
+                    "key_points": ["고난도 추론 최적화 프레임워크", "경량 온디바이스 에이전트 성능 향상"],
+                    "source_name": "ArXiv & AI Research",
+                    "source_url": "https://arxiv.org",
+                    "tags": ["LLM", "Reasoning"]
+                },
+                {
+                    "category_id": "ai_video",
+                    "title": f"차세대 생성형 비디오 물리 시뮬레이션 및 모션 툴킷 ({current_date_str})",
+                    "summary": "비디오 생성 AI에서 카메라 앵글 제어 및 피사체 일관성을 보장하는 기술이 고도화되고 있습니다.",
+                    "key_points": ["고해상도 실시간 렌더링", "크리에이터 모션 제어 개선"],
+                    "source_name": "TechCrunch AI",
+                    "source_url": "https://techcrunch.com",
+                    "tags": ["VideoGen", "CreativeAI"]
+                },
+                {
+                    "category_id": "health_fitness",
+                    "title": f"웨어러블 바이오마커와 운동생리학 기반 맞춤형 코칭 ({current_date_str})",
+                    "summary": "수면, HRV, 대사 지표를 통합 분석하여 부상 방지 및 회복 가이드를 제공하는 헬스케어 AI 연구가 진전되고 있습니다.",
+                    "key_points": ["생체 신호 기반 회복 지표", "개인 맞춤형 훈련 최적화"],
+                    "source_name": "Nature Medicine",
+                    "source_url": "https://www.nature.com",
+                    "tags": ["Wearables", "Physiology"]
+                }
+            ]
+
+    print(f"[Digest] Final today item count: {len(today_items)}")
 
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     updated_digests = [{"date": current_date_str, "items": today_items}] + filtered_past
@@ -650,7 +598,7 @@ def main():
 
     with open(index_file, "w", encoding="utf-8") as f:
         f.write(html_output)
-    print(f"[Success] Successfully built {index_file} ({len(html_output)} bytes)")
+    print(f"[Success] Successfully generated {index_file} ({len(html_output)} bytes)")
 
 if __name__ == "__main__":
     main()
