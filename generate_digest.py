@@ -222,7 +222,7 @@ Return ONLY a valid JSON array matching:
     "category_id": "{cat_id}",
     "type_badge": "🔥 Major Release" OR "💡 Research Insight" OR "🛠️ Open Source & Tool" OR "🧪 Science & Study",
     "title": "Specific, informative Korean headline",
-    "summary": "2-3 sentences executive summary explaining technical mechanism, concrete metrics, and why it matters.",
+    "summary": "2-3 sentences executive summary explaining technical mechanism, concrete metrics, and industry impact.",
     "key_points": [
       "Key technical metric / benchmark / architecture detail",
       "Concrete release feature / experimental finding"
@@ -233,7 +233,8 @@ Return ONLY a valid JSON array matching:
   }}
 ]
 """
-    models = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-1.5-flash"]
+    # Active Gemini Models
+    models = ["gemini-3.6-flash", "gemini-3-flash", "gemini-2.5-flash", "gemini-1.5-flash"]
     for model in models:
         text = query_gemini_with_sdk(api_key, model, prompt, use_search=True)
         if not text:
@@ -613,6 +614,7 @@ def main():
         if api_key:
             items = fetch_category_items(api_key, cat, current_date_str, blacklist_titles)
         
+        # Deduplication filtering
         valid_items = []
         if items:
             for it in items:
@@ -652,4 +654,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-EOF
