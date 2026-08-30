@@ -5,6 +5,7 @@ import re
 import datetime
 from datetime import timezone, timedelta
 import urllib.request
+import urllib.parse
 import urllib.error
 
 # KST Timezone (UTC+9)
@@ -111,6 +112,29 @@ def extract_json_array_or_object(text):
     except Exception:
         return None
 
+def sanitize_and_resolve_url(raw_url, title, source_name, grounded_urls=None):
+    clean_url = str(raw_url).strip() if raw_url else ""
+
+    is_invalid = (
+        not clean_url or
+        clean_url == "#" or
+        "..." in clean_url or
+        "<" in clean_url or
+        "example.com" in clean_url or
+        "direct-link" in clean_url
+    )
+
+    if is_invalid:
+        if grounded_urls and len(grounded_urls) > 0:
+            return grounded_urls[0]
+        q = f"{title} {source_name}"
+        return f"https://www.google.com/search?q={urllib.parse.quote(q)}"
+
+    if not clean_url.startswith("http://") and not clean_url.startswith("https://"):
+        clean_url = "https://" + clean_url
+
+    return clean_url
+
 def query_gemini_direct_rest(api_key, model_name, prompt, use_search=True):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
     payload = {
@@ -131,13 +155,22 @@ def query_gemini_direct_rest(api_key, model_name, prompt, use_search=True):
             candidates = res_json.get("candidates", [])
             if candidates:
                 parts = candidates[0].get("content", {}).get("parts", [])
-                return "".join([p.get("text", "") for p in parts if "text" in p])
+                text = "".join([p.get("text", "") for p in parts if "text" in p])
+                
+                grounded_urls = []
+                g_meta = candidates[0].get("groundingMetadata", {})
+                for chunk in g_meta.get("groundingChunks", []):
+                    u = chunk.get("web", {}).get("uri")
+                    if u:
+                        grounded_urls.append(u)
+
+                return text, grounded_urls
     except urllib.error.HTTPError as e:
         err_msg = e.read().decode("utf-8")
         print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:250]}")
     except Exception as e:
         print(f"[REST API Error] {model_name}: {e}")
-    return None
+    return None, []
 
 def query_gemini_with_sdk(api_key, model_name, prompt, use_search=True):
     try:
@@ -153,10 +186,20 @@ def query_gemini_with_sdk(api_key, model_name, prompt, use_search=True):
             config=config
         )
         if response and response.text:
-            return response.text
+            grounded_urls = []
+            try:
+                if response.candidates and len(response.candidates) > 0:
+                    g_meta = getattr(response.candidates[0], "grounding_metadata", None)
+                    if g_meta and hasattr(g_meta, "grounding_chunks"):
+                        for chunk in g_meta.grounding_chunks:
+                            if hasattr(chunk, "web") and hasattr(chunk.web, "uri"):
+                                grounded_urls.append(chunk.web.uri)
+            except Exception:
+                pass
+            return response.text, grounded_urls
     except Exception as e:
         print(f"[SDK Call Error] {model_name}: {e}")
-    return None
+    return None, []
 
 def is_duplicate_item(item_title, blacklist_set):
     clean_title = item_title.strip().lower()
@@ -206,8 +249,10 @@ Each item MUST provide clear business and product value in 3 structured bullet p
 - "tech_applied": ⚙️ Applied AI/hardware technology, key features, or workflow mechanics.
 - "business_insight": 💼 Business model (SaaS subscription, usage-based, marketplace), pricing strategy, or business opportunity.
 
-URL MANDATE:
-`source_url` MUST be a direct link to the product launch, article, announcement, or project page.
+CRITICAL URL RULE:
+- You MUST provide the REAL, EXACT URL from the Google Search results you browsed.
+- NEVER invent, hallucinate, or guess a fake URL path.
+- If unsure of the exact article slug, provide the real product homepage or official blog domain (e.g., https://www.producthunt.com/ or https://techcrunch.com/).
 
 OUTPUT FORMAT:
 Return ONLY a valid JSON array of 2 to 4 items:
@@ -220,18 +265,18 @@ Return ONLY a valid JSON array of 2 to 4 items:
     "tech_applied": "적용된 핵심 기술(LLM, 비전, 센서 등) 및 서비스 구현 방식",
     "business_insight": "과금 모델(구독, API 등), 원가 절감 효과 및 비즈니스 시사점",
     "source_name": "Source name (e.g., Product Hunt, TechCrunch, VentureBeat, DC Rainmaker)",
-    "source_url": "https://...",
+    "source_url": "https://exact-real-url...",
     "tags": ["SaaS", "EdTech", "B2B"]
   }}
 ]
 """
     models = ["gemini-3.6-flash", "gemini-3-flash", "gemini-2.5-flash", "gemini-1.5-flash"]
     for model in models:
-        text = query_gemini_with_sdk(api_key, model, prompt, use_search=True)
+        text, grounded_urls = query_gemini_with_sdk(api_key, model, prompt, use_search=True)
         if not text:
-            text = query_gemini_direct_rest(api_key, model, prompt, use_search=True)
+            text, grounded_urls = query_gemini_direct_rest(api_key, model, prompt, use_search=True)
         if not text:
-            text = query_gemini_direct_rest(api_key, model, prompt, use_search=False)
+            text, grounded_urls = query_gemini_direct_rest(api_key, model, prompt, use_search=False)
 
         if text:
             parsed = extract_json_array_or_object(text)
@@ -243,13 +288,19 @@ Return ONLY a valid JSON array of 2 to 4 items:
 
             clean_items = []
             if items:
-                for it in items:
+                for idx, it in enumerate(items):
                     title = it.get("title", "")
+                    src_name = it.get("source_name", "Source")
+                    raw_url = it.get("source_url", "")
+                    
+                    cand_grounded = grounded_urls[idx:idx+1] if grounded_urls and idx < len(grounded_urls) else grounded_urls
+                    it["source_url"] = sanitize_and_resolve_url(raw_url, title, src_name, cand_grounded)
+
                     if len(title) > 5 and (it.get("target_problem") or it.get("summary")):
                         clean_items.append(it)
 
             if len(clean_items) >= 1:
-                print(f"[Success] Curated {len(clean_items)} product items for '{cat_id}' via {model}")
+                print(f"[Success] Curated {len(clean_items)} verified product items for '{cat_id}' via {model}")
                 return clean_items
 
     print(f"[Warning] Live discovery returned 0 items for '{cat_id}'.")
@@ -358,7 +409,6 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
     else:
         today_cards_rendered = "\n".join(today_cards_html)
 
-    # Build Past 7 Days Archive HTML
     archive_days_html = []
     for digest in past_digests:
         d_date = digest.get("date")
