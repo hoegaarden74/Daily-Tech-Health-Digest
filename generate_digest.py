@@ -13,33 +13,30 @@ KST = timezone(timedelta(hours=9))
 CATEGORIES = [
     {
         "id": "ai_models",
-        "name": "AI Models & Architecture",
+        "name": "Applied AI & Vertical SaaS",
         "icon": "🤖",
         "badge_class": "bg-blue-500/10 text-blue-400 border border-blue-500/30",
         "dot_class": "bg-blue-400",
-        "tier1_sources": "OpenAI, Anthropic, Google DeepMind, Qwen, DeepSeek official engineering blogs/news",
-        "tier2_niche": "Hugging Face Daily Papers (upvoted papers), GitHub Trending AI repositories, Reddit r/LocalLLaMA quantization/reasoning tricks",
-        "search_guidance": "1) Check for major model releases or weights in last 48h. 2) If few, expand to trending Hugging Face papers, clever open-source fine-tuning/reasoning tools, or GitHub AI gems."
+        "target_sources": "Product Hunt AI, Y Combinator Launches, TechCrunch SaaS, GitHub Trending Showcases, Enterprise AI Case Studies",
+        "search_guidance": "Search for newly launched AI-powered software, vertical SaaS applications (education, legal, coding, customer support, data analysis), automated agentic workflows, and end-user productivity tools released in the last 24-48 hours. Focus on real-world use cases, target customer pain-points, and business models."
     },
     {
         "id": "ai_video",
-        "name": "AI Video & Creative Tech",
+        "name": "Creator & Media Tech",
         "icon": "🎬",
         "badge_class": "bg-purple-500/10 text-purple-400 border border-purple-500/30",
         "dot_class": "bg-purple-400",
-        "tier1_sources": "Kling AI, Higgsfield, Runway, Luma Dream Machine, Pika official changelogs",
-        "tier2_niche": "Reddit r/comfyui custom nodes & workflows, r/aivideo creative experiments, open-source video diffusion & 3D Gaussian Splatting video tools",
-        "search_guidance": "1) Check for major video generator updates. 2) If few, expand to trending ComfyUI video nodes, open-source motion control tools, or indie creator AI video techniques."
+        "target_sources": "Product Hunt Video, Kling AI, Higgsfield, Runway, Luma, Pika, ComfyUI Creator Tools, Social Media Ad Automation",
+        "search_guidance": "Search for commercial creative AI tools, short-form video generation apps, e-commerce product video creators, virtual avatar solutions, and marketing automation platforms released in the last 24-48 hours. Focus on creator monetization, ad production workflows, and video business applications."
     },
     {
         "id": "health_fitness",
-        "name": "Health & Fitness Tech",
+        "name": "Digital Health & Consumer Tech",
         "icon": "🏃",
         "badge_class": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
         "dot_class": "bg-emerald-400",
-        "tier1_sources": "Garmin firmware/sensor updates, Apple Health clinical news, Whoop, Oura",
-        "tier2_niche": "Sports physiology & exercise science clinical studies (PubMed, Nature Medicine), metabolism/lactate/CGM experiments, indie wearable/biosensor projects, DC Rainmaker",
-        "search_guidance": "1) Check for major wearable sensor firmware/releases. 2) If few, expand to fascinating sports science/exercise physiology research findings (HRV, lactate, recovery, fueling) or indie biosensors."
+        "target_sources": "MobiHealthNews, DC Rainmaker, Gadgets & Wearables, TechCrunch Health, Apple Health/Garmin Platform Ecosystems, Whoop, Oura",
+        "search_guidance": "Search for consumer health and fitness applications, wearable bio-data subscription services, AI-powered personal coaching apps, continuous glucose monitoring (CGM) diet/fitness platforms, and wellness tech services released in the last 24-48 hours. Focus on consumer user experience and digital health business models."
     }
 ]
 
@@ -183,57 +180,51 @@ def is_duplicate_item(item_title, blacklist_set):
 def fetch_category_items(api_key, category, current_date_str, blacklist_titles):
     cat_id = category["id"]
     cat_name = category["name"]
-    tier1_sources = category["tier1_sources"]
-    tier2_niche = category["tier2_niche"]
+    target_sources = category["target_sources"]
     search_guidance = category["search_guidance"]
 
     blacklist_section = "\n".join(blacklist_titles[:15]) if blacklist_titles else "None"
 
-    prompt = f"""You are a Principal Tech Analyst and Deep Tech Curator.
+    prompt = f"""You are a Principal Product Strategist, Startup Advisor, and Tech-to-Business Briefing Engine.
 Current Date: {current_date_str} (KST)
 Category: {cat_name} (ID: {cat_id})
 
-2-TIER DISCOVERY STRATEGY:
-1. Tier 1 (Major Breaking News):
-   Sources: {tier1_sources}
-   Look for official releases, benchmarks, architecture updates from the last 24-48 hours.
+MISSION:
+Find, curate, and analyze 2 to 4 tangible product launches, applied tech tools, vertical SaaS solutions, or digital health services that end-users/businesses can actually use or adopt.
 
-2. Tier 2 (Niche & Emerging Gems - IF major news is sparse):
-   Sources: {tier2_niche}
-   Look for high-signal community innovations, trending GitHub repositories, upvoted Hugging Face research papers, ComfyUI workflows, or fascinating sports science / physiological clinical experiments.
+DISCOVERY GUIDANCE:
+- Target Domain: {target_sources}
+- {search_guidance}
+- Focus on practical applications, real-world customer use cases, and business model mechanics, NOT pure theoretical math or isolated academic lab papers.
 
-{search_guidance}
-
-🚨 STRICT QUALITY & ANTI-MARKETING RULES:
-- REJECT generic marketing slogans (e.g. "We build the next-gen AI").
-- ADOPT ONLY items with concrete technical value (benchmarks, version changes, code/tools, clinical data, experimental findings).
-- DEDUPLICATION: DO NOT repeat any of these recently covered stories:
+🚨 DEDUPLICATION (DO NOT REPEAT RECENT STORIES):
 {blacklist_section}
 
-- Flexible Item Count: Return 2 to 4 high-quality items. If there are truly no worthy news items even in Tier 2, return an empty array `[]`.
+REQUIRED ITEM STRUCTURE:
+Each item MUST provide clear business and product value in 3 structured bullet points:
+- "target_problem": 🎯 Target customer profile & specific pain point/problem being solved.
+- "tech_applied": ⚙️ Applied AI/hardware technology, key features, or workflow mechanics.
+- "business_insight": 💼 Business model (SaaS subscription, usage-based, marketplace), pricing strategy, or business opportunity.
 
-URL REQUIREMENT:
-`source_url` MUST be a deep direct link to the article, GitHub repo, paper, or release note.
+URL MANDATE:
+`source_url` MUST be a direct link to the product launch, article, announcement, or project page.
 
-JSON FORMAT:
-Return ONLY a valid JSON array matching:
+OUTPUT FORMAT:
+Return ONLY a valid JSON array of 2 to 4 items:
 [
   {{
     "category_id": "{cat_id}",
-    "type_badge": "🔥 Major Release" OR "💡 Research Insight" OR "🛠️ Open Source & Tool" OR "🧪 Science & Study",
-    "title": "Specific, informative Korean headline",
-    "summary": "2-3 sentences executive summary explaining technical mechanism, concrete metrics, and industry impact.",
-    "key_points": [
-      "Key technical metric / benchmark / architecture detail",
-      "Concrete release feature / experimental finding"
-    ],
-    "source_name": "Specific source name (e.g., Anthropic Engineering, ArXiv, Hugging Face Papers, DC Rainmaker, PubMed)",
+    "type_badge": "🚀 New Product" OR "💼 B2B / SaaS" OR "📱 Consumer App" OR "💡 Use-Case & BM",
+    "title": "Clear, informative Korean product/service headline",
+    "target_problem": "타겟 고객 및 해결하려는 구체적 페인포인트",
+    "tech_applied": "적용된 핵심 기술(LLM, 비전, 센서 등) 및 서비스 구현 방식",
+    "business_insight": "과금 모델(구독, API 등), 원가 절감 효과 및 비즈니스 시사점",
+    "source_name": "Source name (e.g., Product Hunt, TechCrunch, VentureBeat, DC Rainmaker)",
     "source_url": "https://...",
-    "tags": ["Tag1", "Tag2"]
+    "tags": ["SaaS", "EdTech", "B2B"]
   }}
 ]
 """
-    # Active Gemini Models
     models = ["gemini-3.6-flash", "gemini-3-flash", "gemini-2.5-flash", "gemini-1.5-flash"]
     for model in models:
         text = query_gemini_with_sdk(api_key, model, prompt, use_search=True)
@@ -254,11 +245,11 @@ Return ONLY a valid JSON array matching:
             if items:
                 for it in items:
                     title = it.get("title", "")
-                    if len(title) > 5 and it.get("summary"):
+                    if len(title) > 5 and (it.get("target_problem") or it.get("summary")):
                         clean_items.append(it)
 
             if len(clean_items) >= 1:
-                print(f"[Success] Curated {len(clean_items)} items for '{cat_id}' via {model}")
+                print(f"[Success] Curated {len(clean_items)} product items for '{cat_id}' via {model}")
                 return clean_items
 
     print(f"[Warning] Live discovery returned 0 items for '{cat_id}'.")
@@ -282,11 +273,12 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
         if cat_items:
             for item in cat_items:
                 title = item.get("title", "No Title")
-                summary = item.get("summary", "")
-                key_points = item.get("key_points", [])
+                target_problem = item.get("target_problem", item.get("summary", ""))
+                tech_applied = item.get("tech_applied", "")
+                business_insight = item.get("business_insight", "")
                 source_name = item.get("source_name", "Source")
                 source_url = item.get("source_url", "#")
-                type_badge = item.get("type_badge", "💡 Insight")
+                type_badge = item.get("type_badge", "🚀 Product")
                 tags = item.get("tags", [])
 
                 tags_html = "".join([
@@ -294,10 +286,19 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
                     for tag in tags
                 ])
 
-                points_html = "".join([
-                    f'<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>{point}</span></li>'
-                    for point in key_points
-                ])
+                details_list = []
+                if target_problem:
+                    details_list.append(f'<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>{target_problem}</span></li>')
+                if tech_applied:
+                    details_list.append(f'<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>{tech_applied}</span></li>')
+                if business_insight:
+                    details_list.append(f'<li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>{business_insight}</span></li>')
+
+                if not details_list and item.get("key_points"):
+                    for kp in item.get("key_points", []):
+                        details_list.append(f'<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>{kp}</span></li>')
+
+                points_html = "".join(details_list)
 
                 card = f"""
                 <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="{cat['id']}">
@@ -313,15 +314,11 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
                       <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">{source_name}</span>
                     </div>
 
-                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-2.5">
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
                       {title}
                     </h3>
 
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
-                      {summary}
-                    </p>
-
-                    {f'<ul class="space-y-1.5 mb-4 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60">{points_html}</ul>' if points_html else ''}
+                    {f'<ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60">{points_html}</ul>' if points_html else ''}
                   </div>
 
                   <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
@@ -329,7 +326,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
                       {tags_html}
                     </div>
                     <a href="{source_url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
-                      <span>심층 원문</span>
+                      <span>서비스/원문 보기</span>
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                   </div>
@@ -342,8 +339,8 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
               <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold {cat['badge_class']} mb-1">
                 {cat['icon']} {cat['name']}
               </div>
-              <p class="text-sm font-semibold text-slate-300">☕ 오늘은 이 분야에 새로운 소식이 없습니다.</p>
-              <p class="text-xs text-slate-500 max-w-sm">주요 릴리즈 및 틈새 연구 소식을 지속 모니터링 중입니다. 내일 다시 확인해 주세요.</p>
+              <p class="text-sm font-semibold text-slate-300">☕ 오늘은 이 분야에 새로운 상용 제품/서비스 출시 소식이 없습니다.</p>
+              <p class="text-xs text-slate-500 max-w-sm">실용적인 서비스 릴리즈 및 비즈니스 유스케이스를 지속 모니터링 중입니다. 내일 다시 확인해 주세요.</p>
             </div>
             """
             today_cards_html.append(empty_cat_card)
@@ -352,15 +349,16 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
         today_cards_rendered = f"""
         <div class="col-span-full bg-slate-900/50 border border-dashed border-slate-800/80 rounded-2xl p-8 sm:p-10 text-center flex flex-col items-center justify-center gap-3">
           <div class="text-3xl sm:text-4xl">☕</div>
-          <h3 class="text-base sm:text-lg font-bold text-slate-200">오늘은 새로운 주요 소식이 없습니다</h3>
+          <h3 class="text-base sm:text-lg font-bold text-slate-200">오늘은 새로운 비즈니스/제품 소식이 없습니다</h3>
           <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-            메이저 릴리즈 및 틈새 커뮤니티/논문 동향을 실시간 모니터링하고 있습니다. 내일 아침 08:30에 업데이트되는 새로운 브리핑을 확인해 주세요.
+            실사용 가치가 높은 신규 서비스 릴리즈 및 비즈니스 활용 사례를 실시간 모니터링하고 있습니다. 내일 아침 08:30에 업데이트되는 새로운 브리핑을 확인해 주세요.
           </p>
         </div>
         """
     else:
         today_cards_rendered = "\n".join(today_cards_html)
 
+    # Build Past 7 Days Archive HTML
     archive_days_html = []
     for digest in past_digests:
         d_date = digest.get("date")
@@ -387,7 +385,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">{i_source}</span>
-                <a href="{i_url}" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
+                <a href="{i_url}" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">서비스 →</a>
               </div>
             </div>
             """
@@ -422,7 +420,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Daily Tech & Health Digest</title>
+  <title>Daily Tech & Product Briefing</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -484,7 +482,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-2">
         <div class="inline-flex items-center justify-center sm:justify-start gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-xs font-mono font-semibold tracking-wider uppercase text-sky-400">Deep Technical Briefing Engine</span>
+          <span class="text-xs font-mono font-semibold tracking-wider uppercase text-sky-400">Tech-to-Product Intelligence</span>
         </div>
         <div class="inline-flex items-center justify-center gap-2 text-xs font-mono text-slate-400 bg-slate-900/80 border border-slate-800/80 px-3 py-1 rounded-full">
           <span>KST {current_date_str} 08:30</span>
@@ -494,10 +492,10 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
       </div>
 
       <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-2">
-        Daily Tech & Health Digest
+        Daily Tech & Product Briefing
       </h1>
       <p class="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
-        공식 엔지니어링 블로그, 오픈소스 리포지토리, 최신 연구 논문 기반 기술 브리핑을 매일 아침 전해드립니다.
+        신규 상용 서비스, 엔터프라이즈 SaaS, 크리에이터 툴, 디지털 헬스케어의 실질적 유스케이스와 비즈니스 인사이트를 매일 아침 브리핑합니다.
       </p>
 
       <div class="mt-5 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
@@ -505,13 +503,13 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
           전체 보기
         </button>
         <button onclick="filterCategory('ai_models')" id="tab-ai_models" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all shrink-0">
-          🤖 AI Models
+          🤖 Applied AI & SaaS
         </button>
         <button onclick="filterCategory('ai_video')" id="tab-ai_video" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all shrink-0">
-          🎬 AI Video
+          🎬 Creator & Media
         </button>
         <button onclick="filterCategory('health_fitness')" id="tab-health_fitness" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all shrink-0">
-          🏃 Health & Fitness
+          🏃 Digital Health & Tech
         </button>
       </div>
     </header>
@@ -591,7 +589,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
     return html_content
 
 def main():
-    print("[Pipeline] Starting Deep Technical Digest generator (with Tiered Discovery)...")
+    print("[Pipeline] Starting Tech-to-Product Briefing generator...")
     current_date_str = get_current_kst_date()
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
 
@@ -605,10 +603,10 @@ def main():
 
     all_today_items = []
 
-    # 2. Query each category with 2-Tier Discovery
+    # 2. Query each category for practical product/business use cases
     for cat in CATEGORIES:
         cat_id = cat["id"]
-        print(f"\n[Category] Searching 2-Tier news for: {cat['name']} ({cat_id})...")
+        print(f"\n[Category] Curating products & SaaS for: {cat['name']} ({cat_id})...")
         
         items = []
         if api_key:
