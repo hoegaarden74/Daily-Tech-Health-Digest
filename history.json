@@ -1,178 +1,103 @@
 {
-  "last_updated": "2026-08-30T11:05:58.824666+09:00",
+  "last_updated": "2026-08-30T12:04:57.923488+09:00",
   "digests": [
     {
       "date": "2026-08-30",
       "items": [
         {
           "category_id": "ai_models",
-          "type_badge": "🛠️ Open Source & Tool",
-          "title": "SGLang v0.4 경량 서빙 엔진 출시: RadixAttention 2.0 및 Zero-Overhead Chunked Prefill 구현",
-          "summary": "대규모 언어 모델(LLM) 및 멀티모달 추론 엔진 SGLang이 v0.4 버전을 정식 공개했습니다. 복잡한 에이전트 워크플로우에서 KV 캐시 재사용성을 극대화하는 RadixAttention 2.0 트리 구조와 디코딩 단계의 지연시간 병목을 제거하는 Zero-Overhead Chunked Prefill 알고리즘을 도입하여 기존 vLLM 대비 추론 처리량(Throughput)을 최대 3.2배 향상시켰습니다.",
-          "key_points": [
-            "RadixAttention 2.0 기반 프롬프트 캐싱 메커니즘으로 다중 라운드 에이전트 메모리 점유율 45% 절감",
-            "Chunked Prefill과 Decode 토큰 생성을 마이크로배치 단위로 완전히 오버랩시켜 GPU Compute Utilization 91% 달성",
-            "DeepSeek-V3 및 FP8 Transformer 모델 서빙을 위한 전용 FP8 GEMM 커널 통합 지원"
-          ],
-          "source_name": "SGLang Official GitHub",
-          "source_url": "https://github.com/sgl-project/sglang/releases/tag/v0.4.0",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Leya AI - 엔터프라이즈 법무 및 계약 검토 자동화를 위한 Vertical SaaS 플랫폼",
+          "target_problem": "기업 내 법무팀과 로펌 변호사들이 반복적인 표준 계약서 검토, 위험 조항 감지, 판례 및 사내 법률 지침 데이터 검증에 일평균 수시간 이상의 고비용 단순 공수를 소모하는 문제.",
+          "tech_applied": "기업 내부 지식 기반(Vault) 연동 RAG 아키텍처, 계약서 조항 파싱 및 3단계 리스크 스코어링 엔진, 실시간 근거(Citation) 인라인 매핑 및 Word/Google Docs 문서 에디터 플러그인 제공.",
+          "business_insight": "사용자(변호사/법무 담당자) 계정당 월정액 B2B Enterprise SaaS 모델. 단순 리스크 검토 시간을 70% 이상 단축시켜 시간당 자문 가치를 극대화하고 기업 법률 리스크 발생 원가를 선제 차단.",
+          "source_name": "TechCrunch",
+          "source_url": "https://techcrunch.com/2026/08/28/leya-legal-tech-ai-vertical-saas-platform",
           "tags": [
-            "SGLang",
-            "LLM Inference",
-            "RadixAttention",
-            "vLLM",
-            "Optimization"
+            "LegalTech",
+            "Vertical SaaS",
+            "Enterprise AI",
+            "B2B"
           ]
         },
         {
           "category_id": "ai_models",
-          "type_badge": "💡 Research Insight",
-          "title": "Chain-of-Draft (CoD): 생각의 사슬(CoT) 토큰을 80% 압축하는 초고속 추론 프레임워크",
-          "summary": "기존 생각의 사슬(Chain-of-Thought) 방식의 장황한 중간 텍스트 생성으로 인한 지연시간 문제를 해결하기 위해, 핵심 추론 상태만을 최소한의 드래프트 토큰으로 표현하는 'Chain-of-Draft (CoD)' 연구가 공개되었습니다. MATH 및 GSM8K 벤치마크 분석 결과, 기존 CoT 대비 정확도 손실을 1.2% 이내로 방지하면서 생성 토큰 수를 80% 이상 줄였습니다.",
-          "key_points": [
-            "인간의 서술형 메모 방식을 모사하여 추론 단계당 최대 5개 이내의 핵심 드래프트 토큰만 서술하도록 프롬프팅/미세조정 구조 설계",
-            "GSM8K 벤치마크 기준 92.4% 정확도를 유지하며 디코딩 지연시간(Latency) 4.8배 개선",
-            "긴 문맥(Long-context) 추론 시 발생하던 KV 캐시 메모리 팽창 문제를 획기적으로 완화"
-          ],
-          "source_name": "ArXiv / Hugging Face Daily Papers",
-          "source_url": "https://arxiv.org/abs/2502.18600",
+          "type_badge": "🚀 New Product",
+          "title": "Factory AI Droids - 복잡한 코드베이스 및 CI/CD 워크플로우 전담 자율 에이전트",
+          "target_problem": "소프트웨어 엔지니어링 팀이 테크 데트(Tech Debt) 해결, 레거시 코드 리팩토링, 단위 테스트 작성 및 코드 리뷰 작업으로 인해 신규 핵심 기능 개발에 집중하지 못하는 리소스 병목 문제.",
+          "tech_applied": "이슈 트래커(Jira, GitHub) 티켓을 자율 파싱하여 코드 수정 PR을 생성하는 멀티 에이전트(Droids) 아키텍처. CI/CD 파이프라인과 통합되어 빌드 테스트 실패 시 스스로 디버깅 및 반복 수정 수행.",
+          "business_insight": "개발자 수 및 동시 실행 Droid 인스턴스 개수 기반 티어드(Tiered) B2B 구독 모델. 엔지니어링 리드타임을 50% 줄이고 PR 병목을 제거하여 개발 생산성 대비 ROI 명확화.",
+          "source_name": "Product Hunt",
+          "source_url": "https://www.producthunt.com/posts/factory-ai-droids",
           "tags": [
-            "ChainOfThought",
-            "Reasoning",
-            "TokenCompression",
-            "LLM Architecture",
-            "Efficiency"
+            "DevTools",
+            "AI Agents",
+            "Vertical SaaS",
+            "Productivity"
           ]
         },
         {
           "category_id": "ai_models",
-          "type_badge": "🔥 Major Release",
-          "title": "Qwen2.5-Coder-32B 및 Eagle-2 트리 기반 추측 디코딩 통합 가이드 공개",
-          "summary": "Qwen 엔지니어링 팀이 코드 생성에 특화된 Qwen2.5-Coder-32B 모델의 추론 속도를 획기적으로 개선하기 위해 Eagle-2 추측 디코딩(Speculative Decoding) 통합 가이드와 0.5B 드래프트 모델 가중치를 공개했습니다. 구문 구조 검증 트리를 병렬로 생성함으로써 정확도 손실 없이 코드 완결 속도를 2.8배 끌어올렸습니다.",
-          "key_points": [
-            "Qwen2.5-Coder-32B-Instruct 기준 HumanEval 92.7% 성능을 보존하며 초당 140 토큰 생성 속도 달성",
-            "Eagle-2의 트리 구조 verification 텐서를 적용하여 파이썬 및 덧붙이기 코드 구문(Syntax) 수용률 86% 기록",
-            "vLLM 및 TensorRT-LLM 파이프라인과 즉시 연동 가능한 Open-source Draft Model 가중치 포함"
-          ],
-          "source_name": "Qwen Team Engineering Blog",
-          "source_url": "https://qwenlm.github.io/blog/qwen2.5-coder-family/",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Sierra AI - 자율 추론 기반 엔터프라이즈 CX 고객 경험 및 워크플로우 오케스트레이션",
+          "target_problem": "기존 시나리오 룰 기반 CS 챗봇의 낮은 자동 해결률(30% 미만)로 인해 고객 불만이 누적되고, 단순 재고 문의·환불·예약 변경 건으로 컨택센터 운영 비용이 가파르게 상승하는 문제.",
+          "tech_applied": "기업 내부 ERP·CRM API와 실시간 양방향 연동되는 추론형 에이전트 엔진. 세션 상태를 유지하는 Stateful AI 기반으로 복잡한 다단계 환불/교환 절차를 자율 처리하며, 에스컬레이션 시 상담원에게 맥락 요약 전달.",
+          "business_insight": "문의 성공적 해결 건수당 과금(Resolution-based Pricing) 또는 연간 계약 모델. 기존 컨택센터 인건비 및 상담원 인계 비용(Cost per Ticket)을 최대 60% 이상 절감시키는 구체적 유닛 이코노믹스 제시.",
+          "source_name": "VentureBeat",
+          "source_url": "https://venturebeat.com/ai/sierra-ai-enterprise-cx-agent-orchestration",
           "tags": [
-            "Qwen2.5",
-            "CodeLLM",
-            "SpeculativeDecoding",
-            "Eagle2",
-            "OpenSource"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🔥 Major Release",
-          "title": "Luma AI 'Dream Machine 2.0' 카메라 궤적 API 및 4K 공간 비디오 렌더링 엔진 공개",
-          "summary": "Luma AI가 카메라 시점 궤적(Pan, Tilt, Orbit, Dolly)을 3D 좌표 공간상에서 정밀 제어할 수 있는 Dream Machine 2.0 카메라 API를 공개했습니다. 6-DoF 포즈 조건부 확산 알고리즘을 결합하여 복잡한 시점 이동 중에도 객체의 모션 일관성을 유지하며 4K 해상도의 3D 공간 비디오(Spatial Video) 내보내기를 지원합니다.",
-          "key_points": [
-            "베지에 스플라인 기반 6-DoF 카메라 궤적 프롬프팅 및 포즈 고정 조건부 확산(Pose-conditioned Diffusion) 엔진 적용",
-            "Apple Vision Pro 및 VR 헤드셋 호환 스테레오스코픽 4K 공간 비디오(Stereoscopic Spatial Video) 파이프라인 탑재"
-          ],
-          "source_name": "Luma AI Official Blog",
-          "source_url": "https://lumalabs.ai/blog/dream-machine-2-camera-control",
-          "tags": [
-            "LumaAI",
-            "DreamMachine",
-            "CameraControl",
-            "SpatialVideo"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🛠️ Open Source & Tool",
-          "title": "ComfyUI-4DGaussians: 단일 비디오 기반 4D 가우시안 스플래팅 360도 자유 시점 동적 렌더링 노드 공개",
-          "summary": "오픈소스 커뮤니티에서 단일 2D 비디오 입력만으로 시공간 동적 변형 장(4D Dynamic Deformation Field)을 복원하는 ComfyUI-4DGaussians 커스텀 노드가 공개되었습니다. 기존 AI 비디오 생생 모델의 프레임 간 깜빡임(Flicker)을 완전히 배제하고 RTX 4090 환경에서 실시간 60fps 속도로 자유 시점 카메라 렌더링을 지원합니다.",
-          "key_points": [
-            "변형 뉴럴 필드(Deformed Neural Field) 기술로 VRAM 12GB 이하 메모리 사용량 최적화",
-            "3D 메쉬 전환 없이 비디오 프레임을 인터랙티브 360도 카메라 시점 재구성 및 파티클 렌더링"
-          ],
-          "source_name": "GitHub - ComfyUI 4D Gaussian Splatting",
-          "source_url": "https://github.com/graphdeco-inria/dynamic-3dgs-comfyui",
-          "tags": [
-            "ComfyUI",
-            "4DGS",
-            "GaussianSplatting",
-            "OpenSource"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Research Insight",
-          "title": "LivePortrait 2.0: 암시적 키포인트 기반 다중 타겟 3D 헤드 포즈 및 표정 정밀 제어 모델 공개",
-          "summary": "KwaiVGI 연구진이 멀티 타깃 얼굴 표정과 시선, 헤드 포즈를 독립적으로 제어하는 LivePortrait 2.0 아키텍처 논문을 발표했습니다. 기존 2D 랜드마크 매핑의 한계를 극복하고 3D 암시적 키포인트 변형 트랜스포머를 적용해 TensorRT 최적화 시 4K 해상도 120fps 초고속 모션 리타겟팅을 구현했습니다.",
-          "key_points": [
-            "3D Implicit Keypoint Transformer 기법으로 대각선 앵글 및 가려짐(Occlusion) 상황에서도 왜곡 없는 애니메이션 합성",
-            "TensorRT 추론 최적화를 통해 4K 비디오 렌더링 속도 120fps 달성 및 시선/입모양 제어 파라미터 완전 분리"
-          ],
-          "source_name": "Hugging Face Papers",
-          "source_url": "https://huggingface.co/papers/2608.14820",
-          "tags": [
-            "LivePortrait",
-            "FacialAnimation",
-            "3DKeypoint",
-            "HuggingFace"
+            "Customer Support",
+            "Enterprise AI",
+            "AI Agents",
+            "B2B SaaS"
           ]
         },
         {
           "category_id": "health_fitness",
-          "type_badge": "🔥 Major Release",
-          "title": "Oura, 2차 미분 PPG 광혈류 파형 분해 알고리즘 기반 심혈관 연령 및 VO2 Max 추정 펌웨어 배포",
-          "summary": "Oura가 광혈류측정(PPG) 센서의 2차 미분 파형(SDPTG) 분석 엔진을 탑재한 신규 펌웨어 업데이트를 공개했습니다. 손가락 동맥 파형의 수축기/다이아스톨릭 Peak 분리 기술을 통해 맥파 전달 속도(PWV)와 미세혈관 탄성을 실시간으로 산출하며, 가스분석 검사(CPET) 대비 오차 범위를 대폭 줄였습니다.",
-          "key_points": [
-            "2차 미분 PPG(SDPTG) 파형 정밀 분해를 통한 심혈관 연령(Cardiovascular Age) 및 혈관 탄성 인자 정량화",
-            "실제 가스분석 검사(CPET) 벤치마크 비교 시 평균 절대 오차(MAE) 3.2 mL/kg/min, Spearman 상관계수 r=0.91 달성"
-          ],
-          "source_name": "Oura Health Science Team",
-          "source_url": "https://ouraring.com/blog/cardiovascular-age-vo2-max-science",
+          "type_badge": "🚀 New Product",
+          "title": "애보트(Abbott) Lingo: 비처방(OTC) 연속혈당측정기 기반 실시간 대사 바이오 코칭 플랫폼",
+          "target_problem": "비당뇨 일반 소비자가 식후 혈당 급증(Glucose Spike), 수면 장애, 무기력증의 원인을 객관적 생체 데이터로 파악하기 어렵고 기존 의료용 CGM은 병원 처방 절차가 번거로웠던 페인포인트 해결.",
+          "tech_applied": "연속 혈당 바이오센서 데이터 무선 수신 기술과 맞춤형 대사 지수(Lingo Count) 산출 AI 알고리즘 적용. 음식 사진 및 활동 기록을 멀티모달 LLM으로 분석하여 식후 혈당 반응을 예측하고 개별 맞춤형 혈당 완화 가이드 제공.",
+          "business_insight": "처방전 없는 소비자 직접 판매(D2C) 하드웨어 정기 배송(월 $89~$149) 및 앱 구독 하이브리드 모델. 글로벌 비당뇨 웰니스 대사 관리 시장을 직접 공략하여 B2C recurring revenue 생태계 구축.",
+          "source_name": "MobiHealthNews",
+          "source_url": "https://www.mobihealthnews.com/news/abbott-lingo-cgm-wellness-launch",
           "tags": [
-            "Oura",
-            "PPG",
-            "VO2Max",
-            "Biometrics",
-            "Firmware"
+            "DigitalHealth",
+            "CGM",
+            "ConsumerTech",
+            "Wellness"
           ]
         },
         {
           "category_id": "health_fitness",
-          "type_badge": "🧪 Science & Study",
-          "title": "Nature Medicine: 100Hz IMU 및 ECG 시계열 TCN 모델 기반 파킨슨병 보행 동결 2.5초 전 예측",
-          "summary": "웨어러블 3축 가속도계/자이로스코프(IMU)와 ECG 센서 신호를 Temporal Convolutional Network(TCN) 딥러닝 아키텍처로 처리하여 파킨슨병 환자의 보행 동결(Freezing of Gait) 증상을 발생 2.5초 전에 조기 감지하는 연구 결과가 발표되었습니다. 280ms의 낮은 연산 지연 시간을 달성해 실시간 청각/진동 피드백 개입이 가능합니다.",
-          "key_points": [
-            "100Hz 관성측정장치(IMU) 신호와 심전도 변동성을 결합한 다변량 TCN 딥러닝 모션 데이터 처리",
-            "보행 동결 발생 2.5초 전 조기 예측 감도 94.2%, AUC 0.942 기록 및 실시간 바이오피드백 지원 가능"
-          ],
-          "source_name": "Nature Medicine",
-          "source_url": "https://www.nature.com/articles/s41591-026-03120-x",
+          "type_badge": "📱 Consumer App",
+          "title": "오우라(Oura) 'Oura Advisor': 대화형 AI 파트너 기반 생체 데이터 맥락화 및 맞춤 수면·스트레스 코칭",
+          "target_problem": "웨어러블 스마트링에서 수집되는 HRV, 체온, 수면 단계 등 대량의 바이오데이터를 사용자가 스스로 해석하여 일상 행동 변화(카페인 섭취 시점, 휴식 스케줄 등)로 연결하기 어렵다는 문제 해결.",
+          "tech_applied": "개인화 생체 데이터 튜닝 LLM 오케스트레이션 엔진. 착용자의 수면 패턴, HRV recovery, 주간 활동량을 실시간 맥락화(Contextualization)하여 자연어 대화 방식으로 최적의 수면 및 스트레스 관리 솔루션 제시.",
+          "business_insight": "기존 Oura Ring 하드웨어 판매 중심에서 'Oura Membership'(월 $5.99) 서비스 가치를 증대시키는 LTV(고객 생애 가치) 극대화 전략. B2B 웰니스 솔루션 API 제공을 통한 기업 임직원 건강관리 시장 확장.",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://www.gadgetsandwearables.com/oura-advisor-ai-health-coaching",
           "tags": [
-            "NatureMedicine",
-            "Parkinson",
-            "IMU",
-            "DeepLearning",
-            "ClinicalTech"
+            "SmartRing",
+            "Wearables",
+            "AI-Coaching",
+            "HealthTech"
           ]
         },
         {
           "category_id": "health_fitness",
-          "type_badge": "🛠️ Open Source & Tool",
-          "title": "지속적 조직간액(ISF) 젖산 실시간 모니터링을 위한 OpenLactate BLE 펌웨어 및 분석 파이프라인 공개",
-          "summary": "지속적 미세침 biosensor 장치와 연동 가능한 오픈소스 젖산 모니터링 엔진 OpenLactate가 공개되었습니다. 10Hz 노이즈 필터링이 적용된 이중 채널 전류측정(Amperometric) 신호 수집 기술을 바탕으로 1.0~15.0 mmol/L 체내 젖산 수치 변동을 ANT+ 및 Custom BLE 프로토콜로 실시간 스트리밍합니다.",
-          "key_points": [
-            "Amperometric 미세전류 센서 신호 처리 알고리즘 적용으로 MARD(평균 절대 상대 오차) 7.8% 달성",
-            "ANT+ 및 BLE 브로드캐스트 프로토콜 지원을 통해 Garmin 디바이스 및 Python 실시간 데이터 분석 파이프라인과 연동"
-          ],
-          "source_name": "DC Rainmaker / Open Hardware Community",
-          "source_url": "https://www.dcrainmaker.com/2026/08/continuous-lactate-microbiosensor-integration-testing.html",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "위딩스(Withings) Body Scan Pro: 의료기관 및 보험사용 B2B 원격 환자 모니터링(RPM) 대시보드 및 바이오 체중계",
+          "target_problem": "의무기관 및 보험사가 원격 환자의 혈관 유연성, 체성분 변화, 당뇨병성 신경병증 징후를 일상에서 지속 감지하지 못해 심혈관 질환 및 대사 질환 조기 진단 타이밍을 놓치는 문제 해결.",
+          "tech_applied": "6리드 심전도(ECG), 다주파수 체성분 분석(BIA), 발바닥 신경 반응 자극 센서가 일체화된 스마트 체중계 + 의료용 EMR/EHR 연동 실시간 이상 알림 B2B SaaS 파이프라인.",
+          "business_insight": "디바이스 일시불 공급 + 환자당 월정액 B2B SaaS 라이선스(PPPM, Per-Patient-Per-Month) 구독 수익 모델. 미국 CPT 코드 기반 원격 환자 모니터링(RPM) 의료 수가 환수가 가능하여 의료진 및 보험사의 도입 매력도 높음.",
+          "source_name": "TechCrunch Health",
+          "source_url": "https://techcrunch.com/health/withings-body-scan-pro-rpm-b2b-launch",
           "tags": [
-            "OpenLactate",
-            "Biosensors",
-            "Lactate",
-            "WearableTech",
-            "OpenSource"
+            "B2BSaaS",
+            "RPM",
+            "RemoteCare",
+            "DigitalHealth"
           ]
         }
       ]
