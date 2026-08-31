@@ -19,7 +19,7 @@ CATEGORIES = [
         "badge_class": "bg-blue-500/10 text-blue-400 border border-blue-500/30",
         "dot_class": "bg-blue-400",
         "target_sources": "Hugging Face Trend, GitHub Trending, Reddit (r/LocalLLaMA, r/MachineLearning), X Tech Community, Product Hunt, TechCrunch SaaS",
-        "search_guidance": "Search for newly released/updated open-source weights, commercial API models, fine-tuning frameworks, and agentic infrastructure released or heavily discussed in the last 3 to 7 days. Focus strictly on models and tools with clear commercial applicability and developer adoption, excluding pure theoretical academic lab papers."
+        "search_guidance": "Search for newly released or significantly updated AI open-weight models, commercial API models, fine-tuning frameworks, and agentic infrastructure released or discussed in the last 3 to 7 days. Focus on practical commercial applicability, engineering adoption, and business feasibility rather than purely theoretical academic papers."
     },
     {
         "id": "ai_video",
@@ -27,8 +27,8 @@ CATEGORIES = [
         "icon": "🎬",
         "badge_class": "bg-purple-500/10 text-purple-400 border border-purple-500/30",
         "dot_class": "bg-purple-400",
-        "target_sources": "Product Hunt, Reddit (r/StableDiffusion, r/AI_Agents, r/indiehackers), X AI Creators, Higgsfield, Kling AI, Runway, Luma, ComfyUI Eco, Toolify",
-        "search_guidance": "Search for end-user commercial AI content creation tools, video generation SaaS (e.g., Higgsfield, Kling), avatar/voice generation, e-commerce marketing automation, and creator monetization platforms released or trending in the last 3 to 7 days. Focus on user workflows, practical use cases, and business models."
+        "target_sources": "Product Hunt, Reddit (r/StableDiffusion, r/AI_Agents, r/indiehackers), X AI Creators, Higgsfield, Kling AI, Runway, Luma, ComfyUI Ecosystem, Toolify",
+        "search_guidance": "Search for end-user commercial AI content creation solutions, video generation SaaS (such as Higgsfield, Kling, Runway), avatar/voice generation platforms, e-commerce marketing automation, and creator monetization tools released or trending in the last 3 to 7 days. Focus on user workflows, practical use cases, and business models."
     },
     {
         "id": "health_fitness",
@@ -36,14 +36,14 @@ CATEGORIES = [
         "icon": "🏃",
         "badge_class": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
         "dot_class": "bg-emerald-400",
-        "target_sources": "MobiHealthNews, DC Rainmaker, Gadgets & Wearables, Reddit (r/quantifiedself, r/Biohackers), Apple Health/Garmin Eco, Whoop, Oura, CGM SaaS Communities",
-        "search_guidance": "Search for consumer digital health apps, wearable sensor integrations, continuous glucose monitoring (CGM) diet platforms, and AI personal coaching services gaining attention in the last 3 to 7 days. Focus on consumer UX, health data business models, and subscription monetization."
+        "target_sources": "MobiHealthNews, DC Rainmaker, Gadgets & Wearables, Reddit (r/quantifiedself, r/Biohackers), Apple Health/Garmin Ecosystems, Whoop, Oura, CGM SaaS Communities",
+        "search_guidance": "Search for consumer digital health apps, wearable sensor integrations, continuous glucose monitoring (CGM) fitness platforms, and AI-powered personal coaching services gaining attention in the last 3 to 7 days. Focus on user experience, health data business models, and subscription monetization strategies."
     }
 ]
 
 CATEGORY_MAP = {c["id"]: c for c in CATEGORIES}
 
-# 중복 판별 시 무시할 일반 테크 불용어 정의
+# 중복 판별 시 무시할 일반 테크 불용어
 GENERIC_STOPWORDS = {
     "ai", "saas", "app", "model", "platform", "tool", "tools", "generator", "agent", 
     "service", "system", "new", "the", "for", "with", "and", "via",
@@ -174,7 +174,7 @@ def query_gemini_direct_rest(api_key, model_name, prompt, use_search=True):
                 return text, grounded_urls
     except urllib.error.HTTPError as e:
         err_msg = e.read().decode("utf-8")
-        print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:200]}")
+        print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:250]}")
     except Exception as e:
         print(f"[REST API Error] {model_name}: {e}")
     return None, []
@@ -213,7 +213,6 @@ def is_duplicate_item(item_title, blacklist_set):
     if clean_title in blacklist_set:
         return True
     
-    # 영문/한글 2글자 이상 토큰 추출 후 불용어 필터링
     raw_tokens = set(re.findall(r'[a-zA-Z0-9가-힣]{2,}', clean_title))
     item_tokens = {t for t in raw_tokens if t not in GENERIC_STOPWORDS}
     
@@ -229,7 +228,6 @@ def is_duplicate_item(item_title, blacklist_set):
         union = len(item_tokens.union(b_tokens))
         jaccard = overlap / union if union > 0 else 0
         
-        # 의미 있는 키워드 기준 유사도 70% 이상일 때만 중복으로 판별
         if jaccard >= 0.70:
             return True
     return False
@@ -272,19 +270,19 @@ Return ONLY a valid JSON array of 2 to 4 items:
 [
   {{
     "category_id": "{cat_id}",
-    "type_badge": "🚀 New Product" OR "💼 B2B / SaaS" OR "📱 Consumer App" OR "💡 Use-Case & BM",
+    "type_badge": "🚀 New Product",
     "title": "명확하고 구체적인 국문 헤드라인",
     "target_problem": "타겟 고객 및 해결하려는 구체적 문제",
     "tech_applied": "적용된 기술 스택(LLM 모델명, 비전 인프라 등) 및 작동 방식",
     "business_insight": "수익 모델(구독, API 과금 등) 및 사업적 시사점",
-    "source_name": "Source / Community name (e.g., Product Hunt, Reddit r/LocalLLaMA, TechCrunch)",
+    "source_name": "Source / Community name",
     "source_url": "https://exact-real-url...",
-    "tags": ["AI", "SaaS", "Creator"]
+    "tags": ["AI", "SaaS"]
   }}
 ]
 """
-    # 안정적인 공식 모델 우선 호출
-    models = ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+    # 404 에러 모델을 배제하고 지원 모델로 구성
+    models = ["gemini-3.6-flash", "gemini-3-flash"]
     for model in models:
         text, grounded_urls = query_gemini_with_sdk(api_key, model, prompt, use_search=True)
         if not text:
@@ -645,6 +643,10 @@ def main():
     current_date_str = get_current_kst_date()
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
 
+    if not api_key:
+        print("[CRITICAL ERROR] GEMINI_API_KEY 환경 변수가 비어 있습니다.")
+        sys.exit(1)
+
     history_file = "history.json"
     index_file = "index.html"
 
@@ -660,9 +662,7 @@ def main():
         cat_id = cat["id"]
         print(f"\n[Category] Searching practical products/services for: {cat['name']} ({cat_id})...")
         
-        items = []
-        if api_key:
-            items = fetch_category_items(api_key, cat, current_date_str, blacklist_titles)
+        items = fetch_category_items(api_key, cat, current_date_str, blacklist_titles)
         
         # 고유명사 기반 중복 필터링
         valid_items = []
