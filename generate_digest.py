@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import re
+import time
 import datetime
 from datetime import timezone, timedelta
 import urllib.request
@@ -43,7 +44,6 @@ CATEGORIES = [
 
 CATEGORY_MAP = {c["id"]: c for c in CATEGORIES}
 
-# 중복 판별 시 무시할 일반 테크 불용어
 GENERIC_STOPWORDS = {
     "ai", "saas", "app", "model", "platform", "tool", "tools", "generator", "agent", 
     "service", "system", "new", "the", "for", "with", "and", "via",
@@ -155,57 +155,72 @@ def query_gemini_direct_rest(api_key, model_name, prompt, use_search=True):
 
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=50) as resp:
-            body = resp.read().decode("utf-8")
-            res_json = json.loads(body)
-            candidates = res_json.get("candidates", [])
-            if candidates:
-                parts = candidates[0].get("content", {}).get("parts", [])
-                text = "".join([p.get("text", "") for p in parts if "text" in p])
-                
-                grounded_urls = []
-                g_meta = candidates[0].get("groundingMetadata", {})
-                for chunk in g_meta.get("groundingChunks", []):
-                    u = chunk.get("web", {}).get("uri")
-                    if u:
-                        grounded_urls.append(u)
+    
+    for attempt in range(2):
+        try:
+            with urllib.request.urlopen(req, timeout=50) as resp:
+                body = resp.read().decode("utf-8")
+                res_json = json.loads(body)
+                candidates = res_json.get("candidates", [])
+                if candidates:
+                    parts = candidates[0].get("content", {}).get("parts", [])
+                    text = "".join([p.get("text", "") for p in parts if "text" in p])
+                    
+                    grounded_urls = []
+                    g_meta = candidates[0].get("groundingMetadata", {})
+                    for chunk in g_meta.get("groundingChunks", []):
+                        u = chunk.get("web", {}).get("uri")
+                        if u:
+                            grounded_urls.append(u)
 
-                return text, grounded_urls
-    except urllib.error.HTTPError as e:
-        err_msg = e.read().decode("utf-8")
-        print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:250]}")
-    except Exception as e:
-        print(f"[REST API Error] {model_name}: {e}")
+                    return text, grounded_urls
+        except urllib.error.HTTPError as e:
+            err_msg = e.read().decode("utf-8")
+            if e.code == 429 and attempt == 0:
+                print(f"[Rate Limit] 429 Quota Exceeded. 5초 대기 후 재시도합니다...")
+                time.sleep(5)
+                continue
+            print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:250]}")
+            break
+        except Exception as e:
+            print(f"[REST API Error] {model_name}: {e}")
+            break
     return None, []
 
 def query_gemini_with_sdk(api_key, model_name, prompt, use_search=True):
-    try:
-        from google import genai
-        from google.genai import types
-        client = genai.Client(api_key=api_key)
-        config = types.GenerateContentConfig(temperature=0.2)
-        if use_search:
-            config.tools = [types.Tool(google_search=types.GoogleSearch())]
-        response = client.models.generate_content(
-            model=model_name,
-            contents=prompt,
-            config=config
-        )
-        if response and response.text:
-            grounded_urls = []
-            try:
-                if response.candidates and len(response.candidates) > 0:
-                    g_meta = getattr(response.candidates[0], "grounding_metadata", None)
-                    if g_meta and hasattr(g_meta, "grounding_chunks"):
-                        for chunk in g_meta.grounding_chunks:
-                            if hasattr(chunk, "web") and hasattr(chunk.web, "uri"):
-                                grounded_urls.append(chunk.web.uri)
-            except Exception:
-                pass
-            return response.text, grounded_urls
-    except Exception as e:
-        print(f"[SDK Call Error] {model_name}: {e}")
+    for attempt in range(2):
+        try:
+            from google import genai
+            from google.genai import types
+            client = genai.Client(api_key=api_key)
+            config = types.GenerateContentConfig(temperature=0.2)
+            if use_search:
+                config.tools = [types.Tool(google_search=types.GoogleSearch())]
+            response = client.models.generate_content(
+                model=model_name,
+                contents=prompt,
+                config=config
+            )
+            if response and response.text:
+                grounded_urls = []
+                try:
+                    if response.candidates and len(response.candidates) > 0:
+                        g_meta = getattr(response.candidates[0], "grounding_metadata", None)
+                        if g_meta and hasattr(g_meta, "grounding_chunks"):
+                            for chunk in g_meta.grounding_chunks:
+                                if hasattr(chunk, "web") and hasattr(chunk.web, "uri"):
+                                    grounded_urls.append(chunk.web.uri)
+                except Exception:
+                    pass
+                return response.text, grounded_urls
+        except Exception as e:
+            err_str = str(e)
+            if "429" in err_str and attempt == 0:
+                print(f"[SDK Rate Limit] 429 Quota Exceeded. 5초 대기 후 재시도합니다...")
+                time.sleep(5)
+                continue
+            print(f"[SDK Call Error] {model_name}: {e}")
+            break
     return None, []
 
 def is_duplicate_item(item_title, blacklist_set):
@@ -281,37 +296,42 @@ Return ONLY a valid JSON array of 2 to 4 items:
   }}
 ]
 """
-    # 404 에러 모델을 배제하고 지원 모델로 구성
-    models = ["gemini-3.6-flash", "gemini-3-flash"]
-    for model in models:
-        text, grounded_urls = query_gemini_with_sdk(api_key, model, prompt, use_search=True)
-        if not text:
-            text, grounded_urls = query_gemini_direct_rest(api_key, model, prompt, use_search=True)
+    model = "gemini-3.6-flash"
 
-        if text:
-            parsed = extract_json_array_or_object(text)
-            items = []
-            if isinstance(parsed, list):
-                items = parsed
-            elif isinstance(parsed, dict) and "items" in parsed:
-                items = parsed["items"]
+    # 1. Search Tool 활성화 질의 (SDK -> REST)
+    text, grounded_urls = query_gemini_with_sdk(api_key, model, prompt, use_search=True)
+    if not text:
+        text, grounded_urls = query_gemini_direct_rest(api_key, model, prompt, use_search=True)
 
-            clean_items = []
-            if items:
-                for idx, it in enumerate(items):
-                    title = it.get("title", "")
-                    src_name = it.get("source_name", "Source")
-                    raw_url = it.get("source_url", "")
-                    
-                    cand_grounded = grounded_urls[idx:idx+1] if grounded_urls and idx < len(grounded_urls) else grounded_urls
-                    it["source_url"] = sanitize_and_resolve_url(raw_url, title, src_name, cand_grounded)
+    # 2. Search Grounding 할당량 초과 시 일반 텍스트 모드로 우회 (Fallback)
+    if not text:
+        print(f"[Fallback] Search 할당량 초과로 인하여 {model} 표준 생성 모드로 전환합니다.")
+        text, grounded_urls = query_gemini_direct_rest(api_key, model, prompt, use_search=False)
 
-                    if len(title) > 3 and (it.get("target_problem") or it.get("summary") or it.get("tech_applied")):
-                        clean_items.append(it)
+    if text:
+        parsed = extract_json_array_or_object(text)
+        items = []
+        if isinstance(parsed, list):
+            items = parsed
+        elif isinstance(parsed, dict) and "items" in parsed:
+            items = parsed["items"]
 
-            if len(clean_items) >= 1:
-                print(f"[Success] Curated {len(clean_items)} verified items for '{cat_id}' via {model}")
-                return clean_items
+        clean_items = []
+        if items:
+            for idx, it in enumerate(items):
+                title = it.get("title", "")
+                src_name = it.get("source_name", "Source")
+                raw_url = it.get("source_url", "")
+                
+                cand_grounded = grounded_urls[idx:idx+1] if grounded_urls and idx < len(grounded_urls) else grounded_urls
+                it["source_url"] = sanitize_and_resolve_url(raw_url, title, src_name, cand_grounded)
+
+                if len(title) > 3 and (it.get("target_problem") or it.get("summary") or it.get("tech_applied")):
+                    clean_items.append(it)
+
+        if len(clean_items) >= 1:
+            print(f"[Success] Curated {len(clean_items)} verified items for '{cat_id}' via {model}")
+            return clean_items
 
     print(f"[Warning] Live discovery returned 0 items for '{cat_id}'.")
     return []
@@ -650,21 +670,18 @@ def main():
     history_file = "history.json"
     index_file = "index.html"
 
-    # 1. 과거 히스토리 로드 및 중복 방지 리스트 구성
     history_data = load_history(history_file)
     pruned_digests, blacklist_titles, blacklist_set = prune_history_and_get_blacklist(history_data, current_date_str, max_days=7)
     print(f"[History] Retained {len(pruned_digests)} days of past history. Blacklisted items: {len(blacklist_titles)}")
 
     all_today_items = []
 
-    # 2. 카테고리별 데이터 큐레이션 실행
     for cat in CATEGORIES:
         cat_id = cat["id"]
         print(f"\n[Category] Searching practical products/services for: {cat['name']} ({cat_id})...")
         
         items = fetch_category_items(api_key, cat, current_date_str, blacklist_titles)
         
-        # 고유명사 기반 중복 필터링
         valid_items = []
         if items:
             for it in items:
@@ -676,10 +693,12 @@ def main():
 
         all_today_items.extend(valid_items)
         print(f"[Category] '{cat_id}' finalized with {len(valid_items)} articles.")
+        
+        # 카테고리 간 요청 간격 조절 (Rate Limit 완화)
+        time.sleep(3)
 
     print(f"\n[Digest] Total items collected today: {len(all_today_items)}")
 
-    # 3. 히스토리 갱신
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
         updated_digests = [{"date": current_date_str, "items": all_today_items}] + filtered_past
@@ -695,7 +714,6 @@ def main():
         json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
     print(f"[Success] Saved updated history to {history_file}")
 
-    # 4. HTML 파일 렌더링
     html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests)
 
     with open(index_file, "w", encoding="utf-8") as f:
