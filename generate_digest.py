@@ -51,6 +51,14 @@ CATEGORIES = [
 
 CATEGORY_MAP = {c["id"]: c for c in CATEGORIES}
 
+# 성능 및 우선순위 기준 순차 우회 모델 목록
+FALLBACK_MODELS = [
+    "gemini-3.6-flash",
+    "gemini-3-flash",
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite"
+]
+
 def get_current_kst_date():
     return datetime.datetime.now(KST).strftime("%Y-%m-%d")
 
@@ -83,8 +91,7 @@ def prune_history(history_data, current_date_str, max_days=7):
     pruned_digests.sort(key=lambda x: x.get("date", ""), reverse=True)
     return pruned_digests
 
-def fetch_rss_articles(feed_url, source_name, max_items=5):
-    """실제 언론사/포털의 최신 RSS 피드에서 원문 데이터를 직접 수집"""
+def fetch_rss_articles(feed_url, source_name, max_items=4):
     articles = []
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
     req = urllib.request.Request(feed_url, headers=headers)
@@ -93,12 +100,10 @@ def fetch_rss_articles(feed_url, source_name, max_items=5):
             xml_data = resp.read()
             root = ET.fromstring(xml_data)
 
-            # RSS 2.0
             for item in root.findall(".//item")[:max_items]:
                 title = item.findtext("title", "").strip()
                 link = item.findtext("link", "").strip()
                 desc = item.findtext("description", "").strip()
-                # HTML 태그 제거
                 clean_desc = re.sub(r"<[^>]+>", " ", desc)[:300].strip()
 
                 if title and link:
@@ -113,7 +118,6 @@ def fetch_rss_articles(feed_url, source_name, max_items=5):
     return articles
 
 def fetch_llm_stats_raw():
-    """llm-stats.com 실시간 릴리즈 및 벤치마크 데이터를 직접 수집"""
     radar_raw = []
     urls = [
         ("LLM Stats Updates", "https://llm-stats.com/llm-updates"),
@@ -126,11 +130,10 @@ def fetch_llm_stats_raw():
             req = urllib.request.Request(target_url, headers=headers)
             with urllib.request.urlopen(req, timeout=15) as resp:
                 html = resp.read().decode("utf-8", errors="ignore")
-                # 텍스트 추출
                 text_clean = re.sub(r"<script[\s\S]*?</script>", "", html)
                 text_clean = re.sub(r"<style[\s\S]*?</style>", "", text_clean)
                 text_clean = re.sub(r"<[^>]+>", " ", text_clean)
-                text_clean = re.sub(r"\s+", " ", text_clean)[:1500]
+                text_clean = re.sub(r"\s+", " ", text_clean)[:1200]
 
                 radar_raw.append({
                     "source_name": name,
@@ -142,38 +145,52 @@ def fetch_llm_stats_raw():
             radar_raw.append({
                 "source_name": name,
                 "url": target_url,
-                "content_snippet": "Latest LLM benchmark leaderboard updates, new model releases and pricing shifts."
+                "content_snippet": "Latest LLM model releases, benchmark leaderboards, and pricing shifts."
             })
     return radar_raw
 
-def query_gemini_pure_json(api_key, model_name, prompt):
-    """Search Tool 없이 수집된 원문 텍스트만을 전달하여 100% 정확한 JSON 분석 수행"""
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "temperature": 0.1,
-            "responseMimeType": "application/json"
+def query_gemini_with_model_waterfall(api_key, prompt):
+    """
+    고성능 모델부터 순차적으로 시도하여 429, 503, 타임아웃 발생 시 즉시 다음 모델로 우회
+    """
+    for model_name in FALLBACK_MODELS:
+        print(f"[Pipeline] Attempting analysis with model: {model_name}...")
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "temperature": 0.1,
+                "responseMimeType": "application/json"
+            }
         }
-    }
 
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
-    
-    try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            body = resp.read().decode("utf-8")
-            res_json = json.loads(body)
-            candidates = res_json.get("candidates", [])
-            if candidates:
-                parts = candidates[0].get("content", {}).get("parts", [])
-                return "".join([p.get("text", "") for p in parts if "text" in p])
-    except urllib.error.HTTPError as e:
-        err_msg = e.read().decode("utf-8")
-        print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:250]}")
-    except Exception as e:
-        print(f"[REST API Error] {model_name}: {e}")
-    return None
+        data = json.dumps(payload).encode("utf-8")
+        req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+        
+        try:
+            # 타임아웃을 90초로 상향
+            with urllib.request.urlopen(req, timeout=90) as resp:
+                body = resp.read().decode("utf-8")
+                res_json = json.loads(body)
+                candidates = res_json.get("candidates", [])
+                if candidates:
+                    parts = candidates[0].get("content", {}).get("parts", [])
+                    text = "".join([p.get("text", "") for p in parts if "text" in p])
+                    if text:
+                        print(f"[Success] Successfully generated analysis via {model_name}")
+                        return text, model_name
+        except urllib.error.HTTPError as e:
+            err_msg = e.read().decode("utf-8")
+            print(f"[Model Fail] {model_name} HTTP {e.code}: {err_msg[:180]}")
+            print(f"[Fallback] Switching to next available model...")
+            time.sleep(2)
+        except Exception as e:
+            print(f"[Model Fail] {model_name} Error: {e}")
+            print(f"[Fallback] Switching to next available model...")
+            time.sleep(2)
+
+    print("[CRITICAL] All fallback models exhausted.")
+    return None, None
 
 def analyze_raw_data_with_gemini(api_key, categorized_articles, llm_stats_data, current_date_str):
     prompt = f"""You are a Principal Product Strategist and Tech Briefing Engine.
@@ -216,21 +233,18 @@ OUTPUT STRICT JSON SCHEMA:
   ]
 }}
 """
-    model = "gemini-3.6-flash"
-    print(f"[Pipeline] Analyzing verified raw articles with {model}...")
-    
-    text = query_gemini_pure_json(api_key, model, prompt)
+    text, used_model = query_gemini_with_model_waterfall(api_key, prompt)
     if not text:
-        return [], []
+        return [], [], None
 
     try:
         parsed = json.loads(text)
-        return parsed.get("briefing_items", []), parsed.get("llm_radar_items", [])
+        return parsed.get("briefing_items", []), parsed.get("llm_radar_items", []), used_model
     except Exception as e:
         print(f"[JSON Parse Error] {e}")
-        return [], []
+        return [], [], used_model
 
-def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar_items=None):
+def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar_items=None, used_model=None):
     categorized_today = {c["id"]: [] for c in CATEGORIES}
     for item in today_items:
         cat_id = item.get("category_id", "ai_models")
@@ -298,7 +312,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
                     </div>
                     <a href="{source_url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
                       <span>실제 원문 보기</span>
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                   </div>
                 </div>
@@ -421,6 +435,8 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
       과거 7일간의 누적 헤드라인 아카이브가 이곳에 순차적으로 보관됩니다.
     </div>
     """
+
+    engine_badge = f"Google GenAI ({used_model})" if used_model else "Google GenAI Engine"
 
     html_content = f"""<!DOCTYPE html>
 <html lang="ko" class="dark">
@@ -569,7 +585,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
     </section>
 
     <footer class="mt-10 py-6 border-t border-slate-900 text-center text-xs text-slate-500 space-y-2">
-      <p>Automated by <strong>GitHub Actions</strong> & <strong>Direct Feed Scraping Engine</strong></p>
+      <p>Automated by <strong>GitHub Actions</strong> & <strong>{engine_badge}</strong></p>
     </footer>
 
   </div>
@@ -625,11 +641,10 @@ def main():
     history_file = "history.json"
     index_file = "index.html"
 
-    # 1. 히스토리 로드
     history_data = load_history(history_file)
     pruned_digests = prune_history(history_data, current_date_str, max_days=7)
 
-    # 2. 카테고리별 실제 RSS 피드 기사 직접 수집 (100% 실존 뉴스)
+    # 1. 실제 RSS 피드 수집 (100% 실존 기사)
     categorized_raw_articles = {}
     for cat in CATEGORIES:
         cat_id = cat["id"]
@@ -640,18 +655,17 @@ def main():
         categorized_raw_articles[cat_id] = cat_articles
         print(f"[Scraper] Collected {len(cat_articles)} raw verified articles for '{cat_id}'")
 
-    # 3. llm-stats.com 실시간 데이터 직접 수집
+    # 2. llm-stats.com 실시간 데이터 수집
     llm_stats_raw = fetch_llm_stats_raw()
     print(f"[Scraper] Collected {len(llm_stats_raw)} feeds from llm-stats.com")
 
-    # 4. 수집된 실제 데이터만을 Gemini에게 전달하여 국문 브리핑 및 BM 분석 생성
-    all_today_items, llm_radar_items = analyze_raw_data_with_gemini(
+    # 3. 고성능 모델 -> 대체 모델 순차 우회 분석 실행
+    all_today_items, llm_radar_items, used_model = analyze_raw_data_with_gemini(
         api_key, categorized_raw_articles, llm_stats_raw, current_date_str
     )
 
-    print(f"\n[Digest] Total verified briefings: {len(all_today_items)}, Radar items: {len(llm_radar_items)}")
+    print(f"\n[Digest] Total verified briefings: {len(all_today_items)}, Radar items: {len(llm_radar_items)} (Processed by {used_model})")
 
-    # 5. 히스토리 갱신
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
         updated_digests = [{"date": current_date_str, "items": all_today_items}] + filtered_past
@@ -667,8 +681,7 @@ def main():
         json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
     print(f"[Success] Saved updated history to {history_file}")
 
-    # 6. HTML 렌더링
-    html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests, llm_radar_items)
+    html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests, llm_radar_items, used_model)
 
     with open(index_file, "w", encoding="utf-8") as f:
         f.write(html_output)
