@@ -142,7 +142,7 @@ def sanitize_and_resolve_url(raw_url, title, source_name, grounded_urls=None):
 
     return clean_url
 
-def query_gemini_direct_rest(api_key, model_name, prompt, use_search=True):
+def query_gemini_unified(api_key, model_name, prompt, use_search=True):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
@@ -156,7 +156,8 @@ def query_gemini_direct_rest(api_key, model_name, prompt, use_search=True):
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
     
-    for attempt in range(2):
+    max_retries = 2
+    for attempt in range(max_retries):
         try:
             with urllib.request.urlopen(req, timeout=50) as resp:
                 body = resp.read().decode("utf-8")
@@ -176,50 +177,14 @@ def query_gemini_direct_rest(api_key, model_name, prompt, use_search=True):
                     return text, grounded_urls
         except urllib.error.HTTPError as e:
             err_msg = e.read().decode("utf-8")
-            if e.code == 429 and attempt == 0:
-                print(f"[Rate Limit] 429 Quota Exceeded. 5초 대기 후 재시도합니다...")
-                time.sleep(5)
+            if e.code == 429:
+                print(f"[Rate Limit] 429 Quota Exceeded. 8초 대기 후 재시도합니다 (시도 {attempt+1}/{max_retries})...")
+                time.sleep(8)
                 continue
-            print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:250]}")
+            print(f"[REST API Error] {model_name} (Search={use_search}) HTTP {e.code}: {err_msg[:200]}")
             break
         except Exception as e:
-            print(f"[REST API Error] {model_name}: {e}")
-            break
-    return None, []
-
-def query_gemini_with_sdk(api_key, model_name, prompt, use_search=True):
-    for attempt in range(2):
-        try:
-            from google import genai
-            from google.genai import types
-            client = genai.Client(api_key=api_key)
-            config = types.GenerateContentConfig(temperature=0.2)
-            if use_search:
-                config.tools = [types.Tool(google_search=types.GoogleSearch())]
-            response = client.models.generate_content(
-                model=model_name,
-                contents=prompt,
-                config=config
-            )
-            if response and response.text:
-                grounded_urls = []
-                try:
-                    if response.candidates and len(response.candidates) > 0:
-                        g_meta = getattr(response.candidates[0], "grounding_metadata", None)
-                        if g_meta and hasattr(g_meta, "grounding_chunks"):
-                            for chunk in g_meta.grounding_chunks:
-                                if hasattr(chunk, "web") and hasattr(chunk.web, "uri"):
-                                    grounded_urls.append(chunk.web.uri)
-                except Exception:
-                    pass
-                return response.text, grounded_urls
-        except Exception as e:
-            err_str = str(e)
-            if "429" in err_str and attempt == 0:
-                print(f"[SDK Rate Limit] 429 Quota Exceeded. 5초 대기 후 재시도합니다...")
-                time.sleep(5)
-                continue
-            print(f"[SDK Call Error] {model_name}: {e}")
+            print(f"[REST API Error] {model_name} (Search={use_search}): {e}")
             break
     return None, []
 
@@ -298,15 +263,14 @@ Return ONLY a valid JSON array of 2 to 4 items:
 """
     model = "gemini-3.6-flash"
 
-    # 1. Search Tool 활성화 질의 (SDK -> REST)
-    text, grounded_urls = query_gemini_with_sdk(api_key, model, prompt, use_search=True)
-    if not text:
-        text, grounded_urls = query_gemini_direct_rest(api_key, model, prompt, use_search=True)
+    # 1. Search Grounding 활성화 질의
+    text, grounded_urls = query_gemini_unified(api_key, model, prompt, use_search=True)
 
-    # 2. Search Grounding 할당량 초과 시 일반 텍스트 모드로 우회 (Fallback)
+    # 2. Search Grounding 할당량 제한 시 표준 텍스트 모드로 우회 (Fallback)
     if not text:
-        print(f"[Fallback] Search 할당량 초과로 인하여 {model} 표준 생성 모드로 전환합니다.")
-        text, grounded_urls = query_gemini_direct_rest(api_key, model, prompt, use_search=False)
+        print(f"[Fallback] Search 일시 제한으로 {model} 표준 생성 모드로 전환합니다.")
+        time.sleep(3)
+        text, grounded_urls = query_gemini_unified(api_key, model, prompt, use_search=False)
 
     if text:
         parsed = extract_json_array_or_object(text)
@@ -694,8 +658,8 @@ def main():
         all_today_items.extend(valid_items)
         print(f"[Category] '{cat_id}' finalized with {len(valid_items)} articles.")
         
-        # 카테고리 간 요청 간격 조절 (Rate Limit 완화)
-        time.sleep(3)
+        # 분당 요청 한도(RPM) 방지를 위한 카테고리 간 안전 대기 시간 (6초)
+        time.sleep(6)
 
     print(f"\n[Digest] Total items collected today: {len(all_today_items)}")
 
