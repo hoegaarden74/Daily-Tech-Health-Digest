@@ -100,17 +100,17 @@ def extract_json_array_or_object(text):
         except Exception:
             pass
 
-    arr_match = re.search(r'(\[[\s\S]*\])', text)
-    if arr_match:
-        try:
-            return json.loads(arr_match.group(1).strip())
-        except Exception:
-            pass
-
     obj_match = re.search(r'(\{[\s\S]*\})', text)
     if obj_match:
         try:
             return json.loads(obj_match.group(1).strip())
+        except Exception:
+            pass
+
+    arr_match = re.search(r'(\[[\s\S]*\])', text)
+    if arr_match:
+        try:
+            return json.loads(arr_match.group(1).strip())
         except Exception:
             pass
 
@@ -179,8 +179,8 @@ def query_gemini_unified(api_key, model_name, prompt, use_search=True):
         except urllib.error.HTTPError as e:
             err_msg = e.read().decode("utf-8")
             if e.code == 429:
-                print(f"[Rate Limit] 429 Quota Exceeded. 15초 쿨다운 후 재시도합니다 (시도 {attempt+1}/{max_retries})...")
-                time.sleep(15)
+                print(f"[Rate Limit] 429 Quota Exceeded. 12초 쿨다운 후 재시도합니다 (시도 {attempt+1}/{max_retries})...")
+                time.sleep(12)
                 continue
             print(f"[REST API Error] {model_name} (Search={use_search}) HTTP {e.code}: {err_msg[:200]}")
             break
@@ -213,7 +213,7 @@ def is_duplicate_item(item_title, blacklist_set):
             return True
     return False
 
-def fetch_all_categories_unified(api_key, current_date_str, blacklist_titles):
+def fetch_comprehensive_briefing_and_radar(api_key, current_date_str, blacklist_titles):
     blacklist_section = "\n".join(blacklist_titles[:25]) if blacklist_titles else "None"
 
     cat_descriptions = []
@@ -226,62 +226,68 @@ def fetch_all_categories_unified(api_key, current_date_str, blacklist_titles):
     prompt = f"""You are a Principal Product Strategist and Tech-to-Business Briefing Analyst.
 Current Date: {current_date_str} (KST)
 
-MISSION:
-Curate 2 to 3 practical, high-value product launches, applied AI tools, or digital health services for EACH of the following 3 categories (Total 6 to 9 items):
-
+TASK 1: BUSINESS BRIEFING ITEMS (2 to 3 practical products per category, total 6 to 9 items)
 {categories_prompt_block}
+Focus on commercial viability, BM, end-user SaaS tools, excluding pure math papers.
 
-CRITICAL RULES:
-1. Search recent announcements, releases, and community discussions (Reddit, Product Hunt, X, Hacker News).
-2. Focus strictly on commercial viability, business models, and end-user solutions. Exclude pure theoretical math or laboratory papers.
-3. Provide real URLs from official sources or reputable portals.
+TASK 2: LLM STATS & MODEL RELEASE RADAR (3 to 5 real-time model releases and benchmark updates)
+Direct Target References:
+- https://llm-stats.com/ai-news
+- https://llm-stats.com/llm-updates
+Search recent model version updates, open-weight launches (Qwen, Llama, DeepSeek, GLM, Mistral, OpenAI, Claude, Gemini), API pricing shifts, and benchmark leaderboards.
 
-🚨 DEDUPLICATION (DO NOT REPEAT RECENT STORIES):
+DEDUPLICATION:
 {blacklist_section}
 
-OUTPUT FORMAT:
-Return ONLY a valid JSON array containing items for ALL 3 categories. Schema:
-[
-  {{
-    "category_id": "ai_models" | "ai_video" | "health_fitness",
-    "type_badge": "🚀 New Product" | "💼 B2B / SaaS" | "📱 Consumer App" | "💡 Use-Case & BM",
-    "title": "명확하고 구체적인 국문 헤드라인",
-    "target_problem": "타겟 고객 및 해결하려는 구체적 문제점",
-    "tech_applied": "적용 기술 스택(LLM 모델명, 센서 연동 등) 및 구현 방식",
-    "business_insight": "수익/과금 모델(구독, API 등) 및 사업적 시사점",
-    "source_name": "Source / Community name",
-    "source_url": "https://exact-real-url...",
-    "tags": ["AI", "SaaS", "Creator"]
-  }}
-]
+OUTPUT STRICT JSON SCHEMA:
+{{
+  "briefing_items": [
+    {{
+      "category_id": "ai_models" | "ai_video" | "health_fitness",
+      "type_badge": "🚀 New Product" | "💼 B2B / SaaS" | "📱 Consumer App" | "💡 Use-Case & BM",
+      "title": "명확하고 구체적인 국문 헤드라인",
+      "target_problem": "🎯 타겟 고객 및 해결하려는 구체적 문제점",
+      "tech_applied": "⚙️ 적용 기술 스택 및 구현 방식",
+      "business_insight": "💼 과금 모델 및 사업적 시사점",
+      "source_name": "Source / Community name",
+      "source_url": "https://...",
+      "tags": ["AI", "SaaS"]
+    }}
+  ],
+  "llm_radar_items": [
+    {{
+      "badge": "🚀 Model Release" | "📊 Benchmark" | "⚡ API & Infra",
+      "title": "모델명/업데이트 헤드라인 (국문)",
+      "org": "조직명 (OpenAI, Anthropic, Qwen, DeepSeek 등)",
+      "summary": "신규 릴리즈 핵심 스펙, 성능(벤치마크 점수) 및 라이선스/가격 변경 사항",
+      "source_name": "LLM Stats",
+      "source_url": "https://llm-stats.com/ai-news"
+    }}
+  ]
+}}
 """
     model = "gemini-3.6-flash"
-    print(f"[Pipeline] Requesting unified 3-category curation via {model}...")
+    print(f"[Pipeline] Requesting unified Business Briefing & LLM-Stats Radar via {model}...")
 
-    # 1. 단일 Search Grounding 호출
     text, grounded_urls = query_gemini_unified(api_key, model, prompt, use_search=True)
 
-    # 2. Search Grounding 실패 시 일반 텍스트 모드로 우회 (Fallback)
     if not text:
-        print(f"[Fallback] Search 도구 한도 도달로 {model} 표준 생성 모드로 전환합니다.")
-        time.sleep(5)
+        print(f"[Fallback] Search 일시 제한으로 {model} 표준 생성 모드로 전환합니다.")
+        time.sleep(3)
         fallback_prompt = prompt + "\n\nNote: If live search tool is constrained, synthesize the most relevant verified releases and commercial products directly into the JSON schema."
         text, grounded_urls = query_gemini_unified(api_key, model, fallback_prompt, use_search=False)
 
+    briefing_items = []
+    llm_radar_items = []
+
     if text:
         parsed = extract_json_array_or_object(text)
-        items = []
-        if isinstance(parsed, list):
-            items = parsed
-        elif isinstance(parsed, dict):
-            for k in ["items", "data", "results", "articles"]:
-                if k in parsed and isinstance(parsed[k], list):
-                    items = parsed[k]
-                    break
+        if isinstance(parsed, dict):
+            raw_briefings = parsed.get("briefing_items", [])
+            raw_radars = parsed.get("llm_radar_items", [])
 
-        clean_items = []
-        if items:
-            for idx, it in enumerate(items):
+            # Briefing parsing
+            for idx, it in enumerate(raw_briefings):
                 title = it.get("title", "")
                 cat_id = it.get("category_id", "")
                 src_name = it.get("source_name", "Source")
@@ -294,16 +300,23 @@ Return ONLY a valid JSON array containing items for ALL 3 categories. Schema:
                 it["source_url"] = sanitize_and_resolve_url(raw_url, title, src_name, cand_grounded)
 
                 if len(title) > 3 and (it.get("target_problem") or it.get("summary") or it.get("tech_applied")):
-                    clean_items.append(it)
+                    briefing_items.append(it)
 
-        if clean_items:
-            print(f"[Success] Unified curation succeeded with {len(clean_items)} verified items.")
-            return clean_items
+            # Radar parsing
+            for it in raw_radars:
+                r_title = it.get("title", "")
+                r_url = it.get("source_url", "https://llm-stats.com/ai-news")
+                it["source_url"] = sanitize_and_resolve_url(r_url, r_title, "LLM Stats")
+                if len(r_title) > 2:
+                    llm_radar_items.append(it)
 
-    print("[Warning] Unified curation returned 0 items.")
-    return []
+        elif isinstance(parsed, list):
+            briefing_items = parsed
 
-def render_html_dashboard(current_date_str, today_items, past_digests):
+    print(f"[Success] Curated {len(briefing_items)} briefings & {len(llm_radar_items)} LLM-Stats radar items.")
+    return briefing_items, llm_radar_items
+
+def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar_items=None):
     categorized_today = {c["id"]: [] for c in CATEGORIES}
     for item in today_items:
         cat_id = item.get("category_id", "ai_models")
@@ -401,6 +414,47 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
         """
     else:
         today_cards_rendered = "\n".join(today_cards_html)
+
+    # LLM-Stats Radar Section HTML 구성
+    radar_cards_html = []
+    if llm_radar_items:
+        for r_item in llm_radar_items:
+            r_badge = r_item.get("badge", "🚀 Model Release")
+            r_title = r_item.get("title", "")
+            r_org = r_item.get("org", "AI Lab")
+            r_sum = r_item.get("summary", "")
+            r_url = r_item.get("source_url", "https://llm-stats.com/ai-news")
+
+            badge_color = "bg-amber-500/10 text-amber-300 border-amber-500/30" if "Release" in r_badge else "bg-cyan-500/10 text-cyan-300 border-cyan-500/30"
+
+            r_card = f"""
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-xl p-3.5 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-[11px] font-semibold px-2 py-0.5 rounded-md border {badge_color}">{r_badge}</span>
+                  <span class="text-[11px] font-mono text-slate-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800/60">{r_org}</span>
+                </div>
+                <h4 class="text-sm font-bold text-slate-100 hover:text-amber-300 transition-colors mb-1.5">{r_title}</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-3">{r_sum}</p>
+              </div>
+              <div class="pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px]">
+                <span class="text-slate-500 font-mono">Source: LLM-Stats.com</span>
+                <a href="{r_url}" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-medium">스펙/벤치마크 확인 →</a>
+              </div>
+            </div>
+            """
+            radar_cards_html.append(r_card)
+        radar_rendered = f"""
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          {"".join(radar_cards_html)}
+        </div>
+        """
+    else:
+        radar_rendered = """
+        <div class="bg-slate-900/40 border border-dashed border-slate-800 rounded-xl p-4 text-center text-xs text-slate-500">
+          llm-stats.com 실시간 업데이트 피드를 연결 중입니다.
+        </div>
+        """
 
     archive_days_html = []
     for digest in past_digests:
@@ -554,7 +608,8 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
       </div>
     </header>
 
-    <main class="space-y-4 mb-10">
+    <!-- SECTION 1: TODAY'S CURATED BRIEFING -->
+    <main class="space-y-4 mb-8">
       <div class="flex items-center justify-between">
         <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
           <span class="text-amber-400">⚡</span> Today's Briefing <span class="text-xs font-mono font-normal text-slate-500">({current_date_str})</span>
@@ -567,6 +622,26 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
       </div>
     </main>
 
+    <!-- SECTION 2: LLM STATS LIVE RADAR (NEW) -->
+    <section class="mb-10 bg-slate-950/70 border border-slate-800/90 rounded-2xl p-4 sm:p-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-800/80">
+        <div>
+          <h3 class="text-base font-bold text-slate-100 flex items-center gap-2">
+            <span class="text-amber-400">📡</span> LLM Stats Live Radar
+            <span class="text-[11px] font-mono font-normal text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">llm-stats.com Feed</span>
+          </h3>
+          <p class="text-xs text-slate-400 mt-0.5">글로벌 AI 연구소의 실시간 모델 출시, API 변경 및 벤치마크 업데이트 현황입니다.</p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-sky-400 hover:underline">AI News ↗</a>
+          <span class="text-slate-700">•</span>
+          <a href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-sky-400 hover:underline">Model Updates ↗</a>
+        </div>
+      </div>
+      {radar_rendered}
+    </section>
+
+    <!-- SECTION 3: WEEKLY ARCHIVE -->
     <section class="mt-auto pt-6 border-t border-slate-800/80 space-y-4">
       <div class="flex items-center justify-between">
         <h2 class="text-base sm:text-lg font-bold text-slate-200 flex items-center gap-2">
@@ -626,7 +701,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
     return html_content
 
 def main():
-    print("[Pipeline] Starting Tech-to-Business Briefing generator...")
+    print("[Pipeline] Starting Tech-to-Business Briefing & LLM-Stats Radar generator...")
     current_date_str = get_current_kst_date()
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
 
@@ -641,18 +716,18 @@ def main():
     pruned_digests, blacklist_titles, blacklist_set = prune_history_and_get_blacklist(history_data, current_date_str, max_days=7)
     print(f"[History] Retained {len(pruned_digests)} days of past history. Blacklisted items: {len(blacklist_titles)}")
 
-    raw_items = fetch_all_categories_unified(api_key, current_date_str, blacklist_titles)
+    raw_briefings, llm_radar_items = fetch_comprehensive_briefing_and_radar(api_key, current_date_str, blacklist_titles)
 
     all_today_items = []
-    if raw_items:
-        for it in raw_items:
+    if raw_briefings:
+        for it in raw_briefings:
             t = it.get("title", "")
             if not is_duplicate_item(t, blacklist_set):
                 all_today_items.append(it)
             else:
                 print(f"[Dedup] Skipped duplicate item: {t}")
 
-    print(f"\n[Digest] Total items collected today: {len(all_today_items)}")
+    print(f"\n[Digest] Total briefing items: {len(all_today_items)}, Radar items: {len(llm_radar_items)}")
 
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
@@ -669,7 +744,7 @@ def main():
         json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
     print(f"[Success] Saved updated history to {history_file}")
 
-    html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests)
+    html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests, llm_radar_items)
 
     with open(index_file, "w", encoding="utf-8") as f:
         f.write(html_output)
