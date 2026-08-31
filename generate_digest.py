@@ -43,21 +43,13 @@ CATEGORIES = [
         "badge_class": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
         "dot_class": "bg-emerald-400",
         "feeds": [
-            {"name": "MobiHealthNews", "url": "https://www.mobihealthnews.com/feed"},
-            {"name": "Gadgets & Wearables", "url": "https://gadgetsandwearables.com/feed/"}
+            {"name": "Gadgets & Wearables", "url": "https://gadgetsandwearables.com/feed/"},
+            {"name": "MobiHealthNews", "url": "https://www.mobihealthnews.com/feed"}
         ]
     }
 ]
 
 CATEGORY_MAP = {c["id"]: c for c in CATEGORIES}
-
-# 성능 및 우선순위 기준 순차 우회 모델 목록
-FALLBACK_MODELS = [
-    "gemini-3.6-flash",
-    "gemini-3-flash",
-    "gemini-2.5-flash",
-    "gemini-2.5-flash-lite"
-]
 
 def get_current_kst_date():
     return datetime.datetime.now(KST).strftime("%Y-%m-%d")
@@ -149,48 +141,38 @@ def fetch_llm_stats_raw():
             })
     return radar_raw
 
-def query_gemini_with_model_waterfall(api_key, prompt):
-    """
-    고성능 모델부터 순차적으로 시도하여 429, 503, 타임아웃 발생 시 즉시 다음 모델로 우회
-    """
-    for model_name in FALLBACK_MODELS:
-        print(f"[Pipeline] Attempting analysis with model: {model_name}...")
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
-        payload = {
-            "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {
-                "temperature": 0.1,
-                "responseMimeType": "application/json"
-            }
+def query_gemini_single_model(api_key, model_name, prompt):
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "temperature": 0.1,
+            "responseMimeType": "application/json"
         }
+    }
 
-        data = json.dumps(payload).encode("utf-8")
-        req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+    
+    error_reason = None
+    try:
+        with urllib.request.urlopen(req, timeout=90) as resp:
+            body = resp.read().decode("utf-8")
+            res_json = json.loads(body)
+            candidates = res_json.get("candidates", [])
+            if candidates:
+                parts = candidates[0].get("content", {}).get("parts", [])
+                text = "".join([p.get("text", "") for p in parts if "text" in p])
+                return text, None
+    except urllib.error.HTTPError as e:
+        err_msg = e.read().decode("utf-8")
+        print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:250]}")
+        error_reason = f"HTTP {e.code} (일일 쿼터 초과 또는 서버 부하)"
+    except Exception as e:
+        print(f"[REST API Error] {model_name}: {e}")
+        error_reason = "네트워크 타임아웃 또는 서버 응답 지연"
         
-        try:
-            # 타임아웃을 90초로 상향
-            with urllib.request.urlopen(req, timeout=90) as resp:
-                body = resp.read().decode("utf-8")
-                res_json = json.loads(body)
-                candidates = res_json.get("candidates", [])
-                if candidates:
-                    parts = candidates[0].get("content", {}).get("parts", [])
-                    text = "".join([p.get("text", "") for p in parts if "text" in p])
-                    if text:
-                        print(f"[Success] Successfully generated analysis via {model_name}")
-                        return text, model_name
-        except urllib.error.HTTPError as e:
-            err_msg = e.read().decode("utf-8")
-            print(f"[Model Fail] {model_name} HTTP {e.code}: {err_msg[:180]}")
-            print(f"[Fallback] Switching to next available model...")
-            time.sleep(2)
-        except Exception as e:
-            print(f"[Model Fail] {model_name} Error: {e}")
-            print(f"[Fallback] Switching to next available model...")
-            time.sleep(2)
-
-    print("[CRITICAL] All fallback models exhausted.")
-    return None, None
+    return None, error_reason
 
 def analyze_raw_data_with_gemini(api_key, categorized_articles, llm_stats_data, current_date_str):
     prompt = f"""You are a Principal Product Strategist and Tech Briefing Engine.
@@ -233,18 +215,21 @@ OUTPUT STRICT JSON SCHEMA:
   ]
 }}
 """
-    text, used_model = query_gemini_with_model_waterfall(api_key, prompt)
+    model = "gemini-3.6-flash"
+    print(f"[Pipeline] Analyzing verified raw articles with {model}...")
+    
+    text, error_reason = query_gemini_single_model(api_key, model, prompt)
     if not text:
-        return [], [], None
+        return [], [], error_reason
 
     try:
         parsed = json.loads(text)
-        return parsed.get("briefing_items", []), parsed.get("llm_radar_items", []), used_model
+        return parsed.get("briefing_items", []), parsed.get("llm_radar_items", []), None
     except Exception as e:
         print(f"[JSON Parse Error] {e}")
-        return [], [], used_model
+        return [], [], "데이터 파싱 에러"
 
-def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar_items=None, used_model=None):
+def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar_items=None, api_error=None):
     categorized_today = {c["id"]: [] for c in CATEGORIES}
     for item in today_items:
         cat_id = item.get("category_id", "ai_models")
@@ -324,22 +309,36 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
               <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold {cat['badge_class']} mb-1">
                 {cat['icon']} {cat['name']}
               </div>
-              <p class="text-sm font-semibold text-slate-300">☕ 해당 카테고리에 검증된 신규 상용 솔루션 소식이 없습니다.</p>
+              <p class="text-sm font-semibold text-slate-300">☕ 해당 카테고리에 등록된 신규 상용 솔루션 소식이 없습니다.</p>
               <p class="text-xs text-slate-500 max-w-sm">실존하는 피드를 실시간 모니터링 중입니다.</p>
             </div>
             """
             today_cards_html.append(empty_cat_card)
 
     if total_today_count == 0:
-        today_cards_rendered = f"""
-        <div class="col-span-full bg-slate-900/50 border border-dashed border-slate-800/80 rounded-2xl p-8 sm:p-10 text-center flex flex-col items-center justify-center gap-3">
-          <div class="text-3xl sm:text-4xl">☕</div>
-          <h3 class="text-base sm:text-lg font-bold text-slate-200">오늘은 검증된 신규 비즈니스 소식이 없습니다</h3>
-          <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-            인터넷 상의 미확인 추론 데이터를 배제하고, 실시간 검증된 실제 릴리즈만 수집합니다.
-          </p>
-        </div>
-        """
+        if api_error:
+            today_cards_rendered = f"""
+            <div class="col-span-full bg-amber-500/5 border border-amber-500/30 rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center justify-center gap-2.5">
+              <div class="text-2xl sm:text-3xl">⚠️</div>
+              <h3 class="text-base sm:text-lg font-bold text-amber-300">Gemini API 일일 한도 도달 안내</h3>
+              <p class="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
+                현재 Gemini API 무료 등급(Free Tier)의 <strong>일일 최대 호출 한도(20 RPD)</strong>에 도달하였거나 서버 일시 과부하({api_error})로 인해 신규 분석이 일시 지연되었습니다.
+              </p>
+              <div class="mt-2 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-400">
+                <span>🔄 쿼터 초기화 후 <strong>내일 오전 08:30 정기 스케줄</strong>에 정상 갱신됩니다.</span>
+              </div>
+            </div>
+            """
+        else:
+            today_cards_rendered = f"""
+            <div class="col-span-full bg-slate-900/50 border border-dashed border-slate-800/80 rounded-2xl p-8 sm:p-10 text-center flex flex-col items-center justify-center gap-3">
+              <div class="text-3xl sm:text-4xl">☕</div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-200">오늘은 검증된 신규 비즈니스 소식이 없습니다</h3>
+              <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
+                인터넷 상의 미확인 추론 데이터를 배제하고, 실시간 검증된 실제 릴리즈만 수집합니다.
+              </p>
+            </div>
+            """
     else:
         today_cards_rendered = "\n".join(today_cards_html)
 
@@ -435,8 +434,6 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
       과거 7일간의 누적 헤드라인 아카이브가 이곳에 순차적으로 보관됩니다.
     </div>
     """
-
-    engine_badge = f"Google GenAI ({used_model})" if used_model else "Google GenAI Engine"
 
     html_content = f"""<!DOCTYPE html>
 <html lang="ko" class="dark">
@@ -585,7 +582,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
     </section>
 
     <footer class="mt-10 py-6 border-t border-slate-900 text-center text-xs text-slate-500 space-y-2">
-      <p>Automated by <strong>GitHub Actions</strong> & <strong>{engine_badge}</strong></p>
+      <p>Automated by <strong>GitHub Actions</strong> & <strong>Google GenAI (Gemini 3.6 Flash)</strong></p>
     </footer>
 
   </div>
@@ -610,7 +607,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
         const cardCat = card.getAttribute('data-category');
         if (catId === 'all' || cardCat === catId || card.classList.contains('col-span-full')) {{
           card.style.display = '';
-          if (!card.textContent.includes('해당 카테고리에 검증된') && !card.textContent.includes('오늘은 검증된')) {{
+          if (!card.textContent.includes('해당 카테고리에 등록된') && !card.textContent.includes('오늘은 검증된') && !card.textContent.includes('한도 도달')) {{
             visibleCount++;
           }}
         }} else {{
@@ -630,7 +627,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
     return html_content
 
 def main():
-    print("[Pipeline] Starting Verified Direct Scraping Briefing Engine...")
+    print("[Pipeline] Starting Verified Direct Scraping Briefing Engine (Gemini 3.6 Flash)...")
     current_date_str = get_current_kst_date()
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
 
@@ -659,12 +656,14 @@ def main():
     llm_stats_raw = fetch_llm_stats_raw()
     print(f"[Scraper] Collected {len(llm_stats_raw)} feeds from llm-stats.com")
 
-    # 3. 고성능 모델 -> 대체 모델 순차 우회 분석 실행
-    all_today_items, llm_radar_items, used_model = analyze_raw_data_with_gemini(
+    # 3. Gemini 3.6 Flash 단일 분석 실행
+    all_today_items, llm_radar_items, api_error = analyze_raw_data_with_gemini(
         api_key, categorized_raw_articles, llm_stats_raw, current_date_str
     )
 
-    print(f"\n[Digest] Total verified briefings: {len(all_today_items)}, Radar items: {len(llm_radar_items)} (Processed by {used_model})")
+    print(f"\n[Digest] Total verified briefings: {len(all_today_items)}, Radar items: {len(llm_radar_items)}")
+    if api_error:
+        print(f"[Notice] API Limit/Error Status: {api_error}")
 
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
@@ -681,7 +680,7 @@ def main():
         json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
     print(f"[Success] Saved updated history to {history_file}")
 
-    html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests, llm_radar_items, used_model)
+    html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests, llm_radar_items, api_error)
 
     with open(index_file, "w", encoding="utf-8") as f:
         f.write(html_output)
