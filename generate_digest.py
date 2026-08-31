@@ -20,7 +20,7 @@ CATEGORIES = [
         "badge_class": "bg-blue-500/10 text-blue-400 border border-blue-500/30",
         "dot_class": "bg-blue-400",
         "target_sources": "Hugging Face Trend, GitHub Trending, Reddit (r/LocalLLaMA, r/MachineLearning), X Tech Community, Product Hunt, TechCrunch SaaS",
-        "search_guidance": "Search for newly released or significantly updated AI open-weight models, commercial API models, fine-tuning frameworks, and agentic infrastructure released or discussed in the last 3 to 7 days. Focus on practical commercial applicability, engineering adoption, and business feasibility rather than purely theoretical academic papers."
+        "search_guidance": "실제 상용화 가능한 AI 오픈가중치 모델, 신규 상용 API 모델, 파인튜닝/에이전트 인프라. 순수 이론 논문 배제."
     },
     {
         "id": "ai_video",
@@ -28,8 +28,8 @@ CATEGORIES = [
         "icon": "🎬",
         "badge_class": "bg-purple-500/10 text-purple-400 border border-purple-500/30",
         "dot_class": "bg-purple-400",
-        "target_sources": "Product Hunt, Reddit (r/StableDiffusion, r/AI_Agents, r/indiehackers), X AI Creators, Higgsfield, Kling AI, Runway, Luma, ComfyUI Ecosystem, Toolify",
-        "search_guidance": "Search for end-user commercial AI content creation solutions, video generation SaaS (such as Higgsfield, Kling, Runway), avatar/voice generation platforms, e-commerce marketing automation, and creator monetization tools released or trending in the last 3 to 7 days. Focus on user workflows, practical use cases, and business models."
+        "target_sources": "Product Hunt, Reddit (r/StableDiffusion, r/AI_Agents, r/indiehackers), X AI Creators, Higgsfield, Kling AI, Runway, Luma, ComfyUI Eco, Toolify",
+        "search_guidance": "엔드유저용 상용 생성형 AI 솔루션, 비디오 생성 SaaS(Higgsfield 등), 아바타/보이스 솔루션, 마케팅 자동화 및 크리에이터 BM 툴."
     },
     {
         "id": "health_fitness",
@@ -37,8 +37,8 @@ CATEGORIES = [
         "icon": "🏃",
         "badge_class": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
         "dot_class": "bg-emerald-400",
-        "target_sources": "MobiHealthNews, DC Rainmaker, Gadgets & Wearables, Reddit (r/quantifiedself, r/Biohackers), Apple Health/Garmin Ecosystems, Whoop, Oura, CGM SaaS Communities",
-        "search_guidance": "Search for consumer digital health apps, wearable sensor integrations, continuous glucose monitoring (CGM) fitness platforms, and AI-powered personal coaching services gaining attention in the last 3 to 7 days. Focus on user experience, health data business models, and subscription monetization strategies."
+        "target_sources": "MobiHealthNews, DC Rainmaker, Gadgets & Wearables, Reddit (r/quantifiedself, r/Biohackers), Apple Health/Garmin Eco, Whoop, Oura, CGM SaaS Communities",
+        "search_guidance": "소비자용 디지털 헬스케어 앱, 웨어러블 센서 바이오데이터 연동, CGM 기반 다이어트/피트니스, AI 맞춤형 코칭 BM."
     }
 ]
 
@@ -159,7 +159,7 @@ def query_gemini_unified(api_key, model_name, prompt, use_search=True):
     max_retries = 2
     for attempt in range(max_retries):
         try:
-            with urllib.request.urlopen(req, timeout=50) as resp:
+            with urllib.request.urlopen(req, timeout=60) as resp:
                 body = resp.read().decode("utf-8")
                 res_json = json.loads(body)
                 candidates = res_json.get("candidates", [])
@@ -178,8 +178,8 @@ def query_gemini_unified(api_key, model_name, prompt, use_search=True):
         except urllib.error.HTTPError as e:
             err_msg = e.read().decode("utf-8")
             if e.code == 429:
-                print(f"[Rate Limit] 429 Quota Exceeded. 8초 대기 후 재시도합니다 (시도 {attempt+1}/{max_retries})...")
-                time.sleep(8)
+                print(f"[Rate Limit] 429 Quota Exceeded. 10초 대기 후 재시도합니다 (시도 {attempt+1}/{max_retries})...")
+                time.sleep(10)
                 continue
             print(f"[REST API Error] {model_name} (Search={use_search}) HTTP {e.code}: {err_msg[:200]}")
             break
@@ -212,61 +212,55 @@ def is_duplicate_item(item_title, blacklist_set):
             return True
     return False
 
-def fetch_category_items(api_key, category, current_date_str, blacklist_titles):
-    cat_id = category["id"]
-    cat_name = category["name"]
-    target_sources = category["target_sources"]
-    search_guidance = category["search_guidance"]
+def fetch_all_categories_unified(api_key, current_date_str, blacklist_titles):
+    blacklist_section = "\n".join(blacklist_titles[:25]) if blacklist_titles else "None"
 
-    blacklist_section = "\n".join(blacklist_titles[:20]) if blacklist_titles else "None"
+    cat_descriptions = []
+    for cat in CATEGORIES:
+        desc = f"- Category ID: \"{cat['id']}\" ({cat['name']})\n  Target Sources: {cat['target_sources']}\n  Focus: {cat['search_guidance']}"
+        cat_descriptions.append(desc)
+
+    categories_prompt_block = "\n\n".join(cat_descriptions)
 
     prompt = f"""You are a Principal Product Strategist and Tech-to-Business Briefing Analyst.
 Current Date: {current_date_str} (KST)
-Category: {cat_name} (ID: {cat_id})
 
 MISSION:
-Search, curate, and structure 2 to 4 tangible product releases, applied AI models, creator SaaS solutions, or digital health platforms released or heavily discussed in the last 3 to 7 days.
+Perform a single comprehensive web search and curate 2 to 3 practical, high-value product launches, applied AI tools, or digital health services for EACH of the following 3 categories (Total 6 to 9 items):
 
-TARGET CHANNELS & COMMUNITY SPACES:
-- Key Domains: {target_sources}
-- {search_guidance}
-- Include signals from developer/creator communities (Reddit, Hacker News, X/Twitter, Product Hunt discussions) where practical utility is validated.
+{categories_prompt_block}
 
-🚨 DEDUPLICATION (DO NOT REPEAT PREVIOUS HEADLINES):
+CRITICAL RULES:
+1. Search recent 3 to 7 days of announcements, releases, and community discussions (Reddit, Product Hunt, X, Hacker News).
+2. Focus strictly on commercial viability, business models, and end-user solutions. Exclude pure theoretical math or laboratory papers.
+3. Provide real, exact URLs from your search results.
+
+🚨 DEDUPLICATION (DO NOT REPEAT RECENT STORIES):
 {blacklist_section}
 
-REQUIRED ITEM SCHEMA:
-For each product/tool, provide concise analysis in Korean:
-- "target_problem": 🎯 Target customer profile & specific pain point/problem being solved.
-- "tech_applied": ⚙️ Core applied AI/model/hardware technology and workflow mechanics.
-- "business_insight": 💼 Business model (SaaS subscription, usage-based, API), pricing, and strategic opportunity for founders.
-
-CRITICAL URL RULE:
-- Provide the real URL from your search results.
-- If an exact article slug is not present, provide the official product homepage or service link.
-
 OUTPUT FORMAT:
-Return ONLY a valid JSON array of 2 to 4 items:
+Return ONLY a valid JSON array containing items for ALL 3 categories:
 [
   {{
-    "category_id": "{cat_id}",
-    "type_badge": "🚀 New Product",
+    "category_id": "ai_models" | "ai_video" | "health_fitness",
+    "type_badge": "🚀 New Product" | "💼 B2B / SaaS" | "📱 Consumer App" | "💡 Use-Case & BM",
     "title": "명확하고 구체적인 국문 헤드라인",
-    "target_problem": "타겟 고객 및 해결하려는 구체적 문제",
-    "tech_applied": "적용된 기술 스택(LLM 모델명, 비전 인프라 등) 및 작동 방식",
-    "business_insight": "수익 모델(구독, API 과금 등) 및 사업적 시사점",
+    "target_problem": "🎯 타겟 고객 및 해결하려는 구체적 문제점",
+    "tech_applied": "⚙️ 적용 기술 스택(LLM 모델명, 센서 연동 등) 및 구현 방식",
+    "business_insight": "💼 수익/과금 모델(구독, API 등) 및 사업적 시사점",
     "source_name": "Source / Community name",
     "source_url": "https://exact-real-url...",
-    "tags": ["AI", "SaaS"]
+    "tags": ["AI", "SaaS", "Creator"]
   }}
 ]
 """
     model = "gemini-3.6-flash"
+    print(f"[Pipeline] Requesting unified 3-category curation via {model} (Single Batch Request)...")
 
-    # 1. Search Grounding 활성화 질의
+    # 1. 단일 Search Grounding 호출
     text, grounded_urls = query_gemini_unified(api_key, model, prompt, use_search=True)
 
-    # 2. Search Grounding 할당량 제한 시 표준 텍스트 모드로 우회 (Fallback)
+    # 2. Search Grounding 실패 시 일반 텍스트 모드로 우회 (Fallback)
     if not text:
         print(f"[Fallback] Search 일시 제한으로 {model} 표준 생성 모드로 전환합니다.")
         time.sleep(3)
@@ -277,27 +271,34 @@ Return ONLY a valid JSON array of 2 to 4 items:
         items = []
         if isinstance(parsed, list):
             items = parsed
-        elif isinstance(parsed, dict) and "items" in parsed:
-            items = parsed["items"]
+        elif isinstance(parsed, dict):
+            for k in ["items", "data", "results"]:
+                if k in parsed and isinstance(parsed[k], list):
+                    items = parsed[k]
+                    break
 
         clean_items = []
         if items:
             for idx, it in enumerate(items):
                 title = it.get("title", "")
+                cat_id = it.get("category_id", "")
                 src_name = it.get("source_name", "Source")
                 raw_url = it.get("source_url", "")
                 
+                if cat_id not in CATEGORY_MAP:
+                    continue
+
                 cand_grounded = grounded_urls[idx:idx+1] if grounded_urls and idx < len(grounded_urls) else grounded_urls
                 it["source_url"] = sanitize_and_resolve_url(raw_url, title, src_name, cand_grounded)
 
                 if len(title) > 3 and (it.get("target_problem") or it.get("summary") or it.get("tech_applied")):
                     clean_items.append(it)
 
-        if len(clean_items) >= 1:
-            print(f"[Success] Curated {len(clean_items)} verified items for '{cat_id}' via {model}")
+        if clean_items:
+            print(f"[Success] Unified curation succeeded with {len(clean_items)} verified items.")
             return clean_items
 
-    print(f"[Warning] Live discovery returned 0 items for '{cat_id}'.")
+    print("[Warning] Unified curation returned 0 items.")
     return []
 
 def render_html_dashboard(current_date_str, today_items, past_digests):
@@ -368,7 +369,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
                     </div>
                     <a href="{source_url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
                       <span>서비스/원문 보기</span>
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                   </div>
                 </div>
@@ -634,35 +635,27 @@ def main():
     history_file = "history.json"
     index_file = "index.html"
 
+    # 1. 히스토리 로드 및 중복 리스트 추출
     history_data = load_history(history_file)
     pruned_digests, blacklist_titles, blacklist_set = prune_history_and_get_blacklist(history_data, current_date_str, max_days=7)
     print(f"[History] Retained {len(pruned_digests)} days of past history. Blacklisted items: {len(blacklist_titles)}")
 
+    # 2. 3개 카테고리 단일 통합 큐레이션 실행 (단 1회 호출)
+    raw_items = fetch_all_categories_unified(api_key, current_date_str, blacklist_titles)
+
+    # 3. 중복 필터링 적용
     all_today_items = []
-
-    for cat in CATEGORIES:
-        cat_id = cat["id"]
-        print(f"\n[Category] Searching practical products/services for: {cat['name']} ({cat_id})...")
-        
-        items = fetch_category_items(api_key, cat, current_date_str, blacklist_titles)
-        
-        valid_items = []
-        if items:
-            for it in items:
-                t = it.get("title", "")
-                if not is_duplicate_item(t, blacklist_set):
-                    valid_items.append(it)
-                else:
-                    print(f"[Dedup] Skipped duplicate item: {t}")
-
-        all_today_items.extend(valid_items)
-        print(f"[Category] '{cat_id}' finalized with {len(valid_items)} articles.")
-        
-        # 분당 요청 한도(RPM) 방지를 위한 카테고리 간 안전 대기 시간 (6초)
-        time.sleep(6)
+    if raw_items:
+        for it in raw_items:
+            t = it.get("title", "")
+            if not is_duplicate_item(t, blacklist_set):
+                all_today_items.append(it)
+            else:
+                print(f"[Dedup] Skipped duplicate item: {t}")
 
     print(f"\n[Digest] Total items collected today: {len(all_today_items)}")
 
+    # 4. 히스토리 저장
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
         updated_digests = [{"date": current_date_str, "items": all_today_items}] + filtered_past
@@ -678,6 +671,7 @@ def main():
         json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
     print(f"[Success] Saved updated history to {history_file}")
 
+    # 5. HTML 파일 렌더링
     html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests)
 
     with open(index_file, "w", encoding="utf-8") as f:
