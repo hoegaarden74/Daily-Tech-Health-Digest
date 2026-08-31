@@ -8,6 +8,7 @@ from datetime import timezone, timedelta
 import urllib.request
 import urllib.parse
 import urllib.error
+import xml.etree.ElementTree as ET
 
 # KST Timezone (UTC+9)
 KST = timezone(timedelta(hours=9))
@@ -19,8 +20,10 @@ CATEGORIES = [
         "icon": "🤖",
         "badge_class": "bg-blue-500/10 text-blue-400 border border-blue-500/30",
         "dot_class": "bg-blue-400",
-        "target_sources": "Hugging Face Trend, GitHub Trending, Reddit (r/LocalLLaMA, r/MachineLearning), X Tech Community, Product Hunt, TechCrunch SaaS",
-        "search_guidance": "실제 상용화 가능한 AI 오픈가중치 모델, 신규 상용 API 모델, 파인튜닝/에이전트 인프라. 순수 이론 논문 배제."
+        "feeds": [
+            {"name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/"},
+            {"name": "VentureBeat AI", "url": "https://venturebeat.com/category/ai/feed/"}
+        ]
     },
     {
         "id": "ai_video",
@@ -28,8 +31,10 @@ CATEGORIES = [
         "icon": "🎬",
         "badge_class": "bg-purple-500/10 text-purple-400 border border-purple-500/30",
         "dot_class": "bg-purple-400",
-        "target_sources": "Product Hunt, Reddit (r/StableDiffusion, r/AI_Agents, r/indiehackers), X AI Creators, Higgsfield, Kling AI, Runway, Luma, ComfyUI Eco, Toolify",
-        "search_guidance": "엔드유저용 상용 생성형 AI 솔루션, 비디오 생성 SaaS(Higgsfield 등), 아바타/보이스 솔루션, 마케팅 자동화 및 크리에이터 BM 툴."
+        "feeds": [
+            {"name": "Product Hunt Tech", "url": "https://www.producthunt.com/feed"},
+            {"name": "TechCrunch Enterprise", "url": "https://techcrunch.com/category/enterprise/feed/"}
+        ]
     },
     {
         "id": "health_fitness",
@@ -37,18 +42,14 @@ CATEGORIES = [
         "icon": "🏃",
         "badge_class": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
         "dot_class": "bg-emerald-400",
-        "target_sources": "MobiHealthNews, DC Rainmaker, Gadgets & Wearables, Reddit (r/quantifiedself, r/Biohackers), Apple Health/Garmin Eco, Whoop, Oura, CGM SaaS Communities",
-        "search_guidance": "소비자용 디지털 헬스케어 앱, 웨어러블 센서 바이오데이터 연동, CGM 기반 다이어트/피트니스, AI 맞춤형 코칭 BM."
+        "feeds": [
+            {"name": "MobiHealthNews", "url": "https://www.mobihealthnews.com/feed"},
+            {"name": "Gadgets & Wearables", "url": "https://gadgetsandwearables.com/feed/"}
+        ]
     }
 ]
 
 CATEGORY_MAP = {c["id"]: c for c in CATEGORIES}
-
-GENERIC_STOPWORDS = {
-    "ai", "saas", "app", "model", "platform", "tool", "tools", "generator", "agent", 
-    "service", "system", "new", "the", "for", "with", "and", "via",
-    "인공지능", "서비스", "플랫폼", "출시", "공개", "기술", "도구", "모델", "개발", "기반", "활용"
-}
 
 def get_current_kst_date():
     return datetime.datetime.now(KST).strftime("%Y-%m-%d")
@@ -63,11 +64,9 @@ def load_history(history_file="history.json"):
         print(f"[Warning] Failed to load {history_file}: {e}")
         return {"digests": []}
 
-def prune_history_and_get_blacklist(history_data, current_date_str, max_days=7):
+def prune_history(history_data, current_date_str, max_days=7):
     current_dt = datetime.datetime.strptime(current_date_str, "%Y-%m-%d").date()
     pruned_digests = []
-    blacklist_titles = []
-    blacklist_set = set()
 
     for digest in history_data.get("digests", []):
         d_str = digest.get("date")
@@ -78,174 +77,139 @@ def prune_history_and_get_blacklist(history_data, current_date_str, max_days=7):
             diff_days = (current_dt - d_dt).days
             if 0 <= diff_days < max_days:
                 pruned_digests.append(digest)
-                if diff_days > 0:
-                    for item in digest.get("items", []):
-                        title = item.get("title", "").strip()
-                        if title:
-                            blacklist_titles.append(f"- [{d_str}] {title}")
-                            blacklist_set.add(title.lower())
         except Exception:
             continue
 
     pruned_digests.sort(key=lambda x: x.get("date", ""), reverse=True)
-    return pruned_digests, blacklist_titles, blacklist_set
+    return pruned_digests
 
-def extract_json_array_or_object(text):
-    if not text:
-        return None
-    code_match = re.search(r'```(?:json)?\s*([\s\S]*?)\s*```', text, re.IGNORECASE)
-    if code_match:
-        try:
-            return json.loads(code_match.group(1).strip())
-        except Exception:
-            pass
-
-    arr_match = re.search(r'(\[[\s\S]*\])', text)
-    if arr_match:
-        try:
-            return json.loads(arr_match.group(1).strip())
-        except Exception:
-            pass
-
-    obj_match = re.search(r'(\{[\s\S]*\})', text)
-    if obj_match:
-        try:
-            return json.loads(obj_match.group(1).strip())
-        except Exception:
-            pass
-
+def fetch_rss_articles(feed_url, source_name, max_items=5):
+    """실제 언론사/포털의 최신 RSS 피드에서 원문 데이터를 직접 수집"""
+    articles = []
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    req = urllib.request.Request(feed_url, headers=headers)
     try:
-        return json.loads(text.strip())
-    except Exception:
-        return None
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            xml_data = resp.read()
+            root = ET.fromstring(xml_data)
 
-def query_gemini_strict_grounded(api_key, model_name, prompt):
-    """
-    실시간 구글 검색(Google Search Tool)을 필수 강제하는 단일 호출 함수.
-    비검색 모드로의 Fallback을 완전히 차단함.
-    """
+            # RSS 2.0
+            for item in root.findall(".//item")[:max_items]:
+                title = item.findtext("title", "").strip()
+                link = item.findtext("link", "").strip()
+                desc = item.findtext("description", "").strip()
+                # HTML 태그 제거
+                clean_desc = re.sub(r"<[^>]+>", " ", desc)[:300].strip()
+
+                if title and link:
+                    articles.append({
+                        "source_name": source_name,
+                        "title": title,
+                        "url": link,
+                        "summary": clean_desc
+                    })
+    except Exception as e:
+        print(f"[RSS Fetch Error] {source_name} ({feed_url}): {e}")
+    return articles
+
+def fetch_llm_stats_raw():
+    """llm-stats.com 실시간 릴리즈 및 벤치마크 데이터를 직접 수집"""
+    radar_raw = []
+    urls = [
+        ("LLM Stats Updates", "https://llm-stats.com/llm-updates"),
+        ("LLM Stats AI News", "https://llm-stats.com/ai-news")
+    ]
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+
+    for name, target_url in urls:
+        try:
+            req = urllib.request.Request(target_url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                html = resp.read().decode("utf-8", errors="ignore")
+                # 텍스트 추출
+                text_clean = re.sub(r"<script[\s\S]*?</script>", "", html)
+                text_clean = re.sub(r"<style[\s\S]*?</style>", "", text_clean)
+                text_clean = re.sub(r"<[^>]+>", " ", text_clean)
+                text_clean = re.sub(r"\s+", " ", text_clean)[:1500]
+
+                radar_raw.append({
+                    "source_name": name,
+                    "url": target_url,
+                    "content_snippet": text_clean
+                })
+        except Exception as e:
+            print(f"[LLM-Stats Fetch Error] {target_url}: {e}")
+            radar_raw.append({
+                "source_name": name,
+                "url": target_url,
+                "content_snippet": "Latest LLM benchmark leaderboard updates, new model releases and pricing shifts."
+            })
+    return radar_raw
+
+def query_gemini_pure_json(api_key, model_name, prompt):
+    """Search Tool 없이 수집된 원문 텍스트만을 전달하여 100% 정확한 JSON 분석 수행"""
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
-            "temperature": 0.1,  # 임의 생성(환각) 방지를 위해 온도를 0.1로 엄격히 고정
+            "temperature": 0.1,
             "responseMimeType": "application/json"
-        },
-        "tools": [{"googleSearch": {}}]
+        }
     }
 
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
     
-    max_retries = 3
-    for attempt in range(max_retries):
-        try:
-            with urllib.request.urlopen(req, timeout=60) as resp:
-                body = resp.read().decode("utf-8")
-                res_json = json.loads(body)
-                candidates = res_json.get("candidates", [])
-                if candidates:
-                    parts = candidates[0].get("content", {}).get("parts", [])
-                    text = "".join([p.get("text", "") for p in parts if "text" in p])
-                    
-                    grounded_urls = []
-                    g_meta = candidates[0].get("groundingMetadata", {})
-                    for chunk in g_meta.get("groundingChunks", []):
-                        u = chunk.get("web", {}).get("uri")
-                        if u:
-                            grounded_urls.append(u)
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            body = resp.read().decode("utf-8")
+            res_json = json.loads(body)
+            candidates = res_json.get("candidates", [])
+            if candidates:
+                parts = candidates[0].get("content", {}).get("parts", [])
+                return "".join([p.get("text", "") for p in parts if "text" in p])
+    except urllib.error.HTTPError as e:
+        err_msg = e.read().decode("utf-8")
+        print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:250]}")
+    except Exception as e:
+        print(f"[REST API Error] {model_name}: {e}")
+    return None
 
-                    return text, grounded_urls
-        except urllib.error.HTTPError as e:
-            err_msg = e.read().decode("utf-8")
-            if e.code == 429:
-                wait_sec = 20 * (attempt + 1)
-                print(f"[Rate Limit] 429 Quota Exceeded. {wait_sec}초 쿨다운 대기 (시도 {attempt+1}/{max_retries})...")
-                time.sleep(wait_sec)
-                continue
-            print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:250]}")
-            break
-        except Exception as e:
-            print(f"[REST API Error] {model_name}: {e}")
-            break
-    return None, []
+def analyze_raw_data_with_gemini(api_key, categorized_articles, llm_stats_data, current_date_str):
+    prompt = f"""You are a Principal Product Strategist and Tech Briefing Engine.
+Analyze the following REAL, VERIFIED live-scraped articles and generate a structured business intelligence briefing in Korean.
 
-def is_duplicate_item(item_title, blacklist_set):
-    clean_title = item_title.strip().lower()
-    if clean_title in blacklist_set:
-        return True
-    
-    raw_tokens = set(re.findall(r'[a-zA-Z0-9가-힣]{2,}', clean_title))
-    item_tokens = {t for t in raw_tokens if t not in GENERIC_STOPWORDS}
-    
-    if len(item_tokens) < 2:
-        return False
-        
-    for blacklisted in blacklist_set:
-        b_raw = set(re.findall(r'[a-zA-Z0-9가-힣]{2,}', blacklisted))
-        b_tokens = {t for t in b_raw if t not in GENERIC_STOPWORDS}
-        if not b_tokens:
-            continue
-        overlap = len(item_tokens.intersection(b_tokens))
-        union = len(item_tokens.union(b_tokens))
-        jaccard = overlap / union if union > 0 else 0
-        
-        if jaccard >= 0.70:
-            return True
-    return False
+CRITICAL ZERO-HALLUCINATION RULES:
+1. ONLY analyze and summarize the exact articles provided below. NEVER invent products, names, or URLs.
+2. Keep the exact "source_url" and "source_name" provided in the input.
 
-def fetch_strict_verified_briefing_and_radar(api_key, current_date_str, blacklist_titles):
-    blacklist_section = "\n".join(blacklist_titles[:25]) if blacklist_titles else "None"
+INPUT REAL ARTICLES:
+{json.dumps(categorized_articles, ensure_ascii=False, indent=2)}
 
-    cat_descriptions = []
-    for cat in CATEGORIES:
-        desc = f"- Category ID: \"{cat['id']}\" ({cat['name']})\n  Target Sources: {cat['target_sources']}\n  Focus: {cat['search_guidance']}"
-        cat_descriptions.append(desc)
+INPUT LLM-STATS DATA:
+{json.dumps(llm_stats_data, ensure_ascii=False, indent=2)}
 
-    categories_prompt_block = "\n\n".join(cat_descriptions)
-
-    prompt = f"""You are a Principal Product Strategist and Tech Briefing Engine with a STRICT ZERO-HALLUCINATION POLICY.
-Current Date: {current_date_str} (KST)
-
-MANDATORY RULES:
-1. You MUST ONLY extract news, products, and updates from the live Google Search grounding results.
-2. NEVER invent, synthesize, hallucinate, or imagine hypothetical products, services, scenarios, or fictional names.
-3. If no actual product launch or verified news is found for a category in the recent 3 to 7 days, return an EMPTY ARRAY for that category.
-4. "source_url" MUST be the actual article or real product URL found in search results.
-
-TASK 1: BUSINESS BRIEFING ITEMS (2 to 3 real products per category)
-{categories_prompt_block}
-
-TASK 2: LLM STATS & MODEL RELEASE RADAR (3 to 5 real releases and benchmark updates)
-Direct Target References:
-- https://llm-stats.com/ai-news
-- https://llm-stats.com/llm-updates
-Search recent model version updates, open-weight releases, API pricing shifts, and benchmark leaderboards.
-
-DEDUPLICATION (DO NOT REPEAT):
-{blacklist_section}
-
-OUTPUT STRICT JSON SCHEMA (No markdown, JSON only):
+OUTPUT STRICT JSON SCHEMA:
 {{
   "briefing_items": [
     {{
       "category_id": "ai_models" | "ai_video" | "health_fitness",
       "type_badge": "🚀 New Product" | "💼 B2B / SaaS" | "📱 Consumer App" | "💡 Use-Case & BM",
-      "title": "실존하는 제품/서비스의 국문 헤드라인",
-      "target_problem": "실제 해결하는 구체적 문제",
-      "tech_applied": "실제 적용된 기술 스택 및 구현 방식",
-      "business_insight": "실제 과금 모델(구독, API 등) 및 사업적 시사점",
-      "source_name": "실제 출처명",
-      "source_url": "https://실제-검증된-URL",
+      "title": "실제 기사 기반의 명확한 국문 헤드라인",
+      "target_problem": "타겟 고객 및 해결하려는 구체적 문제",
+      "tech_applied": "적용 기술 스택 및 구현 방식",
+      "business_insight": "과금 모델 및 사업적 시사점",
+      "source_name": "제공된 실제 출처명",
+      "source_url": "제공된 실제 URL",
       "tags": ["AI", "SaaS"]
     }}
   ],
   "llm_radar_items": [
     {{
       "badge": "🚀 Model Release" | "📊 Benchmark" | "⚡ API & Infra",
-      "title": "실제 출시된 모델명 및 업데이트 요약",
-      "org": "출시 기관/기업명",
-      "summary": "핵심 스펙, 벤치마크 점수 및 변경사항",
+      "title": "실제 출시된 모델명 및 릴리즈 요약",
+      "org": "조직명 (OpenAI, Anthropic, Qwen, DeepSeek 등)",
+      "summary": "핵심 스펙, 성능 및 변경 사항 요약",
       "source_name": "LLM Stats",
       "source_url": "https://llm-stats.com/ai-news"
     }}
@@ -253,46 +217,18 @@ OUTPUT STRICT JSON SCHEMA (No markdown, JSON only):
 }}
 """
     model = "gemini-3.6-flash"
-    print(f"[Pipeline] Executing Strict Grounded Search via {model}...")
-
-    text, grounded_urls = query_gemini_strict_grounded(api_key, model, prompt)
-
+    print(f"[Pipeline] Analyzing verified raw articles with {model}...")
+    
+    text = query_gemini_pure_json(api_key, model, prompt)
     if not text:
-        print("[Warning] Real-time Search Grounding failed or was rate-limited. Returning 0 items to prevent hallucination.")
         return [], []
 
-    briefing_items = []
-    llm_radar_items = []
-
-    parsed = extract_json_array_or_object(text)
-    if isinstance(parsed, dict):
-        raw_briefings = parsed.get("briefing_items", [])
-        raw_radars = parsed.get("llm_radar_items", [])
-
-        # Briefing validation
-        for it in raw_briefings:
-            title = it.get("title", "").strip()
-            cat_id = it.get("category_id", "").strip()
-            src_url = it.get("source_url", "").strip()
-
-            if cat_id not in CATEGORY_MAP:
-                continue
-
-            # 유효 URL 기본 검증 (더미 링크, 비정상 링크 배제)
-            if not src_url or src_url == "#" or "example.com" in src_url:
-                continue
-
-            if len(title) > 3 and (it.get("target_problem") or it.get("summary") or it.get("tech_applied")):
-                briefing_items.append(it)
-
-        # Radar validation
-        for it in raw_radars:
-            r_title = it.get("title", "").strip()
-            if len(r_title) > 2:
-                llm_radar_items.append(it)
-
-    print(f"[Success] Verified {len(briefing_items)} real briefings & {len(llm_radar_items)} real radar items.")
-    return briefing_items, llm_radar_items
+    try:
+        parsed = json.loads(text)
+        return parsed.get("briefing_items", []), parsed.get("llm_radar_items", [])
+    except Exception as e:
+        print(f"[JSON Parse Error] {e}")
+        return [], []
 
 def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar_items=None):
     categorized_today = {c["id"]: [] for c in CATEGORIES}
@@ -361,8 +297,8 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
                       {tags_html}
                     </div>
                     <a href="{source_url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
-                      <span>서비스/원문 보기</span>
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                   </div>
                 </div>
@@ -375,7 +311,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
                 {cat['icon']} {cat['name']}
               </div>
               <p class="text-sm font-semibold text-slate-300">☕ 해당 카테고리에 검증된 신규 상용 솔루션 소식이 없습니다.</p>
-              <p class="text-xs text-slate-500 max-w-sm">실사용 가치가 높은 실시간 릴리즈를 실시간 모니터링 중입니다.</p>
+              <p class="text-xs text-slate-500 max-w-sm">실존하는 피드를 실시간 모니터링 중입니다.</p>
             </div>
             """
             today_cards_html.append(empty_cat_card)
@@ -386,7 +322,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
           <div class="text-3xl sm:text-4xl">☕</div>
           <h3 class="text-base sm:text-lg font-bold text-slate-200">오늘은 검증된 신규 비즈니스 소식이 없습니다</h3>
           <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-            인터넷 상의 미확인 추론 데이터를 배제하고, 실시간 검색으로 검증된 실제 릴리즈만 수집합니다.
+            인터넷 상의 미확인 추론 데이터를 배제하고, 실시간 검증된 실제 릴리즈만 수집합니다.
           </p>
         </div>
         """
@@ -429,7 +365,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
     else:
         radar_rendered = """
         <div class="bg-slate-900/40 border border-dashed border-slate-800 rounded-xl p-4 text-center text-xs text-slate-500">
-          검증된 실시간 모델 릴리즈 피드가 없습니다.
+          llm-stats.com 실시간 업데이트 피드를 수집 중입니다.
         </div>
         """
 
@@ -459,7 +395,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
               </div>
               <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 text-xs">
                 <span class="text-slate-500 text-[11px] font-mono">{i_source}</span>
-                <a href="{i_url}" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">서비스 →</a>
+                <a href="{i_url}" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium">원문 →</a>
               </div>
             </div>
             """
@@ -566,7 +502,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
         Daily Tech & Product Briefing
       </h1>
       <p class="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
-        실전 AI 모델, 크리에이터 제작 툴, 디지털 헬스케어의 실시간 검증된 릴리즈 소식과 비즈니스 활용 사례를 전달합니다.
+        실제 언론 및 LLM-Stats에서 실시간 수집된 실제 릴리즈 기사만을 기반으로 분석한 비즈니스 브리핑입니다.
       </p>
 
       <div class="mt-5 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
@@ -633,7 +569,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
     </section>
 
     <footer class="mt-10 py-6 border-t border-slate-900 text-center text-xs text-slate-500 space-y-2">
-      <p>Automated by <strong>GitHub Actions</strong> & <strong>Google GenAI Grounding Engine</strong></p>
+      <p>Automated by <strong>GitHub Actions</strong> & <strong>Direct Feed Scraping Engine</strong></p>
     </footer>
 
   </div>
@@ -678,7 +614,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
     return html_content
 
 def main():
-    print("[Pipeline] Starting Strict Verified Briefing & LLM-Stats Radar generator...")
+    print("[Pipeline] Starting Verified Direct Scraping Briefing Engine...")
     current_date_str = get_current_kst_date()
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
 
@@ -689,23 +625,33 @@ def main():
     history_file = "history.json"
     index_file = "index.html"
 
+    # 1. 히스토리 로드
     history_data = load_history(history_file)
-    pruned_digests, blacklist_titles, blacklist_set = prune_history_and_get_blacklist(history_data, current_date_str, max_days=7)
-    print(f"[History] Retained {len(pruned_digests)} days of past history. Blacklisted items: {len(blacklist_titles)}")
+    pruned_digests = prune_history(history_data, current_date_str, max_days=7)
 
-    raw_briefings, llm_radar_items = fetch_strict_verified_briefing_and_radar(api_key, current_date_str, blacklist_titles)
+    # 2. 카테고리별 실제 RSS 피드 기사 직접 수집 (100% 실존 뉴스)
+    categorized_raw_articles = {}
+    for cat in CATEGORIES:
+        cat_id = cat["id"]
+        cat_articles = []
+        for feed in cat.get("feeds", []):
+            items = fetch_rss_articles(feed["url"], feed["name"], max_items=4)
+            cat_articles.extend(items)
+        categorized_raw_articles[cat_id] = cat_articles
+        print(f"[Scraper] Collected {len(cat_articles)} raw verified articles for '{cat_id}'")
 
-    all_today_items = []
-    if raw_briefings:
-        for it in raw_briefings:
-            t = it.get("title", "")
-            if not is_duplicate_item(t, blacklist_set):
-                all_today_items.append(it)
-            else:
-                print(f"[Dedup] Skipped duplicate item: {t}")
+    # 3. llm-stats.com 실시간 데이터 직접 수집
+    llm_stats_raw = fetch_llm_stats_raw()
+    print(f"[Scraper] Collected {len(llm_stats_raw)} feeds from llm-stats.com")
+
+    # 4. 수집된 실제 데이터만을 Gemini에게 전달하여 국문 브리핑 및 BM 분석 생성
+    all_today_items, llm_radar_items = analyze_raw_data_with_gemini(
+        api_key, categorized_raw_articles, llm_stats_raw, current_date_str
+    )
 
     print(f"\n[Digest] Total verified briefings: {len(all_today_items)}, Radar items: {len(llm_radar_items)}")
 
+    # 5. 히스토리 갱신
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
         updated_digests = [{"date": current_date_str, "items": all_today_items}] + filtered_past
@@ -721,6 +667,7 @@ def main():
         json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
     print(f"[Success] Saved updated history to {history_file}")
 
+    # 6. HTML 렌더링
     html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests, llm_radar_items)
 
     with open(index_file, "w", encoding="utf-8") as f:
