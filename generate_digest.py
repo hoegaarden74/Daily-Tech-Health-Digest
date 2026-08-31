@@ -147,7 +147,8 @@ def query_gemini_unified(api_key, model_name, prompt, use_search=True):
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
-            "temperature": 0.2
+            "temperature": 0.2,
+            "responseMimeType": "application/json"
         }
     }
     if use_search:
@@ -178,8 +179,8 @@ def query_gemini_unified(api_key, model_name, prompt, use_search=True):
         except urllib.error.HTTPError as e:
             err_msg = e.read().decode("utf-8")
             if e.code == 429:
-                print(f"[Rate Limit] 429 Quota Exceeded. 10초 대기 후 재시도합니다 (시도 {attempt+1}/{max_retries})...")
-                time.sleep(10)
+                print(f"[Rate Limit] 429 Quota Exceeded. 15초 쿨다운 후 재시도합니다 (시도 {attempt+1}/{max_retries})...")
+                time.sleep(15)
                 continue
             print(f"[REST API Error] {model_name} (Search={use_search}) HTTP {e.code}: {err_msg[:200]}")
             break
@@ -226,28 +227,28 @@ def fetch_all_categories_unified(api_key, current_date_str, blacklist_titles):
 Current Date: {current_date_str} (KST)
 
 MISSION:
-Perform a single comprehensive web search and curate 2 to 3 practical, high-value product launches, applied AI tools, or digital health services for EACH of the following 3 categories (Total 6 to 9 items):
+Curate 2 to 3 practical, high-value product launches, applied AI tools, or digital health services for EACH of the following 3 categories (Total 6 to 9 items):
 
 {categories_prompt_block}
 
 CRITICAL RULES:
-1. Search recent 3 to 7 days of announcements, releases, and community discussions (Reddit, Product Hunt, X, Hacker News).
+1. Search recent announcements, releases, and community discussions (Reddit, Product Hunt, X, Hacker News).
 2. Focus strictly on commercial viability, business models, and end-user solutions. Exclude pure theoretical math or laboratory papers.
-3. Provide real, exact URLs from your search results.
+3. Provide real URLs from official sources or reputable portals.
 
 🚨 DEDUPLICATION (DO NOT REPEAT RECENT STORIES):
 {blacklist_section}
 
 OUTPUT FORMAT:
-Return ONLY a valid JSON array containing items for ALL 3 categories:
+Return ONLY a valid JSON array containing items for ALL 3 categories. Schema:
 [
   {{
     "category_id": "ai_models" | "ai_video" | "health_fitness",
     "type_badge": "🚀 New Product" | "💼 B2B / SaaS" | "📱 Consumer App" | "💡 Use-Case & BM",
     "title": "명확하고 구체적인 국문 헤드라인",
-    "target_problem": "🎯 타겟 고객 및 해결하려는 구체적 문제점",
-    "tech_applied": "⚙️ 적용 기술 스택(LLM 모델명, 센서 연동 등) 및 구현 방식",
-    "business_insight": "💼 수익/과금 모델(구독, API 등) 및 사업적 시사점",
+    "target_problem": "타겟 고객 및 해결하려는 구체적 문제점",
+    "tech_applied": "적용 기술 스택(LLM 모델명, 센서 연동 등) 및 구현 방식",
+    "business_insight": "수익/과금 모델(구독, API 등) 및 사업적 시사점",
     "source_name": "Source / Community name",
     "source_url": "https://exact-real-url...",
     "tags": ["AI", "SaaS", "Creator"]
@@ -255,16 +256,17 @@ Return ONLY a valid JSON array containing items for ALL 3 categories:
 ]
 """
     model = "gemini-3.6-flash"
-    print(f"[Pipeline] Requesting unified 3-category curation via {model} (Single Batch Request)...")
+    print(f"[Pipeline] Requesting unified 3-category curation via {model}...")
 
     # 1. 단일 Search Grounding 호출
     text, grounded_urls = query_gemini_unified(api_key, model, prompt, use_search=True)
 
     # 2. Search Grounding 실패 시 일반 텍스트 모드로 우회 (Fallback)
     if not text:
-        print(f"[Fallback] Search 일시 제한으로 {model} 표준 생성 모드로 전환합니다.")
-        time.sleep(3)
-        text, grounded_urls = query_gemini_unified(api_key, model, prompt, use_search=False)
+        print(f"[Fallback] Search 도구 한도 도달로 {model} 표준 생성 모드로 전환합니다.")
+        time.sleep(5)
+        fallback_prompt = prompt + "\n\nNote: If live search tool is constrained, synthesize the most relevant verified releases and commercial products directly into the JSON schema."
+        text, grounded_urls = query_gemini_unified(api_key, model, fallback_prompt, use_search=False)
 
     if text:
         parsed = extract_json_array_or_object(text)
@@ -272,7 +274,7 @@ Return ONLY a valid JSON array containing items for ALL 3 categories:
         if isinstance(parsed, list):
             items = parsed
         elif isinstance(parsed, dict):
-            for k in ["items", "data", "results"]:
+            for k in ["items", "data", "results", "articles"]:
                 if k in parsed and isinstance(parsed[k], list):
                     items = parsed[k]
                     break
@@ -369,7 +371,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
                     </div>
                     <a href="{source_url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
                       <span>서비스/원문 보기</span>
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                   </div>
                 </div>
@@ -635,15 +637,12 @@ def main():
     history_file = "history.json"
     index_file = "index.html"
 
-    # 1. 히스토리 로드 및 중복 리스트 추출
     history_data = load_history(history_file)
     pruned_digests, blacklist_titles, blacklist_set = prune_history_and_get_blacklist(history_data, current_date_str, max_days=7)
     print(f"[History] Retained {len(pruned_digests)} days of past history. Blacklisted items: {len(blacklist_titles)}")
 
-    # 2. 3개 카테고리 단일 통합 큐레이션 실행 (단 1회 호출)
     raw_items = fetch_all_categories_unified(api_key, current_date_str, blacklist_titles)
 
-    # 3. 중복 필터링 적용
     all_today_items = []
     if raw_items:
         for it in raw_items:
@@ -655,7 +654,6 @@ def main():
 
     print(f"\n[Digest] Total items collected today: {len(all_today_items)}")
 
-    # 4. 히스토리 저장
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
         updated_digests = [{"date": current_date_str, "items": all_today_items}] + filtered_past
@@ -671,7 +669,6 @@ def main():
         json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
     print(f"[Success] Saved updated history to {history_file}")
 
-    # 5. HTML 파일 렌더링
     html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests)
 
     with open(index_file, "w", encoding="utf-8") as f:
