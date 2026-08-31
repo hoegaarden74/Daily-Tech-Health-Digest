@@ -14,34 +14,41 @@ KST = timezone(timedelta(hours=9))
 CATEGORIES = [
     {
         "id": "ai_models",
-        "name": "Applied AI & Vertical SaaS",
+        "name": "Applied AI Models & Tech",
         "icon": "🤖",
         "badge_class": "bg-blue-500/10 text-blue-400 border border-blue-500/30",
         "dot_class": "bg-blue-400",
-        "target_sources": "Product Hunt AI, Y Combinator Launches, TechCrunch SaaS, GitHub Trending Showcases, Enterprise AI Case Studies",
-        "search_guidance": "Search for newly launched AI-powered software, vertical SaaS applications (education, legal, coding, customer support, data analysis), automated agentic workflows, and end-user productivity tools released in the last 24-48 hours. Focus on real-world use cases, target customer pain-points, and business models."
+        "target_sources": "Hugging Face Trend, GitHub Trending, Reddit (r/LocalLLaMA, r/MachineLearning), X Tech Community, Product Hunt, TechCrunch SaaS",
+        "search_guidance": "Search for newly released/updated open-source weights, commercial API models, fine-tuning frameworks, and agentic infrastructure released or heavily discussed in the last 3 to 7 days. Focus strictly on models and tools with clear commercial applicability and developer adoption, excluding pure theoretical academic lab papers."
     },
     {
         "id": "ai_video",
-        "name": "Creator & Media Tech",
+        "name": "AI Content & Creator Tools",
         "icon": "🎬",
         "badge_class": "bg-purple-500/10 text-purple-400 border border-purple-500/30",
         "dot_class": "bg-purple-400",
-        "target_sources": "Product Hunt Video, Kling AI, Higgsfield, Runway, Luma, Pika, ComfyUI Creator Tools, Social Media Ad Automation",
-        "search_guidance": "Search for commercial creative AI tools, short-form video generation apps, e-commerce product video creators, virtual avatar solutions, and marketing automation platforms released in the last 24-48 hours. Focus on creator monetization, ad production workflows, and video business applications."
+        "target_sources": "Product Hunt, Reddit (r/StableDiffusion, r/AI_Agents, r/indiehackers), X AI Creators, Higgsfield, Kling AI, Runway, Luma, ComfyUI Eco, Toolify",
+        "search_guidance": "Search for end-user commercial AI content creation tools, video generation SaaS (e.g., Higgsfield, Kling), avatar/voice generation, e-commerce marketing automation, and creator monetization platforms released or trending in the last 3 to 7 days. Focus on user workflows, practical use cases, and business models."
     },
     {
         "id": "health_fitness",
-        "name": "Digital Health & Consumer Tech",
+        "name": "Digital Health & Wellness Tech",
         "icon": "🏃",
         "badge_class": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30",
         "dot_class": "bg-emerald-400",
-        "target_sources": "MobiHealthNews, DC Rainmaker, Gadgets & Wearables, TechCrunch Health, Apple Health/Garmin Platform Ecosystems, Whoop, Oura",
-        "search_guidance": "Search for consumer health and fitness applications, wearable bio-data subscription services, AI-powered personal coaching apps, continuous glucose monitoring (CGM) diet/fitness platforms, and wellness tech services released in the last 24-48 hours. Focus on consumer user experience and digital health business models."
+        "target_sources": "MobiHealthNews, DC Rainmaker, Gadgets & Wearables, Reddit (r/quantifiedself, r/Biohackers), Apple Health/Garmin Eco, Whoop, Oura, CGM SaaS Communities",
+        "search_guidance": "Search for consumer digital health apps, wearable sensor integrations, continuous glucose monitoring (CGM) diet platforms, and AI personal coaching services gaining attention in the last 3 to 7 days. Focus on consumer UX, health data business models, and subscription monetization."
     }
 ]
 
 CATEGORY_MAP = {c["id"]: c for c in CATEGORIES}
+
+# 중복 판별 시 무시할 일반 테크 불용어 정의
+GENERIC_STOPWORDS = {
+    "ai", "saas", "app", "model", "platform", "tool", "tools", "generator", "agent", 
+    "service", "system", "new", "the", "for", "with", "and", "via",
+    "인공지능", "서비스", "플랫폼", "출시", "공개", "기술", "도구", "모델", "개발", "기반", "활용"
+}
 
 def get_current_kst_date():
     return datetime.datetime.now(KST).strftime("%Y-%m-%d")
@@ -77,7 +84,7 @@ def prune_history_and_get_blacklist(history_data, current_date_str, max_days=7):
                         if title:
                             blacklist_titles.append(f"- [{d_str}] {title}")
                             blacklist_set.add(title.lower())
-        except Exception as e:
+        except Exception:
             continue
 
     pruned_digests.sort(key=lambda x: x.get("date", ""), reverse=True)
@@ -140,7 +147,7 @@ def query_gemini_direct_rest(api_key, model_name, prompt, use_search=True):
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
-            "temperature": 0.3
+            "temperature": 0.2
         }
     }
     if use_search:
@@ -149,7 +156,7 @@ def query_gemini_direct_rest(api_key, model_name, prompt, use_search=True):
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=40) as resp:
+        with urllib.request.urlopen(req, timeout=50) as resp:
             body = resp.read().decode("utf-8")
             res_json = json.loads(body)
             candidates = res_json.get("candidates", [])
@@ -167,7 +174,7 @@ def query_gemini_direct_rest(api_key, model_name, prompt, use_search=True):
                 return text, grounded_urls
     except urllib.error.HTTPError as e:
         err_msg = e.read().decode("utf-8")
-        print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:250]}")
+        print(f"[REST API Error] {model_name} HTTP {e.code}: {err_msg[:200]}")
     except Exception as e:
         print(f"[REST API Error] {model_name}: {e}")
     return None, []
@@ -177,7 +184,7 @@ def query_gemini_with_sdk(api_key, model_name, prompt, use_search=True):
         from google import genai
         from google.genai import types
         client = genai.Client(api_key=api_key)
-        config = types.GenerateContentConfig(temperature=0.3)
+        config = types.GenerateContentConfig(temperature=0.2)
         if use_search:
             config.tools = [types.Tool(google_search=types.GoogleSearch())]
         response = client.models.generate_content(
@@ -206,17 +213,24 @@ def is_duplicate_item(item_title, blacklist_set):
     if clean_title in blacklist_set:
         return True
     
-    item_tokens = set(re.findall(r'[a-zA-Z0-9가-힣]{2,}', clean_title))
-    if not item_tokens:
+    # 영문/한글 2글자 이상 토큰 추출 후 불용어 필터링
+    raw_tokens = set(re.findall(r'[a-zA-Z0-9가-힣]{2,}', clean_title))
+    item_tokens = {t for t in raw_tokens if t not in GENERIC_STOPWORDS}
+    
+    if len(item_tokens) < 2:
         return False
         
     for blacklisted in blacklist_set:
-        b_tokens = set(re.findall(r'[a-zA-Z0-9가-힣]{2,}', blacklisted))
+        b_raw = set(re.findall(r'[a-zA-Z0-9가-힣]{2,}', blacklisted))
+        b_tokens = {t for t in b_raw if t not in GENERIC_STOPWORDS}
         if not b_tokens:
             continue
         overlap = len(item_tokens.intersection(b_tokens))
-        ratio = overlap / max(len(item_tokens), len(b_tokens))
-        if ratio > 0.60:
+        union = len(item_tokens.union(b_tokens))
+        jaccard = overlap / union if union > 0 else 0
+        
+        # 의미 있는 키워드 기준 유사도 70% 이상일 때만 중복으로 판별
+        if jaccard >= 0.70:
             return True
     return False
 
@@ -226,33 +240,32 @@ def fetch_category_items(api_key, category, current_date_str, blacklist_titles):
     target_sources = category["target_sources"]
     search_guidance = category["search_guidance"]
 
-    blacklist_section = "\n".join(blacklist_titles[:15]) if blacklist_titles else "None"
+    blacklist_section = "\n".join(blacklist_titles[:20]) if blacklist_titles else "None"
 
-    prompt = f"""You are a Principal Product Strategist, Startup Advisor, and Tech-to-Business Briefing Engine.
+    prompt = f"""You are a Principal Product Strategist and Tech-to-Business Briefing Analyst.
 Current Date: {current_date_str} (KST)
 Category: {cat_name} (ID: {cat_id})
 
 MISSION:
-Find, curate, and analyze 2 to 4 tangible product launches, applied tech tools, vertical SaaS solutions, or digital health services that end-users/businesses can actually use or adopt.
+Search, curate, and structure 2 to 4 tangible product releases, applied AI models, creator SaaS solutions, or digital health platforms released or heavily discussed in the last 3 to 7 days.
 
-DISCOVERY GUIDANCE:
-- Target Domain: {target_sources}
+TARGET CHANNELS & COMMUNITY SPACES:
+- Key Domains: {target_sources}
 - {search_guidance}
-- Focus on practical applications, real-world customer use cases, and business model mechanics, NOT pure theoretical math or isolated academic lab papers.
+- Include signals from developer/creator communities (Reddit, Hacker News, X/Twitter, Product Hunt discussions) where practical utility is validated.
 
-🚨 DEDUPLICATION (DO NOT REPEAT RECENT STORIES):
+🚨 DEDUPLICATION (DO NOT REPEAT PREVIOUS HEADLINES):
 {blacklist_section}
 
-REQUIRED ITEM STRUCTURE:
-Each item MUST provide clear business and product value in 3 structured bullet points:
+REQUIRED ITEM SCHEMA:
+For each product/tool, provide concise analysis in Korean:
 - "target_problem": 🎯 Target customer profile & specific pain point/problem being solved.
-- "tech_applied": ⚙️ Applied AI/hardware technology, key features, or workflow mechanics.
-- "business_insight": 💼 Business model (SaaS subscription, usage-based, marketplace), pricing strategy, or business opportunity.
+- "tech_applied": ⚙️ Core applied AI/model/hardware technology and workflow mechanics.
+- "business_insight": 💼 Business model (SaaS subscription, usage-based, API), pricing, and strategic opportunity for founders.
 
 CRITICAL URL RULE:
-- You MUST provide the REAL, EXACT URL from the Google Search results you browsed.
-- NEVER invent, hallucinate, or guess a fake URL path.
-- If unsure of the exact article slug, provide the real product homepage or official blog domain (e.g., https://www.producthunt.com/ or https://techcrunch.com/).
+- Provide the real URL from your search results.
+- If an exact article slug is not present, provide the official product homepage or service link.
 
 OUTPUT FORMAT:
 Return ONLY a valid JSON array of 2 to 4 items:
@@ -260,23 +273,22 @@ Return ONLY a valid JSON array of 2 to 4 items:
   {{
     "category_id": "{cat_id}",
     "type_badge": "🚀 New Product" OR "💼 B2B / SaaS" OR "📱 Consumer App" OR "💡 Use-Case & BM",
-    "title": "Clear, informative Korean product/service headline",
-    "target_problem": "타겟 고객 및 해결하려는 구체적 페인포인트",
-    "tech_applied": "적용된 핵심 기술(LLM, 비전, 센서 등) 및 서비스 구현 방식",
-    "business_insight": "과금 모델(구독, API 등), 원가 절감 효과 및 비즈니스 시사점",
-    "source_name": "Source name (e.g., Product Hunt, TechCrunch, VentureBeat, DC Rainmaker)",
+    "title": "명확하고 구체적인 국문 헤드라인",
+    "target_problem": "타겟 고객 및 해결하려는 구체적 문제",
+    "tech_applied": "적용된 기술 스택(LLM 모델명, 비전 인프라 등) 및 작동 방식",
+    "business_insight": "수익 모델(구독, API 과금 등) 및 사업적 시사점",
+    "source_name": "Source / Community name (e.g., Product Hunt, Reddit r/LocalLLaMA, TechCrunch)",
     "source_url": "https://exact-real-url...",
-    "tags": ["SaaS", "EdTech", "B2B"]
+    "tags": ["AI", "SaaS", "Creator"]
   }}
 ]
 """
-    models = ["gemini-3.6-flash", "gemini-3-flash", "gemini-2.5-flash", "gemini-1.5-flash"]
+    # 안정적인 공식 모델 우선 호출
+    models = ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
     for model in models:
         text, grounded_urls = query_gemini_with_sdk(api_key, model, prompt, use_search=True)
         if not text:
             text, grounded_urls = query_gemini_direct_rest(api_key, model, prompt, use_search=True)
-        if not text:
-            text, grounded_urls = query_gemini_direct_rest(api_key, model, prompt, use_search=False)
 
         if text:
             parsed = extract_json_array_or_object(text)
@@ -296,11 +308,11 @@ Return ONLY a valid JSON array of 2 to 4 items:
                     cand_grounded = grounded_urls[idx:idx+1] if grounded_urls and idx < len(grounded_urls) else grounded_urls
                     it["source_url"] = sanitize_and_resolve_url(raw_url, title, src_name, cand_grounded)
 
-                    if len(title) > 5 and (it.get("target_problem") or it.get("summary")):
+                    if len(title) > 3 and (it.get("target_problem") or it.get("summary") or it.get("tech_applied")):
                         clean_items.append(it)
 
             if len(clean_items) >= 1:
-                print(f"[Success] Curated {len(clean_items)} verified product items for '{cat_id}' via {model}")
+                print(f"[Success] Curated {len(clean_items)} verified items for '{cat_id}' via {model}")
                 return clean_items
 
     print(f"[Warning] Live discovery returned 0 items for '{cat_id}'.")
@@ -345,10 +357,6 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
                 if business_insight:
                     details_list.append(f'<li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>{business_insight}</span></li>')
 
-                if not details_list and item.get("key_points"):
-                    for kp in item.get("key_points", []):
-                        details_list.append(f'<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-bold">▸</span><span>{kp}</span></li>')
-
                 points_html = "".join(details_list)
 
                 card = f"""
@@ -390,8 +398,8 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
               <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold {cat['badge_class']} mb-1">
                 {cat['icon']} {cat['name']}
               </div>
-              <p class="text-sm font-semibold text-slate-300">☕ 오늘은 이 분야에 새로운 상용 제품/서비스 출시 소식이 없습니다.</p>
-              <p class="text-xs text-slate-500 max-w-sm">실용적인 서비스 릴리즈 및 비즈니스 유스케이스를 지속 모니터링 중입니다. 내일 다시 확인해 주세요.</p>
+              <p class="text-sm font-semibold text-slate-300">☕ 해당 카테고리에 등록된 신규 솔루션 소식이 없습니다.</p>
+              <p class="text-xs text-slate-500 max-w-sm">실용적인 서비스 릴리즈 및 비즈니스 유스케이스를 지속 모니터링 중입니다.</p>
             </div>
             """
             today_cards_html.append(empty_cat_card)
@@ -402,7 +410,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
           <div class="text-3xl sm:text-4xl">☕</div>
           <h3 class="text-base sm:text-lg font-bold text-slate-200">오늘은 새로운 비즈니스/제품 소식이 없습니다</h3>
           <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-            실사용 가치가 높은 신규 서비스 릴리즈 및 비즈니스 활용 사례를 실시간 모니터링하고 있습니다. 내일 아침 08:30에 업데이트되는 새로운 브리핑을 확인해 주세요.
+            실사용 가치가 높은 신규 서비스 릴리즈 및 비즈니스 활용 사례를 지속적으로 모니터링하고 있습니다.
           </p>
         </div>
         """
@@ -456,14 +464,11 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
         """
         archive_days_html.append(archive_block)
 
-    if not archive_days_html:
-        archive_rendered = """
-        <div class="bg-slate-900/40 border border-dashed border-slate-800 rounded-2xl p-6 text-center text-slate-500 text-sm">
-          과거 7일간의 누적 헤드라인 아카이브가 이곳에 순차적으로 보관됩니다.
-        </div>
-        """
-    else:
-        archive_rendered = "\n".join(archive_days_html)
+    archive_rendered = "\n".join(archive_days_html) if archive_days_html else """
+    <div class="bg-slate-900/40 border border-dashed border-slate-800 rounded-2xl p-6 text-center text-slate-500 text-sm">
+      과거 7일간의 누적 헤드라인 아카이브가 이곳에 순차적으로 보관됩니다.
+    </div>
+    """
 
     html_content = f"""<!DOCTYPE html>
 <html lang="ko" class="dark">
@@ -532,10 +537,10 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-2">
         <div class="inline-flex items-center justify-center sm:justify-start gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-xs font-mono font-semibold tracking-wider uppercase text-sky-400">Tech-to-Product Intelligence</span>
+          <span class="text-xs font-mono font-semibold tracking-wider uppercase text-sky-400">Tech-to-Business Intelligence</span>
         </div>
         <div class="inline-flex items-center justify-center gap-2 text-xs font-mono text-slate-400 bg-slate-900/80 border border-slate-800/80 px-3 py-1 rounded-full">
-          <span>KST {current_date_str} 08:30</span>
+          <span>KST {current_date_str}</span>
           <span class="text-slate-600">|</span>
           <span class="text-emerald-400">Live Active</span>
         </div>
@@ -545,7 +550,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
         Daily Tech & Product Briefing
       </h1>
       <p class="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
-        신규 상용 서비스, 엔터프라이즈 SaaS, 크리에이터 툴, 디지털 헬스케어의 실질적 유스케이스와 비즈니스 인사이트를 매일 아침 브리핑합니다.
+        실전 AI 모델, 크리에이터 제작 툴, 디지털 헬스케어의 최신 출시 소식과 비즈니스 활용 사례를 전달합니다.
       </p>
 
       <div class="mt-5 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
@@ -553,10 +558,10 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
           전체 보기
         </button>
         <button onclick="filterCategory('ai_models')" id="tab-ai_models" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all shrink-0">
-          🤖 Applied AI & SaaS
+          🤖 AI Models & Tech
         </button>
         <button onclick="filterCategory('ai_video')" id="tab-ai_video" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all shrink-0">
-          🎬 Creator & Media
+          🎬 AI Content & Tools
         </button>
         <button onclick="filterCategory('health_fitness')" id="tab-health_fitness" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700 transition-all shrink-0">
           🏃 Digital Health & Tech
@@ -582,7 +587,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
         <h2 class="text-base sm:text-lg font-bold text-slate-200 flex items-center gap-2">
           <span>📚</span> Weekly Highlights & Archive <span class="text-xs font-normal text-slate-500 font-mono">(Past 7 Days)</span>
         </h2>
-        <span class="text-xs text-slate-500 font-mono">7-Day Rolling Buffer</span>
+        <span class="text-xs text-slate-500 font-mono">7-Day Buffer</span>
       </div>
 
       <div class="space-y-3">
@@ -592,9 +597,6 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
 
     <footer class="mt-10 py-6 border-t border-slate-900 text-center text-xs text-slate-500 space-y-2">
       <p>Automated by <strong>GitHub Actions</strong> & <strong>Google GenAI Engine</strong></p>
-      <p class="font-mono text-[11px] text-slate-600">
-        <a href="https://github.com/hoegaarden74/Daily-Tech-Health-Digest" target="_blank" class="hover:text-slate-400 underline">hoegaarden74/Daily-Tech-Health-Digest</a> • GitHub Pages Continuous Delivery
-      </p>
     </footer>
 
   </div>
@@ -619,7 +621,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
         const cardCat = card.getAttribute('data-category');
         if (catId === 'all' || cardCat === catId || card.classList.contains('col-span-full')) {{
           card.style.display = '';
-          if (!card.textContent.includes('오늘은 새로운')) {{
+          if (!card.textContent.includes('해당 카테고리에 등록된')) {{
             visibleCount++;
           }}
         }} else {{
@@ -639,30 +641,30 @@ def render_html_dashboard(current_date_str, today_items, past_digests):
     return html_content
 
 def main():
-    print("[Pipeline] Starting Tech-to-Product Briefing generator...")
+    print("[Pipeline] Starting Tech-to-Business Briefing generator...")
     current_date_str = get_current_kst_date()
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
 
     history_file = "history.json"
     index_file = "index.html"
 
-    # 1. Load history & build strict blacklist
+    # 1. 과거 히스토리 로드 및 중복 방지 리스트 구성
     history_data = load_history(history_file)
     pruned_digests, blacklist_titles, blacklist_set = prune_history_and_get_blacklist(history_data, current_date_str, max_days=7)
     print(f"[History] Retained {len(pruned_digests)} days of past history. Blacklisted items: {len(blacklist_titles)}")
 
     all_today_items = []
 
-    # 2. Query each category for practical product/business use cases
+    # 2. 카테고리별 데이터 큐레이션 실행
     for cat in CATEGORIES:
         cat_id = cat["id"]
-        print(f"\n[Category] Curating products & SaaS for: {cat['name']} ({cat_id})...")
+        print(f"\n[Category] Searching practical products/services for: {cat['name']} ({cat_id})...")
         
         items = []
         if api_key:
             items = fetch_category_items(api_key, cat, current_date_str, blacklist_titles)
         
-        # Deduplication filtering
+        # 고유명사 기반 중복 필터링
         valid_items = []
         if items:
             for it in items:
@@ -675,9 +677,9 @@ def main():
         all_today_items.extend(valid_items)
         print(f"[Category] '{cat_id}' finalized with {len(valid_items)} articles.")
 
-    print(f"\n[Digest] Total articles collected today: {len(all_today_items)}")
+    print(f"\n[Digest] Total items collected today: {len(all_today_items)}")
 
-    # 3. Update history (only if we have items to record today)
+    # 3. 히스토리 갱신
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
         updated_digests = [{"date": current_date_str, "items": all_today_items}] + filtered_past
@@ -693,7 +695,7 @@ def main():
         json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
     print(f"[Success] Saved updated history to {history_file}")
 
-    # 4. Render index.html
+    # 4. HTML 파일 렌더링
     html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests)
 
     with open(index_file, "w", encoding="utf-8") as f:
