@@ -108,14 +108,17 @@
 
       <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
         
-        <div class="col-span-full bg-slate-900/50 border border-dashed border-slate-800/80 rounded-2xl p-8 sm:p-10 text-center flex flex-col items-center justify-center gap-3">
-          <div class="text-3xl sm:text-4xl">☕</div>
-          <h3 class="text-base sm:text-lg font-bold text-slate-200">오늘은 검증된 신규 비즈니스 소식이 없습니다</h3>
-          <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-            인터넷 상의 미확인 추론 데이터를 배제하고, 실시간 검증된 실제 릴리즈만 수집합니다.
-          </p>
-        </div>
-        
+            <div class="col-span-full bg-amber-500/5 border border-amber-500/30 rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center justify-center gap-2.5">
+              <div class="text-2xl sm:text-3xl">⚠️</div>
+              <h3 class="text-base sm:text-lg font-bold text-amber-300">Gemini API 일일 한도 도달 안내</h3>
+              <p class="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
+                현재 Gemini API 무료 등급(Free Tier)의 <strong>일일 최대 호출 한도(20 RPD)</strong>에 도달하였거나 서버 일시 과부하(네트워크 타임아웃 또는 서버 응답 지연)로 인해 신규 분석이 일시 지연되었습니다.
+              </p>
+              <div class="mt-2 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-400">
+                <span>🔄 쿼터 초기화 후 <strong>내일 오전 08:30 정기 스케줄</strong>에 정상 갱신됩니다.</span>
+              </div>
+            </div>
+            
       </div>
     </main>
 
@@ -413,7 +416,7 @@
     </section>
 
     <footer class="mt-10 py-6 border-t border-slate-900 text-center text-xs text-slate-500 space-y-2">
-      <p>Automated by <strong>GitHub Actions</strong> & <strong>Google GenAI Engine</strong></p>
+      <p>Automated by <strong>GitHub Actions</strong> & <strong>Google GenAI (Gemini 3.6 Flash)</strong></p>
     </footer>
 
   </div>
@@ -438,7 +441,7 @@
         const cardCat = card.getAttribute('data-category');
         if (catId === 'all' || cardCat === catId || card.classList.contains('col-span-full')) {
           card.style.display = '';
-          if (!card.textContent.includes('해당 카테고리에 검증된') && !card.textContent.includes('오늘은 검증된')) {
+          if (!card.textContent.includes('해당 카테고리에 등록된') && !card.textContent.includes('오늘은 검증된') && !card.textContent.includes('한도 도달')) {
             visibleCount++;
           }
         } else {
