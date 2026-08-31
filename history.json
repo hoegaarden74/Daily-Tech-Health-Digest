@@ -1,6 +1,123 @@
 {
-  "last_updated": "2026-08-31T14:55:39.031305+09:00",
+  "last_updated": "2026-08-31T14:59:50.023582+09:00",
   "digests": [
+    {
+      "date": "2026-08-31",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "미국의 드론·로봇 규제 강화와 중국의 글로벌 공급망 우회 전략",
+          "target_problem": "미국 정부의 해외산 드론 및 로봇 수입 규제 강화에 대응하는 글로벌 공급망 및 제조 시장 확보 문제",
+          "tech_applied": "자율주행 로보틱스, 무인 항공기 시스템(UAS) 및 대규모 양산 자동화 기술",
+          "business_insight": "미국의 무역 장벽 강화에도 불구하고 중국은 자체 생산 규모(Scale)를 바탕으로 타 국가 시장으로 경쟁 축을 이동시켜 영향력을 유지할 전망입니다.",
+          "source_name": "TechCrunch AI",
+          "source_url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/",
+          "tags": [
+            "Robotics",
+            "Drones",
+            "SupplyChain",
+            "Policy"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "기업용 자율 AI 에이전트 간 복잡성 및 상호작용 위험성 증가",
+          "target_problem": "단일 에이전트 도입을 넘어 복수의 AI 에이전트 플릿(Fleet)이 API를 호출하고 소통할 때 발생하는 상호작용 복잡성 및 보안 위협",
+          "tech_applied": "Multi-Agent Orchestration, API Gateway, Agent-to-Agent Communication Protocols",
+          "business_insight": "개별 에이전트 성능 자체보다 에이전트 간 연결성, 데이터 가시성 및 거버넌스 관리 도구를 제공하는 솔루션의 가치가 급상승하고 있습니다.",
+          "source_name": "VentureBeat AI",
+          "source_url": "https://venturebeat.com/ai/enterprise-ais-real-risk-isnt-autonomous-agents-its-the-complexity-between-them",
+          "tags": [
+            "EnterpriseAI",
+            "AIAgents",
+            "Orchestration",
+            "Governance"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "소니 뮤직·워너, 앤트로픽 대상 저작권 침해 손해배상 소송 제기",
+          "target_problem": "AI 모델 학습 및 출력을 둘러싼 대형 음악 레이블과 AI 파운데이션 모델 기업 간의 지적재산권 무단 도용 갈등",
+          "tech_applied": "Large Language Models, Foundation Model Training Data Management",
+          "business_insight": "생성형 AI 기업의 데이터 수집 과정에 대한 법적 리스크가 현실화됨에 따라 학습 데이터의 출처 투명성 확보 및 라이선스 계약 체결이 필수가 되고 있습니다.",
+          "source_name": "TechCrunch AI",
+          "source_url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
+          "tags": [
+            "Legal",
+            "Copyright",
+            "Anthropic",
+            "IP"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "아마존, 급증하는 수요에 맞쳐 엔비디아 GPU 200만 대 추가 주문",
+          "target_problem": "클라우드 인프라 및 생성형 AI·비디오 모델 인퍼런스 수요 급증에 따른 데이터센터 컴퓨팅 파워 부족",
+          "tech_applied": "NVIDIA GPU Infrastructure, Enterprise Cloud Data Center Architecture",
+          "business_insight": "클라우드 서비스 제공업체(CSP)들의 대규모 AI 하드웨어 투자 지속으로 글로벌 AI 인프라 경쟁이 가속화되고 있습니다.",
+          "source_name": "TechCrunch Enterprise",
+          "source_url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand/",
+          "tags": [
+            "Amazon",
+            "NVIDIA",
+            "Cloud",
+            "Infrastructure"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "아르가 랩스, 기업용 AI 에이전트 학습 플랫폼으로 1천만 달러 시드 투자 유치",
+          "target_problem": "기업 환경에 최적화된 자율 동작 AI 에이전트를 효율적으로 훈련시키고 검증하는 프로세스의 미비",
+          "tech_applied": "Agent Training Environments, Reinforcement Learning for Enterprise AI",
+          "business_insight": "General Catalyst 등 주요 VC들의 투자 유치는 엔터프라이즈 AI 에이전트의 실질적 배치 및 훈련 인프라 스타트업의 성장 가능성을 입증합니다.",
+          "source_name": "TechCrunch Enterprise",
+          "source_url": "https://techcrunch.com/2026/08/26/arga-is-building-a-better-way-to-train-enterprise-ai-agents/",
+          "tags": [
+            "AI-Agents",
+            "Training",
+            "VentureCapital",
+            "Enterprise"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "샤오미 스마트 밴드 11 유출: 음성 녹음 및 심회박변동성(HRV) 지원",
+          "target_problem": "가성비 웨어러블 기기에서의 고도화된 생체 데이터 측정 및 독립적인 유저 툴 요구",
+          "tech_applied": "HRV (Heart Rate Variability) Biosensors, On-device Voice Recording, Dual-phone Connectivity",
+          "business_insight": "저가형 피트니스 트래커가 고급 생체 데이터(HRV) 및 보이스 메모 기능을 흡수하며 프리미엄 웨어러블과의 기능적 격차를 줄이고 있습니다.",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/08/30/xiaomi-smart-band-11-features-leak/",
+          "tags": [
+            "Wearables",
+            "Xiaomi",
+            "HealthTech",
+            "HRV"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "BP Doctor Fit 리뷰: 실제 커프식 혈압계를 탑재한 웨어러블 스마트워치",
+          "target_problem": "광학식 센서 기반 혈압 측정의 정확도 한계 및 전문 의료용 혈압 측정기 휴대 편의성 부족",
+          "tech_applied": "Inflatable Wrist Cuff Mechanism, Oscillometric Blood Pressure Monitoring",
+          "business_insight": "실제 공기 주입식 커프 방식을 손목형 디바이스에 적용하여 홈 헬스케어 및 메디컬 트래킹 전문성을 극대화한 니치 헬스케어 기기 시장이 확대되고 있습니다.",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/08/30/bp-doctor-fit-review/",
+          "tags": [
+            "HealthTech",
+            "BloodPressure",
+            "Smartwatch",
+            "Hardware"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-08-29",
       "items": [
