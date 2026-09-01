@@ -69,7 +69,7 @@ FALLBACK_MODELS = [
 ]
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 (DailyDigest/3.5)"
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 (DailyDigest/3.6)"
 }
 
 def get_current_kst_date():
@@ -104,7 +104,7 @@ def prune_history(history_data, current_date_str, max_days=7):
     pruned_digests.sort(key=lambda x: x.get("date", ""), reverse=True)
     return pruned_digests
 
-def fetch_rss_feed(source_name, feed_url, max_items=4):
+def fetch_rss_feed(source_name, feed_url, max_items=6):
     """RSS 2.0 및 Atom 규격을 동시 지원하는 XML 파서"""
     articles = []
     req = urllib.request.Request(feed_url, headers=HEADERS)
@@ -185,7 +185,6 @@ def deduplicate_raw_items(items):
     seen_titles = set()
     unique_items = []
     for it in items:
-        # 영문/숫자 기준 20글자 정규화 키 생성
         norm_key = re.sub(r"[^a-zA-Z0-9가-힣]", "", it.get("title", ""))[:25].lower()
         if norm_key and norm_key not in seen_titles:
             seen_titles.add(norm_key)
@@ -262,10 +261,12 @@ def analyze_raw_data_with_gemini(api_key, categorized_articles, radar_data, curr
     prompt = f"""You are a Principal Product Strategist and Tech Briefing Engine.
 Analyze the following REAL, VERIFIED live-scraped items from top community & developer sources, deduplicate identical news across sources, and generate a structured business intelligence briefing in Korean.
 
-CRITICAL ZERO-HALLUCINATION RULES:
+CRITICAL ZERO-HALLUCINATION & CURATION RULES:
 1. ONLY analyze and summarize the exact real items provided in the input below. NEVER invent products, names, or fake URLs.
-2. For "ai_video" (AI Content & Creator Tools), prioritize actual video/audio/image generation tools, LoRA models, avatar creators, and workflow software.
-3. Keep the exact "source_url" and "source_name" provided in the input.
+2. For EACH category, aim to select and curate up to 4 to 5 high-impact, practical software tools, models, or device updates if valid data exists in the input.
+3. If there are fewer than 4-5 verified, high-quality items for a category in the input, ONLY return the genuinely valid items. Do NOT force-fill with low-value gossip or hallucinated entries.
+4. For "ai_video" (AI Content & Creator Tools), prioritize actual video/audio/image generation tools, LoRA models, avatar creators, and workflow software.
+5. Keep the exact "source_url" and "source_name" provided in the input.
 
 INPUT REAL ARTICLES:
 {json.dumps(categorized_articles, ensure_ascii=False, indent=2)}
@@ -711,7 +712,7 @@ def main():
     history_data = load_history(history_file)
     pruned_digests = prune_history(history_data, current_date_str, max_days=7)
 
-    # 1. 확정된 소스 풀 전체 수집
+    # 1. 확정된 소스 풀 전체 수집 (피드당 최대 6건으로 후보군 확대)
     categorized_raw_articles = {}
     for cat in CATEGORIES:
         cat_id = cat["id"]
@@ -722,23 +723,22 @@ def main():
             src_url = src.get("url", "")
 
             if src_type == "rss":
-                items = fetch_rss_feed(src_name, src_url, max_items=4)
+                items = fetch_rss_feed(src_name, src_url, max_items=6)
             else:
                 items = fetch_web_snippet(src_name, src_url, max_chars=1200)
 
             raw_items.extend(items)
-            time.sleep(1)  # Rate Limit 방어 딜레이
+            time.sleep(1)
 
-        # 중복 릴리즈 1차 필터링
         deduped = deduplicate_raw_items(raw_items)
         categorized_raw_articles[cat_id] = deduped
-        print(f"[Harvester] Collected {len(deduped)} unique verified items for '{cat_id}'")
+        print(f"[Harvester] Collected {len(deduped)} unique candidate items for '{cat_id}'")
 
     # 2. 벤치마크 및 모델 레이더 수집
     radar_data = fetch_radar_data()
     print(f"[Harvester] Collected {len(radar_data)} radar snippets (LLM-Stats, Artificial Analysis)")
 
-    # 3. Gemini 다단계 우회 분석 실행
+    # 3. Gemini 다단계 우회 분석 실행 (카테고리당 최대 4~5건 유연 큐레이션)
     all_today_items, llm_radar_items, used_model = analyze_raw_data_with_gemini(
         api_key, categorized_raw_articles, radar_data, current_date_str
     )
