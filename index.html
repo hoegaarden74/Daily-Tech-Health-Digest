@@ -103,19 +103,330 @@
         <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
           <span class="text-amber-400">⚡</span> Today's Briefing <span class="text-xs font-mono font-normal text-slate-500">(2026-09-02)</span>
         </h2>
-        <span id="active-count" class="text-xs font-mono text-slate-400">0 Items</span>
+        <span id="active-count" class="text-xs font-mono text-slate-400">10 Items</span>
       </div>
 
       <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
         
-        <div class="col-span-full bg-slate-900/50 border border-dashed border-slate-800/80 rounded-2xl p-8 sm:p-10 text-center flex flex-col items-center justify-center gap-3">
-          <div class="text-3xl sm:text-4xl">☕</div>
-          <h3 class="text-base sm:text-lg font-bold text-slate-200">오늘은 검증된 신규 비즈니스 소식이 없습니다</h3>
-          <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-            공식 개발자 채널 및 벤치마크 플랫폼에서 실시간 검증된 실제 릴리즈만 수집합니다.
-          </p>
-        </div>
-        
+                <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_models">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                          <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                          🤖 Applied AI Models & Tech
+                        </span>
+                        <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 font-mono">💼 B2B / SaaS</span>
+                      </div>
+                      <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">MarkTechPost</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
+                      앤트로픽, 캐싱 비용 75% 절감 및 최고 성능 갖춘 Claude Fable 5.1 및 Mythos 5.1 공개
+                    </h3>
+
+                    <ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>복잡한 에이전트 워크플로우 수행 시 발생하는 과도한 API 캐시 읽기 비용과 안전성 최적화 문제</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>새로운 캐싱 아키텍처 적용, Terminal-Bench-Science 52.6% 달성, Project Glasswing 기반 안전 가드레일 분리</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>스마트 캐싱 기법을 통해 에이전트 구동 비용을 기존 대비 45% 절감하여 B2B 엔터프라이즈 도입 장벽을 획기적으로 낮춤</span></li></ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Anthropic</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Claude</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#LLM</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#API Cost Optimization</span>
+                    </div>
+                    <a href="https://www.marktechpost.com/2026/09/01/anthropic-releases-claude-fable-5-1-and-claude-mythos-5-1-52-6-on-terminal-bench-science-and-75-cheaper-cache-reads/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+                
+
+                <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_models">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                          <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                          🤖 Applied AI Models & Tech
+                        </span>
+                        <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 font-mono">💡 Use-Case & BM</span>
+                      </div>
+                      <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">MarkTechPost</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
+                      프린스턴·앤트그룹·스탠퍼드, 퀀트 금융을 위한 자율 알파 요인 발굴 프레임워크 AQuA 발표
+                    </h3>
+
+                    <ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>자율형 퀀트 연구 에이전트가 실험 작성 중 편향된 특징(Leaky Feature)을 성공 사례로 오인하여 편향을 확산시키는 문제</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>에이전트 단에서 데이터 누수를 격리하고 자율적으로 요인 발굴 및 모델을 검증하는 2단계 에이전트 아키텍처</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>금융 파이프라인 내 편향 요인을 자동 차단함으로써 퀀트 헤지펀드 및 자산운용사의 알고리즘 개발 리드타임을 대폭 단축</span></li></ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#QuantFinance</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#AI Agent</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#FinTech</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#AQuA</span>
+                    </div>
+                    <a href="https://www.marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+                
+
+                <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_models">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                          <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                          🤖 Applied AI Models & Tech
+                        </span>
+                        <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 font-mono">🚀 New Product</span>
+                      </div>
+                      <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">MarkTechPost</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
+                      구글 AI, 다변량 시계열 예측 전용 파운데이션 모델 TimesFM-3 출시
+                    </h3>
+
+                    <ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>단일 지표 위주의 시계열 모델이 복잡하게 얽힌 다변량 시계열 데이터를 추론할 때 발생하는 정밀도 저하 문제</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>3억 3천만(330M) 파라미터 기반 제로샷 사전학습, 단일 포워드 패스로 다중 예측 대상 및 과거 공변량 동시 처리</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>재고 예측, 금융 트레이딩, 에너지 수요 추정 등 다양한 산업 분야에서 별도 파인튜닝 없는 제로샷 모형 도입 가능</span></li></ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Google AI</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Time Series</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Foundation Model</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#TimesFM-3</span>
+                    </div>
+                    <a href="https://www.marktechpost.com/2026/08/31/google-ai-releases-timesfm-3-a-330m-parameter-zero-shot-foundation-model-for-multivariate-time-series-forecasting/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+                
+
+                <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_models">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                          <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                          🤖 Applied AI Models & Tech
+                        </span>
+                        <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 font-mono">🚀 New Product</span>
+                      </div>
+                      <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">MarkTechPost</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
+                      Gradium AI, 216ms 초저지연·81% 정확도 달성한 신규 Default TTS 모델 공개
+                    </h3>
+
+                    <ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>음성 합성 모델에서 응답 속도(Latency) 향상 시 음성 품질 및 발음 정확도가 저하되는 상충 관계 문제</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>5개 언어 500개 난해한 문장 기준 81% 패스율, P50 최초 음성 생성 시간(TTFA) 216ms 달성</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>실시간 대화형 AI 콜센터 및 내비게이션, 인공지능 에이전트에 지연 없는 자연스러운 음성 인터페이스 제공</span></li></ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Speech AI</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#TTS</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Gradium AI</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Realtime AI</span>
+                    </div>
+                    <a href="https://www.marktechpost.com/2026/08/31/gradium-ai-releases-new-default-tts-model-81-0-hard-case-pass-rate-at-216-ms-time-to-first-audio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+                
+
+                <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_video">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                          <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                          🎬 AI Content & Creator Tools
+                        </span>
+                        <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 font-mono">🚀 New Product</span>
+                      </div>
+                      <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">Reddit r/StableDiffusion</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
+                      Minimax H3 올인원 4스텝 텍스트/이미지/참조 비디오 경량화 모델 파이프라인 공개
+                    </h3>
+
+                    <ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>비디오 생성 시 참조 이미지, 텍스트, 로라(LoRA) 모델을 개별 로딩하여 오버헤드와 생성 시간이 과도하게 소요되는 문제</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>Minimax H3 융합 4스텝 터보 생성 파이프라인, INT8 양자화 및 레퍼런스 비디오(ref2v) 단일 가속 체크포인트 통합</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>로컬 그래픽 카드에서도 실시간에 가까운 고품질 AI 비디오 스튜디오 구축 가능성을 제시하여 크리에이터 생산성 극대화</span></li></ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Minimax H3</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#AI Video</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#ComfyUI</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Quantization</span>
+                    </div>
+                    <a href="https://www.reddit.com/r/StableDiffusion/comments/1w47mtg/matlowaiminimaxh3fusedturboint8convrot_hugging/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+                
+
+                <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_video">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                          <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                          🎬 AI Content & Creator Tools
+                        </span>
+                        <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 font-mono">💡 Use-Case & BM</span>
+                      </div>
+                      <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">Reddit r/StableDiffusion</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
+                      ComfyUI 커스텀 노드를 통한 실시간 비디오 노이즈 제거 및 DLSS 5 가속 노드 지원
+                    </h3>
+
+                    <ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>고해상도 AI 영상 프레임 연산 시 발생하는 그래픽 하드웨어 과부하 및 프레임 레이트 저하 현상</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>ComfyUI 커스텀 노드 환경 내 DLSS 5 업스케일링 및 AI 기반 실시간 노이즈 리덕션(NR) 파이프라인 결합</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>렌더링 타임을 획기적으로 줄여 영상 렌더링 서버 비용 단축 및 크리에이터 툴 플랫폼의 경쟁력 강화</span></li></ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#ComfyUI</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#DLSS 5</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#AI Video</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Optimization</span>
+                    </div>
+                    <a href="https://www.reddit.com/r/StableDiffusion/comments/1w3zfje/experimental_dlss_5_comfyui_custom_node/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+                
+
+                <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="ai_video">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                          <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                          🎬 AI Content & Creator Tools
+                        </span>
+                        <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 font-mono">🚀 New Product</span>
+                      </div>
+                      <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">The Rundown AI</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
+                      Runway, 코드 없이 웹 서비스 및 대화형 인터페이스를 만드는 'Solaris' 공개
+                    </h3>
+
+                    <ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>복잡한 코딩 지식 없이는 인터랙티브한 웹 인터페이스나 영상 기반 서비스를 직접 제작하기 어려운 한계</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>노코드 인터랙티브 비디오 및 AI 멀티미디어 인터페이스 자동 생성 스택</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>콘텐츠 크리에이터가 복잡한 개발자 도움 없이 직접 웹 애플리케이션 및 경험형 미디어를 배포할 수 있는 신규 수익 모델 구축</span></li></ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Runway</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Solaris</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#No-Code</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#AI Media</span>
+                    </div>
+                    <a href="https://www.therundown.ai/articles/runway-solaris-previews-the-no-code-internet" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+                
+
+                <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="health_fitness">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                          🏃 Digital Health & Wellness Tech
+                        </span>
+                        <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 font-mono">📱 Consumer App</span>
+                      </div>
+                      <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">Gadgets & Wearables</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
+                      구글 픽셀 워치 5, 제스처 제어 기능 강화 및 제미나이 AI 대폭 업데이트
+                    </h3>
+
+                    <ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>스마트워치 소형 화면 내에서의 직접적인 터치 조작 불편함 및 텍스트 중심 보조 기능의 한계</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>온디바이스 제미나이(Gemini) 음성 대화 모델 연동 및 고도화된 손동작 제어 제스처 인식 알고리즘</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>하드웨어 스펙 경쟁을 넘어 AI 온디바이스 UX 중심의 락인(Lock-in) 효과를 극대화하여 웨어러블 생태계 확장</span></li></ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Pixel Watch 5</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Google Gemini</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Smartwatch</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#On-Device AI</span>
+                    </div>
+                    <a href="https://gadgetsandwearables.com/2026/09/01/pixel-watch-5-september-2026-update/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+                
+
+                <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="health_fitness">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                          🏃 Digital Health & Wellness Tech
+                        </span>
+                        <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 font-mono">💡 Use-Case & BM</span>
+                      </div>
+                      <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">Gadgets & Wearables</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
+                      오우라(Oura), 생체 패턴 기반 '수면 나이(Sleep Age)' 지표 관련 특허 출원
+                    </h3>
+
+                    <ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>단순 수면 시간 측정만으로는 사용자가 자신의 수면 건강 상태와 생체 나이 대비 질을 파악하기 어려움</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>심박변이도(HRV), 수면 단계, 체온 변화 데이터를 분석하여 생물학적 나이 대비 수면 질을 산출하는 생체 지표 알고리즘</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>직관적인 건강 메트릭을 추가하여 웰니스 및 수면 관리 특화 링 시장에서의 독점적 서비스 가치와 구독 매출 증대</span></li></ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Oura Ring</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Sleep Age</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Digital Health</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Patent</span>
+                    </div>
+                    <a href="https://gadgetsandwearables.com/2026/09/01/oura-sleep-age/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+                
+
+                <div class="digest-card group relative bg-slate-900/80 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-4 sm:p-5 transition-all duration-200 backdrop-blur-sm flex flex-col justify-between" data-category="health_fitness">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                          🏃 Digital Health & Wellness Tech
+                        </span>
+                        <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 font-mono">💼 B2B / SaaS</span>
+                      </div>
+                      <span class="text-[11px] text-slate-400 font-mono bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800/50">DC Rainmaker</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-snug mb-3">
+                      가민(Garmin), 글로벌 스포츠 코칭 플랫폼 TrainingPeaks 및 TrainHeroic 전격 인수
+                    </h3>
+
+                    <ul class="space-y-2 mb-4 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/60"><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-sky-400 font-semibold shrink-0">🎯 타겟/과제</span><span>스마트워치 하드웨어 제조 중심 비즈니스 모델의 한계 및 소프트웨어 스포츠 코칭 파이프라인 부족</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-indigo-400 font-semibold shrink-0">⚙️ 적용 기술</span><span>가민 헬스 하드웨어 생태계와 트레이닝픽스(TrainingPeaks)의 선수 데이터 분석 및 맞춤형 훈련 플랫폼 통합</span></li><li class="flex items-start gap-2 text-xs sm:text-sm text-emerald-300"><span class="text-emerald-400 font-semibold shrink-0">💼 BM/시사점</span><span>전문 선수 및 코치 B2B 시장까지 플랫폼을 확장하여 피트니스 데이터 구독 모델 및 에코시스템 고도화</span></li></ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Garmin</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#TrainingPeaks</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#M&A</span><span class="inline-block text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700/50">#Fitness SaaS</span>
+                    </div>
+                    <a href="https://www.dcrainmaker.com/2026/07/garmin-acquires-training-trainheroic.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                      <span>실제 원문 보기</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+                
       </div>
     </main>
 
@@ -136,8 +447,53 @@
         </div>
       </div>
       
-        <div class="bg-slate-900/40 border border-dashed border-slate-800 rounded-xl p-4 text-center text-xs text-slate-500">
-          LLM-Stats 및 Artificial Analysis 실시간 피드를 수집 중입니다.
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-xl p-3.5 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-[11px] font-semibold px-2 py-0.5 rounded-md border bg-amber-500/10 text-amber-300 border-amber-500/30">🚀 Model Release</span>
+                  <span class="text-[11px] font-mono text-slate-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800/60">Anthropic</span>
+                </div>
+                <h4 class="text-sm font-bold text-slate-100 hover:text-amber-300 transition-colors mb-1.5">Claude Fable 5.1 & Mythos 5.1 공개</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-3">프롬프트 캐싱 비용을 75% 절감하고, Terminal-Bench-Science에서 52.6%를 기록한 신규 최상위 성능 LLM. 에이전트 실행 비용을 약 45% 축소.</p>
+              </div>
+              <div class="pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px]">
+                <span class="text-slate-500 font-mono">Verified Source</span>
+                <a href="https://artificialanalysis.ai/" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-medium">스펙/벤치마크 확인 →</a>
+              </div>
+            </div>
+            
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-xl p-3.5 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-[11px] font-semibold px-2 py-0.5 rounded-md border bg-cyan-500/10 text-cyan-300 border-cyan-500/30">⚡ API & Infra</span>
+                  <span class="text-[11px] font-mono text-slate-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800/60">Google AI</span>
+                </div>
+                <h4 class="text-sm font-bold text-slate-100 hover:text-amber-300 transition-colors mb-1.5">TimesFM-3 다변량 시계열 파운데이션 모델</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-3">3억 3천만 파라미터 크기의 다변량 제로샷 시계열 예측 모델. 별도의 사전 조율 없이 다양한 산업 지표 예측 가능.</p>
+              </div>
+              <div class="pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px]">
+                <span class="text-slate-500 font-mono">Verified Source</span>
+                <a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-medium">스펙/벤치마크 확인 →</a>
+              </div>
+            </div>
+            
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-xl p-3.5 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-[11px] font-semibold px-2 py-0.5 rounded-md border bg-cyan-500/10 text-cyan-300 border-cyan-500/30">⚡ API & Infra</span>
+                  <span class="text-[11px] font-mono text-slate-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800/60">Google DeepMind</span>
+                </div>
+                <h4 class="text-sm font-bold text-slate-100 hover:text-amber-300 transition-colors mb-1.5">Gemini 3.7 Flash 비디오 분석 비용 66% 절감</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-3">멀티모달 비디오 이해 및 분석 처리 비용을 이전 버전 대비 66% 감축하여 고화질 영상 처리 가성비 대폭 향상.</p>
+              </div>
+              <div class="pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px]">
+                <span class="text-slate-500 font-mono">Verified Source</span>
+                <a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-medium">스펙/벤치마크 확인 →</a>
+              </div>
+            </div>
+            
         </div>
         
     </section>
@@ -558,7 +914,7 @@
     </section>
 
     <footer class="mt-10 py-6 border-t border-slate-900 text-center text-xs text-slate-500 space-y-2">
-      <p>Automated by <strong>GitHub Actions</strong> & <strong>Google GenAI Engine</strong></p>
+      <p>Automated by <strong>GitHub Actions</strong> & <strong>Google GenAI (gemini-3.6-flash)</strong></p>
     </footer>
 
   </div>

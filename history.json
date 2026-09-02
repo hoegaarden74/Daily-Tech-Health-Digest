@@ -1,6 +1,171 @@
 {
-  "last_updated": "2026-09-02T08:34:27.054690+09:00",
+  "last_updated": "2026-09-02T10:28:22.154821+09:00",
   "digests": [
+    {
+      "date": "2026-09-02",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "앤트로픽, 캐싱 비용 75% 절감 및 최고 성능 갖춘 Claude Fable 5.1 및 Mythos 5.1 공개",
+          "target_problem": "복잡한 에이전트 워크플로우 수행 시 발생하는 과도한 API 캐시 읽기 비용과 안전성 최적화 문제",
+          "tech_applied": "새로운 캐싱 아키텍처 적용, Terminal-Bench-Science 52.6% 달성, Project Glasswing 기반 안전 가드레일 분리",
+          "business_insight": "스마트 캐싱 기법을 통해 에이전트 구동 비용을 기존 대비 45% 절감하여 B2B 엔터프라이즈 도입 장벽을 획기적으로 낮춤",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/01/anthropic-releases-claude-fable-5-1-and-claude-mythos-5-1-52-6-on-terminal-bench-science-and-75-cheaper-cache-reads/",
+          "tags": [
+            "Anthropic",
+            "Claude",
+            "LLM",
+            "API Cost Optimization"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "프린스턴·앤트그룹·스탠퍼드, 퀀트 금융을 위한 자율 알파 요인 발굴 프레임워크 AQuA 발표",
+          "target_problem": "자율형 퀀트 연구 에이전트가 실험 작성 중 편향된 특징(Leaky Feature)을 성공 사례로 오인하여 편향을 확산시키는 문제",
+          "tech_applied": "에이전트 단에서 데이터 누수를 격리하고 자율적으로 요인 발굴 및 모델을 검증하는 2단계 에이전트 아키텍처",
+          "business_insight": "금융 파이프라인 내 편향 요인을 자동 차단함으로써 퀀트 헤지펀드 및 자산운용사의 알고리즘 개발 리드타임을 대폭 단축",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery/",
+          "tags": [
+            "QuantFinance",
+            "AI Agent",
+            "FinTech",
+            "AQuA"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "구글 AI, 다변량 시계열 예측 전용 파운데이션 모델 TimesFM-3 출시",
+          "target_problem": "단일 지표 위주의 시계열 모델이 복잡하게 얽힌 다변량 시계열 데이터를 추론할 때 발생하는 정밀도 저하 문제",
+          "tech_applied": "3억 3천만(330M) 파라미터 기반 제로샷 사전학습, 단일 포워드 패스로 다중 예측 대상 및 과거 공변량 동시 처리",
+          "business_insight": "재고 예측, 금융 트레이딩, 에너지 수요 추정 등 다양한 산업 분야에서 별도 파인튜닝 없는 제로샷 모형 도입 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/08/31/google-ai-releases-timesfm-3-a-330m-parameter-zero-shot-foundation-model-for-multivariate-time-series-forecasting/",
+          "tags": [
+            "Google AI",
+            "Time Series",
+            "Foundation Model",
+            "TimesFM-3"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Gradium AI, 216ms 초저지연·81% 정확도 달성한 신규 Default TTS 모델 공개",
+          "target_problem": "음성 합성 모델에서 응답 속도(Latency) 향상 시 음성 품질 및 발음 정확도가 저하되는 상충 관계 문제",
+          "tech_applied": "5개 언어 500개 난해한 문장 기준 81% 패스율, P50 최초 음성 생성 시간(TTFA) 216ms 달성",
+          "business_insight": "실시간 대화형 AI 콜센터 및 내비게이션, 인공지능 에이전트에 지연 없는 자연스러운 음성 인터페이스 제공",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/08/31/gradium-ai-releases-new-default-tts-model-81-0-hard-case-pass-rate-at-216-ms-time-to-first-audio/",
+          "tags": [
+            "Speech AI",
+            "TTS",
+            "Gradium AI",
+            "Realtime AI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Minimax H3 올인원 4스텝 텍스트/이미지/참조 비디오 경량화 모델 파이프라인 공개",
+          "target_problem": "비디오 생성 시 참조 이미지, 텍스트, 로라(LoRA) 모델을 개별 로딩하여 오버헤드와 생성 시간이 과도하게 소요되는 문제",
+          "tech_applied": "Minimax H3 융합 4스텝 터보 생성 파이프라인, INT8 양자화 및 레퍼런스 비디오(ref2v) 단일 가속 체크포인트 통합",
+          "business_insight": "로컬 그래픽 카드에서도 실시간에 가까운 고품질 AI 비디오 스튜디오 구축 가능성을 제시하여 크리에이터 생산성 극대화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w47mtg/matlowaiminimaxh3fusedturboint8convrot_hugging/",
+          "tags": [
+            "Minimax H3",
+            "AI Video",
+            "ComfyUI",
+            "Quantization"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "ComfyUI 커스텀 노드를 통한 실시간 비디오 노이즈 제거 및 DLSS 5 가속 노드 지원",
+          "target_problem": "고해상도 AI 영상 프레임 연산 시 발생하는 그래픽 하드웨어 과부하 및 프레임 레이트 저하 현상",
+          "tech_applied": "ComfyUI 커스텀 노드 환경 내 DLSS 5 업스케일링 및 AI 기반 실시간 노이즈 리덕션(NR) 파이프라인 결합",
+          "business_insight": "렌더링 타임을 획기적으로 줄여 영상 렌더링 서버 비용 단축 및 크리에이터 툴 플랫폼의 경쟁력 강화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w3zfje/experimental_dlss_5_comfyui_custom_node/",
+          "tags": [
+            "ComfyUI",
+            "DLSS 5",
+            "AI Video",
+            "Optimization"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Runway, 코드 없이 웹 서비스 및 대화형 인터페이스를 만드는 'Solaris' 공개",
+          "target_problem": "복잡한 코딩 지식 없이는 인터랙티브한 웹 인터페이스나 영상 기반 서비스를 직접 제작하기 어려운 한계",
+          "tech_applied": "노코드 인터랙티브 비디오 및 AI 멀티미디어 인터페이스 자동 생성 스택",
+          "business_insight": "콘텐츠 크리에이터가 복잡한 개발자 도움 없이 직접 웹 애플리케이션 및 경험형 미디어를 배포할 수 있는 신규 수익 모델 구축",
+          "source_name": "The Rundown AI",
+          "source_url": "https://www.therundown.ai/articles/runway-solaris-previews-the-no-code-internet",
+          "tags": [
+            "Runway",
+            "Solaris",
+            "No-Code",
+            "AI Media"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "구글 픽셀 워치 5, 제스처 제어 기능 강화 및 제미나이 AI 대폭 업데이트",
+          "target_problem": "스마트워치 소형 화면 내에서의 직접적인 터치 조작 불편함 및 텍스트 중심 보조 기능의 한계",
+          "tech_applied": "온디바이스 제미나이(Gemini) 음성 대화 모델 연동 및 고도화된 손동작 제어 제스처 인식 알고리즘",
+          "business_insight": "하드웨어 스펙 경쟁을 넘어 AI 온디바이스 UX 중심의 락인(Lock-in) 효과를 극대화하여 웨어러블 생태계 확장",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/01/pixel-watch-5-september-2026-update/",
+          "tags": [
+            "Pixel Watch 5",
+            "Google Gemini",
+            "Smartwatch",
+            "On-Device AI"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "오우라(Oura), 생체 패턴 기반 '수면 나이(Sleep Age)' 지표 관련 특허 출원",
+          "target_problem": "단순 수면 시간 측정만으로는 사용자가 자신의 수면 건강 상태와 생체 나이 대비 질을 파악하기 어려움",
+          "tech_applied": "심박변이도(HRV), 수면 단계, 체온 변화 데이터를 분석하여 생물학적 나이 대비 수면 질을 산출하는 생체 지표 알고리즘",
+          "business_insight": "직관적인 건강 메트릭을 추가하여 웰니스 및 수면 관리 특화 링 시장에서의 독점적 서비스 가치와 구독 매출 증대",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/01/oura-sleep-age/",
+          "tags": [
+            "Oura Ring",
+            "Sleep Age",
+            "Digital Health",
+            "Patent"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "가민(Garmin), 글로벌 스포츠 코칭 플랫폼 TrainingPeaks 및 TrainHeroic 전격 인수",
+          "target_problem": "스마트워치 하드웨어 제조 중심 비즈니스 모델의 한계 및 소프트웨어 스포츠 코칭 파이프라인 부족",
+          "tech_applied": "가민 헬스 하드웨어 생태계와 트레이닝픽스(TrainingPeaks)의 선수 데이터 분석 및 맞춤형 훈련 플랫폼 통합",
+          "business_insight": "전문 선수 및 코치 B2B 시장까지 플랫폼을 확장하여 피트니스 데이터 구독 모델 및 에코시스템 고도화",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/07/garmin-acquires-training-trainheroic.html",
+          "tags": [
+            "Garmin",
+            "TrainingPeaks",
+            "M&A",
+            "Fitness SaaS"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-01",
       "items": [
