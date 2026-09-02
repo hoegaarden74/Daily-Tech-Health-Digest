@@ -1,6 +1,219 @@
 {
-  "last_updated": "2026-09-02T10:28:22.154821+09:00",
+  "last_updated": "2026-09-03T08:33:50.934020+09:00",
   "digests": [
+    {
+      "date": "2026-09-03",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "엔비디아, 멀티 LLM API 트래픽 라우팅 라이브러리 'Switchyard' 오픈소스 공개",
+          "target_problem": "OpenAI와 Anthropic 등 서로 다른 LLM API 간 규격 차이 및 엔터프라이즈 멀티 모델 라우팅 구현의 복잡성 해결",
+          "tech_applied": "Rust 기반, Apache-2.0 라이선스, 프로비저닝 포맷 디코딩, LLM 분류기 및 스태이지 라우팅 알고리즘, 파스스루 역변환",
+          "business_insight": "개발자가 코드 변경 없이 Claude Code나 OpenAI 커넥터를 자유롭게 전환하도록 인프라 장벽을 낮추어 멀티 클라우드 AI 생태계 주도권 확보",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/02/nvidia-releases-switchyard-rust-proxy-llm-traffic-openai-anthropic-api-translation/",
+          "tags": [
+            "AI",
+            "Infrastructure",
+            "OpenSource",
+            "Rust"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "구글 딥마인드, 경량화 모델 'Gemini 3.8 Flash' 및 보안 특화 'Cyber' 버전 동시 출시",
+          "target_problem": "추론 비용을 낮추면서도 높은 수준의 개발 생산성 및 사이버 보안 패치 자동화를 수행해야 하는 수요 대응",
+          "tech_applied": "동일 파운데이션 인텔리전스 기반 안전 완화 정책 분리, 1M 토큰당 $0.75/$3.75 단가 체계, 가상 버그 패치 속도 2.6배 향상",
+          "business_insight": "경량화 모델 시장에서 성능 대비 비용 효율성(Cost-performance)을 극대화하여 Enterprise DevSecOps 시장 침투 가속화",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/02/google-deepmind-releases-gemini-3-8-flash-and-gemini-3-8-flash-cyber-one-core-model-two-access-envelopes/",
+          "tags": [
+            "AI",
+            "Gemini",
+            "Security",
+            "DevOps"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "앤트로픽, 고객 자체 클라우드에 감시 데이터를 격리 보관하는 'EFS' 기술 발표",
+          "target_problem": "금융·의료 등 엄격한 규제 환경에서 Zero-Data-Retention(데이터 무보관) 규정과 크로스 세션 오남용 탐지 간의 충돌",
+          "tech_applied": "Enterprise Frontier Safeguards(EFS) 아키텍처, 고객 클라우드 계정 내 감시 데이터 저장, 고객 암호화 키 관리, 자동화 탐지 연동",
+          "business_insight": "엔터프라이즈의 보안 우려를 완벽히 해소하는 맞춤형 데이터 주권 관리 구조로 B2B 대형 계약 수주율 제고",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/02/anthropic-enterprise-frontier-safeguards-efs/",
+          "tags": [
+            "AI",
+            "Security",
+            "Enterprise",
+            "Privacy"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "앤트로픽, 성능 개선 및 캐시 읽기 비용 75% 절감한 'Claude Fable 5.1' 출시",
+          "target_problem": "대규모 프롬프트와 에이전틱 워크플로우 운영 시 발생하는 프롬프트 캐싱 비용 부담 및 터미널 환경 제어 성능 한계",
+          "tech_applied": "Terminal-Bench-Science 52.6% 달성, 프롬프트 캐시 읽기 75% 비용 절감, Glasswing 프로젝트 전용 Mythos 5.1 파이프라인 연동",
+          "business_insight": "대폭 낮아진 캐시 단가로 자율형 AI 에이전트 서비스의 TCO(총소유비용)를 감소시켜 자율 코딩 및 연구 시장 독점 강화",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/01/anthropic-releases-claude-fable-5-1-and-claude-mythos-5-1-52-6-on-terminal-bench-science-and-75-cheaper-cache-reads/",
+          "tags": [
+            "AI",
+            "Claude",
+            "CostOptimization",
+            "DeveloperTools"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "퍼플렉시티, 맥(Mac) 환경용 '하이브리드 컴퓨팅' 기능 출시… 온디바이스 보안 강화",
+          "target_problem": "기업 내부 계약서, 기밀 기록 등 외부 클라우드 엔드포인트로 전송이 불가능한 데이터 활용 한계",
+          "tech_applied": "클라우드 에이전트 오케스트레이션과 맥 온디바이스 로컬 모델 간 하이브리드 컴퓨팅 분깃점 가이딩",
+          "business_insight": "민감 데이터는 로컬에서 처리하고 일반 작업은 클라우드로 처리하는 혼합형 BM을 통해 Enterprise Desktop AI 시장 혁신",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/01/perplexity-releases-hybrid-compute-on-mac-cloud-agents-orchestrate-down-to-a-local-model-gated-on-device/",
+          "tags": [
+            "AI",
+            "OnDevice",
+            "Mac",
+            "Privacy"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "MiniMax H3 Max를 활용한 24시간 무한 라이브스트림 방송 파이프라인 구축",
+          "target_problem": "실시간 방송 제작 시 콘텐츠 고갈 및 연출비용 부담 해결",
+          "tech_applied": "MiniMax H3 Max 비디오 파이프라인, 자동 생성 스크립트 기반 실시간 렌더링 및 라이브 스트리밍 연동",
+          "business_insight": "인공지능 기반의 24/7 인터랙티브 무한 방송 채널을 구축하여 미디어 및 엔터테인먼트 부문의 미디어 생성 비용 절감 가능성 입증",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w50cp2/someone_used_minimax_h3_max_to_build_a_livestream/",
+          "tags": [
+            "AI",
+            "VideoGen",
+            "Streaming",
+            "Content"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "ComfyUI용 DLSS 5 커스텀 노드 공개… 고화질 영상 프레임 연산 극대화",
+          "target_problem": "고해상도 비디오 생성 및 디테일 그래픽 렌더링 시 과도하게 발생하는 연산 병목 및 화질 저하",
+          "tech_applied": "DLSS 5 기술, ComfyUI 커스텀 노드(ComfyUI-DLSS5-NR), AI 업스케일링 및 실시간 노이즈 제거 파이프라인",
+          "business_insight": "로컬 크리에이터의 연산 리소스 한계를 엔비디아의 차세대 DLSS 워크플로우 노드로 극복하여 생성형 렌더링 생산성 향상",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w52wnj/dlss_5_ingame_footage_from_diablo_4_its_incredible/",
+          "tags": [
+            "AI",
+            "ComfyUI",
+            "DLSS",
+            "VideoEditing"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "Mac 전용 스튜디오 모드가 탑재된 화면 캡처 솔루션 'CleanShot 5.0' 출시",
+          "target_problem": "영상 비디오 녹화 후 편집 및 시각 주석 작업을 전문 편집 프로그램으로 일일이 옮겨 작업하는 번거로움",
+          "tech_applied": "Mac 네이티브 스튜디오 모드 레코더, AI 자동 주석 및 실시간 비디오 협업 클라우드 툴",
+          "business_insight": "테크 에반젤리스트 및 크리에이터를 위한 유료 소프트웨어 비즈니스 모델 고도화",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/cleanshot",
+          "tags": [
+            "SaaS",
+            "Productivity",
+            "Mac",
+            "Video"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "10초 만에 AI 에이전트에 실제 전화번호를 부여하는 API 'Dial' 출시",
+          "target_problem": "음성 AI 에이전트를 실시간 PSTN 전화망 및 고객센터 시스템에 구축하는 데 드는 긴 개발 시간과 통신 인프라 복잡성",
+          "tech_applied": "온디맨드 가화번호 발급 API, 실시간 저지연 음성 에이전트 전화망 프로토콜 자동 매핑",
+          "business_insight": "AICC(AI 콜센터) 및 자동 세일즈 에이전트 서비스를 도입하려는 기업 고객 대상 개발자 중심 API 사용량 기반 과금 모델 구축",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/dial-3",
+          "tags": [
+            "AI",
+            "VoiceAI",
+            "API",
+            "Telecommunication"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "구글, 픽셀 워치 5용 고정밀 GPS 및 Gemini 제스처 기능 대규모 업데이트",
+          "target_problem": "스마트워치 내 위치 추적 정확도 부족 및 복잡한 터치 입력의 불편함",
+          "tech_applied": "새로운 GPS 트래킹 알고리즘, 온디바이스 Gemini AI, 손짓 기반 스마트 제스처 제어",
+          "business_insight": "하드웨어 변경 없이 획기적인 소프트웨어 및 알고리즘 업데이트로 안드로이드 프리미엄 웰니스 생태계 강화",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/08/google-pixel-watch-5-gps-accuracy-vs-garmin-apple.html",
+          "tags": [
+            "Wearables",
+            "Google",
+            "Fitness",
+            "GPS"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "가민, 스크린을 제거한 24/7 신체 모니터링 밴드 'Garmin Cirqa' 공개",
+          "target_problem": "디스플레이 스마트워치를 항시 착용하는 것에 부담을 느끼는 사용자들의 지속적 헬스케어 데이터 수집 니즈",
+          "tech_applied": "스크린리스 컴팩트 폼팩터, 손목/상완(Bicep) 겸용 착용 디자인, 정밀 24/7 광학 PPG 센서",
+          "business_insight": "Whoop 5.0, Oura Ring 등 스크린리스 트래커 시장과의 직접 경쟁을 통해 피트니스 데이터 플랫폼 서비스 영토 확장",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/08/garmin-cirqa-in-depth-review-one-month-later-expectations-reality.html",
+          "tags": [
+            "Wearables",
+            "Garmin",
+            "HealthTech",
+            "Sensory"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "어메이즈핏, 이중 태양광 패널을 적용한 'T-Rex Dual Solar' 아웃도어 워치 출시",
+          "target_problem": "장시간 아웃도어 탐험 및 장거리 트레일 러닝 시 스마트워치 배터리 조기 소진 문제",
+          "tech_applied": "Dual Solar 패널 시스템, 강화 하우징 아웃도어 설계, 저전력 헬스 모니터링",
+          "business_insight": "태양광 자급식 충전 특화 솔루션으로 익스트림 스포츠 전문 마니아층 유입 촉진",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/02/amazfit-t-rex-dual-solar-two-panels/",
+          "tags": [
+            "Wearables",
+            "Amazfit",
+            "Solar",
+            "Outdoor"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "오라(Oura), 사용자 수면 건강 정도를 직관적으로 제공하는 'Sleep Age' 특허 출원",
+          "target_problem": "단순 수면 점수(Sleep Score) 지표만으로는 직관적인 건강 노화 수준 추적이 어렵다는 점",
+          "tech_applied": "생체 수면 신호 기반 연령 산출 알고리즘, 특허 기반 수면 생체 지표 정밀 측정",
+          "business_insight": "개인화된 생체 연령 정보 지표를 추가하여 Oura 앱의 정기 구독 retention(유지율) 강화 전략 추진",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/01/oura-sleep-age/",
+          "tags": [
+            "HealthTech",
+            "Oura",
+            "Patent",
+            "Sleep"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-02",
       "items": [
