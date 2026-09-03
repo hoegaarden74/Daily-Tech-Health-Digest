@@ -1,6 +1,202 @@
 {
-  "last_updated": "2026-09-03T08:33:50.934020+09:00",
+  "last_updated": "2026-09-04T08:31:58.165592+09:00",
   "digests": [
+    {
+      "date": "2026-09-04",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "OpenAI, 105만 토큰 컨텍스트 및 컴퓨터 제어 모델 'GPT-6 Astra' 공개",
+          "target_problem": "단순 챗봇을 넘어 복잡한 OS 레벨의 컴퓨터 조작 및 장기적인 에이전트 작업을 수행하려는 엔터프라이즈 요구 반영",
+          "tech_applied": "1.05M 토큰 컨텍스트 지원, OSWorld V2-Offline 72.6% 달성, 검색 가능한 노트(searchable notes) 메커니즘으로 Codex 컴팩션 대체",
+          "business_insight": "백만 토큰당 $10/$50의 단가로 단순 대화형 AI 시장을 넘어 자율 에이전트 시장 중심의 과금 모델 확립",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/03/openai-releases-gpt-6-astra-a-1-05m-context-computer-use-model-gated-behind-a-critical-cyber-threshold/",
+          "tags": [
+            "OpenAI",
+            "GPT-6",
+            "Computer Use",
+            "AI Agent"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "앤스로픽, 커머스 에이전트 구축용 오픈소스 블루프린트 'Claude Commerce Agents' 발표",
+          "target_problem": "리테일, 여행, 통신 커머스 에이전트 구축 시 반복되는 스캐폴딩 및 승인 게이트 개발 비용 감소",
+          "tech_applied": "Apache-2.0 라이선스 기반의 Agent Loop, 카탈로그 툴 레이어, 승인 게이트, 평가(Eval) 스위트 레퍼런스 코드",
+          "business_insight": "개발자 생태계 오픈소스 제공을 통해 Claude API 사용량을 증대시키는 B2B 생태계 확장 전략",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/03/anthropic-released-claude-commerce-agents-an-apache-2-0-blueprint-for-shopping-and-merchant-agents-across-retail-travel-telecom-and-entertainment/",
+          "tags": [
+            "Anthropic",
+            "Claude",
+            "Commerce",
+            "OpenSource"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Meta AI, 토큰 및 툴 호출 효율성을 극대화한 'Muse Spark 1.3' 코딩 모델 출시",
+          "target_problem": "에이전트형 코딩 수행 시 발생하는 과도한 API 툴 호출과 토큰 비용 부담 해소",
+          "tech_applied": "이전 버전 대비 툴 호출 약 20% 감소, 토큰 사용량 약 25% 절감 알고리즘 적용",
+          "business_insight": "에이전트 실행 추론 비용(Inference Cost)을 절감하여 개발자 도구의 ROI 개선 및 실시간 응답성 확보",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/03/meta-ai-released-muse-spark-1-3-an-agentic-coding-model-that-uses-20-fewer-tool-calls-and-25-fewer-tokens-than-muse-spark-1-2/",
+          "tags": [
+            "Meta AI",
+            "Coding Agent",
+            "LLM Efficiency"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "퍼플렉시티, 애플 실리콘 전용 고성능 추론 엔진 'Lily' 오픈소스 공개",
+          "target_problem": "로컬 환경에서 Qwen3.6-35B 등 대형 AI 모델 추론 시 느린 속도와 리소스 비효율 문제 해결",
+          "tech_applied": "Rust 및 커스텀 Metal 커널 기반 프레임워크, MLX-LM 대비 Prefill 1.23배 및 Decode 1.35배 향상",
+          "business_insight": "하이브리드 컴퓨팅 솔루션의 추론 엔지니어링 생태계 주도 및 애플 하드웨어 기반 로컬 AI 확산 촉진",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/02/perplexity-open-sources-lily-a-rust-metal-inference-engine-for-qwen3-6-35b-a3b-on-apple-silicon/",
+          "tags": [
+            "Perplexity",
+            "Apple Silicon",
+            "Rust",
+            "Inference Engine"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "NVIDIA, 이종 LLM 트래픽 통합 프록시 'Switchyard' 공개",
+          "target_problem": "OpenAI, Anthropic 등 서로 다른 LLM API 포맷으로 인한 멀티 모델 스위칭 및 호환성 저해 해결",
+          "tech_applied": "Rust 기반 프록시 라이브러리, 라우팅 알고리즘(LLM Classifier, Stage-Router) 및 자동 API 변환 지원",
+          "business_insight": "기업들이 특정 LLM 벤더에 종속되지 않고 인프라 레벨에서 유연하게 파운데이션 모델을 교체하도록 지원",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/02/nvidia-releases-switchyard-rust-proxy-llm-traffic-openai-anthropic-api-translation/",
+          "tags": [
+            "NVIDIA",
+            "Rust",
+            "API Proxy",
+            "Multi-LLM"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Higgsfield, 캐릭터와 제품 동작을 자유롭게 재구성하는 'Genjutsu' 출시",
+          "target_problem": "기존 비디오 생성 도구에서 인물, 장소, 비주얼 제품의 동작 컨트롤이 어려웠던 한계 개선",
+          "tech_applied": "비디오 캐릭터 및 스페셜 프로덕트 모션 리캐스팅(Recasting) AI 모델",
+          "business_insight": "마케팅 비디오, 쇼핑몰 가상 상풍 연출 등 상업용 크리에이터 생태계 맞춤 SaaS 과금 모델 구축",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/higgsfield",
+          "tags": [
+            "Higgsfield",
+            "AI Video",
+            "Motion Recasting",
+            "Creator Tools"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Minimax H3 생태계, 영화적 리얼리즘 LoRA 및 고속 오디오 재생성 기법 확산",
+          "target_problem": "AI 비디오 생성 모델의 저품질 오디오 발생 문제와 사람 동작의 비자연스러움 개선",
+          "tech_applied": "Minimax H3 FP8 모델, CinematicRealism/Better-Human-Motion LoRA 연동 및 잠재 공간 기반 빠른 오디오 리젠 워크플로우",
+          "business_insight": "오픈 커뮤니티 중심의 튜닝 모델과 초고속 렌더링 팁이 상용 크리에이션 워크플로우 비용을 대폭 감소",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w6g1w7/testing_orangesouthminimaxh3cinematicrealism_and/",
+          "tags": [
+            "Minimax H3",
+            "LoRA",
+            "Stable Diffusion",
+            "Video Gen"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Runway, 노코드 인터랙티브 웹 생태계 시대를 느낄 수 있는 'Solaris' 프리뷰 공개",
+          "target_problem": "복잡한 코딩 없이 비디오 기반의 인터랙티브 웹 콘텐츠 및 미디어를 즉시 생성하려는 니즈",
+          "tech_applied": "Runway 비디오 생성 가상화 모델 엔진 및 노코드 웹 생성 플랫폼 인터페이스",
+          "business_insight": "미디어 및 엔터테인먼트 시장을 겨냥한 초개인화 인터랙티브 노코드 비디오 SaaS 확장",
+          "source_name": "The Rundown AI",
+          "source_url": "https://www.therundown.ai/articles/runway-solaris-previews-the-no-code-internet",
+          "tags": [
+            "Runway",
+            "Solaris",
+            "No-Code",
+            "AI Media"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "샤오미, 수면 HRV 지원 및 2,000니트 디스플레이의 'Smart Band 11' 공식 발표",
+          "target_problem": "저가형 스마트 밴드 시장에서 정밀한 심회복도(HRV) 수면 모니터링 및 야외 시인성 부족 문제 극복",
+          "tech_applied": "2,000-nit 고휘도 디스플레이, 수면 중 심율변이도(HRV) 추적 센서 알고리즘",
+          "business_insight": "압도적인 가격 경쟁력으로 수면 웰니스 시장을 교란하며 가성비 웨어러블 점유율 확대",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/03/xiaomi-smart-band-11-launch/",
+          "tags": [
+            "Xiaomi",
+            "Smart Band 11",
+            "Sleep HRV",
+            "Wearable"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Actxa, IFA 2026서 비침습 혈당 추정 지원 $149 스크린리스 'Spark Band' 공개",
+          "target_problem": "바늘 채혈이나 고가의 연속혈당측정기(CGM) 없이 일상적인 혈당 추이를 추적하려는 수요",
+          "tech_applied": "스크린리스 바이오 센서 밴드 기술 기반 비침습 혈당 추정(Glucose Estimate) 수집 시스템",
+          "business_insight": "149달러의 진입 장벽 낮은 가격대로 대중적인 일상 헬스케어 및 당뇨 예방 시장 공략",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/03/actxa-spark-band-glucose-estimate/",
+          "tags": [
+            "Actxa",
+            "Glucose Estimate",
+            "Wearable",
+            "IFA 2026"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "WHOOP, 좌식 시간을 일일 건강 지표로 측정하는 'Movement Score' 특허 출원",
+          "target_problem": "운동 시간 외에 하루 중 정적인 상태(앉아있는 시간)가 신체에 미치는 부정적 영향을 수치화할 지표 부재",
+          "tech_applied": "좌식 행동 분석 특허 알고리즘 기반 무브먼트 스코어 계산 시스템",
+          "business_insight": "기존 피트니스 추적을 넘어 일상 생활습관 전체를 커버하는 구독형 웨어러블 리텐션 제고",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/03/whoop-movement-score-patent/",
+          "tags": [
+            "WHOOP",
+            "Movement Score",
+            "Health Tech",
+            "Patent"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "구글, GPS 정밀도를 대폭 개선한 'Pixel Watch 5' 심층 분석 발표",
+          "target_problem": "기존 스마트워치의 도심/산악 지형 내 GPS 정확도 저하 및 위치 오차 문제",
+          "tech_applied": "위치 정밀도를 대폭 끌어올린 신규 위치 추적 알고리즘 및 센서 융합 기술",
+          "business_insight": "가민, 애플워치와 경쟁하기 위한 러닝/아웃도어 전문 스포츠 유저 타겟팅 기능 강화",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/google-watch-5-in-depth-review.html",
+          "tags": [
+            "Google",
+            "Pixel Watch 5",
+            "GPS Accuracy",
+            "DC Rainmaker"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-03",
       "items": [
@@ -719,203 +915,6 @@
             "WhoopStrain",
             "CoreTemp",
             "CNSFatigue"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-08-28",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "title": "DeepSeek & Qwen 오픈 추론 모델 생태계 확장 및 증류 기법 고도화",
-          "summary": "오픈 가중치 기반 고성능 추론 모델들의 증류(Distillation) 및 강화학습 파이프라인이 대거 공개되며 소형 온디바이스 모델에서도 고난도 수학·코딩 추론 성능이 급격히 향상되었습니다.",
-          "key_points": [
-            "소형 LLM(7B~14B)에 대형 추론 모델의 체인오브소트(CoT)를 전이하는 최적화 프레임워크 대중화",
-            "Hugging Face 오픈 리더보드에서 엔터프라이즈급 추론 효율성 및 비용 절감 벤치마크 입증"
-          ],
-          "source_name": "Hugging Face & Tech Report",
-          "source_url": "https://huggingface.co/blog",
-          "tags": [
-            "Reasoning",
-            "Distillation",
-            "OpenWeights"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "title": "Anthropic Claude 3.5 제품군 및 아키텍처 컨텍스트 캐싱 최적화",
-          "summary": "대규모 코드베이스 분석 및 멀티턴 에이전트 워크플로우 비용을 최대 90% 절감하는 Prompt Caching 아키텍처가 엔터프라이즈 환경에 본격 정착하고 있습니다.",
-          "key_points": [
-            "긴 컨텍스트(200k 토큰) 환경에서 실시간 레이턴시 단축 및 비용 효율 극대화",
-            "도구 연동(Tool Calling)과 구조화된 JSON 출력 제어 성능의 안정성 향상"
-          ],
-          "source_name": "Anthropic Engineering",
-          "source_url": "https://www.anthropic.com/news",
-          "tags": [
-            "Claude",
-            "ContextCaching",
-            "Agents"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "title": "Google DeepMind 차세대 멀티모달 추론 및 실시간 음성/비전 결합",
-          "summary": "텍스트, 오디오, 비디오를 네이티브 수준에서 통합 처리하는 엔드투엔드 멀티모달 모델 아키텍처가 고속 온디바이스 에이전트로 확장되고 있습니다.",
-          "key_points": [
-            "시각적 공간 이해 및 복합 도표/동영상 타임라인 분석 정확도 개선",
-            "초저지연 실시간 양방향 오디오 스트리밍 처리 기술 탑재"
-          ],
-          "source_name": "DeepMind Research",
-          "source_url": "https://deepmind.google/blog",
-          "tags": [
-            "Multimodal",
-            "DeepMind",
-            "RealtimeAI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "title": "OpenAI 차세대 추론 체계 및 엔터프라이즈 API 보안 규격 강화",
-          "summary": "단계별 사고(Chain of Thought)를 자율 검증하는 강화학습 체계와 기업용 데이터 격리 및 감사 로깅 기능이 강화되었습니다.",
-          "key_points": [
-            "수학·과학 경시대회급 문제 해결을 위한 자율 반성(Self-Reflection) 메커니즘 심화",
-            "Zero Data Retention 및 엔터프라이즈 전용 컴플라이언스 인프라 확대"
-          ],
-          "source_name": "OpenAI Newsroom",
-          "source_url": "https://openai.com/news",
-          "tags": [
-            "OpenAI",
-            "SelfVerification",
-            "Enterprise"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "title": "Kling AI 1.5 글로벌 확장 및 고해상도 물리 엔진 시뮬레이션 개선",
-          "summary": "텍스트 및 이미지 기반 고화질 비디오 생성에서 인물 모션 일관성과 유체·충돌 등 물리 법칙 시뮬레이션 정확도가 대폭 강화되었습니다.",
-          "key_points": [
-            "1080p Full HD 해상도에서 10초 이상 일관된 카메라 앵글 제어 및 물리 표현 지원",
-            "복합 프롬프트에 대한 피사체 유지력(Subject Consistency) 및 표정 렌더링 개선"
-          ],
-          "source_name": "Kling AI",
-          "source_url": "https://klingai.com",
-          "tags": [
-            "KlingAI",
-            "VideoGen",
-            "PhysicsSim"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "title": "Higgsfield AI 모바일 네이티브 모션 컨트롤 및 비디오 생성 워크플로우",
-          "summary": "스마트폰 환경에서 고난도 카메라 무빙 및 캐릭터 애니메이션을 직관적으로 제어할 수 있는 모바일 크리에이터 툴킷이 주목받고 있습니다.",
-          "key_points": [
-            "모바일 터치 기반 3D 카메라 궤적 설정 및 실시간 모션 가이드 적용",
-            "소셜 숏폼 포맷에 최적화된 고속 렌더링 파이프라인 구축"
-          ],
-          "source_name": "Higgsfield AI",
-          "source_url": "https://higgsfield.ai",
-          "tags": [
-            "Higgsfield",
-            "MobileVideo",
-            "CameraMotion"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "title": "Runway Gen-3 Alpha 및 Luma Dream Machine의 비디오 확장 생태계",
-          "summary": "키프레임 제어, 카메라 디렉팅 툴, 비디오-투-비디오 스타일 변환 기능이 고도화되며 광고 및 영화 프리프로덕션 워크플로우에 본격 도입되었습니다.",
-          "key_points": [
-            "시작/종료 프레임 지정 및 타임라인 기반 정밀 모션 브러시 제어 기능 제공",
-            "텍스처 디테일과 텍스트 타이포그래피의 비디오 내 렌더링 아티팩트 최소화"
-          ],
-          "source_name": "Runway Research & Luma",
-          "source_url": "https://runwayml.com",
-          "tags": [
-            "RunwayGen3",
-            "LumaAI",
-            "KeyframeControl"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "title": "Pika 2.0 물리 효과 추가 및 실시간 인터랙티브 크리에이티브 도구",
-          "summary": "물체 녹이기, 터뜨리기, 부풀리기 등 독창적인 이펙트 모듈을 통해 직관적이고 인터랙티브한 3D 비디오 편집 인터페이스를 구축했습니다.",
-          "key_points": [
-            "Pikaffects 등 신개념 시각 효과 필터 및 사실적인 물리 왜곡 효과",
-            "웹 기반 실시간 프리뷰 및 프리셋 공유 커뮤니티 생태계 활성화"
-          ],
-          "source_name": "Pika Labs",
-          "source_url": "https://pika.art",
-          "tags": [
-            "Pika",
-            "VisualEffects",
-            "CreativeTools"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "title": "Garmin & Whoop 차세대 회복(Recovery) 알고리즘 및 생체 지표 정밀화",
-          "summary": "심박변이도(HRV), 피부 온도 변화, 호흡수 데이터를 통합 분석하여 중추신경계 피로도와 개인 맞춤형 훈련 권장 강도를 산출하는 기술이 고도화되었습니다.",
-          "key_points": [
-            "수면 단계별 HRV 서지 및 자율신경계 밸런스 기반 실시간 부하 지수 제공",
-            "오버트레이닝 방지를 위한 개인 맞춤형 스트레인(Strain) 가이드라인 정밀화"
-          ],
-          "source_name": "Wearable Tech Reviews",
-          "source_url": "https://www.garmin.com",
-          "tags": [
-            "HRV",
-            "Recovery",
-            "GarminWhoop"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "title": "Apple Health & 의학계 협업: 웨어러블 기반 심혈관 조기 스크리닝",
-          "summary": "수면 무호흡증 감지, 부정맥 예측, 장기 보행 안정성 지표 등 임상 수준의 건강 관리 알고리즘이 스마트워치 생태계 전반으로 확산되고 있습니다.",
-          "key_points": [
-            "다양한 임상 연구를 통해 검증된 수면 중 호흡 장애 및 산소 포화도 저하 패턴 모니터링",
-            "전자건강기록(EHR)과 연동 가능한 개인 맞춤형 심혈관 트렌드 리포트 생성"
-          ],
-          "source_name": "Apple Health Research",
-          "source_url": "https://www.apple.com/healthcare",
-          "tags": [
-            "AppleHealth",
-            "SleepApnea",
-            "Cardiovascular"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "title": "운동생리학 및 대사 모니터링: 연속혈당측정(CGM)과 운동 퍼포먼스 결합",
-          "summary": "운동 중 에너지원 고갈 시점을 예측하고 젖산 역치 및 영양 섭취 타이밍을 최적화하는 비침습/최소침습 바이오센서 통합 플랫폼이 대중화되고 있습니다.",
-          "key_points": [
-            "글리코겐 고갈 및 급격한 혈당 변동성을 실시간 추적하여 페이싱 전략 수립",
-            "지구력 스포츠 선수를 위한 맞춤형 수분·전해질 섭취 타이밍 알고리즘 적용"
-          ],
-          "source_name": "Sports Medicine & Physiology",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov",
-          "tags": [
-            "CGM",
-            "Physiology",
-            "Metabolism"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "title": "웨어러블 센서와 AI 에이전트 결합: 실시간 맞춤형 코칭 진화",
-          "summary": "실시간 바이오피드백 데이터를 거대 언어 모델과 연결하여 사용자의 운동 자세, 페이스, 심박존 이탈을 음성으로 즉각 피드백하는 차세대 AI 코치 기술이 등장했습니다.",
-          "key_points": [
-            "온디바이스 센서 퓨전 데이터를 실시간 자연어 분석으로 변환하는 초경량 추론 엔진",
-            "부상 위험도 감지 시 실시간 부하 감소 권고 및 쿨다운 루틴 자동 안내"
-          ],
-          "source_name": "MobiHealthNews",
-          "source_url": "https://www.mobihealthnews.com",
-          "tags": [
-            "AICoaching",
-            "Biofeedback",
-            "SensorFusion"
           ]
         }
       ]
