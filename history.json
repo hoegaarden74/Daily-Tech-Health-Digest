@@ -1,6 +1,191 @@
 {
-  "last_updated": "2026-09-04T08:31:58.165592+09:00",
+  "last_updated": "2026-09-05T08:18:36.895585+09:00",
   "digests": [
+    {
+      "date": "2026-09-05",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "NeoMME: 멀티모달 및 다국어 지원 효율적 인코더 공개",
+          "target_problem": "다국어 환경 및 다양한 미디어 데이터(텍스트, 이미지 등) 통합 처리 시 발생하는 높은 연산 비용과 연산 비효율성 문제 해결",
+          "tech_applied": "Multimodal-native 및 Multilingual 아키텍처 기반의 경량화 인코더 최적화 기술",
+          "business_insight": "글로벌 시장 대상 멀티모달 AI 서비스를 저비용·고효율로 구축할 수 있는 오픈 모델 기반 인프라 프레임워크 제시",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/Hcompany/neomme",
+          "tags": [
+            "Multimodal",
+            "Encoder",
+            "OpenSource"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "100 GRPO 스텝만으로 350M 소형 모델의 구조화된 출력 성능 개선",
+          "target_problem": "소형 언어 모델(SLM)이 JSON 등 정형 데이터나 구조화된 명령어 출력을 안정적으로 이행하지 못하는 문제 해결",
+          "tech_applied": "TRL 라이브러리 기반 100 단계의 GRPO(Group Relative Policy Optimization) 파인튜닝 기법",
+          "business_insight": "경량화 모델에 최소한의 강화학습 파인튜닝을 적용하여 API 파싱 데이터 정밀도를 높임으로써 에지 및 온디바이스 운영 비용 절감",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/grpo-with-trl-ifstruct",
+          "tags": [
+            "SLM",
+            "GRPO",
+            "StructuredOutput"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "코딩 에이전트를 위한 자체 소유 메모리 시스템 구축 (Funes)",
+          "target_problem": "개발 에이전트의 제한된 단기 컨텍스트 한계 및 외부 메모리 서버 활용 시 발생하는 민감 코드 데이터의 보안 및 비용 문제",
+          "tech_applied": "개발 에이전트 전용 지속성 영구 메모리(Persistent Memory) 온프레미스/자체 호스팅 아키텍처",
+          "business_insight": "기업의 소스코드 보안을 유지하면서 개발 에이전트의 컨텍스트 지속성을 보장하는 프라이빗 AI 자율 개발 솔루션 구현",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/funes",
+          "tags": [
+            "CodingAgent",
+            "Memory",
+            "DevTools"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Perplexity의 ROSE 서빙 스택, vLLM 대비 추론 속도 및 지연시간 개선",
+          "target_problem": "대규모 언어 모델 서빙 프레임워크(vLLM 등) 이용 시 대량 호출 상황에서 발생하는 지연시간(Latency) 및 처리량 한계",
+          "tech_applied": "Perplexity 자체 개발 ROSE 서빙 아키텍처 및 커스텀 추론 서빙 최적화 스택",
+          "business_insight": "실시간 RAG 및 AI 검색 서비스의 응답 속도를 혁신적으로 단축하여 사용자 경험을 개선하고 추론 서버 인프라 비용 단축",
+          "source_name": "AlphaSignal",
+          "source_url": "https://alphasignal.ai/",
+          "tags": [
+            "Inference",
+            "ROSE",
+            "Perplexity"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Video DeltaNet: 하이브리드 어텐션 기반 초고속 비디오 생성 모델",
+          "target_problem": "기존 딥러닝 영상 생성 모델의 느린 렌더링 속도와 높은 GPU 추론 비용 문제",
+          "tech_applied": "VDN-Minimax-H3 기반 하이브리드 어텐션(Hybrid Attention) 알고리즘 및 8 디노이징 스텝 최적화",
+          "business_insight": "실제 비디오 재생 시간보다 빠른 렌더링 속도(8x B200 GPU 기준 14.4초 클립을 11.23초 만에 생성)를 확보하여 실시간 파이프라인 상용화 기반 마련",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w78wmi/video_deltanet_hybrid_attention_to_speed_up_video/",
+          "tags": [
+            "VideoGen",
+            "MiniMax-H3",
+            "FastInference"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Viggle-Animate: MiniMax-H3 기반 단 3단계 포워드 패스 캐릭터 교체 파이프라인",
+          "target_problem": "비디오 내 특정 캐릭터 교체 시 프롬프트, 포즈 추출, 마스크 지정 등 번거로운 전처리 작업 필요성",
+          "tech_applied": "33.1B MiniMax-H3 파인튜닝 모델을 3단계 포워드 패스로 증류(Distillation)한 아키텍처",
+          "business_insight": "텍스트/포즈/마스크 입력 없이 이미지 단 1프레임 리페인팅만으로 빠른 동작 캐릭터 교체가 가능해 숏폼 및 영상 제작 생산성 혁신",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w7b8h9/viggleanimate_character_replacement_based_on/",
+          "tags": [
+            "Viggle",
+            "CharacterReplacement",
+            "VideoEditing"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "LLaDA-Image: 6B 파라미터 기반 통합 이미지 생성 및 편집 모델",
+          "target_problem": "이미지 생성 파이프라인과 이미지 편집 파이프라인이 상호 분리되어 발생하는 모델 파편화 및 추론 비효율성",
+          "tech_applied": "이미지 생성과 수정/편집 작업을 단일 아키텍처로 통합한 6B 파라미터 Unified 모델",
+          "business_insight": "단일 6B 모델로 생성과 편집을 동시에 처리함으로써 e-커머스 상품 이미지 제작 및 디자인 워크플로우 인프라 운영 단가 대폭 절감",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w6u2hb/lladaimage_a_unified_6b_imageedit_model_has_been/",
+          "tags": [
+            "ImageEdit",
+            "LLaDA",
+            "GenerativeAI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "RTX 3070 8GB VRAM 환경에서의 MiniMax H3 고품질 로컬 추론 워크플로우",
+          "target_problem": "고성능 워크스테이션이 없는 일반 개인 크리에이터의 대용량 영상 모델 실행 제약",
+          "tech_applied": "MiniMax Ref 워크플로우, 0.5MP 해상도 설정 및 8GB VRAM 메모리 관리 기법",
+          "business_insight": "보급형 그래픽 카드로도 고품질 영화 스타일 씬/캐릭터 생성이 가능함을 보증하여 AI 마이크로 스튜디오 창업 생태계 활성화 기대",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w6nwp4/pushing_minimax_h3_quality_on_an_rtx_3070_8gb/",
+          "tags": [
+            "MiniMax",
+            "Workflow",
+            "VRAMOptimization"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "Speediance Strap: 코어 체온 트래킹 기능을 탑재한 스크린리스 피트니스 밴드",
+          "target_problem": "기존 웨어러블 기기의 단순 표면 온도 측정 한계 및 운동 중 정확한 심부 체온 측정 필요성",
+          "tech_applied": "손목 부위 심부 체온(Core Body Temperature) 실시간 추적 전용 센싱 알고리즘",
+          "business_insight": "디스플레이를 제거하여 배터리 수명과 가성비를 확보하고 정밀 운동 상태 분석이 필요한 선수 및 하이엔드 피트니스 시장 공략",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/04/speediance-strap-core-body-temperature/",
+          "tags": [
+            "Wearables",
+            "HealthTech",
+            "TemperatureTracking"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Withings BeamO: AI 기반 심장 및 폐 분석 기능 'StethO Sense' 출시 발표",
+          "target_problem": "가정용 원격 진단 기기에서 정밀한 심음 및 폐음 모니터링 분석의 어려움",
+          "tech_applied": "StethO Sense AI 심폐 음향 분석 및 원격 건강 모니터링 데이터 스택",
+          "business_insight": "하드웨어 판매에 그치지 않고 AI 기반 정밀 모니터링 솔루션 소프트웨어를 결합하여 원격 의료 진단 생태계 진입",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/04/withings-beamo-stetho-sense-ifa-2026/",
+          "tags": [
+            "Withings",
+            "DigitalHealth",
+            "AIHealthcare"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "구글 피셀 워치 5: 신규 알고리즘 도입을 통한 GPS 정확도 대폭 향상",
+          "target_problem": "도심 빌딩 숲 및 야외 트레일 러닝 시 스마트워치 GPS 데이터 수신 오차 및 궤적 튀김 현상",
+          "tech_applied": "신규 위성 데이터 보정 알고리즘 및 융합 센서 오차 수정 기술",
+          "business_insight": "하드웨어 폼팩터 변경 없이 알고리즘 최적화만으로 전문 스포츠 워치 수준의 트래킹 정밀도를 확보하여 제품 경쟁력 제고",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/google-watch-5-in-depth-review.html",
+          "tags": [
+            "PixelWatch",
+            "GPS",
+            "Wearables"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "코로스(COROS), 기존 Pace 4 워치에 펌웨어 업데이트로 오프라인 풀 매핑 지원",
+          "target_problem": "중저가 미드레인지 스포츠 워치 라인업의 풀 매핑 및 지도 내비게이션 기능 부재",
+          "tech_applied": "온디바이스 맵 렌더링 최적화 및 무료 소프트웨어 펌웨어 업데이트 파이프라인",
+          "business_insight": "소프트웨어 업데이트를 통한 기존 고객 제품 가치 제고로 브랜드 충성도 향상 및 경쟁사 대비 가성비 경쟁력 확보",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/massive-mapping-watches.html",
+          "tags": [
+            "COROS",
+            "FirmwareUpdate",
+            "SportsTech"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-04",
       "items": [
@@ -766,155 +951,6 @@
             "Wearable",
             "Health Tech",
             "Fitness Tracking"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-08-29",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "title": "Hugging Face & DeepSeek CoT 증류 가중치 오픈 및 벤치마크 분석 (2026-08-29)",
-          "summary": "DeepSeek R1 및 Qwen 2.5 기반의 고난도 추론 체인오브소트(CoT)를 소형 7B~14B 파라미터 모델에 증류한 오픈 가중치가 Hugging Face에 등록되었습니다. GSM8K 및 MATH 벤치마크에서 기존 동급 모델 대비 25% 이상의 정확도 향상을 기록했습니다.",
-          "key_points": [
-            "MATH 500 및 AIME 벤치마크 추론 효율성 입증",
-            "vLLM 및 Ollama 온디바이스 배포 양자화(Q4/Q8) 지원"
-          ],
-          "source_name": "Hugging Face Daily Papers",
-          "source_url": "https://huggingface.co/papers",
-          "tags": [
-            "Reasoning",
-            "CoTDistillation",
-            "OpenWeights"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "title": "Anthropic Claude 3.5 Sonnet 프롬프트 캐싱 아키텍처 및 200k 토큰 비용 최적화",
-          "summary": "엔터프라이즈 코드베이스 분석 및 멀티턴 에이전트 실행 시 반복 컨텍스트 비용을 최대 90% 절감하고 레이턴시를 80% 단축하는 Prompt Caching API 규격이 공식 배포되었습니다.",
-          "key_points": [
-            "최소 1,024 토큰 이상 캐시 블록 5분 TTL 및 자동 갱신 지원",
-            "Tool Calling 및 정형 JSON Schema 검증 처리 안정화"
-          ],
-          "source_name": "Anthropic Engineering News",
-          "source_url": "https://www.anthropic.com/news",
-          "tags": [
-            "PromptCaching",
-            "Claude3.5",
-            "LatencyReduction"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "title": "Google DeepMind 네이티브 오디오-비전 멀티모달 스트리밍 아키텍처 공개",
-          "summary": "별도의 음성 인식(STT)이나 텍스트 변환 과정 없이 오디오 파형과 비디오 프레임을 직접 임베딩 공간에서 융합 처리하는 서브-400ms 초저지연 실시간 멀티모달 추론 파이프라인이 공개되었습니다.",
-          "key_points": [
-            "양방향 음성 억양 및 톤 변화 실시간 감지 추론",
-            "초당 30fps 비디오 스트림의 시각적 공간 추론 정확도 개선"
-          ],
-          "source_name": "Google DeepMind Research",
-          "source_url": "https://deepmind.google/discover/blog",
-          "tags": [
-            "Multimodal",
-            "EndToEnd",
-            "RealtimeInference"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "title": "Kling AI 1.5 1080p 물리 시뮬레이션 및 다중 카메라 궤적 제어 엔진 (2026-08-29)",
-          "summary": "복합 조명 반사, 유체 흐름, 직물 충돌 등 물리 법칙 시뮬레이션 정확도를 강화한 Kling 1.5 비디오 디퓨전 엔진이 업데이트되었습니다. 10초 생성 시 피사체 디테일 손실을 획기적으로 낮췄습니다.",
-          "key_points": [
-            "Pan/Tilt/Zoom 3축 카메라 좌표 궤적 정밀 수치 제어",
-            "다중 인물 씬에서의 얼굴 왜곡 및 모션 블러 아티팩트 40% 저감"
-          ],
-          "source_name": "Kling AI Product Changelog",
-          "source_url": "https://klingai.com",
-          "tags": [
-            "PhysicsEngine",
-            "CameraTrajectory",
-            "DiffusionVideo"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "title": "Higgsfield AI 모바일 네이티브 모션 컨트롤 및 ComfyUI 커스텀 노드 생태계",
-          "summary": "스마트폰 터치 제스처로 3D 공간 내 인물 모션 패스를 설정하고 즉각 렌더링하는 모바일 툴킷과 오픈소스 ComfyUI 연동 파이프라인이 릴리즈되었습니다.",
-          "key_points": [
-            "터치 기반 키프레임 궤적 생성 및 캐릭터 리깅 보간",
-            "ComfyUI 워크플로우를 통한 로컬 GPU 가속 렌더링 지원"
-          ],
-          "source_name": "Reddit r/comfyui & Higgsfield",
-          "source_url": "https://reddit.com/r/comfyui",
-          "tags": [
-            "ComfyUI",
-            "MobileWorkflow",
-            "MotionPath"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "title": "Runway Gen-3 Alpha 키프레임 보간 및 비디오-투-비디오 스타일 전이 고도화",
-          "summary": "영상 시작과 끝 프레임을 고정하고 중간 모션을 물리 연산으로 채우는 First/Last Keyframe 제어와 4K 텍스처 스타일 변환 파이프라인이 정식 릴리즈되었습니다.",
-          "key_points": [
-            "시간축 일관성(Temporal Consistency) 향상으로 프레임 깜빡임 억제",
-            "프로덕션 VFX 파이프라인을 위한 OpenEXR 및 고색역 내보내기 지원"
-          ],
-          "source_name": "Runway Research News",
-          "source_url": "https://runwayml.com/news",
-          "tags": [
-            "KeyframeControl",
-            "TemporalConsistency",
-            "VFXPipeline"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "title": "DC Rainmaker & Garmin Elevate V5 센서: 수면 무호흡 및 HRV 복합 알고리즘 분석 (2026-08-29)",
-          "summary": "Garmin의 최신 Elevate Gen 5 광학 센서 펌웨어 업데이트를 통해 수면 중 산소포화도 급락 및 호흡 장애를 조기 감지하는 FDA 승인 수면 무호흡 감지 알고리즘이 적용되었습니다.",
-          "key_points": [
-            "야간 수면 단계별 HRV 서지와 교감신경 긴장도 연계 분석",
-            "오버트레이닝 방지를 위한 개인화된 회복 권고 시간 정밀화"
-          ],
-          "source_name": "DC Rainmaker Review",
-          "source_url": "https://www.dcrainmaker.com",
-          "tags": [
-            "GarminElevate",
-            "SleepApnea",
-            "HRVRecovery"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "title": "PubMed 임상 연구: 연속혈당측정(CGM) 데이터와 젖산 역치/글리코겐 고갈 상관관계",
-          "summary": "지구력 운동선수 대상 임상 연구에서 운동 중 혈당 변동 기울기(Glucose Slope)가 젖산 역치(LT2) 및 근육 내 글리코겐 고갈 시점을 실시간 예측할 수 있음이 입증되었습니다.",
-          "key_points": [
-            "혈당 급락 전 15분 선행 지표를 통한 탄수화물 섭취 타이밍 산출",
-            "VO2max 80% 이상 고강도 인터벌 세션에서의 대사 효율 최적화"
-          ],
-          "source_name": "PubMed Clinical Physiology",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov",
-          "tags": [
-            "CGM",
-            "LactateThreshold",
-            "MetabolicStudy"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "title": "MobiHealthNews: Whoop 4.0 피부 온도 센서 기반 중추신경계 스트레인(Strain) 산출 고도화",
-          "summary": "Whoop의 최신 알고리즘 업데이트로 미세 피부 온도 변화와 야간 호흡수를 결합하여 근골격계 피로뿐만 아니라 중추신경계(CNS) 피로도를 독립 산출하는 기능이 도입되었습니다.",
-          "key_points": [
-            "체온 리듬 편차 기반 면역 저하 및 오버리칭 사전 경고",
-            "운동 강도별 심박존 타임라인과 누적 생체 부하 지수 시각화"
-          ],
-          "source_name": "MobiHealthNews",
-          "source_url": "https://www.mobihealthnews.com",
-          "tags": [
-            "WhoopStrain",
-            "CoreTemp",
-            "CNSFatigue"
           ]
         }
       ]
