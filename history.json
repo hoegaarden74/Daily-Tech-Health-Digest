@@ -1,6 +1,235 @@
 {
-  "last_updated": "2026-09-05T08:18:36.895585+09:00",
+  "last_updated": "2026-09-06T08:16:20.266134+09:00",
   "digests": [
+    {
+      "date": "2026-09-06",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "GitHub Project HydraFusion: Copilot CLI를 위한 런타임 멀티모델 오케스트레이션 엔진",
+          "target_problem": "단일 코딩 모델 사용 시 발생하는 비용 비효율성 및 특정 코딩 작업별 모델 성능 차이 해결",
+          "tech_applied": "작업 단위별 런타임 최적화 알고리즘, Single/Cascade(품질 게이트)/Critique(교차 검증 리뷰어) 3가지 다이내믹 라우팅 패턴",
+          "business_insight": "Claude Opus 등 고성능 모델 대비 67% 낮은 비용으로 우수한 코딩 생산성을 제공하는 개발자용 맞춤 라우팅 구조 구축",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/05/github-introduces-project-hydrafusion-runtime-multi-model-orchestration-that-builds-a-workflow-per-coding-task-in-copilot-cli/",
+          "tags": [
+            "GitHub",
+            "Copilot",
+            "MultiModel",
+            "LLM Routing"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Adaption Labs 'Invent a Dataset': 태스크 설명 기반 데이터셋 자동 생성 API",
+          "target_problem": "AI 모델 학습에 필요한 시드 데이터 수집, 스키마 설계 및 라벨링 가이드 작성 프로세스의 비효율성",
+          "tech_applied": "단일 API 호출(`datasets.invent`)로 목표 행동 설명문으로부터 도메인, 행 수, 출력 포맷이 정제된 데이터셋 자동 생성",
+          "business_insight": "데이터 라벨링 및 시드 수집 단계 비용을 절감하여 AI 모델 맞춤 파인튜닝 진입 장벽 혁신적 하향",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/04/datasets-invent-api-training-data-without-labeling-adaptive-data-autoscientist/",
+          "tags": [
+            "DataGeneration",
+            "FineTuning",
+            "API",
+            "AdaptionLabs"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Google Gemini Flash: 비디오 토큰을 최대 88% 절감하는 에이전트형 비디오 이해 기술",
+          "target_problem": "긴 비디오 데이터 처리 시 프레임 고정 추출(1 FPS) 방식으로 인한 토큰 폭증 및 비용/지연 시간 부담",
+          "tech_applied": "비디오 전체를 수동적으로 섭취하지 않고 프롬프트 요구에 맞춰 필요한 영상 구간만 탐색·로드하는 Agentic Navigation",
+          "business_insight": "비디오 AI 처리 연산 비용을 88% 감축하여 멀티모달 서비스 운영사의 B2B API 비용 구조 획기적 개선",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/04/google-agentic-video-understanding-gemini-flash-models/",
+          "tags": [
+            "Google",
+            "Gemini",
+            "VideoAI",
+            "TokenOptimization"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "NVIDIA Personal AI Router (PAIR): 홈 네트워크 컴퓨팅 자원 통합 가상 추론 라우터",
+          "target_problem": "로컬 환경 내 분산된 GPU/Mac 노드의 로컬 LLM 추론 자원 파편화 및 자원 활용 비효율",
+          "tech_applied": "Ollama 및 LM Studio 프록시, RTX/DGX Spark/Mac 노드 간 요청 분산 스케줄러 알고리즘 (오픈소스)",
+          "business_insight": "기존 개발 에이전트 변경 없이 로컬 온프레미스 인프라 자원을 효율적으로 분산·통합하여 개인/기업 컴퓨팅 비용 절감",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/04/nvidia-releases-personal-ai-router-pair-an-open-source-virtual-inference-router-that-distributes-local-ai-requests-across-rtx-dgx-spark-and-mac-nodes/",
+          "tags": [
+            "NVIDIA",
+            "OpenSource",
+            "InferenceRouter",
+            "LocalAI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "OpenAI GPT-6 Astra: 105만 토큰 문맥 기반 컴퓨터 유즈(Computer-Use) 전용 플래그십 모델",
+          "target_problem": "기존 대화형 모델의 복잡한 OS 디바이스 제어 및 컴퓨터 자동화 능력 한계",
+          "tech_applied": "OSWorld V2-Offline 72.6% 달성, Codex 요약 구조 대신 검색 가능한 검색 노트 구조 채택, 105만 토큰 컨텍스트 지원",
+          "business_insight": "백그라운드 컴퓨터 제어 및 자동화 에이전트 B2B 시장 공략 (입력 1M 토큰당 $10, 출력 $50 요금제)",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/03/openai-releases-gpt-6-astra-a-1-05m-context-computer-use-model-gated-behind-a-critical-cyber-threshold/",
+          "tags": [
+            "OpenAI",
+            "GPT6",
+            "ComputerUse",
+            "Agent"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "MiniMax H3 기반 VR180 입체 Side-by-Side (SBS) 비디오 생성 LoRA",
+          "target_problem": "VR 헤드셋 사용자들을 위한 180도 입체 비디오 콘텐츠 제작 기술의 부재 및 높은 제작 난이도",
+          "tech_applied": "ComfyUI 연동, 참조 캐릭터/시작 이미지 기반 0.1 4-step Fast LoRA, 21:9 비율 1.3MP stereoscopic 처리",
+          "business_insight": "공간 음향 및 VR 헤드셋 유저층을 위한 초고속 3D/VR 영상 콘텐츠 제작 생태계 활성화 기반 마련",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w7opok/minimax_h3_vr180_stereoscopic_sidebyside_lora/",
+          "tags": [
+            "MiniMax",
+            "VR180",
+            "LoRA",
+            "ComfyUI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Fizgig: 비디오 실시간 프리뷰 기반 LoRA 블록 직접 편집 및 커스텀 툴",
+          "target_problem": "비디오 파인튜닝 모델(LoRA) 수정 시 결과물을 실시간 확인하기 어렵고 파라미터 조작이 복잡한 문제",
+          "tech_applied": "실시간 비디오 피드백 기반 블록 편집, 타 LoRA 합성, Fl2va/Ref2va 지원 및 Turbo LoRA 품질 개선 엔진",
+          "business_insight": "크리에이터 및 프론트엔드 미디어 제작진을 위한 맞춤형 Video LoRA 튜닝 SaaS 툴킷 제공",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w85v66/minimax_edit_your_loras_directly_with_video/",
+          "tags": [
+            "VideoEditing",
+            "LoRA",
+            "Fizgig",
+            "MiniMax"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "FaceFusion Mobile: 안드로이드 NPU 온디바이스 실시간 AI 페이스스왑 앱",
+          "target_problem": "모바일 환경에서 페이스스왑 처리 시 서버 전송으로 인한 개인정보 유출 우려 및 느린 반응 속도",
+          "tech_applied": "Snapdragon Hexagon NPU 최적화, GPU/CPU 폴백 지원, 온디바이스 전면 카메라 실시간 라이브 스왑",
+          "business_insight": "서버 비용 부담 없는 100% 프라이버시 보장 온디바이스 AI 영상 앱 상용화 가능성 제시",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w83xcl/offline_fast_high_quality_ai_face_swap_on_android/",
+          "tags": [
+            "OnDeviceAI",
+            "FaceSwap",
+            "Android",
+            "NPU"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "Retold: 가족 목소리 기반 수작업 스타일 스토리북 애니메이션 생성 서비스",
+          "target_problem": "가족의 음성과 추억을 개성 있고 감성적인 비디오 및 애니메이션 콘텐츠로 기록하기 어려운 점",
+          "tech_applied": "가족 음성 음성합성 기술과 핸드드러잉 필름 스토어 프레임 생성 AI 가공 스택",
+          "business_insight": "개인화된 유료 콘텐츠 제작 B2C 구독 및 개별 선물용 스토리 영상 시장 개척",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/retold",
+          "tags": [
+            "VoiceAI",
+            "Storytelling",
+            "Animation",
+            "B2C"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Oura: 스마트 링 차세대 촉각 알림을 위한 압력 기반 햅틱 특허 출원",
+          "target_problem": "기존 모터 진동 방식 스마트 링의 두께 증가 및 진동 소음/착용감 저하 문제",
+          "tech_applied": "소형 진동 모터 대신 손가락 마디에 은밀한 압력을 가하는 압력 센서 햅틱 피드백 기기 구조",
+          "business_insight": "스마트 링의 슬림한 디자인 유지와 폼팩터 차별화를 통한 웰니스 알림 프리미엄 생태계 강화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/05/oura-ring-pressure-haptic-feedback-patent/",
+          "tags": [
+            "Oura",
+            "SmartRing",
+            "Hardware",
+            "Wearables"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "WHOOP: 사용자 정의 저널 및 1RM(1-Rep Max) 추정 트래킹 기능 업데이트",
+          "target_problem": "단순 심박 트래킹을 넘어 근력 운동 수행 능력을 정확히 측정하고 행동 패턴을 기록하고 싶은 피트니스 유저 니즈",
+          "tech_applied": "운동 수행 데이터 기반 1RM 계산 알고리즘 및 사용자 정의 커스텀 Journal 데이터 분석 체계",
+          "business_insight": "근력 운동 선수 및 피트니스 마니아를 위한 소프트웨어 기능 확장으로 구독 유지율(Retention) 제고",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/05/whoop-custom-journal-workout-tracking-update/",
+          "tags": [
+            "WHOOP",
+            "Fitness",
+            "1RM",
+            "SoftwareUpdate"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Speediance Strap: 심부 체온(Core Body Temp) 측정 전용 스크린리스 피트니스 밴드",
+          "target_problem": "운동 중 피부 표면 온도 대신 정확한 심부 체온 변화를 실시간으로 모니터링하기 어려운 한계",
+          "tech_applied": "스크린리스 손목 밴드 형태의 심부 체온 측정 전용 연속 센싱 알고리즘",
+          "business_insight": "선수 및 내구성 운동 선수를 타깃으로 한 맞춤형 피트니스 센서 기기 시장 개척",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/04/speediance-strap-core-body-temperature/",
+          "tags": [
+            "Speediance",
+            "CoreTemperature",
+            "Wearables",
+            "IFA2026"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Withings BeamO StethO Sense: AI 기반 심장 및 폐 청진 분석 솔루션",
+          "target_problem": "가정 내에서 심장 소리 및 폐 호흡음을 전문적으로 측정하고 질환 징후를 사전 감지하기 어려움",
+          "tech_applied": "디지털 청진기 기능 및 AI 기반 심음·폐음 파형 분석 솔루션 (StethO Sense)",
+          "business_insight": "원격 의료 및 홈 헬스케어 디바이스 고도화를 통한 B2B2C 헬스케어 플랫폼 구독 모델 강화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/04/withings-beamo-stetho-sense-ifa-2026/",
+          "tags": [
+            "Withings",
+            "DigitalHealth",
+            "AIHealth",
+            "BeamO"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "COROS Pace 4: 기존 제품에 전체 지형 맵(Full Mapping) 무료 펌웨어 업데이트 제공",
+          "target_problem": "중저가 피트니스 스마트워치에서 고가 라인업의 전면지형 지도 네비게이션 미지원 문제",
+          "tech_applied": "기존 Pace 4 워치 하드웨어 메모리 및 디스플레이 최적화 풀 매핑 펌웨어 패치",
+          "business_insight": "사후 펌웨어 업데이트를 통한 브랜드 충성도 향상 및 경쟁사(Garmin 등) 대비 하드웨어 가치 증대",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/massive-mapping-watches.html",
+          "tags": [
+            "COROS",
+            "Pace4",
+            "Firmware",
+            "GPSWatch"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-05",
       "items": [
