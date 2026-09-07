@@ -61,15 +61,12 @@ RADAR_SOURCES = [
     {"name": "Artificial Analysis", "url": "https://artificialanalysis.ai/"}
 ]
 
-# 주력 모델 및 안정적 백업 모델 풀
 FALLBACK_MODELS = [
-    "gemini-3.6-flash",
-    "gemini-2.0-flash",
-    "gemini-1.5-flash"
+    "gemini-3.6-flash"
 ]
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 (DailyDigest/3.7)"
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 (DailyDigest/3.8)"
 }
 
 def get_current_kst_date():
@@ -112,7 +109,6 @@ def fetch_rss_feed(source_name, feed_url, max_items=6):
             xml_data = resp.read()
             root = ET.fromstring(xml_data)
 
-            # RSS 2.0 처리
             items = root.findall(".//item")
             if items:
                 for item in items[:max_items]:
@@ -129,7 +125,6 @@ def fetch_rss_feed(source_name, feed_url, max_items=6):
                         })
                 return articles
 
-            # Atom 처리 (Reddit, Hugging Face 등)
             entries = root.findall(".//{http://www.w3.org/2005/Atom}entry") or root.findall(".//entry")
             for entry in entries[:max_items]:
                 t, l, d = "", "", ""
@@ -226,8 +221,9 @@ def query_gemini_waterfall(api_key, prompt):
         }
         data = json.dumps(payload).encode("utf-8")
 
-        for attempt in range(1, 4):
-            print(f"[Pipeline] Requesting analysis via {model_name} (Attempt {attempt}/3)...")
+        max_attempts = 5
+        for attempt in range(1, max_attempts + 1):
+            print(f"[Pipeline] Requesting analysis via {model_name} (Attempt {attempt}/{max_attempts})...")
             req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
             
             try:
@@ -244,16 +240,16 @@ def query_gemini_waterfall(api_key, prompt):
             except urllib.error.HTTPError as e:
                 err_msg = e.read().decode("utf-8")
                 print(f"[API Error] {model_name} HTTP {e.code}: {err_msg[:160]}")
-                if e.code in [503, 429] and attempt < 3:
-                    wait_time = attempt * 10
+                if e.code in [503, 429] and attempt < max_attempts:
+                    wait_time = attempt * 15
                     print(f"[Retry] 서버 지연 감지. {wait_time}초 대기 후 재시도합니다...")
                     time.sleep(wait_time)
                 else:
                     break
             except Exception as e:
                 print(f"[API Error] {model_name}: {e}")
-                if attempt < 3:
-                    time.sleep(5)
+                if attempt < max_attempts:
+                    time.sleep(10)
                 else:
                     break
 
@@ -384,7 +380,7 @@ def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar
                     </div>
                     <a href="{source_url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors shrink-0 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
                       <span>실제 원문 보기</span>
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke_linejoin="round" stroke_width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke_linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                   </div>
                 </div>
@@ -716,7 +712,6 @@ def main():
     history_data = load_history(history_file)
     pruned_digests = prune_history(history_data, current_date_str, max_days=7)
 
-    # 1. 확정된 소스 풀 전체 수집
     categorized_raw_articles = {}
     for cat in CATEGORIES:
         cat_id = cat["id"]
@@ -738,18 +733,15 @@ def main():
         categorized_raw_articles[cat_id] = deduped
         print(f"[Harvester] Collected {len(deduped)} unique candidate items for '{cat_id}'")
 
-    # 2. 벤치마크 및 모델 레이더 수집
     radar_data = fetch_radar_data()
     print(f"[Harvester] Collected {len(radar_data)} radar snippets (LLM-Stats, Artificial Analysis)")
 
-    # 3. Gemini 다단계 우회 분석 실행 (카테고리당 최대 4~5건 유연 큐레이션)
     all_today_items, llm_radar_items, used_model = analyze_raw_data_with_gemini(
         api_key, categorized_raw_articles, radar_data, current_date_str
     )
 
     print(f"\n[Digest] Total verified items: {len(all_today_items)}, Radar items: {len(llm_radar_items)} (Engine: {used_model})")
 
-    # 4. 히스토리 갱신
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
         updated_digests = [{"date": current_date_str, "items": all_today_items}] + filtered_past
@@ -765,7 +757,6 @@ def main():
         json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
     print(f"[Success] Saved updated history to {history_file}")
 
-    # 5. HTML 대시보드 렌더링
     html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests, llm_radar_items, used_model)
 
     with open(index_file, "w", encoding="utf-8") as f:
