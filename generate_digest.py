@@ -61,12 +61,14 @@ RADAR_SOURCES = [
     {"name": "Artificial Analysis", "url": "https://artificialanalysis.ai/"}
 ]
 
+# 가용 모델 풀 (Flash 과부하 시 Pro 모델로 순차 우회)
 FALLBACK_MODELS = [
-    "gemini-3.6-flash"
+    "gemini-3.6-flash",
+    "gemini-3.6-pro"
 ]
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 (DailyDigest/3.8)"
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 (DailyDigest/3.9)"
 }
 
 def get_current_kst_date():
@@ -101,7 +103,7 @@ def prune_history(history_data, current_date_str, max_days=7):
     pruned_digests.sort(key=lambda x: x.get("date", ""), reverse=True)
     return pruned_digests
 
-def fetch_rss_feed(source_name, feed_url, max_items=6):
+def fetch_rss_feed(source_name, feed_url, max_items=5):
     articles = []
     req = urllib.request.Request(feed_url, headers=HEADERS)
     try:
@@ -109,13 +111,14 @@ def fetch_rss_feed(source_name, feed_url, max_items=6):
             xml_data = resp.read()
             root = ET.fromstring(xml_data)
 
+            # RSS 2.0 처리
             items = root.findall(".//item")
             if items:
                 for item in items[:max_items]:
                     t = item.findtext("title", "").strip()
                     l = item.findtext("link", "").strip()
                     d = item.findtext("description", "").strip()
-                    clean_d = re.sub(r"<[^>]+>", " ", d)[:300].strip()
+                    clean_d = re.sub(r"<[^>]+>", " ", d)[:250].strip()
                     if t and l:
                         articles.append({
                             "source_name": source_name,
@@ -125,6 +128,7 @@ def fetch_rss_feed(source_name, feed_url, max_items=6):
                         })
                 return articles
 
+            # Atom 처리 (Reddit, Hugging Face 등)
             entries = root.findall(".//{http://www.w3.org/2005/Atom}entry") or root.findall(".//entry")
             for entry in entries[:max_items]:
                 t, l, d = "", "", ""
@@ -137,7 +141,7 @@ def fetch_rss_feed(source_name, feed_url, max_items=6):
                     elif tag_name in ["summary", "content"]:
                         d = (child.text or "").strip()
 
-                clean_d = re.sub(r"<[^>]+>", " ", d)[:300].strip()
+                clean_d = re.sub(r"<[^>]+>", " ", d)[:250].strip()
                 if t and l:
                     articles.append({
                         "source_name": source_name,
@@ -149,7 +153,7 @@ def fetch_rss_feed(source_name, feed_url, max_items=6):
         print(f"[RSS Error] {source_name} ({feed_url}): {e}")
     return articles
 
-def fetch_web_snippet(source_name, target_url, max_chars=1200):
+def fetch_web_snippet(source_name, target_url, max_chars=800):
     articles = []
     req = urllib.request.Request(target_url, headers=HEADERS)
     try:
@@ -193,7 +197,7 @@ def fetch_radar_data():
                 text_clean = re.sub(r"<script[\s\S]*?</script>", "", html)
                 text_clean = re.sub(r"<style[\s\S]*?</style>", "", text_clean)
                 text_clean = re.sub(r"<[^>]+>", " ", text_clean)
-                text_clean = re.sub(r"\s+", " ", text_clean)[:1000].strip()
+                text_clean = re.sub(r"\s+", " ", text_clean)[:800].strip()
 
                 radar_raw.append({
                     "source_name": r_src["name"],
@@ -221,7 +225,7 @@ def query_gemini_waterfall(api_key, prompt):
         }
         data = json.dumps(payload).encode("utf-8")
 
-        max_attempts = 5
+        max_attempts = 3
         for attempt in range(1, max_attempts + 1):
             print(f"[Pipeline] Requesting analysis via {model_name} (Attempt {attempt}/{max_attempts})...")
             req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
@@ -253,23 +257,28 @@ def query_gemini_waterfall(api_key, prompt):
                 else:
                     break
 
-        print(f"[Fallback] Switching from {model_name} to next model...")
+        print(f"[Fallback] {model_name} 실패. 다음 가용 모델로 우회합니다...")
 
     return None, None
 
 def analyze_raw_data_with_gemini(api_key, categorized_articles, radar_data, current_date_str):
+    # 과밀 방지 및 토큰 다이어트: 카테고리별 상위 6건으로 후보군 압축
+    optimized_input = {}
+    for cat_id, items in categorized_articles.items():
+        optimized_input[cat_id] = items[:6]
+
     prompt = f"""You are a Principal Product Strategist and Tech Briefing Engine.
 Analyze the following REAL, VERIFIED live-scraped items from top community & developer sources, deduplicate identical news across sources, and generate a structured business intelligence briefing in Korean.
 
 CRITICAL ZERO-HALLUCINATION & CURATION RULES:
 1. ONLY analyze and summarize the exact real items provided in the input below. NEVER invent products, names, or fake URLs.
-2. For EACH category, aim to select and curate up to 4 to 5 high-impact, practical software tools, models, or device updates if valid data exists in the input.
+2. For EACH category, select and curate up to 4 to 5 high-impact, practical software tools, models, or device updates if valid data exists in the input.
 3. If there are fewer than 4-5 verified, high-quality items for a category in the input, ONLY return the genuinely valid items. Do NOT force-fill with low-value gossip or hallucinated entries.
 4. For "ai_video" (AI Content & Creator Tools), prioritize actual video/audio/image generation tools, LoRA models, avatar creators, and workflow software.
 5. Keep the exact "source_url" and "source_name" provided in the input.
 
 INPUT REAL ARTICLES:
-{json.dumps(categorized_articles, ensure_ascii=False, indent=2)}
+{json.dumps(optimized_input, ensure_ascii=False, indent=2)}
 
 INPUT BENCHMARK & RADAR DATA:
 {json.dumps(radar_data, ensure_ascii=False, indent=2)}
@@ -712,6 +721,7 @@ def main():
     history_data = load_history(history_file)
     pruned_digests = prune_history(history_data, current_date_str, max_days=7)
 
+    # 1. 확정된 소스 풀 전체 수집
     categorized_raw_articles = {}
     for cat in CATEGORIES:
         cat_id = cat["id"]
@@ -722,9 +732,9 @@ def main():
             src_url = src.get("url", "")
 
             if src_type == "rss":
-                items = fetch_rss_feed(src_name, src_url, max_items=6)
+                items = fetch_rss_feed(src_name, src_url, max_items=5)
             else:
-                items = fetch_web_snippet(src_name, src_url, max_chars=1200)
+                items = fetch_web_snippet(src_name, src_url, max_chars=800)
 
             raw_items.extend(items)
             time.sleep(1)
@@ -733,15 +743,18 @@ def main():
         categorized_raw_articles[cat_id] = deduped
         print(f"[Harvester] Collected {len(deduped)} unique candidate items for '{cat_id}'")
 
+    # 2. 벤치마크 및 모델 레이더 수집
     radar_data = fetch_radar_data()
     print(f"[Harvester] Collected {len(radar_data)} radar snippets (LLM-Stats, Artificial Analysis)")
 
+    # 3. Gemini 다단계 우회 분석 실행
     all_today_items, llm_radar_items, used_model = analyze_raw_data_with_gemini(
         api_key, categorized_raw_articles, radar_data, current_date_str
     )
 
     print(f"\n[Digest] Total verified items: {len(all_today_items)}, Radar items: {len(llm_radar_items)} (Engine: {used_model})")
 
+    # 4. 히스토리 갱신
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
         updated_digests = [{"date": current_date_str, "items": all_today_items}] + filtered_past
@@ -757,6 +770,7 @@ def main():
         json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
     print(f"[Success] Saved updated history to {history_file}")
 
+    # 5. HTML 대시보드 렌더링
     html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests, llm_radar_items, used_model)
 
     with open(index_file, "w", encoding="utf-8") as f:
