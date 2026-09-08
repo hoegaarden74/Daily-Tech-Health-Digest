@@ -3,7 +3,9 @@ import sys
 import json
 import re
 import time
+import random
 import datetime
+import tempfile
 from datetime import timezone, timedelta
 import urllib.request
 import urllib.parse
@@ -61,10 +63,12 @@ RADAR_SOURCES = [
     {"name": "Artificial Analysis", "url": "https://artificialanalysis.ai/"}
 ]
 
-# 가용 모델 풀 (Flash 과부하 시 Pro 모델로 순차 우회)
-FALLBACK_MODELS = [
+# 무료 API 티어에서 사용할 Flash 계열 기본값.
+# GEMINI_MODELS="model-a,model-b"로 코드 수정 없이 순서를 바꿀 수 있다.
+DEFAULT_GEMINI_MODELS = [
     "gemini-3.6-flash",
-    "gemini-3.6-pro"
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash",
 ]
 
 HEADERS = {
@@ -213,22 +217,45 @@ def fetch_radar_data():
             })
     return radar_raw
 
+def get_gemini_models():
+    configured = os.environ.get("GEMINI_MODELS", "").strip()
+    if not configured:
+        return DEFAULT_GEMINI_MODELS
+    return [model.strip() for model in configured.split(",") if model.strip()]
+
+def get_retry_delay(error, attempt, base_seconds=4, max_seconds=60):
+    retry_after = error.headers.get("Retry-After") if error.headers else None
+    if retry_after:
+        try:
+            return min(float(retry_after), max_seconds)
+        except ValueError:
+            pass
+    exponential = min(base_seconds * (2 ** (attempt - 1)), max_seconds)
+    return exponential + random.uniform(0, min(exponential * 0.25, 5))
+
 def query_gemini_waterfall(api_key, prompt):
-    for model_name in FALLBACK_MODELS:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
+    models = get_gemini_models()
+    if not models:
+        print("[CRITICAL ERROR] 사용할 Gemini 모델이 설정되지 않았습니다.")
+        return None, None
+
+    for model_name in models:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent"
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "temperature": 0.1,
                 "responseMimeType": "application/json"
             }
         }
         data = json.dumps(payload).encode("utf-8")
 
-        max_attempts = 3
+        max_attempts = 4
         for attempt in range(1, max_attempts + 1):
             print(f"[Pipeline] Requesting analysis via {model_name} (Attempt {attempt}/{max_attempts})...")
-            req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+            req = urllib.request.Request(url, data=data, headers={
+                "Content-Type": "application/json",
+                "x-goog-api-key": api_key,
+            })
             
             try:
                 with urllib.request.urlopen(req, timeout=90) as resp:
@@ -244,9 +271,9 @@ def query_gemini_waterfall(api_key, prompt):
             except urllib.error.HTTPError as e:
                 err_msg = e.read().decode("utf-8")
                 print(f"[API Error] {model_name} HTTP {e.code}: {err_msg[:160]}")
-                if e.code in [503, 429] and attempt < max_attempts:
-                    wait_time = attempt * 15
-                    print(f"[Retry] 서버 지연 감지. {wait_time}초 대기 후 재시도합니다...")
+                if e.code in [408, 429, 500, 502, 503, 504] and attempt < max_attempts:
+                    wait_time = get_retry_delay(e, attempt)
+                    print(f"[Retry] 일시적 오류 감지. {wait_time:.1f}초 대기 후 재시도합니다...")
                     time.sleep(wait_time)
                 else:
                     break
@@ -316,10 +343,32 @@ OUTPUT STRICT JSON SCHEMA:
 
     try:
         parsed = json.loads(text)
-        return parsed.get("briefing_items", []), parsed.get("llm_radar_items", []), used_model
+        briefing_items = parsed.get("briefing_items")
+        radar_items = parsed.get("llm_radar_items")
+        if not isinstance(briefing_items, list) or not isinstance(radar_items, list):
+            raise ValueError("필수 JSON 배열이 없습니다.")
+        if not briefing_items:
+            raise ValueError("브리핑 항목이 0건입니다.")
+        return briefing_items, radar_items, used_model
     except Exception as e:
         print(f"[JSON Parse Error] {e}")
         return [], [], used_model
+
+def atomic_write_text(file_path, content):
+    target_dir = os.path.dirname(os.path.abspath(file_path))
+    temp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", dir=target_dir, delete=False
+        ) as temp_file:
+            temp_file.write(content)
+            temp_file.flush()
+            os.fsync(temp_file.fileno())
+            temp_path = temp_file.name
+        os.replace(temp_path, file_path)
+    finally:
+        if temp_path and os.path.exists(temp_path):
+            os.unlink(temp_path)
 
 def render_html_dashboard(current_date_str, today_items, past_digests, llm_radar_items=None, used_model=None):
     categorized_today = {c["id"]: [] for c in CATEGORIES}
@@ -754,6 +803,10 @@ def main():
 
     print(f"\n[Digest] Total verified items: {len(all_today_items)}, Radar items: {len(llm_radar_items)} (Engine: {used_model})")
 
+    if not all_today_items or not used_model:
+        print("[CRITICAL ERROR] Gemini 분석에 실패했습니다. 기존 페이지와 히스토리를 보존합니다.")
+        sys.exit(1)
+
     # 4. 히스토리 갱신
     filtered_past = [d for d in pruned_digests if d.get("date") != current_date_str]
     if all_today_items:
@@ -766,15 +819,18 @@ def main():
         "digests": updated_digests
     }
 
-    with open(history_file, "w", encoding="utf-8") as f:
-        json.dump(history_data_to_save, f, ensure_ascii=False, indent=2)
-    print(f"[Success] Saved updated history to {history_file}")
+    history_output = json.dumps(history_data_to_save, ensure_ascii=False, indent=2)
 
     # 5. HTML 대시보드 렌더링
     html_output = render_html_dashboard(current_date_str, all_today_items, updated_digests, llm_radar_items, used_model)
 
-    with open(index_file, "w", encoding="utf-8") as f:
-        f.write(html_output)
+    if "<!DOCTYPE html>" not in html_output or current_date_str not in html_output:
+        print("[CRITICAL ERROR] HTML 결과 검증에 실패했습니다. 기존 파일을 보존합니다.")
+        sys.exit(1)
+
+    atomic_write_text(history_file, history_output)
+    atomic_write_text(index_file, html_output)
+    print(f"[Success] Saved updated history to {history_file}")
     print(f"[Success] Successfully generated {index_file} ({len(html_output)} bytes)")
 
 if __name__ == "__main__":
