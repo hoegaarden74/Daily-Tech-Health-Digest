@@ -41,8 +41,15 @@ jobs:
       - name: Generate Daily Digest
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODELS: gemini-3.6-flash,gemini-3.5-flash-lite,gemini-3.5-flash
         run: |
           python generate_digest.py
+
+      - name: Validate generated files
+        run: |
+          test -s index.html
+          test -s history.json
+          python -m json.tool history.json > /dev/null
 
       - name: Commit and push changes
         run: |
@@ -59,10 +66,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p site
+          cp index.html site/index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: 'site'
 
       - name: Deploy to GitHub Pages
         id: deployment
