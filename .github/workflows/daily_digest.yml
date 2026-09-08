@@ -2,9 +2,9 @@ name: Daily Tech & Health Digest Pipeline
 
 on:
   schedule:
-    # 매일 KST 06:38 (UTC 21:38) - 큐 지연 발생 시에도 KST 08:00~08:30 사이 배포 완료
-    - cron: '38 21 * * *'
-  workflow_dispatch:      # 수동 실행 트리거
+    # 매일 한국 시간(KST) 새벽 06:17 실행 (UTC 기준 21:17)
+    - cron: '17 21 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
