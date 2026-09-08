@@ -1,6 +1,187 @@
 {
-  "last_updated": "2026-09-08T08:50:15.719619+09:00",
+  "last_updated": "2026-09-08T10:34:11.747765+09:00",
   "digests": [
+    {
+      "date": "2026-09-08",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "OpenBMB, 온디바이스 최적화 2.52B 모델 'MiniCPM5-2B' 공개",
+          "target_problem": "기기 내 제한된 연산 자원 환경에서 긴 문맥 처리와 높은 성능을 동시 달성해야 하는 문제 해결",
+          "tech_applied": "2.516B 파라미터 Causal 언어 모델, 131,072 토큰 기본 컨텍스트 윈도우, 온디바이스 추론 최적화",
+          "business_insight": "모바일 및 엣지 디바이스 환경에서 클라우드 컴퓨팅 비용을 줄이고 프라이버시를 보호하는 온디바이스 AI 서비스 구축 가속화",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/07/openbmb-releases-minicpm5-2b-a-2-52b-dense-model-averaging-53-9-across-34-benchmarks-and-built-to-run-on-device/",
+          "tags": [
+            "AI Models",
+            "On-Device AI",
+            "OpenBMB",
+            "LLM"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Axis Robotics, 웹 브라우저 기반 로봇 제어 데이터 수집 엔진 'AXIS' 출시",
+          "target_problem": "고가의 데이터 수집 하드웨어와 연구실 환경 제한으로 인한 로봇 조작 데이터셋 확장 병목 현상 해소",
+          "tech_applied": "브라우저 기반 실시간 데이터 수집 인터페이스, 백엔드 GPU 연산 오프로딩, 207개 로봇 조작 과제 및 50,129개 궤적 데이터",
+          "business_insight": "실험실 외 대규모 실용 데이터 수집 프로세스 효율화로 로보틱스 AI 모델의 학습 시간 단축 및 개발 비용 절감",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/07/axis-robotics-releases-axis-a-browser-based-data-engine-with-207-robot-manipulation-tasks-and-50129-trajectories/",
+          "tags": [
+            "Robotics",
+            "Data Engine",
+            "AXIS",
+            "AI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "IFM, Apache 2.0 라이선스 기반 'K2 Horizon' 6개 모델 라인업 공개",
+          "target_problem": "다양한 매개변수 규모를 커버하면서 상업적 이용이 가능한 고성능 오픈소스 모델 선택지 부족 문제",
+          "tech_applied": "0.9B부터 375B 매개변수까지 포함하는 6개 오프닝 체크포인트 모델, Apache 2.0 오픈소스 라이선스",
+          "business_insight": "기업이 라이선스 제약 없이 자체 인프라 요구사항에 맞게 모델 스케일을 선택하여 비용 효율적인 맞춤형 AI 인프라 구축 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/06/ifm-releases-k2-horizon-six-apache-2-0-models-from-0-9b-to-375b/",
+          "tags": [
+            "Open Source",
+            "LLM",
+            "IFM",
+            "Apache 2.0"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "H Company, 단일 타워 멀티모달 인코더 'NeoMME' 260M 및 800M 모델 발표",
+          "target_problem": "기존 멀티모달 검색 모델의 복잡한 비전 타워 및 디코더 구조로 인한 리소스 소모 극복",
+          "tech_applied": "비전 타워와 인과적 디코더 제거, 단일 트랜스포머 내 다국어 텍스트 토큰 및 32x32 원시 이미지 패치 직접 처리",
+          "business_insight": "텍스트 및 비주얼 정보 동시 인덱싱 성능 개선으로 멀티모달 RAG 및 엔터프라이즈 검색 서비스 연산 비용 획기적 절감",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/06/h-company-releases-neomme-a-family-of-260m-and-800m-single-tower-multimodal-encoders-that-drop-the-vision-tower-and-causal-decoder/",
+          "tags": [
+            "Multimodal",
+            "Encoder",
+            "H Company",
+            "AI Research"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Meta FAIR, GPU 컴퓨팅 비용 절감을 위한 AI 연구 선호도 모델(RPM) 도입",
+          "target_problem": "AI 에이전트가 제안하는 무수한 머신러닝 실험으로 인해 발생하는 과도한 GPU 자원 및 비용 낭비",
+          "tech_applied": "고정된 LLM 판정 모델 기반의 15개 후보 실험 순위 평가 알고리즘, AIRS-Bench 검증",
+          "business_insight": "비효율적인 AI 실험의 실제 실행을 사전에 차단함으로써 연구 개발 비용 단축 및 GPU 컴퓨팅 자원 최적화 지원",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/06/meta-fair-introduces-ai-research-preference-models-rpms-ranking-ml-experiments-before-spending-gpu-hours/",
+          "tags": [
+            "Meta FAIR",
+            "GPU Optimization",
+            "AI Agent",
+            "MLOps"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "MiniMax H3 기반 고품질 영상 생성을 위한 112가지 설정 파라미터 비교 스위프",
+          "target_problem": "비디오 생성 AI 모델 실행 시 하이퍼파라미터 조합 미숙지로 인한 품질 저하 및 자원 손실",
+          "tech_applied": "RTX 3090 환경에서의 MiniMax H3 품질 테스트, 프롬프트·시드·스케줄러 고정 및 LoRA/RefMod 제어 실험",
+          "business_insight": "로컬 GPU 비디오 생성 워크플로우에 최적화된 설정을 도출함으로써 AI 영상 제작자의 워크플로우 생산성 증대",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w9rvz6/i_ran_112_minimax_h3_tests_on_an_rtx_3090/",
+          "tags": [
+            "AI Video",
+            "MiniMax H3",
+            "Workflow",
+            "Optimization"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Minimax fl2va 스케치 제어 기반의 디테일한 비디오 애니메이션 연출 기법",
+          "target_problem": "기존 프롬프트 기반 비디오 AI 제어의 한계로 인한 프레임 단위 동작 및 구도 제어 불확실성",
+          "tech_applied": "Minimax fl2va 모델 및 스케치 연동 애니메이션 제어 워크플로우",
+          "business_insight": "크리에이터가 직관적인 스케치 패스로 비디오 연출을 정밀 제어함에 따라 애니메이션 콘텐츠 제작 시간 단축",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w9ew6g/minimax_fl2va_if_you_know_a_bit_how_to_sketch_you/",
+          "tags": [
+            "AI Video",
+            "Animation",
+            "Minimax",
+            "ControlNet"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "Antalpha, 크립토 리서치 및 예측 전용 비구 Custodial AI 에이전트 'Nina' 출시",
+          "target_problem": "복잡한 자산 리서치 및 트레이딩 과정에서의 사용자 의사결정 지연과 웹3 보안 리스크",
+          "tech_applied": "Non-custodial 아키텍처, AI 에이전트 기반 자산 트레이딩 및 시장 예측 엔진",
+          "business_insight": "개인키 보안을 유지하면서 크립토 시장의 데이터 분석과 거래 실행을 자동화하는 AI 자산 관리 구독 서비스 가능성",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/antalpha",
+          "tags": [
+            "Crypto",
+            "AI Agent",
+            "Fintech",
+            "Productivity"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "삼성전자, 갤럭시 워치 고혈압 알림 기능 실증을 위한 임상 연구 착수",
+          "target_problem": "일상생활 속 고혈압 위험군의 초기 인지 부족 및 연속적 혈압 변동성 측정 한계",
+          "tech_applied": "갤럭시 워치 바이오센서 기반 PPG 알림 모니터링 및 고혈압 추적 스터디 알고리즘",
+          "business_insight": "웨어러블 모니터링 기능의 의료기기급 승인 기반 마련으로 디지털 헬스케어 생태계 및 B2B 의료 연계 서비스 확장",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/07/samsung-hypertension-alerts/",
+          "tags": [
+            "Wearables",
+            "Samsung",
+            "Healthcare",
+            "Hypertension"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Soundcore, IFA 2026서 체온 및 수면 추적 지원 'Sleep Earbuds 4 Pro' 공개",
+          "target_problem": "단순 코골이 차단을 넘어 수면 중 생체 신호 정밀 측정과 종합 수면 관리 니즈 증대",
+          "tech_applied": "소음 차단 모듈, 수면 상태 체온 및 생체 데이터 센싱 추적 기술",
+          "business_insight": "슬립테크 제품이 모니터링 웨어러블 디바이스 영역으로 확장되며 웰니스 구독 모델과의 결합 가능성 제시",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/07/soundcore-sleep-earbuds-4-pro/",
+          "tags": [
+            "SleepTech",
+            "Wearables",
+            "Soundcore",
+            "IFA 2026"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "COROS, 기존 Pace 4 스마트워치 대상 풀 매핑 기능 무상 펌웨어 업데이트 발표",
+          "target_problem": "보급형 아웃도어 스포츠 워치에서의 지도 및 경로 탐색 기능 부재 문제",
+          "tech_applied": "온디바이스 풀 매핑 엔진 및 경로 그래픽 렌더링 펌웨어 업그레이드",
+          "business_insight": "기존 제품의 소프트웨어 가치 극대화를 통해 고객 충성도를 높이고 아웃도어 워치 시장 경쟁력 대폭 강화",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/massive-mapping-watches.html",
+          "tags": [
+            "COROS",
+            "Smartwatch",
+            "Firmware",
+            "Outdoor"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-07",
       "items": [
