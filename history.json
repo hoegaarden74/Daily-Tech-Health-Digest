@@ -1,6 +1,176 @@
 {
-  "last_updated": "2026-09-10T08:15:01.978649+09:00",
+  "last_updated": "2026-09-11T08:12:10.045567+09:00",
   "digests": [
+    {
+      "date": "2026-09-11",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "IBM, 상업용 라이선스의 Granite 시계열 모델 PatchTST-FM-r2 출시",
+          "target_problem": "시계열 데이터 예측 및 이상 탐지를 수행하려는 기업 대상 데이터 예측 모델 정밀도 개선",
+          "tech_applied": "PatchTST-FM-r2 파운데이션 모델 아키텍처 및 파이프라인 적용",
+          "business_insight": "상업적 이용이 허용된 오픈 라이선스로 enterprise B2B 데이터 분석 SaaS 시장 진입 장벽 완화",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+          "tags": [
+            "IBM",
+            "TimeSeries",
+            "B2B"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "100 단계 GRPO 학습을 통한 350M 모델 구조화 출력 성능 향상",
+          "target_problem": "경량화 LLM에서 JSON 등 구조화된 데이터 출력을 신뢰성 있게 생성하기 어려움",
+          "tech_applied": "TRL 기반 100 단계 GRPO(Group Relative Policy Optimization) 파이널 튜닝",
+          "business_insight": "소형 라이트급 모델로 온디바이스 및 저비용 API 구축이 가능해져 구조화 데이터 처리 비용 획기적 절감",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/grpo-with-trl-ifstruct",
+          "tags": [
+            "FineTuning",
+            "GRPO",
+            "StructuredOutput"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "NeoMME: 멀티모달 및 다국어 지원 효율적 엔코더 모델",
+          "target_problem": "다국어 텍스트와 다양한 이미지/멀티모달 표현을 동시에 고효율로 임베딩·엔코딩할 필요성",
+          "tech_applied": "Multimodal-native 및 Multilingual Encoder 파이프라인 아키텍처",
+          "business_insight": "다국어 데이터 검색 및 시각 검색 시스템 구축에 필요한 컴퓨팅 자원 및 추론 시간 절감 효과",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/Hcompany/neomme",
+          "tags": [
+            "Multimodal",
+            "Encoder",
+            "AI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Gradio 워크플로우를 활용한 AUTOMATIC1111 재구성",
+          "target_problem": "기존 복잡한 SD WebUI 환경을 유연한 파이썬 모듈 및 커스텀 UI 워크플로우로 개편 필요성",
+          "tech_applied": "Gradio 커스텀 워크플로우 모듈화 엔진",
+          "business_insight": "이미지 생성 툴의 커스텀 파이프라인 구축 단계를 단순화하여 디벨로퍼 생산성 확보",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/gradio-workflow-1111",
+          "tags": [
+            "StableDiffusion",
+            "Gradio",
+            "Workflow"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "편집 가능한 멜로디 파이프라인을 지원하는 음악 생성 AI 'Yue2' 공개",
+          "target_problem": "기존 음원 생성 AI의 제어 불가능성을 해결하고 가사와 스타일 프롬프트 기반 멜로디/코드 계획 수립",
+          "tech_applied": "Editable composition 기반 멜로디·코드 및 보컬/반주 분리 합성 모델",
+          "business_insight": "음악 창작자 및 서브컬처 콘텐츠 제작자가 정교하게 세부 구성을 수정할 수 있는 음원 워크플로우 제안",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wc2rf0/new_music_model_released_yue2/",
+          "tags": [
+            "MusicAI",
+            "Yue2",
+            "AudioGen"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "MiniMax H3 기반 생성 및 RefMod 참조 이미지 제어 기술 활용",
+          "target_problem": "영상/이미지 생성 시 특정 스타일, 의상, 복합 참조 이미지를 다중 융합(Fusion)하여 일관성 유지",
+          "tech_applied": "ComfyUI MiniMaxH3Mod 및 RefMod 8종 참조 이미지 베이스 제어",
+          "business_insight": "비디오 생성 시 캐스팅 및 의상 일관성을 유지함으로써 비디오 제작 프로덕션의 공수 대폭 단축",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wclxbj/h3_refmods_are_great_i_highly_advice_trying_it/",
+          "tags": [
+            "MiniMaxH3",
+            "RefMod",
+            "VideoGen"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Qwen-Image-Edit-2511 대 SenseNova-U1.5-Lite 이미지 편집 성능 비교 분석",
+          "target_problem": "다중 참조 이미지를 정밀하게 편집하고 합성하는 이미징 AI의 실전 정확도 비교 필요성",
+          "tech_applied": "Multi-reference image fusion 기반 이미지 편집 및 스타일 변환 라이트웨이트 모델",
+          "business_insight": "경량화 모델 도입으로 디자인 소프트웨어 제품 내부의 자동 이미지 편집 연산 비용 절감 가능",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wcm948/qwenimageedit2511_vs_sensenovau15lite/",
+          "tags": [
+            "Qwen",
+            "SenseNova",
+            "ImageEditing"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "코드베이스 내 제품 UI 디자인 자동화 도구 Modeinspect 1.0 출시",
+          "target_problem": "디자인 모형을 개발 코드베이스로 즉각 이관하여 UI 개발 스크린을 정밀 구현하는 작업의 번거로움",
+          "tech_applied": "코드 인식 디자인 렌더링 및 자동 UI 생성 엔진",
+          "business_insight": "무료 크레딧 제공 마케팅을 통한 프론트엔드 개발자 및 프론트 디자인 시장 B2B 도입 가속화",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/modeinspect-1-0",
+          "tags": [
+            "Modeinspect",
+            "UI Design",
+            "CodeGenerators"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "애플, 50시간 배터리 수명 및 Readiness 기능을 탑재한 Apple Watch Ultra 4 발표",
+          "target_problem": "장시간 아웃도어 스포츠 및 지능형 신체 회복 상태 측정 수요 대응",
+          "tech_applied": "S11 칩셋, 50시간 배터리 효율 최적화, Readiness 및 회복 HRV 알고리즘",
+          "business_insight": "회복력(Readiness) 중심 추적으로 WHOOP 등 피트니스 밴드 시장 선점 업체에 직접적 압박 선언",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/09/apple-watch-ultra-4-battery-readiness-health/",
+          "tags": [
+            "Apple",
+            "Smartwatch",
+            "Health"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "가민, Venu 4 사용자를 위한 낙상 감지(Fall Detection) 신규 업데이트 배포 완료",
+          "target_problem": "고령자 및 고위험 야외 활동 시 응급 상황 낙상 감지 및 긴급 알림 제공",
+          "tech_applied": "가속도계 및 자이로스코프 센서 기반 신뢰도 향상 낙상 감지 펌웨어",
+          "business_insight": "기존 기기 펌웨어 업데이트를 통한 기기 잔존 가치 증대 및 고령층 헬스케어 시장 점유율 제고",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/10/garmin-venu-4-fall-detection-update/",
+          "tags": [
+            "Garmin",
+            "Venu4",
+            "Safety"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "가민 앱 코드 해석을 통해 유출된 'CIRQA Smart Band Pro' 신규 라인업 정보",
+          "target_problem": "스마트 링 외에 스마트 밴드 폼팩터를 통한 초밀착 다중 생체 데이터 측정 요구",
+          "tech_applied": "초경량 센서 밴드 및 가민 커넥트 앱 생태계 연동 프로토콜",
+          "business_insight": "스마트링과 스마트 밴드를 아우르는 멀티 폼팩터 헬스케어 디바이스 포트폴리오 확장 전략",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/10/garmin-cirqa-smart-band-pro-leak/",
+          "tags": [
+            "Garmin",
+            "Wearable",
+            "SmartBand"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-10",
       "items": [
@@ -1204,202 +1374,6 @@
             "COROS",
             "FirmwareUpdate",
             "SportsTech"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-04",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "OpenAI, 105만 토큰 컨텍스트 및 컴퓨터 제어 모델 'GPT-6 Astra' 공개",
-          "target_problem": "단순 챗봇을 넘어 복잡한 OS 레벨의 컴퓨터 조작 및 장기적인 에이전트 작업을 수행하려는 엔터프라이즈 요구 반영",
-          "tech_applied": "1.05M 토큰 컨텍스트 지원, OSWorld V2-Offline 72.6% 달성, 검색 가능한 노트(searchable notes) 메커니즘으로 Codex 컴팩션 대체",
-          "business_insight": "백만 토큰당 $10/$50의 단가로 단순 대화형 AI 시장을 넘어 자율 에이전트 시장 중심의 과금 모델 확립",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/03/openai-releases-gpt-6-astra-a-1-05m-context-computer-use-model-gated-behind-a-critical-cyber-threshold/",
-          "tags": [
-            "OpenAI",
-            "GPT-6",
-            "Computer Use",
-            "AI Agent"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "앤스로픽, 커머스 에이전트 구축용 오픈소스 블루프린트 'Claude Commerce Agents' 발표",
-          "target_problem": "리테일, 여행, 통신 커머스 에이전트 구축 시 반복되는 스캐폴딩 및 승인 게이트 개발 비용 감소",
-          "tech_applied": "Apache-2.0 라이선스 기반의 Agent Loop, 카탈로그 툴 레이어, 승인 게이트, 평가(Eval) 스위트 레퍼런스 코드",
-          "business_insight": "개발자 생태계 오픈소스 제공을 통해 Claude API 사용량을 증대시키는 B2B 생태계 확장 전략",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/03/anthropic-released-claude-commerce-agents-an-apache-2-0-blueprint-for-shopping-and-merchant-agents-across-retail-travel-telecom-and-entertainment/",
-          "tags": [
-            "Anthropic",
-            "Claude",
-            "Commerce",
-            "OpenSource"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Meta AI, 토큰 및 툴 호출 효율성을 극대화한 'Muse Spark 1.3' 코딩 모델 출시",
-          "target_problem": "에이전트형 코딩 수행 시 발생하는 과도한 API 툴 호출과 토큰 비용 부담 해소",
-          "tech_applied": "이전 버전 대비 툴 호출 약 20% 감소, 토큰 사용량 약 25% 절감 알고리즘 적용",
-          "business_insight": "에이전트 실행 추론 비용(Inference Cost)을 절감하여 개발자 도구의 ROI 개선 및 실시간 응답성 확보",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/03/meta-ai-released-muse-spark-1-3-an-agentic-coding-model-that-uses-20-fewer-tool-calls-and-25-fewer-tokens-than-muse-spark-1-2/",
-          "tags": [
-            "Meta AI",
-            "Coding Agent",
-            "LLM Efficiency"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "퍼플렉시티, 애플 실리콘 전용 고성능 추론 엔진 'Lily' 오픈소스 공개",
-          "target_problem": "로컬 환경에서 Qwen3.6-35B 등 대형 AI 모델 추론 시 느린 속도와 리소스 비효율 문제 해결",
-          "tech_applied": "Rust 및 커스텀 Metal 커널 기반 프레임워크, MLX-LM 대비 Prefill 1.23배 및 Decode 1.35배 향상",
-          "business_insight": "하이브리드 컴퓨팅 솔루션의 추론 엔지니어링 생태계 주도 및 애플 하드웨어 기반 로컬 AI 확산 촉진",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/02/perplexity-open-sources-lily-a-rust-metal-inference-engine-for-qwen3-6-35b-a3b-on-apple-silicon/",
-          "tags": [
-            "Perplexity",
-            "Apple Silicon",
-            "Rust",
-            "Inference Engine"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "NVIDIA, 이종 LLM 트래픽 통합 프록시 'Switchyard' 공개",
-          "target_problem": "OpenAI, Anthropic 등 서로 다른 LLM API 포맷으로 인한 멀티 모델 스위칭 및 호환성 저해 해결",
-          "tech_applied": "Rust 기반 프록시 라이브러리, 라우팅 알고리즘(LLM Classifier, Stage-Router) 및 자동 API 변환 지원",
-          "business_insight": "기업들이 특정 LLM 벤더에 종속되지 않고 인프라 레벨에서 유연하게 파운데이션 모델을 교체하도록 지원",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/02/nvidia-releases-switchyard-rust-proxy-llm-traffic-openai-anthropic-api-translation/",
-          "tags": [
-            "NVIDIA",
-            "Rust",
-            "API Proxy",
-            "Multi-LLM"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Higgsfield, 캐릭터와 제품 동작을 자유롭게 재구성하는 'Genjutsu' 출시",
-          "target_problem": "기존 비디오 생성 도구에서 인물, 장소, 비주얼 제품의 동작 컨트롤이 어려웠던 한계 개선",
-          "tech_applied": "비디오 캐릭터 및 스페셜 프로덕트 모션 리캐스팅(Recasting) AI 모델",
-          "business_insight": "마케팅 비디오, 쇼핑몰 가상 상풍 연출 등 상업용 크리에이터 생태계 맞춤 SaaS 과금 모델 구축",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/higgsfield",
-          "tags": [
-            "Higgsfield",
-            "AI Video",
-            "Motion Recasting",
-            "Creator Tools"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Minimax H3 생태계, 영화적 리얼리즘 LoRA 및 고속 오디오 재생성 기법 확산",
-          "target_problem": "AI 비디오 생성 모델의 저품질 오디오 발생 문제와 사람 동작의 비자연스러움 개선",
-          "tech_applied": "Minimax H3 FP8 모델, CinematicRealism/Better-Human-Motion LoRA 연동 및 잠재 공간 기반 빠른 오디오 리젠 워크플로우",
-          "business_insight": "오픈 커뮤니티 중심의 튜닝 모델과 초고속 렌더링 팁이 상용 크리에이션 워크플로우 비용을 대폭 감소",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w6g1w7/testing_orangesouthminimaxh3cinematicrealism_and/",
-          "tags": [
-            "Minimax H3",
-            "LoRA",
-            "Stable Diffusion",
-            "Video Gen"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Runway, 노코드 인터랙티브 웹 생태계 시대를 느낄 수 있는 'Solaris' 프리뷰 공개",
-          "target_problem": "복잡한 코딩 없이 비디오 기반의 인터랙티브 웹 콘텐츠 및 미디어를 즉시 생성하려는 니즈",
-          "tech_applied": "Runway 비디오 생성 가상화 모델 엔진 및 노코드 웹 생성 플랫폼 인터페이스",
-          "business_insight": "미디어 및 엔터테인먼트 시장을 겨냥한 초개인화 인터랙티브 노코드 비디오 SaaS 확장",
-          "source_name": "The Rundown AI",
-          "source_url": "https://www.therundown.ai/articles/runway-solaris-previews-the-no-code-internet",
-          "tags": [
-            "Runway",
-            "Solaris",
-            "No-Code",
-            "AI Media"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "샤오미, 수면 HRV 지원 및 2,000니트 디스플레이의 'Smart Band 11' 공식 발표",
-          "target_problem": "저가형 스마트 밴드 시장에서 정밀한 심회복도(HRV) 수면 모니터링 및 야외 시인성 부족 문제 극복",
-          "tech_applied": "2,000-nit 고휘도 디스플레이, 수면 중 심율변이도(HRV) 추적 센서 알고리즘",
-          "business_insight": "압도적인 가격 경쟁력으로 수면 웰니스 시장을 교란하며 가성비 웨어러블 점유율 확대",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/03/xiaomi-smart-band-11-launch/",
-          "tags": [
-            "Xiaomi",
-            "Smart Band 11",
-            "Sleep HRV",
-            "Wearable"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "Actxa, IFA 2026서 비침습 혈당 추정 지원 $149 스크린리스 'Spark Band' 공개",
-          "target_problem": "바늘 채혈이나 고가의 연속혈당측정기(CGM) 없이 일상적인 혈당 추이를 추적하려는 수요",
-          "tech_applied": "스크린리스 바이오 센서 밴드 기술 기반 비침습 혈당 추정(Glucose Estimate) 수집 시스템",
-          "business_insight": "149달러의 진입 장벽 낮은 가격대로 대중적인 일상 헬스케어 및 당뇨 예방 시장 공략",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/03/actxa-spark-band-glucose-estimate/",
-          "tags": [
-            "Actxa",
-            "Glucose Estimate",
-            "Wearable",
-            "IFA 2026"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "WHOOP, 좌식 시간을 일일 건강 지표로 측정하는 'Movement Score' 특허 출원",
-          "target_problem": "운동 시간 외에 하루 중 정적인 상태(앉아있는 시간)가 신체에 미치는 부정적 영향을 수치화할 지표 부재",
-          "tech_applied": "좌식 행동 분석 특허 알고리즘 기반 무브먼트 스코어 계산 시스템",
-          "business_insight": "기존 피트니스 추적을 넘어 일상 생활습관 전체를 커버하는 구독형 웨어러블 리텐션 제고",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/03/whoop-movement-score-patent/",
-          "tags": [
-            "WHOOP",
-            "Movement Score",
-            "Health Tech",
-            "Patent"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "구글, GPS 정밀도를 대폭 개선한 'Pixel Watch 5' 심층 분석 발표",
-          "target_problem": "기존 스마트워치의 도심/산악 지형 내 GPS 정확도 저하 및 위치 오차 문제",
-          "tech_applied": "위치 정밀도를 대폭 끌어올린 신규 위치 추적 알고리즘 및 센서 융합 기술",
-          "business_insight": "가민, 애플워치와 경쟁하기 위한 러닝/아웃도어 전문 스포츠 유저 타겟팅 기능 강화",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/google-watch-5-in-depth-review.html",
-          "tags": [
-            "Google",
-            "Pixel Watch 5",
-            "GPS Accuracy",
-            "DC Rainmaker"
           ]
         }
       ]
