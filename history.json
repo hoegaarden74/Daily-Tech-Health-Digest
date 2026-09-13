@@ -1,6 +1,213 @@
 {
-  "last_updated": "2026-09-13T08:03:42.391949+09:00",
+  "last_updated": "2026-09-14T08:09:57.857359+09:00",
   "digests": [
+    {
+      "date": "2026-09-14",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "AWS, 백그라운드 AI 에이전트를 위한 오픈소스 인박스 'Pizza Bot' 공개",
+          "target_problem": "여러 백그라운드 AI 에이전트 간의 워크플로우 통제, 작업 상태 영구 유지 및 인간 승인 절차 관리의 복잡성",
+          "tech_applied": "DeepAgents 및 LangGraph 프레임워크 기반, MCP(Model Context Protocol) 연동, 영구적 작업 상태 관리 및 스케줄링 워크플로우 지원",
+          "business_insight": "자율형 AI 에이전트의 기업 도입 시 사람의 승인 및 모니터링 체계를 오픈소스로 표준화하여 B2B 에이전트 생태계 확장",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/13/aws-introduces-pizza-bot-an-open-source-inbox-for-background-ai-agents/",
+          "tags": [
+            "AWS",
+            "AI 에이전트",
+            "오픈소스",
+            "LangGraph"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "프린스턴 연구진, 토큰 간 디코더 상태를 보존하는 Recurrent Looped Transformer (RLT) 발표",
+          "target_problem": "기존 트랜스포머의 토큰 생성 과정에서 장기적 시퀀스 생성 시 컨텍스트 유지 제한 및 연산 효율 저하",
+          "tech_applied": "Causal Encoder와 Recurrent Decoder 구조 결합, 토큰 간 은닉 상태(Hidden State) 및 슬라이딩 윈도우 어텐션 캐시 순환 유지",
+          "business_insight": "무제한 시간적 깊이(Unbounded Temporal Depth)를 통해 인프라 비용 부담 없이 초장문 텍스트 연산 및 연속 대화 모델 구현 가능성 제시",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/13/a-princeton-researcher-proposes-recurrent-looped-transformer-rlt/",
+          "tags": [
+            "Transformer",
+            "AI 아키텍처",
+            "LLM",
+            "연구"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "장기 수행 과제(Long-Horizon Tasks)를 위한 AI 에이전트 컨텍스트 엔지니어링 기법",
+          "target_problem": "LLM이 반복적인 도구 호출 및 장시간 작업 수행 시 발생하는 컨텍스트 오버플로우와 목표 상실(Goal Loss) 문제",
+          "tech_applied": "LangChain Deep Agents 및 Claude Code 등에서 검증된 하네스(Harness) 레이어 중심 4가지 컨텍스트 제어 메커니즘",
+          "business_insight": "복잡한 엔터프라이즈 자동화 파이프라인에서 AI 에이전트의 미션 완료율과 추론 신뢰도를 비약적으로 향상",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/12/context-engineering-inside-the-harness-4-mechanisms-that-beat-context-overflow-and-goal-loss-on-long-horizon-tasks/",
+          "tags": [
+            "Context Engineering",
+            "AI 에이전트",
+            "개발 프레임워크",
+            "LLM"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "NVIDIA cuML 및 RAPIDS 기반의 GPU 가속 머신러닝 워크플로우 구축법",
+          "target_problem": "대용량 데이터 분석 및 기존 CPU 기반 머신러닝 워크플로우의 느린 학습 및 추론 속도",
+          "tech_applied": "NVIDIA cuML, RAPIDS 라이브러리, zero-code scikit-learn 가속 파이프라인(cuml.accel) 및 GPU 벤치마킹",
+          "business_insight": "파이썬 머신러닝 코드 수정을 최소화하면서 GPU 인프라 전환을 통해 기업의 데이터 분석 처리 속도 대폭 개선",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/12/implementation-of-machine-learning-workflows-with-nvidia-cuml-rapids-gpu-benchmarking-explainability-clustering-and-model-inference/",
+          "tags": [
+            "NVIDIA",
+            "GPU 가속",
+            "RAPIDS",
+            "머신러닝"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Hugging Face, Gradio Workflow 기반 AUTOMATIC1111 재구축 가이드 공개",
+          "target_problem": "기존 웹 UI 솔루션의 복잡성과 인터페이스 확장성 부족",
+          "tech_applied": "Hugging Face Gradio의 최신 Workflow 구성 인터페이스를 활용한 이미지 생성 파이프라인 모듈화",
+          "business_insight": "오픈소스 이미지 생성 파이프라인의 커스텀 개발을 용이하게 하여 이미지 생성 앱 개발 속도 가속화",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/gradio-workflow-1111",
+          "tags": [
+            "HuggingFace",
+            "Gradio",
+            "AUTOMATIC1111",
+            "UI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "ComfyUI용 TaoMate MiniMax H3 3-Step LoRA 변환 포맷 및 리파이너 활용법",
+          "target_problem": "MiniMax H3 고성능 생성 모델의 긴 생성 시간 및 연산 비용 문제",
+          "tech_applied": "3단계 추론 지원 LoRA의 ComfyUI 전용 safetensors 변환 및 리파이너(Refiner) 단계 병용 파이프라인",
+          "business_insight": "최소 추론 단계로 우수한 화질을 유지하여 AI 비디오 크리에이터의 연산 비용 절감 및 생산성 극대화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wf3zco/taomate_h3_3_step_lora_now_working_in_comfyui/",
+          "tags": [
+            "ComfyUI",
+            "LoRA",
+            "MiniMax H3",
+            "생성 AI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "FLUX.2-klein-9B 지원 RefMods 모듈 공개",
+          "target_problem": "대형 오픈 비주얼 모델 사용 시 정교한 참조(Reference) 제어 및 커스텀 미세조정 한계",
+          "tech_applied": "FLUX.2-klein-9B 구조 호환 참조 모듈(RefMods) 파라미터 최적화",
+          "business_insight": "커뮤니티 중심의 모듈화 생태계 구축을 통해 고품질 비주얼 콘텐츠 커스텀 제작 생태계 강화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1werxhr/flux2klein9b_refmods/",
+          "tags": [
+            "FLUX",
+            "오픈소스",
+            "이미지 생성"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "MiniMax H3 기반 3D 카메라 컨트롤 업데이트 및 영문판 리포지토리 공개",
+          "target_problem": "AI 기반 영상 생성 시 카메라 연출 및 시점 정밀 제어의 한계",
+          "tech_applied": "MiniMax H3 연동 3D 카메라 컨트롤 오버레이 알고리즘 및 영문 깃허브 오픈소스 제공",
+          "business_insight": "전문 영화/영상 제작 파이프라인에 AI 비디오 생성 도구를 접목할 수 있는 실질적 연출 도구 확보",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wey8t7/h3_camera_control_update/",
+          "tags": [
+            "MiniMax",
+            "3D 카메라",
+            "비디오 생성",
+            "오픈소스"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "두 번의 터치로 문장을 완성하는 'GhostWriter by MyHandler' 출시",
+          "target_problem": "모바일 환경에서 긴 글 및 콘텐츠 작성을 위해 다중 탭과 긴 프롬프트를 입력해야 하는 번거로움",
+          "tech_applied": "초단축 탭 사용자 인터페이스 및 모바일 최적화 자동 텍스트 작성 엔진",
+          "business_insight": "소셜 미디어 크리에이터를 겨냥한 초경량 생산성 모바일 앱 구독 수익 모델",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/ghostwriter-by-myhandler",
+          "tags": [
+            "ProductHunt",
+            "생산성",
+            "모바일 앱"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "애플워치 울트라 4 및 시리즈 12 실물 핸즈온 리뷰",
+          "target_problem": "스마트워치 시장에서 하드웨어 폼팩터 변화와 피트니스 추적 성능 향상에 대한 소비자 요구",
+          "tech_applied": "울트라 시리즈 하드웨어 폼팩터 개편, 차세대 센서 스택 및 통합 피트니스 트래킹",
+          "business_insight": "아웃도어 전문 고객과 일반 소비자를 동시 공략하는 애플의 웨어러블 라인업 고도화 전략",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/apple-watch-ultra4-series-12hands-on.html",
+          "tags": [
+            "AppleWatch",
+            "웨어러블",
+            "헬스케어"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "애플워치 '회복 HRV'와 '전체 HRV' 세분화 지표 도입 분석",
+          "target_problem": "일상 활동 중 노이즈로 인해 신체 회복 정도를 심박변이도(HRV)로 정확히 파악하기 어렵던 문제",
+          "tech_applied": "수면 및 휴식 시 측정되는 Recovery HRV(RMSSD 기반)와 24시간 일상 활동 데이터를 추적하는 Overall HRV의 신호 분리",
+          "business_insight": "헬스 데이터 정밀도 제고를 통해 디지털 헬스케어 플랫폼 및 정밀 웰니스 서비스 연동성 강화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/11/apple-watch-recovery-hrv-overall-hrv-rmssd/",
+          "tags": [
+            "HRV",
+            "애플워치",
+            "헬스데이터"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "가민, 최신 러닝 워치 Forerunner 70 및 170 출시 후 첫 할인 실시",
+          "target_problem": "러닝 스마트워치 신제품의 구매 진입 장벽 완화 및 신규 사용자 유입 촉진 필요성",
+          "tech_applied": "러닝 다이내믹스 메트릭 및 GPS 트래킹, Garmin Connect 피트니스 분석 플랫폼 연동",
+          "business_insight": "엔트리 및 미드레인지 라인업 할인 가격 정책을 통한 신규 스포츠 유저 확보 및 생태계 락인 강화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/13/garmin-forerunner-70-170-first-sale/",
+          "tags": [
+            "Garmin",
+            "Forerunner",
+            "웨어러블"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "Fitbit Air, 구글 헬스 연동 'Health Guardian' 기능 공식 출시 준비 완료",
+          "target_problem": "착용자의 이상 건강 징후 감지 및 즉각적인 보호 알림 체계 강화 필요성",
+          "tech_applied": "Fitbit 바이오 센서 데이터와 Google Health 앱 생태계 연동 실시간 모니터링 시스템",
+          "business_insight": "구글 생태계와의 소프트웨어 통합 강화를 통한 Fitbit 브랜드의 모바일 헬스케어 경쟁력 제고",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/11/fitbit-air-health-guardian-google-health-app/",
+          "tags": [
+            "Fitbit",
+            "GoogleHealth",
+            "헬스케어"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-13",
       "items": [
@@ -1070,218 +1277,6 @@
             "GPS Watch",
             "Firmware Update",
             "COROS"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-07",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "H Company, 시각 타워와 인과적 디코더를 제거한 경량 멀티모달 인코더 'NeoMME' 공개",
-          "target_problem": "기존 멀티모달 검색 및 인코딩 모델(ColPali 등)이 무거운 비전 타워와 인과적 디코더로 인해 고비용·고지연 문제를 겪는 현상",
-          "tech_applied": "단일 트랜스포머 구조에서 다국어 텍스트 토큰과 32x32 패치 이미지를 동시 처리하며, 마스크드 디스크리트 디퓨전 기술을 결합",
-          "business_insight": "260M 및 800M 파라미터 단일 인코더로 컴퓨팅 자원을 대폭 절감하여 고성능 다국어·멀티모달 RAG 인프라의 상용화 진입장벽을 낮춤",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/06/h-company-releases-neomme-a-family-of-260m-and-800m-single-tower-multimodal-encoders-that-drop-the-vision-tower-and-causal-decoder/",
-          "tags": [
-            "AI",
-            "Multimodal",
-            "Encoder",
-            "RAG"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Meta FAIR, GPU 컴퓨팅 투입 전 AI 연구 후보를 사전 평가하는 'RPMs' 발표",
-          "target_problem": "AI 연구 에이전트가 제안하는 무수한 실험 중 비효율적이거나 가치 낮은 실험에 비싼 GPU 시간이 낭비되는 문제",
-          "tech_applied": "고정된(Frozen) LLM 판정 모델을 활용해 실행 전 15개 후보 실험의 성과를 사전 예측 및 순위를 매겨 최적의 1개만 실행",
-          "business_insight": "AIRS-Bench 점수를 0.684에서 0.729로 끌어올리면서 고비용 GPU 자원 활용 효율을 극대화하고 R&D 비용 절감",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/06/meta-fair-introduces-ai-research-preference-models-rpms-ranking-ml-experiments-before-spending-gpu-hours/",
-          "tags": [
-            "AI",
-            "Meta",
-            "LLM",
-            "Optimization"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "UC 버클리 연구진, 컴퓨터 활용 에이전트 통합 플랫폼 'CUA-Lite' 오픈소스 공개",
-          "target_problem": "컴퓨터 조작 에이전트 개발 시 에이전트, 환경, 추적 데이터, 평가 프레임워크가 파편화되어 상호 호환되지 않는 한계",
-          "tech_applied": "단일 액션 공간 및 통합 데이터 스키마 구축, OSWorld 및 샌드박스, 데이터셋, 평가, 강화학습(RL) 환경 일원화",
-          "business_insight": "자율 PC/OS 조작 에이전트 개발 표준화에 기여하며 기술 프레임워크 파편화로 인한 개발 비용 단축",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/05/uc-berkeley-researchers-release-cua-lite-an-open-platform-unifying-sandboxes-data-evaluation-and-rl-for-computer-use-agents/",
-          "tags": [
-            "AI Agent",
-            "Computer Use",
-            "Reinforcement Learning"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "GitHub, 코딩 작업별 멀티 모델 동적 라우팅 'Project HydraFusion' 발표",
-          "target_problem": "단일 모델 고정 선택 방식으로 인한 고비용 문제 및 작업 난이도별 최적 모델 매칭의 어려움",
-          "tech_applied": "Single, 품질 게이트가 포함된 Cascade, 상호 검토 기반 Critique 등 3가지 런타임 오케스트레이션 패턴 지원",
-          "business_insight": "Claude Opus 5 대비 67% 낮은 비용으로 우수한 코딩 작업 성공률을 달성하는 고효율 멀티모델 SaaS 지향",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/05/github-introduces-project-hydrafusion-runtime-multi-model-orchestration-that-builds-a-workflow-per-coding-task-in-copilot-cli/",
-          "tags": [
-            "GitHub",
-            "Copilot",
-            "Orchestration",
-            "Coding"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Adaption Labs, 시드 데이터 없이 태스크 설명만으로 맞춤 데이터셋을 합성하는 'Invent a Dataset' API 출시",
-          "target_problem": "AI 모델 학습용 맞춤 데이터 수집, 라벨링 가이드 작성, 스키마 설계에 소요되는 고비용·장시간 문제",
-          "tech_applied": "단일 `datasets.invent` API 호출로 작업 목적 설명에서 도메인, 데이터 행 수, 출력 포맷이 완비된 학습용 데이터 세트 자동 생성",
-          "business_insight": "라벨링 작업 없는 Data-as-a-Service 모델을 제시하여 enterprise 파인튜닝 데이터 생성 파이프라인 혁신",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/04/datasets-invent-api-training-data-without-labeling-adaptive-data-autoscientist/",
-          "tags": [
-            "Dataset",
-            "Synthetic Data",
-            "API",
-            "Data Pipeline"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "fal.ai, 미니맥스 H3 파인튜닝 기반 고품질 비디오 생성 모델 'H3 Max' 공개",
-          "target_problem": "고품질 생성형 비디오 제작을 위한 모델 호스팅 및 파인튜닝 인프라 구축 부담",
-          "tech_applied": "MiniMax H3 비디오 생성 모델을 후가공 및 파인튜닝하여 fal의 클라우드 추론 API 인프라 상에서 서비스",
-          "business_insight": "개발자와 영상 프로덕션을 대상으로 API 기반 고성능 렌더링 파이프라인 과금 모델 적용",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/fal-ai",
-          "tags": [
-            "AI Video",
-            "MiniMax H3",
-            "fal.ai",
-            "API"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Krea 2 기반 인스타그램 인스턴트 실사 스타일 LoRA 모델 커뮤니티 공개",
-          "target_problem": "AI 생성 이미지에서 빈번히 발생하는 인공적이고 전형적인 느낌을 지우고 사실적인 라이프스타일 톤을 표현하는 난제",
-          "tech_applied": "Krea 2 프롬프터 및 ComfyUI 워크플로우 지원 메타데이터 결합 파인튜닝 LoRA 모델",
-          "business_insight": "오픈소스 이미지·비디오 생성 생태계에서 초실사 워크플로우 대중화를 촉진하고 커뮤니티 중심 모델 개발 활성화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w8ykz2/new_insta_realism_lora/",
-          "tags": [
-            "Stable Diffusion",
-            "LoRA",
-            "Krea 2",
-            "Image Gen"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "구글 Gemini, 에이전틱 비디오 이해(Agentic Video Understanding) 기능 탑재",
-          "target_problem": "긴 동영상 콘텐츠에서 특정 장면이나 정밀한 정보를 빠르게 추출 및 요약하기 어려운 한계",
-          "tech_applied": "에이전틱 멀티모달 비디오 분석 알고리즘을 적용하여 영상맥락 이해 및 타임스탬프 기반 인터랙티브 인사이팅 제공",
-          "business_insight": "미디어, 엔터프라이즈 분석 SaaS 영역에서 구글의 대화형 AI 경쟁력 고도화",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/google",
-          "tags": [
-            "Gemini",
-            "Video Analysis",
-            "Google",
-            "Agent"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "가민, 심층 리뷰를 통해 입증된 첫 스마트링 'CIRQA' 파급력 및 라인업 확장",
-          "target_problem": "스마트워치를 24시간 착용하기 부담스러운 사용자를 위한 소형 건강 트래킹 폼팩터 니즈",
-          "tech_applied": "가민 헬스 에코시스템과 완벽 연동되는 바이오메트릭 센서 탑재 및 10가지 세분화된 사이즈 옵션 제공",
-          "business_insight": "스마트워치 시장을 넘어 Oura 등이 주도하던 스마트 링 시장 공략 및 고도화된 생체 데이터 수집 체계 완성",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/08/garmin-cirqa-in-depth-review-one-month-later-expectations-reality.html",
-          "tags": [
-            "Garmin",
-            "Smart Ring",
-            "Wearable",
-            "Health Tech"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "구글 픽셀 워치 5 심층 평가: 업계 최고 수준의 GPS 정확도 확보",
-          "target_problem": "도심 빌딩 숲이나 야외 러닝 시 스마트워치 GPS 이탈 및 거리 추정 오차 발생",
-          "tech_applied": "신규 캘리브레이션 알고리즘을 통해 수신 한계를 극복하고 위치 추적 정확도를 획기적으로 개선",
-          "business_insight": "프리미엄 피트니스 스마트워치 시장에서 가민 및 애플과의 경쟁력 강화",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/google-watch-5-in-depth-review.html",
-          "tags": [
-            "Google",
-            "Pixel Watch 5",
-            "GPS",
-            "Fitness"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "오라(Oura), 진동 모터 없는 '압력 기반 햅틱 피드백' 스마트링 특허 출원",
-          "target_problem": "초소형 스마트링에 진동 모터 탑재 시 발생하는 두께 증가 및 배터리 급소모 문제",
-          "tech_applied": "착용자의 손가락에 미세한 압력을 가하는 압력 센서 기반 신개념 햅틱 피드백 기법",
-          "business_insight": "링 폼팩터의 착용감을 저해하지 않는 차세대 UX 특허 확보 및 초소형 웨어러블 진입장벽 구축",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/05/oura-ring-pressure-haptic-feedback-patent/",
-          "tags": [
-            "Oura",
-            "Smart Ring",
-            "Patent",
-            "Haptics"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "코로스(COROS), Pace 4 모델 대상 풀 매핑(Full Mapping) 무료 지원 발표",
-          "target_problem": "중급형 스포츠 워치에서 오프라인 지도 기반 경로 내비게이션 기능 미지원으로 인한 야외 활동 불편",
-          "tech_applied": "소프트웨어 펌웨어 업데이트를 통한 온디바이스 지도 데이터 렌더링 및 오프라인 경로 안내 탑재",
-          "business_insight": "기존 제품의 소프트웨어 가치를 높이는 사후 업데이트 전략으로 사용자 충성도 및 브랜드 호감도 증대",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/massive-mapping-watches.html",
-          "tags": [
-            "COROS",
-            "Pace 4",
-            "Firmware",
-            "GPS Map"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "WHOOP, 사용자 지정 저널 트래킹 및 1RM(1-Rep Max) 추정 알고리즘 추가",
-          "target_problem": "개인의 맞춤형 생활 습관과 근력 운동 수행 능력을 통합 측정하기 어려운 기존 피트니스 트래커의 한계",
-          "tech_applied": "사용자 맞춤 행동 저널링 데이터 파이프라인과 심박·가속도계 센서 기반 근력 1RM 산출 모델 결합",
-          "business_insight": "구독형 바이오메트릭 코칭 SaaS 모델의 가치를 높여 유저 리텐션 강화 및 LTV 증가 극대화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/05/whoop-custom-journal-workout-tracking-update/",
-          "tags": [
-            "WHOOP",
-            "Fitness",
-            "SaaS",
-            "1RM"
           ]
         }
       ]
