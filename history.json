@@ -1,6 +1,205 @@
 {
-  "last_updated": "2026-09-14T08:09:57.857359+09:00",
+  "last_updated": "2026-09-15T08:52:36.318044+09:00",
   "digests": [
+    {
+      "date": "2026-09-15",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "사카나 AI, 역전파 없이 1000개 레이어 학습하는 PC-ALM 공개",
+          "target_problem": "기존 역전파(Backpropagation) 알고리즘의 메모리 병목 및 레이어 간 동기화 지연 문제 해결",
+          "tech_applied": "Augmented Lagrangian Predictive Coding (PC-ALM) 기반 레이어 국소(Layer-Local) 학습 기술",
+          "business_insight": "초대형 AI 모델의 분산 학습 비용 절감 및 엣지 디바이스/차세대 하드웨어에서의 직접 학습 가능성 확보",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/14/sakana-ai-researchers-introduce-pc-alm-a-layer-local-alternative-to-backpropagation-that-trains-1000-layer-networks/",
+          "tags": [
+            "AI",
+            "Research",
+            "DeepLearning"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "엔비디아, 피지컬 AI 워크플로우 오케스트레이터 'OSMO' 오픈소스 전환",
+          "target_problem": "로보틱스 및 피지컬 AI 개발 시 파편화된 학습, 시뮬레이션, 하드웨어 테스트 워크플로우 통합",
+          "tech_applied": "쿠버네티스(Kubernetes) 네이티브 기반 단일 YAML 파이프라인 제어 구조",
+          "business_insight": "엔비디아 생태계(Isaac Sim, Project GR00T)의 오픈소스 오케스트레이션 표준 구축을 통한 피지컬 AI 시장 주도권 강화",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/14/nvidia-open-sources-osmo-one-yaml-orchestrates-physical-ai-training-simulation-and-robot-testing/",
+          "tags": [
+            "Robotics",
+            "OpenSource",
+            "PhysicalAI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "앤트로픽 'Pace the Frontier' 플랜 발표 및 빅테크 3사 동의 제휴",
+          "target_problem": "자율 AI 에이전트의 다중 협동 공격 및 통제 불능 위험에 대응하기 위한 프론티어 AI 안전 가이드라인 수립",
+          "tech_applied": "3단계 안전 통제 가이드라인 및 자율 에이전트 모니터링 프레임워크",
+          "business_insight": "글로벌 AI 주요 기업(OpenAI, xAI, Microsoft) 간 규제 프레임워크 표준화 및 안전 기준 마련",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/13/anthropics-3-step-pace-the-frontier-plan-wins-openai-xai-and-microsoft-support-is-it-too-late-to-slow-ai-down/",
+          "tags": [
+            "AIGovernance",
+            "Safety"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "프린스턴 연구진, 무한 시간 심도의 RLT(Recurrent Looped Transformer) 제안",
+          "target_problem": "트랜스포머 모델의 토큰 생성 간 컨텍스트 유지 제한 및 메모리 압박 문제 개선",
+          "tech_applied": "인코더-디코더 결합 및 순환(Recurrent) 슬라이딩 윈도우 어텐션 캐시 기법",
+          "business_insight": "장기 추론 및 실시간 대화형 AI 시스템의 컴퓨팅 자원 효율화 달성",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/13/a-princeton-researcher-proposes-recurrent-looped-transformer-rlt/",
+          "tags": [
+            "Transformer",
+            "Architecture",
+            "AI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "허깅페이스, NCCL 없는 비동기 GRPO LoRA 학습 방식 공유",
+          "target_problem": "분산 환경에서 복잡한 NCCL 인터커넥트 설정 및 클러스터 구축에 드는 고비용 구조",
+          "tech_applied": "버킷 기반 스토리지와 프록시 기반 데이터 전달 및 Async GRPO 알고리즘",
+          "business_insight": "독립적 클라우드 인스턴스(HF Jobs) 모음으로 비용 효율적인 오픈소스 강화학습 파이프라인 구성 가능",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs",
+          "tags": [
+            "HuggingFace",
+            "ReinforcementLearning",
+            "LoRA"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "YuE2 전용 오디오 인코더 오픈소스 공개 및 커스텀 음원 입력 지원",
+          "target_problem": "오픈소스 음악 생성 모델 YuE2의 누락된 오디오 인코더로 인해 사용자 커스텀 음원 입력이 불가했던 점 해결",
+          "tech_applied": "시맨틱 토큰 변환용 오디오 인코더 역설계 및 재학습 기술",
+          "business_insight": "크리에이터가 자체 음원을 유기적으로 AI 생성 음악 생태계에 결합할 수 있는 오픈소스 오디오 파이프라인 완성",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wg4xne/i_trained_the_missing_encoder_for_yue2_so_we_can/",
+          "tags": [
+            "AudioAI",
+            "OpenSource",
+            "MusicGen"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "ComfyUI 기반 YuE2 LoRA 트레이너 노드 출시",
+          "target_problem": "음악 생성 AI 모델에 대한 맞춤형 학풍/스타일 학습(LoRA) 적용 복잡성 극복",
+          "tech_applied": "ComfyUI 맞춤 커스텀 노드 및 파이프라인 스크립트 연동",
+          "business_insight": "노코드/워크플로우 환경에서 서드파티 크리에이터들이 빠르게 맞춤형 음성/음악 LoRA 생태계를 구축할 수 있는 발판 제공",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wgcwjh/comfyui_yue2_lora_trainer_built_on_my_encoder_and/",
+          "tags": [
+            "ComfyUI",
+            "LoRA",
+            "CreatorTools"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "MiniMax 3 비디오 레퍼런스 교체 가이드 및 워크플로우 정립",
+          "target_problem": "비디오 대 비디오(Video-to-Video) 참조 변환 시 일관성 유지 및 모션 매칭의 어려움",
+          "tech_applied": "MiniMax 비디오 인퍼런스 프롬프팅 기법 및 Taomate LoRA 리파이너 4단계 워크플로우",
+          "business_insight": "저비용/고효율 AI 비디오 연출 및 기존 영상 자산의 정밀 스타일 변환 가능",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wfzeps/minimax_3_video_reference_replacement_tutorial/",
+          "tags": [
+            "VideoAI",
+            "MiniMax",
+            "Workflow"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "Naoma AI Demo Agent V2: 웹사이트 방문자 구매 전환 세일즈 에이전트",
+          "target_problem": "웹사이트 유입 트래픽의 낮은 미팅 전환율 및 리드 자격 검증 수작업 소요",
+          "tech_applied": "대화형 데모 진행 및 자격 검증(Qualified Lead) 자동화 세일즈 에이전트",
+          "business_insight": "B2B SaaS 기업의 inbound 리드 수집 자동화를 통한 영업 생산성 대폭 향상",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/naoma",
+          "tags": [
+            "B2BSaaS",
+            "SalesAgent",
+            "AI"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "Apple watchOS 27 공식 릴리즈 및 맞춤형 피트니스 기능 적용",
+          "target_problem": "애플워치 사용자 대상 최신 워크아웃 모니터링 및 생체 데이터 통합 서비스 제공",
+          "tech_applied": "watchOS 27 최신 펌웨어 기능 업데이트 및 알고리즘 고도화",
+          "business_insight": "기존 애플 웨어러블 사용자의 생태계 락인 효과 및 정밀 헬스케어 플랫폼화 가속",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/14/watchos-27-release-compatible-apple-watch-features/",
+          "tags": [
+            "Apple",
+            "watchOS",
+            "Wearables"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "애플워치 Ultra 4 및 Series 12 릴리즈 상세 비교 analysis",
+          "target_problem": "차세대 웨어러블 디바이스의 베젤 변경 및 심회복률(Recovery HRV) 추적 차별화 요구",
+          "tech_applied": "하드웨어 폼팩터 개선 및 Recovery HRV 대 Overall HRV 세분화 분석 센서 기술",
+          "business_insight": "전문 선수 및 일반 사용자 대상 헬스케어 메트릭 세분화 전략으로 고가형 및 일반형 시장 동시 공략",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/apple-watch-ultra4-series-12hands-on.html",
+          "tags": [
+            "AppleWatch",
+            "Fitness",
+            "HRV"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "구글 미스터리 손목 착용 웨어러블(G8BL6) IMDA 인증 확인",
+          "target_problem": "구글 웨어러블 라인업 확장을 위한 신규 폼팩터 및 헬스 디바이스 보급",
+          "tech_applied": "G8BL6 무선 인증 및 헬스 트래킹 스마트 밴드/워치 설계",
+          "business_insight": "픽셀 워치 라인업 외에 피트니스 중심 스마트밴드 시장 진입 가능성 확보",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/14/google-g8bl6-imda-wearable/",
+          "tags": [
+            "Google",
+            "Wearables",
+            "Hardware"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "가민, 출시 4개월 만에 포러너 70/170 첫 할인 세일 실시",
+          "target_problem": "엔트리 및 미드레인지 러너 대상 유저 기반 확대를 위한 가격 접근성 개선",
+          "tech_applied": "가민 생태계 기반 전용 GPS 러닝 워치 및 트레이닝 메트릭",
+          "business_insight": "신제품의 발빠른 할인 프로모션을 통한 러닝 웨어러블 점유율 수성 전략",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/13/garmin-forerunner-70-170-first-sale/",
+          "tags": [
+            "Garmin",
+            "Wearables",
+            "Sale"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-14",
       "items": [
@@ -1106,177 +1305,6 @@
             "AppleWatch",
             "RunningApp",
             "Fitness"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-08",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Reducto, 단일 패스 문서 파싱 모델 'r-1' 공개 (페이지당 1센트로 오류율 20% 절감)",
-          "target_problem": "기존 복잡한 다단계 에이전트 파이프라인으로 인해 문서 파싱 비용과 처리 시간이 급증하던 엔터프라이즈 문제 해결",
-          "tech_applied": "OCR, 레이아웃 감지, 표 추출, 서식 및 그래운딩을 하나의 트랜스포머 단일 패스로 처리하는 일체형 구조",
-          "business_insight": "페이지당 1센트 수준의 높은 비용 효율성을 무기로 기업용 문서 데이터 자동화 시장 진입 속도 가속화",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/07/reducto-releases-r-1-a-single-pass-document-parsing-model-that-cuts-errors-20-at-1-cent-per-page/",
-          "tags": [
-            "Document Parsing",
-            "OCR",
-            "SaaS",
-            "AI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "OpenBMB, 온디바이스 추론에 최적화된 경량 LLM 'MiniCPM5-2B' 출시",
-          "target_problem": "모바일 및 IoT 단말 등 제한된 컴퓨팅 리소스 환경에서 고성능 언어 모델 구동의 어려움",
-          "tech_applied": "25.2억 매개변수 Dense 구조, 131,072 토큰 켄텍스트 윈도우, 온디바이스 맞춤 경량화 기술",
-          "business_insight": "34개 주요 벤치마크 평균 53.9점을 기록하며 Qwen3.5-4B를 상회, 모바일 AI 에이전트 시장에서 경량화 상용 모델로 주목",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/07/openbmb-releases-minicpm5-2b-a-2-52b-dense-model-averaging-53-9-across-34-benchmarks-and-built-to-run-on-device/",
-          "tags": [
-            "On-Device AI",
-            "LLM",
-            "Open Source"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "H Company, 비전 타워를 없앤 단일 타워 멀티모달 인코더 'NeoMME' 발표",
-          "target_problem": "기존 멀티모달 모델에서 사전 학습된 비전 타워와 인과적 디코더 조합 시 발생하는 연산 지연 및 하드웨어 병목",
-          "tech_applied": "다국어 텍스트 토큰과 원본 32x32 이미지 패치를 단일 트랜스포머로 직접 처리하는 260M/800M 양방향 인코더",
-          "business_insight": "경량화된 인코더 파이프라인을 구축해 시각-언어 검색 및 임베딩 서비스의 인프라 운영 비용 절감 가능",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/06/h-company-releases-neomme-a-family-of-260m-and-800m-single-tower-multimodal-encoders-that-drop-the-vision-tower-and-causal-decoder/",
-          "tags": [
-            "Multimodal",
-            "Encoder",
-            "AI Architecture"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "IFM, 0.9B부터 375B 규격의 완전 오픈소스 'K2 Horizon' 모델 6종 공개",
-          "target_problem": "상용화 시 제약이 있는 오픈 라이선스 모델 대신 엔터프라이즈 환경에 적용 가능한 라이선스 오픈 모델 부재",
-          "tech_applied": "MBZUAI 연구소가 개발한 Apache 2.0 라이선스 기반의 0.9B~375B 파라미터 라인업",
-          "business_insight": "완전 개방형 라이선스를 제공함으로써 자체 프라이빗 AI 파이프라인을 구축하려는 기업들의 도입 장벽 대폭 낮춤",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/06/ifm-releases-k2-horizon-six-apache-2-0-models-from-0-9b-to-375b/",
-          "tags": [
-            "Open Source",
-            "LLM",
-            "Enterprise AI"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Krea 2 Turbo — 4단계 추론 지원 정식 Distill LoRA 정식 배포",
-          "target_problem": "이미지 및 비디오 생성 시 높은 스텝 수로 인해 발생하는 추론 속도 지연 문제",
-          "tech_applied": "단 4단계(4-step) 추론만으로 고품질 이미지를 생성하도록 설계된 지식 증류(Distillation) 기반 LoRA",
-          "business_insight": "생성 패스트 파이프라인을 구현하여 크리에이터 툴 플랫폼 및 실시간 인터랙티브 UI의 생성 비용 절감",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w9tx7t/krea2_turbo_distill_4_step_lora_final_version/",
-          "tags": [
-            "Image Generation",
-            "LoRA",
-            "Distillation"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "RTX 3090 기반 MiniMax H3 112개 파라미터 조합 벤치마크 분석",
-          "target_problem": "MiniMax H3 모델 기반 이미지/비디오 생성 시 품질을 극대화하는 최적 설정 탐색의 난이도",
-          "tech_applied": "동일 프롬프트/시드 조건에서 RefMods, Sage 워크플로우, Sampler, Scheduler 파라미터 조합 112건 테스트",
-          "business_insight": "소비자급 GPU 환경에서 영상 크리에이터들이 즉시 활용 가능한 황금 셋업을 제시하여 실무 생성 효율 제고",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w9rvz6/i_ran_112_minimax_h3_tests_on_an_rtx_3090/",
-          "tags": [
-            "MiniMax H3",
-            "Workflow",
-            "Benchmark"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "MiniMax H3용 고속 추론 모듈 'Sol-H3' 등장 및 ComfyUI 적용 논의",
-          "target_problem": "복잡한 고성능 이미지/비디오 오픈 모델의 높은 VRAM 요구량과 생성을 가속화할 파이프라인 필요성",
-          "tech_applied": "Sana 엔진 기반 Sol-Engine 생태계의 Sol-H3 고속 추론 알고리즘 적용",
-          "business_insight": "ComfyUI 커뮤니티 이식이 완료될 경우 로컬 오픈소스 비디오 크리에이터들의 제작 환경 획기적 개선 기대",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1w9yi3l/new_fast_method_for_h3_is_here_now_we_need_a/",
-          "tags": [
-            "Video AI",
-            "Sol-Engine",
-            "ComfyUI"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "삼성전자, 갤럭시 워치 기반 고혈압 경고 기능 임상 연구 개시",
-          "target_problem": "평소 자각하기 어려운 고혈압 상태를 일상적인 모니터링을 통해 사전 감지할 필요성",
-          "tech_applied": "광학 혈류 측정(PPG) 센서와 생체 알림 알고리즘을 결합한 스마트워치 헬스케어 모니터링",
-          "business_insight": "의료기기 수준의 생체 데이터 트래킹 기능을 워치 에코시스템에 이식하여 글로벌 헬스케어 플랫폼 경쟁력 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/07/samsung-hypertension-alerts/",
-          "tags": [
-            "Wearables",
-            "Digital Health",
-            "Samsung"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "사운드코어, 수면 중 생체 신호를 정밀 측정하는 'Sleep Earbuds 4 Pro' 출시",
-          "target_problem": "단순 소음 차단을 넘어 수면 중 다각적 신체 모니터링 및 수면 장애 분석 수요 증가",
-          "tech_applied": "수면 전용 초소형 이어버드 폼팩터에 다중 생체 센서를 내장한 센싱 기술",
-          "business_insight": "슬립테크(SleepTech) 시장에서 스마트 웨어러블 하드웨어와 구독형 헬스 케어 서비스 결합 BM 도출 가능",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/07/soundcore-sleep-earbuds-4-pro/",
-          "tags": [
-            "SleepTech",
-            "Wearable",
-            "Health"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "가민, 10가지 규격 사이즈 지원하는 'CIRQA' 스마트링 전파 인증 포착",
-          "target_problem": "스마트워치 착용이 불편한 착용자의 지속적인 수면 및 24/7 생체 데이터 측정 요구",
-          "tech_applied": "10가지 다양한 손가락 규격에 맞춘 고밀도 생체 센서 탑재 링 폼팩터",
-          "business_insight": "기존 가민 스포츠 헬스 에코시스템과 직접 연동하여 오라링(Oura) 등 전용 스마트링 브랜드와의 경쟁 본격화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/06/garmin-cirqa-smart-ring-ten-sizes/",
-          "tags": [
-            "Smart Ring",
-            "Garmin",
-            "Wearable"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "코로스, 기존 Pace 4 워치 사용자를 위한 풀 내비게이션 맵 펌웨어 무상 제공",
-          "target_problem": "보급형 러닝 워치 사용자들의 트레일 러닝 및 야외 활동 시 풀 매핑 오프라인 지형도 부재",
-          "tech_applied": "기존 기기 메모리 최적화를 통한 오프라인 지도 매핑 펌웨어 소프트웨어 업데이트",
-          "business_insight": "하드웨어 변경 없이 강력한 기능 업데이트를 제공하여 고객 충성도를 극대화하고 소프트웨어 중심 브랜드 가치 제고",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/massive-mapping-watches.html",
-          "tags": [
-            "GPS Watch",
-            "Firmware Update",
-            "COROS"
           ]
         }
       ]
