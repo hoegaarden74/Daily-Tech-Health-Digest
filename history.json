@@ -1,6 +1,139 @@
 {
-  "last_updated": "2026-09-19T08:18:38.145617+09:00",
+  "last_updated": "2026-09-20T08:03:31.170181+09:00",
   "digests": [
+    {
+      "date": "2026-09-20",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "OpenClaw 2026.9.5 출시: 아토믹 업데이트 및 플러그인 핫 리로드 지원",
+          "target_problem": "시스템 가동 중단(Downtime) 없이 게이트웨이를 업데이트하고 플러그인을 실시간 반영하려는 개발자 및 기업",
+          "tech_applied": "격리된 데이터 구조 기반의 Atomic Updates 기술, 게이트웨이 무중단 재설정, 플러그인 Hot Reloading, 대화 공유 및 GPT Live 기능 확장",
+          "business_insight": "엔터프라이즈 레벨의 고가용성(High Availability) 프레임워크를 제공하여 인프라 다운타임 리스크를 최소화하고 MLOps 운영 비용 절감",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/19/openclaw-releases-2026-9-5/",
+          "tags": [
+            "AI",
+            "MLOps",
+            "OpenSource",
+            "Infrastructure"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "TypeSafe AI, 확률 기반 타입형 의사결정 모델 'Jev' 공개",
+          "target_problem": "텍스트 생성 모델의 환각 현상과 불확실성을 배제하고 정교하게 보정된 확률값을 필요로 하는 정밀 결정 시스템",
+          "tech_applied": "System One 아키텍처 기반 구조화 입력/타입 출력 처리 기술, 확률 보정(Calibrated Probabilities) 엔진, $0.042/1M 토큰 입력을 지원하는 정밀 API",
+          "business_insight": "출력 토큰을 무상 제공하고 입력에만 과금하는 혁신적인 구조로, 금융/의료/위험 산정 등 정밀 B2B 의사결정 시장 공략 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/19/typesafe-ai-releases-jev/",
+          "tags": [
+            "AI",
+            "DecisionModel",
+            "API",
+            "B2B"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Linkup Research, 149M 경량 희소 임베딩 모델 'SPARSEUP' 오픈소스 공개",
+          "target_problem": "150M 파라미터 이하의 제한된 인프라 환경에서 고성능 희소 검색(Sparse Retrieval)을 구현하려는 검색 및 RAG 개발자",
+          "tech_applied": "ModernBERT 백본 프레임워크, Sparse Embedding 기법, BEIR-13 벤치마크 기준 56.4 nDCG@10 달성 최적화 알고리즘",
+          "business_insight": "경량화 오픈소스 모델을 통해 에지 단이나 저비용 서빙 인프라에서도 검색 정확도를 비약적으로 상향시켜 RAG 구축 비용 단축",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/19/linkup-research-releases-sparseup/",
+          "tags": [
+            "AI",
+            "OpenSource",
+            "Embedding",
+            "RAG"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "📱 Consumer App",
+          "title": "Meta, 로컬 데이터 연동 개인용 AI 에이전트 'Muse for Mac' 출시",
+          "target_problem": "사용자의 데스크톱 환경(파일, 메일, 메시지, 일정, 메모)에서 원활하게 작업을 자동 수행할 수 있는 온디바이스 연동 AI 필요성",
+          "tech_applied": "macOS 파일 시스템 및 네이티브 앱 연동 API, 온디바이스 개인 정보 보호 데이터 계층, 로컬 워크플로우 자동화 에이전트",
+          "business_insight": "모바일-데스크톱 간 교차 플랫폼 생태계를 구축하여 개인화 AI 에이전트 시장 내 플랫폼 주도권 강화",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/19/meta-launches-muse-for-mac/",
+          "tags": [
+            "Meta",
+            "AI Agent",
+            "macOS",
+            "Productivity"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Qwen Image 2.1 사전 공개: 오픈소스 이미지 생성 성능 대폭 개선",
+          "target_problem": "기존 오픈소스 이미지 모델의 프롬프트 정밀도 및 사실적 묘사 한계 개선 요구",
+          "tech_applied": "차세대 diffusion/transformer 기반 시각 생성 구조, 키워드 구조화 제어 최적화, 정교한 라이팅 및 텍스처 렌더링",
+          "business_insight": "고품질 이미지 오픈소스 모델 확산을 통해 상용 이미지 생성 SaaS 시장의 가격 압박 및 기술 평준화 촉진",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wklr8z/qwen_image_21_prerelease_comparison_by_sandlers/",
+          "tags": [
+            "AI Image",
+            "Qwen",
+            "OpenSource",
+            "GenerativeAI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "H3 HyperFlow: 비디오 및 이미지 생성을 위한 차세대 카메라 제어 모델",
+          "target_problem": "AI 생성 비디오 및 이미지에서의 무작위 카메라 움직임과 일관성 부족 문제",
+          "tech_applied": "HyperFlow 제어 알고리즘, 물리적 재질 및 조명 일관성 유지 기술, 카메라 3D 궤적 일치 제어",
+          "business_insight": "영화, 광고, 영상 제작 워크플로우에서 시계열 일관성을 확보해 고비용 스튜디오 작업을 대체 가능한 생산성 도구로 부각",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wkdku0/h3_hyperflow/",
+          "tags": [
+            "AI Video",
+            "CameraControl",
+            "Workflow",
+            "GenerativeAI"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "OPPO Watch S2 사전 유출: FatMax 측정, ECG 및 10일 배터리 탑재",
+          "target_problem": "짧은 배터리 수명과 단순 심박수 측정을 넘어 심도 있는 지방 연소 구간(FatMax) 측정을 원하는 헬스케어 사용자",
+          "tech_applied": "FatMax 최대 지방 연소율 분석 심박센서 연동 기술, ECG(심전도) 센서, 초저전력 10일 연속 가동 OS 파워 매니지먼트",
+          "business_insight": "고성능 헬스케어 메트릭과 장수명 배터리를 강점으로 미드레인지 스마트워치 시장 공략",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/19/oppo-watch-s2/",
+          "tags": [
+            "Wearables",
+            "HealthTech",
+            "ECG",
+            "Hardware"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Garmin Fenix 9 심층 리뷰: 아웃도어 스포츠 워치의 새로운 표준",
+          "target_problem": "극단적인 아웃도어 환경에서 장시간 가동 및 정밀 위치/위성 통신 측정을 필요로 하는 아웃도어 전문가",
+          "tech_applied": "InReach 위성 통신 모듈 통합, 태양광 충전 기술 개선, 고밀도 지형도 맵핑 알고리즘, 디스플레이 하드웨어 업그레이드",
+          "business_insight": "프리미엄 라인업의 단가 인상과 구독형 안전/통신 서비스 강화를 통한 ARPU(고객당 평균 매출) 상승 전략",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/garmin-fenix9-series-pro-inreach-solar-in-depth-review.html",
+          "tags": [
+            "Garmin",
+            "Fenix9",
+            "Wearable",
+            "Outdoor"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-19",
       "items": [
@@ -1141,163 +1274,6 @@
             "Fitbit",
             "GoogleHealth",
             "헬스케어"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-13",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Anthropic, Claude Code용 플러그인 평가 워크플로우(Plugin Evals) 출시",
-          "target_problem": "개발자가 Claude Code 커스텀 플러그인 및 스킬의 실제 성능 및 유효성을 체계적으로 검증하기 어려운 문제",
-          "tech_applied": "claude plugin eval 명령어로 6가지 채점 방식(Grader) 제공, 노플러그인 베이스라인과의 비교 분석 및 CI Gate 연동 지원",
-          "business_insight": "개발자 도구 에코시스템 내 플러그인의 품질 표준화 및 엔터프라이즈 환경에서의 상용 배포 신뢰성을 제고함",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/11/anthropic-adds-plugin-evals-to-claude-code-6-grader-types-a-no-plugin-baseline-and-a-ci-gate-for-skills/",
-          "tags": [
-            "Claude",
-            "Developer Tools",
-            "AI Evals"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Cohere, 50개 언어 지원 218B MoE 번역 모델 'North Small Translate' 공개",
-          "target_problem": "다국어 엔터프라이즈 환경에서 정교하고 저비용 고성능을 발휘하는 기계 번역 모델의 필요성",
-          "tech_applied": "218B 전체 파라미터 중 토큰당 25B를 활성화하는 Mixture-of-Experts(MoE) 구조, WMT26 평가에서 83.6점 기록",
-          "business_insight": "비상업적 용도 무료 공개 및 고성능 MoE 구조를 통해 글로벌 SaaS 기업들의 기계 번역 도입 비용 절감 기회 제공",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/10/cohere-releases-north-small-translate-a-218b-moe-translation-model-that-scores-83-6-on-wmt26-across-50-languages/",
-          "tags": [
-            "Cohere",
-            "Translation",
-            "MoE",
-            "Open Weights"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Sakana AI, 효율적 멀티 에이전트 오케스트레이션 모델 Fugu Max 및 Fugu Ultra v2 출시",
-          "target_problem": "복잡한 멀티 에이전트 워크플로우 운영 시 발생하는 과도한 API 호출 비용과 오케스트레이션 비효율성",
-          "tech_applied": "학습된 오케스트레이션 아키텍처 기반으로 NVIDIA Nemotron 등 특화 모델에 작업 라우팅 ($2/$6 per 1M 토큰)",
-          "business_insight": "멀티 에이전트 시스템 구축 단가를 획기적으로 낮춰 기업용 에이전트 솔루션의 고도화 및 비용 최적화를 유도",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/10/sakana-ai-launches-fugu-max-and-fugu-ultra-v2-for-cheaper-stronger-multi-agent-orchestration/",
-          "tags": [
-            "Sakana AI",
-            "Multi-Agent",
-            "Orchestration"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "ByteDance Seed 등, 에이전트 하네스 자체 엔지니어링 벤치마크 'HarnessDev' 발표",
-          "target_problem": "LLM이 스스로 에이전트 코딩 환경(Harness)을 지속 개선할 때 발생하는 일반화 및 안정성 부족 문제",
-          "tech_applied": "결과 응답 대신 모델이 구축한 실행 가능 하네스를 직접 평가하는 벤치마크 (64개 변경사항 중 34개만 일반화 성공 확인)",
-          "business_insight": "자율형 AI 개발 에이전트의 자기 개선 한계를 정량화함으로써 안전한 자율 코드 생성 가이드라인 마련",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/11/can-llms-engineer-their-own-agent-harness-bytedance-seeds-harnessdev-says-only-34-of-64-changes-generalize/",
-          "tags": [
-            "ByteDance",
-            "Agents",
-            "Benchmark"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "오디오 생성 AI YuE2, audio.cpp 기반 8-9GB VRAM 경량화 버전 출시",
-          "target_problem": "고성능 오디오 및 음악 생성 AI 모델의 높은 VRAM 요구량으로 인한 소비자 컴퓨팅 환경에서의 제약",
-          "tech_applied": "audio.cpp DEV 브랜치를 통해 Q4/Q8 양자화 가중치 제공, 로컬 8GB VRAM 환경 실행 구현",
-          "business_insight": "로컬 디바이스에서의 고품질 AI 음악 제작 접근성을 대폭 넓혀 1인 크리에이터 및 오디오 소프트웨어 생태계 확장",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wdyk81/yue2_only_needs_89_gb_vram_now/",
-          "tags": [
-            "YuE2",
-            "Audio AI",
-            "Quantization",
-            "Local AI"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "ComfyUI 커스텀 노드팩 'comfyui-obvpm' 업데이트: 단일 노드 참조 이미지 합성 기능 추가",
-          "target_problem": "ComfyUI에서 복잡한 워크플로우 복잡도와 가상 복잡 선 연결로 인한 작업 효율 저하",
-          "tech_applied": "단일 노드 내 참조 이미지 구성, 설정 프리셋 노드, 복잡한 배선 번들/언번들(Bundle/Unbundle) 기능 구현",
-          "business_insight": "비주얼 생성 AI 크리에이터의 워크플로우 생산성 향상 및 복잡한 노드 파이프라인의 모듈화 촉진",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wefiqd/compose_ref_images_in_one_node_settings_presets/",
-          "tags": [
-            "ComfyUI",
-            "Workflow",
-            "Image Generation"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "📱 Consumer App",
-          "title": "Work Life Panda: 온디바이스 AI 기반 올인원 개인 생산성 관리 앱",
-          "target_problem": "여러 캘린더와 태스크 관리 도구 파편화 및 개인정보 유출에 대한 우려",
-          "tech_applied": "로컬 디바이스 단에서 작동하는 Private On-Device AI 엔진 기반 업무 및 일정 통합 관리",
-          "business_insight": "개인정보 보호 요구가 높고 보안을 중시하는 프라이버시 중심 생산성 SaaS 시장 타겟팅",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/work-life-panda",
-          "tags": [
-            "Productivity",
-            "On-Device AI",
-            "Privacy"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "애플워치 시리즈 12 및 울트라 4, 회복 HRV와 전체 HRV 지표 측정 세분화",
-          "target_problem": "단일 심박변이도(HRV) 수치만으로 일일 신체 회복 상태와 전체적인 건강 수준을 정확히 구분하기 힘든 한계",
-          "tech_applied": "Recovery HRV와 Overall HRV 두 가지 데이터 포인트를 분리 측정하여 회복도(RMSSD)와 누적 스트레스 수준 구분",
-          "business_insight": "피트니스 헬스케어 디바이스의 데이터 세분화를 통한 피트니스 트래커 구독 서비스 및 헬스 분석 경쟁력 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/11/apple-watch-recovery-hrv-overall-hrv-rmssd/",
-          "tags": [
-            "Apple Watch",
-            "HRV",
-            "Health Tech"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "가민(Garmin), Venu 4 사용자를 위한 낙상 감지(Fall Detection) 기능 업데이트 완료",
-          "target_problem": "야외 운동 및 일상생활 중 갑작스러운 사고 발생 시 신속한 긴급 구조 요청 메커니즘 부족",
-          "tech_applied": "가속도계 및 자이로스코프 센서 기반 낙상 동작 감지 알고리즘 패치 배포",
-          "business_insight": "고령층 및 아웃도어 스포츠 유저를 위한 안전 기능 확충으로 프리미엄 웰니스 스마트워치 시장 점유율 확대",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/10/garmin-venu-4-fall-detection-update/",
-          "tags": [
-            "Garmin",
-            "Venu 4",
-            "Safety"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "구글, 핏빗 에어(Fitbit Air) 'Health Guardian' 기능 및 신규 웨어러블 릴리즈 준비",
-          "target_problem": "통합 헬스 케어 모니터링 및 실시간 위험 징후 알림 기능의 정교함 필요",
-          "tech_applied": "구글 헬스 앱 연동 신규 Health Guardian 기능 탑재 및 신규 FCC 인증 디바이스(G8BL6) 준비",
-          "business_insight": "구글 웨어러블 에코시스템과 핏빗 헬스 데이터 통합을 통한 상용 디지털 헬스케어 플랫폼 입지 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/11/fitbit-air-health-guardian-google-health-app/",
-          "tags": [
-            "Fitbit",
-            "Google Health",
-            "Wearables"
           ]
         }
       ]
