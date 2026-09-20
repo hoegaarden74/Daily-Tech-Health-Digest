@@ -1,6 +1,154 @@
 {
-  "last_updated": "2026-09-20T08:03:31.170181+09:00",
+  "last_updated": "2026-09-21T08:15:10.263147+09:00",
   "digests": [
+    {
+      "date": "2026-09-21",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Flet 1.0 출시: 파이썬만으로 크로스 플랫폼 웹·데스크톱·모바일 앱 개발 지원",
+          "target_problem": "파이썬 개발자가 프론트엔드 언어(JavaScript/Dart 등)를 별도로 배우지 않고 고성능 프로덕션 앱을 구축하기 어려움",
+          "tech_applied": "Flutter 기반 UI 엔진, 파이썬 3.12/3.13/3.14 번들링, 계층형 CI 패키징 제품군 및 100개 이상의 모바일 컨트롤 제공",
+          "business_insight": "파이썬 생태계 내 풀스택 개발 장벽을 크게 낮추어, 내부 AI 도구 및 B2B SaaS 앱의 신속한 프로토타이핑 및 출시 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/20/flet-1-0-released-build-production-web-desktop-and-mobile-apps-in-python-only/",
+          "tags": [
+            "Python",
+            "App Development",
+            "Cross Platform",
+            "Flet"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "알리바바 Qwen 팀, 60개 국어 지연시간 2.3초 대 실시간 통역 모델 Qwen3.8-LiveTranslate 공개",
+          "target_problem": "다국어 동시통역 시 발생하는 지연 시간 및 화자 분리(Diarization) 불안정성 문제",
+          "tech_applied": "신규 인터리브(Interleave) 아키텍처 기반 real-time simultaneous interpretation 모델 및 화자 분리 알고리즘",
+          "business_insight": "평균 지연시간을 2.3초로 단축하여 글로벌 화상회의, 국제 컨퍼런스, 크로스보더 커머스 CS 등 글로벌 B2B 서비스 적용성 강화",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/19/alibaba-qwen-team-releases-qwen3-8-livetranslate/",
+          "tags": [
+            "AI",
+            "Translation",
+            "Qwen",
+            "Realtime AI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "TypeSafe AI, 텍스트 대신 확률 기반 타입을 반환하는 모델 'Jev' 출시",
+          "target_problem": "기존 LLM의 비확정적 텍스트 출력으로 인한 B2B 시스템 연동 오류 및 보일러플레이트 파싱 부담",
+          "tech_applied": "System One 아키텍처 기반의 보정된(Calibrated) 확률 타입 결정 모델 API",
+          "business_insight": "입력 토큰당 $0.042/1M 가격 체계 및 출력 토큰 무료 정책으로, 자동화 의사결정 워크플로우 운영 비용을 유의미하게 절감",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/19/typesafe-ai-releases-jev/",
+          "tags": [
+            "AI",
+            "API",
+            "TypeSafe",
+            "System One"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Linkup Research, 1억 4,900만 파라미터 오픈소스 희소 임베딩 모델 'SPARSEUP' 공개",
+          "target_problem": "150M 미만 소형 모델 규격에서 베이직 검색 성능(BEIR 벤치마크) 및 효율성 저하 문제",
+          "tech_applied": "ModernBERT 백본 기반의 Sparse Embedding 모델, BEIR-13에서 56.4 nDCG@10 달성",
+          "business_insight": "저비용 경량화 오픈소스 모델을 활용하여 실시간 검색 시스템(RAG) 인프라 구축 비용 대폭 줄임",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/19/linkup-research-releases-sparseup/",
+          "tags": [
+            "Embedding",
+            "OpenSource",
+            "RAG",
+            "BERT"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Qwen-Image-2.1 가중치 공개 및 ComfyUI 워크플로우 지원 시작",
+          "target_problem": "이미지 생성 및 일관성 유지 작업 시 고품질 오픈소스 모델의 부재 및 복잡한 적용 과정",
+          "tech_applied": "Qwen-Image-2.1 오픈 가중치, ComfyUI 통합 워크플로우 및 Hugging Face/ModelScope 배포",
+          "business_insight": "오픈소스 가중치 공개로 크리에이터 생태계 및 AI 이미지/비디오 제작 파이프라인의 접근성과 커스텀 제작 자유도 증대",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wlgh7c/qwenimage21_weights_are_available_on_hugging_face/",
+          "tags": [
+            "AI Image",
+            "Qwen",
+            "ComfyUI",
+            "Open Source"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Minicart: AI 기반 스토어 운영 자동화 솔루션 출시",
+          "target_problem": "전자상거래 스토어 오픈 후 단순 반복적 관리 업무(Busywork)로 인한 운영 효율 감소",
+          "tech_applied": "이커머스 업무 자동화 AI 에이전트 서비스",
+          "business_insight": "1인 창업가 및 중소상공인의 개설 및 운영 진입장벽을 낮춰 구독형 SaaS 과금 모델 수립에 유용한 유즈케이스 제공",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/minicart",
+          "tags": [
+            "E-commerce",
+            "AI Agent",
+            "SaaS"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "Amazfit, Zepp 앱 내 클라우드 데이터 전송 선택권 도입 예정",
+          "target_problem": "웨어러블 사용자들의 개인 건강 데이터 클라우드 동기화에 따른 프라이버시 우려",
+          "tech_applied": "Zepp 헬스 플랫폼 프라이버시 제어 및 선택적 클라우드 동기화 온디바이스 기능",
+          "business_insight": "데이터 프라이버시 규제 강화 흐름 속에서 사용자가 데이터 동기화 범위를 지정하게 함으로써 데이터 신뢰성 확보",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/20/amazfit-zepp-cloud-sync-privacy-controls/",
+          "tags": [
+            "Wearables",
+            "Privacy",
+            "Amazfit",
+            "HealthTech"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "OPPO Watch S2 사전 유출: FatMax 측정, 심전도(ECG) 및 10일 배터리 탑재",
+          "target_problem": "짧은 배터리 수명과 심도 있는 운동 생체 지표(최대 지방 산화율 등) 측정 기능의 부재",
+          "tech_applied": "FatMax 측정 센서, ECG(심전도) 센서 및 저전력 배터리 관리 시스템",
+          "business_insight": "전문 훈련용 생체 지표인 FatMax와 긴 배터리 수명을 대중적인 스마트워치 레이블로 가져와 피트니스 관여도가 높은 사용자층 공략",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/19/oppo-watch-s2/",
+          "tags": [
+            "Smartwatch",
+            "OPPO",
+            "ECG",
+            "Fitness"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Garmin Fenix 9 심층 리뷰: 심층 하드웨어·소프트웨어 업데이트 및 inReach 통합",
+          "target_problem": "아웃도어 워치 사용자의 위성 통신 제약 및 복합 스포츠 트래킹 요구",
+          "tech_applied": "inReach 위성 기술 통합, 태양광 충전 기술, 업그레이드된 트래킹 소프트웨어",
+          "business_insight": "프리미엄 아웃도어 스마트워치 시장의 입지를 강화하며 위성 통신 솔루션을 통합해 추가 서비스 수익(MRR) 창출 기회 확보",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/garmin-fenix9-series-pro-inreach-solar-in-depth-review.html",
+          "tags": [
+            "Garmin",
+            "Fenix9",
+            "Wearable",
+            "Outdoor"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-20",
       "items": [
@@ -1067,213 +1215,6 @@
             "Garmin",
             "Wearables",
             "Sale"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-14",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "AWS, 백그라운드 AI 에이전트를 위한 오픈소스 인박스 'Pizza Bot' 공개",
-          "target_problem": "여러 백그라운드 AI 에이전트 간의 워크플로우 통제, 작업 상태 영구 유지 및 인간 승인 절차 관리의 복잡성",
-          "tech_applied": "DeepAgents 및 LangGraph 프레임워크 기반, MCP(Model Context Protocol) 연동, 영구적 작업 상태 관리 및 스케줄링 워크플로우 지원",
-          "business_insight": "자율형 AI 에이전트의 기업 도입 시 사람의 승인 및 모니터링 체계를 오픈소스로 표준화하여 B2B 에이전트 생태계 확장",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/13/aws-introduces-pizza-bot-an-open-source-inbox-for-background-ai-agents/",
-          "tags": [
-            "AWS",
-            "AI 에이전트",
-            "오픈소스",
-            "LangGraph"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "프린스턴 연구진, 토큰 간 디코더 상태를 보존하는 Recurrent Looped Transformer (RLT) 발표",
-          "target_problem": "기존 트랜스포머의 토큰 생성 과정에서 장기적 시퀀스 생성 시 컨텍스트 유지 제한 및 연산 효율 저하",
-          "tech_applied": "Causal Encoder와 Recurrent Decoder 구조 결합, 토큰 간 은닉 상태(Hidden State) 및 슬라이딩 윈도우 어텐션 캐시 순환 유지",
-          "business_insight": "무제한 시간적 깊이(Unbounded Temporal Depth)를 통해 인프라 비용 부담 없이 초장문 텍스트 연산 및 연속 대화 모델 구현 가능성 제시",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/13/a-princeton-researcher-proposes-recurrent-looped-transformer-rlt/",
-          "tags": [
-            "Transformer",
-            "AI 아키텍처",
-            "LLM",
-            "연구"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "장기 수행 과제(Long-Horizon Tasks)를 위한 AI 에이전트 컨텍스트 엔지니어링 기법",
-          "target_problem": "LLM이 반복적인 도구 호출 및 장시간 작업 수행 시 발생하는 컨텍스트 오버플로우와 목표 상실(Goal Loss) 문제",
-          "tech_applied": "LangChain Deep Agents 및 Claude Code 등에서 검증된 하네스(Harness) 레이어 중심 4가지 컨텍스트 제어 메커니즘",
-          "business_insight": "복잡한 엔터프라이즈 자동화 파이프라인에서 AI 에이전트의 미션 완료율과 추론 신뢰도를 비약적으로 향상",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/12/context-engineering-inside-the-harness-4-mechanisms-that-beat-context-overflow-and-goal-loss-on-long-horizon-tasks/",
-          "tags": [
-            "Context Engineering",
-            "AI 에이전트",
-            "개발 프레임워크",
-            "LLM"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "NVIDIA cuML 및 RAPIDS 기반의 GPU 가속 머신러닝 워크플로우 구축법",
-          "target_problem": "대용량 데이터 분석 및 기존 CPU 기반 머신러닝 워크플로우의 느린 학습 및 추론 속도",
-          "tech_applied": "NVIDIA cuML, RAPIDS 라이브러리, zero-code scikit-learn 가속 파이프라인(cuml.accel) 및 GPU 벤치마킹",
-          "business_insight": "파이썬 머신러닝 코드 수정을 최소화하면서 GPU 인프라 전환을 통해 기업의 데이터 분석 처리 속도 대폭 개선",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/12/implementation-of-machine-learning-workflows-with-nvidia-cuml-rapids-gpu-benchmarking-explainability-clustering-and-model-inference/",
-          "tags": [
-            "NVIDIA",
-            "GPU 가속",
-            "RAPIDS",
-            "머신러닝"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Hugging Face, Gradio Workflow 기반 AUTOMATIC1111 재구축 가이드 공개",
-          "target_problem": "기존 웹 UI 솔루션의 복잡성과 인터페이스 확장성 부족",
-          "tech_applied": "Hugging Face Gradio의 최신 Workflow 구성 인터페이스를 활용한 이미지 생성 파이프라인 모듈화",
-          "business_insight": "오픈소스 이미지 생성 파이프라인의 커스텀 개발을 용이하게 하여 이미지 생성 앱 개발 속도 가속화",
-          "source_name": "Hugging Face Blog",
-          "source_url": "https://huggingface.co/blog/gradio-workflow-1111",
-          "tags": [
-            "HuggingFace",
-            "Gradio",
-            "AUTOMATIC1111",
-            "UI"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "ComfyUI용 TaoMate MiniMax H3 3-Step LoRA 변환 포맷 및 리파이너 활용법",
-          "target_problem": "MiniMax H3 고성능 생성 모델의 긴 생성 시간 및 연산 비용 문제",
-          "tech_applied": "3단계 추론 지원 LoRA의 ComfyUI 전용 safetensors 변환 및 리파이너(Refiner) 단계 병용 파이프라인",
-          "business_insight": "최소 추론 단계로 우수한 화질을 유지하여 AI 비디오 크리에이터의 연산 비용 절감 및 생산성 극대화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wf3zco/taomate_h3_3_step_lora_now_working_in_comfyui/",
-          "tags": [
-            "ComfyUI",
-            "LoRA",
-            "MiniMax H3",
-            "생성 AI"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "FLUX.2-klein-9B 지원 RefMods 모듈 공개",
-          "target_problem": "대형 오픈 비주얼 모델 사용 시 정교한 참조(Reference) 제어 및 커스텀 미세조정 한계",
-          "tech_applied": "FLUX.2-klein-9B 구조 호환 참조 모듈(RefMods) 파라미터 최적화",
-          "business_insight": "커뮤니티 중심의 모듈화 생태계 구축을 통해 고품질 비주얼 콘텐츠 커스텀 제작 생태계 강화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1werxhr/flux2klein9b_refmods/",
-          "tags": [
-            "FLUX",
-            "오픈소스",
-            "이미지 생성"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "MiniMax H3 기반 3D 카메라 컨트롤 업데이트 및 영문판 리포지토리 공개",
-          "target_problem": "AI 기반 영상 생성 시 카메라 연출 및 시점 정밀 제어의 한계",
-          "tech_applied": "MiniMax H3 연동 3D 카메라 컨트롤 오버레이 알고리즘 및 영문 깃허브 오픈소스 제공",
-          "business_insight": "전문 영화/영상 제작 파이프라인에 AI 비디오 생성 도구를 접목할 수 있는 실질적 연출 도구 확보",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wey8t7/h3_camera_control_update/",
-          "tags": [
-            "MiniMax",
-            "3D 카메라",
-            "비디오 생성",
-            "오픈소스"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "📱 Consumer App",
-          "title": "두 번의 터치로 문장을 완성하는 'GhostWriter by MyHandler' 출시",
-          "target_problem": "모바일 환경에서 긴 글 및 콘텐츠 작성을 위해 다중 탭과 긴 프롬프트를 입력해야 하는 번거로움",
-          "tech_applied": "초단축 탭 사용자 인터페이스 및 모바일 최적화 자동 텍스트 작성 엔진",
-          "business_insight": "소셜 미디어 크리에이터를 겨냥한 초경량 생산성 모바일 앱 구독 수익 모델",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/ghostwriter-by-myhandler",
-          "tags": [
-            "ProductHunt",
-            "생산성",
-            "모바일 앱"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "애플워치 울트라 4 및 시리즈 12 실물 핸즈온 리뷰",
-          "target_problem": "스마트워치 시장에서 하드웨어 폼팩터 변화와 피트니스 추적 성능 향상에 대한 소비자 요구",
-          "tech_applied": "울트라 시리즈 하드웨어 폼팩터 개편, 차세대 센서 스택 및 통합 피트니스 트래킹",
-          "business_insight": "아웃도어 전문 고객과 일반 소비자를 동시 공략하는 애플의 웨어러블 라인업 고도화 전략",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/apple-watch-ultra4-series-12hands-on.html",
-          "tags": [
-            "AppleWatch",
-            "웨어러블",
-            "헬스케어"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "애플워치 '회복 HRV'와 '전체 HRV' 세분화 지표 도입 분석",
-          "target_problem": "일상 활동 중 노이즈로 인해 신체 회복 정도를 심박변이도(HRV)로 정확히 파악하기 어렵던 문제",
-          "tech_applied": "수면 및 휴식 시 측정되는 Recovery HRV(RMSSD 기반)와 24시간 일상 활동 데이터를 추적하는 Overall HRV의 신호 분리",
-          "business_insight": "헬스 데이터 정밀도 제고를 통해 디지털 헬스케어 플랫폼 및 정밀 웰니스 서비스 연동성 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/11/apple-watch-recovery-hrv-overall-hrv-rmssd/",
-          "tags": [
-            "HRV",
-            "애플워치",
-            "헬스데이터"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "가민, 최신 러닝 워치 Forerunner 70 및 170 출시 후 첫 할인 실시",
-          "target_problem": "러닝 스마트워치 신제품의 구매 진입 장벽 완화 및 신규 사용자 유입 촉진 필요성",
-          "tech_applied": "러닝 다이내믹스 메트릭 및 GPS 트래킹, Garmin Connect 피트니스 분석 플랫폼 연동",
-          "business_insight": "엔트리 및 미드레인지 라인업 할인 가격 정책을 통한 신규 스포츠 유저 확보 및 생태계 락인 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/13/garmin-forerunner-70-170-first-sale/",
-          "tags": [
-            "Garmin",
-            "Forerunner",
-            "웨어러블"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "Fitbit Air, 구글 헬스 연동 'Health Guardian' 기능 공식 출시 준비 완료",
-          "target_problem": "착용자의 이상 건강 징후 감지 및 즉각적인 보호 알림 체계 강화 필요성",
-          "tech_applied": "Fitbit 바이오 센서 데이터와 Google Health 앱 생태계 연동 실시간 모니터링 시스템",
-          "business_insight": "구글 생태계와의 소프트웨어 통합 강화를 통한 Fitbit 브랜드의 모바일 헬스케어 경쟁력 제고",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/11/fitbit-air-health-guardian-google-health-app/",
-          "tags": [
-            "Fitbit",
-            "GoogleHealth",
-            "헬스케어"
           ]
         }
       ]
