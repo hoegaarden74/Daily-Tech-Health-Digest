@@ -1,6 +1,202 @@
 {
-  "last_updated": "2026-09-21T08:15:10.263147+09:00",
+  "last_updated": "2026-09-22T09:06:55.896716+09:00",
   "digests": [
+    {
+      "date": "2026-09-22",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "AWS, 토큰 비용 28% 절감 가능한 에이전트 프레임워크 'Strands Harness' 공개",
+          "target_problem": "개발 환경(Claude Code, Codex 등)에서는 잘 작동하지만 자체 실행 루프로 구축 시 안정성이 떨어지는 에이전트 개발 격차 문제",
+          "tech_applied": "AWS Strands Agents 팀이 개발한 모듈형 범용 오픈소스 에이전트 하네스(Agent Harness)",
+          "business_insight": "동일 성능 대비 토큰 소비 비용을 28% 대폭 절감하여 에이전틱 AI 서비스 운영사의 인프라 비용 부담 절감 효과",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/21/aws-strands-agents-team-releases-strands-harness/",
+          "tags": [
+            "AWS",
+            "AI Agent",
+            "OpenSource",
+            "LLM Ops"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "알리바바 Qwen, 이미지 생성·편집 및 RGBA 투명도 지원 'Qwen-Image-2.1' 공개",
+          "target_problem": "텍스트 기반 이미지 생성과 다중 참조 이미지 편집, 누끼(RGBA 배경 투명화) 작업을 별도 모델로 처리해야 했던 비효율성",
+          "tech_applied": "7B 파라미터 기반 Diffusion Transformer, Prefix KV Cache 기반 최대 10개 참조 이미지 초고속 편집 기술",
+          "business_insight": "단일 체크포인트로 다양한 이미지 편집 요구사항을 통합 처리함으로써 디자인 파이프라인 자동화 도구 시장 점유율 확대 기대",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/21/alibaba-qwen-releases-qwen-image-2-1/",
+          "tags": [
+            "Alibaba",
+            "Qwen",
+            "Image Gen",
+            "Diffusion Transformer"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "StepFun, 1M 컨텍스트 지원 600B 초대형 MoE 모델 'Step 5 Preview' 발표",
+          "target_problem": "복잡하고 긴 호흡(Long-Horizon)의 에이전트 작업 시 멀티모달 데이터 처리 및 장기 기억 한계 문제",
+          "tech_applied": "총 600B 파라미터(토큰당 27B 활성화) Sparse MoE 구조, 1M 토큰 컨텍스트, 텍스트·이미지·비디오 통합 멀티모달 입력",
+          "business_insight": "희소(Sparse) MoE 설계를 통해 추론 비용을 최적화하면서 대규모 엔터프라이즈 자동화 workflows 솔루션 시장 진입 노림",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/20/stepfun-launches-step-5-preview/",
+          "tags": [
+            "StepFun",
+            "MoE",
+            "Long Context",
+            "MultiModal"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "파이썬 전용 프로덕션 앱 구축 프레임워크 'Flet 1.0' 정식 출시",
+          "target_problem": "파이썬 개발자가 웹, 데스크톱, 모바일 크로스플랫폼 앱 개발 시 여러 프론트엔드 언어/프레임워크를 배워야 하는 부담",
+          "tech_applied": "Python 3.12~3.14 번들링, 레이어드 CI 기반 실기기 패키징, 100여 개 모바일 전용 컴포넌트 탑재",
+          "business_insight": "파이썬 단일 언어로 풀스택 AI 앱 및 SaaS 프로토타입을 프로덕션 수준으로 신속히 배포 가능하여 초기 개발 비용 단축",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/20/flet-1-0-released-build-production-web-desktop-and-mobile-apps-in-python-only/",
+          "tags": [
+            "Python",
+            "Flet",
+            "App Development",
+            "CrossPlatform"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "100M 초경량 이미지 생성 모델 'Supra2-IMG' 오픈소스 공개",
+          "target_problem": "대형 이미지 생성 모델 사용 시 발생하는 과도한 그래픽 자원 소모 및 높은 추론 대기 시간",
+          "tech_applied": "100M 파라미터 DiT(Diffusion Transformer) 구조, 단일 GPU로 10시간 이내 스크래치 학습 달성",
+          "business_insight": "엣지 디바이스 및 온디바이스 AI 환경에서도 SOTA급 퀄리티의 이미지 생성이 가능해져 모바일 앱 탑재 유용성 증대",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wmg1pb/massive_release_supra2img_a_tiny_100m_texttoimage/",
+          "tags": [
+            "Supra2",
+            "DiT",
+            "Lightweight AI",
+            "TextToImage"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "SAM 3.1 기반 잠재 마스크 활용 가이드형 캐릭터 교체 파이프라인 정립",
+          "target_problem": "비디오 캐릭터 교체 작업 시 정밀한 영역 지정 실패로 인한 배경 일탈 및 위치·색상 동기화 비정상 현상",
+          "tech_applied": "Minimax H3, SAM 3.1 Latent Mask 및 위치/색상 추적 마스킹 합성 기술",
+          "business_insight": "정밀 비디오 인페인팅 및 캐릭터 대체 기술을 통해 영상 제작 및 VFX 후반 작업의 자동화 공정 효율 극대화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wm62zl/v5_update_newbie_minimax_h3_sam_31_latent_mask/",
+          "tags": [
+            "SAM3.1",
+            "VideoEditing",
+            "Inpainting",
+            "ComfyUI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "알리바바 Qwen 2.1 생성 결과물에 대한 완전한 상업적 소유권 공식 확인",
+          "target_problem": "오픈소스 AI 모델 사용 시 생성된 이미지 및 콘텐츠의 저작권 및 상업적 라이선스 귀속 불확실성",
+          "tech_applied": "QwenDevs 라이선스 약관 명시를 통한 생성물 소유권 사용자 완전 이전",
+          "business_insight": "상업용 AI 생성 콘텐츠 제작자 및 디자인 에이전시의 법적 리스크 해소로 기업 차원의 도입 가속화 기대",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wmbfxz/fyi_you_actually_own_the_outputs_you_generate/",
+          "tags": [
+            "Qwen2.1",
+            "Copyright",
+            "CommercialUse",
+            "AI Policy"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "소프트웨어 자동화 의사결정 지원 AI 플랫폼 'Jev' 런칭",
+          "target_problem": "복잡한 워크플로우 자동화 과정에서 발생하는 빠른 판단 및 구조화된 의사결정의 부재",
+          "tech_applied": "빠르고 구조화된 AI 기반 의사결정 트리 및 자동화 오케스트레이션",
+          "business_insight": "개발자 및 프로덕트 팀의 반복적인 시스템 설정 결정을 자동화하여 전체 소프트웨어 배포 속도 향상",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/jev-2",
+          "tags": [
+            "Automation",
+            "Productivity",
+            "Workflow"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "샤오미 Mi Fitness, 개인화된 'AI 헬스 어시스턴트' 기능 도입 추진",
+          "target_problem": "기존 스마트밴드/워치 앱의 단순 데이터 나열 방식으로 인한 개인 맞춤형 피트니스 코칭 부재",
+          "tech_applied": "Mi Fitness 최신 앱 코드 내 AI 알고리즘 기반 대화형/분석형 헬스 어시스턴트 엔진",
+          "business_insight": "웨어러블 기기 하드웨어 경쟁을 넘어 인공지능 코칭 소프트웨어 생태계를 통한 고객 락인(Lock-in) 강화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/21/xiaomi-ai-health-assistant/",
+          "tags": [
+            "Xiaomi",
+            "MiFitness",
+            "AI Health",
+            "Wearable"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "오포(OPPO) Watch S2 유출: FatMax 산소 섭취 지표 및 ECG 탑재",
+          "target_problem": "운동 중 체지방 연소 효율을 정밀하게 측정하고 심장 건강 상태를 연속 모니터링하려는 사용자 수요",
+          "tech_applied": "FatMax 측정 알고리즘, ECG(심전도) 센서, 최적화된 저전력 노드 기반 10일 배터리 수명",
+          "business_insight": "전문 선수급 피트니스 지표(FatMax)와 메디컬 기능(ECG)의 결합을 통한 프리미엄 스마트워치 시장 개척",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/19/oppo-watch-s2/",
+          "tags": [
+            "OPPO",
+            "Smartwatch",
+            "FatMax",
+            "ECG"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "웨어러블 브랜드의 '신체 준비도(Readiness) 점수' 과학적 검증 공백 지적",
+          "target_problem": "가민, 오라, 룹, 애플 등이 제공하는 아침 '준비도 점수'의 의학적·임상적 근거 부족 및 모호함",
+          "tech_applied": "심박변이도(HRV), 수면 상태, 체온 분석을 통합 수치화하는 자체 산출 알고리즘",
+          "business_insight": "소비자의 맹목적 신뢰 대비 임상 연구 데이터의 격차가 존재함에 따라, 향후 헬스테크 기업의 과학적 검증 및 웰니스 임상 데이터 확보 요구 증가",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/21/wearable-readiness-scores-science/",
+          "tags": [
+            "Wearables",
+            "ReadinessScore",
+            "HealthTech",
+            "Research"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "아마즈핏(Amazfit), 클라우드 동기화 헬스 데이터 선택적 민감도 제어 기능 준비",
+          "target_problem": "민감한 개인 생체 데이터가 중앙 클라우드로 무조건 자동 전송되는 것에 대한 프라이버시 우려",
+          "tech_applied": "Zepp Health 플랫폼 내 클라우드 동기화 세부 데이터 권한 제어 UI 및 온디바이스 암호화 처리",
+          "business_insight": "개인정보 보호 제어권을 사용자에게 부여함으로써 유럽 등 엄격한 글로벌 데이터 규제(GDPR) 대응 및 브랜드 신뢰도 향상",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/20/amazfit-zepp-cloud-sync-privacy-controls/",
+          "tags": [
+            "Amazfit",
+            "ZeppHealth",
+            "Privacy",
+            "DataSecurity"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-21",
       "items": [
@@ -1016,205 +1212,6 @@
             "watchOS27",
             "HealthTech",
             "Wearable"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-15",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "사카나 AI, 역전파 없이 1000개 레이어 학습하는 PC-ALM 공개",
-          "target_problem": "기존 역전파(Backpropagation) 알고리즘의 메모리 병목 및 레이어 간 동기화 지연 문제 해결",
-          "tech_applied": "Augmented Lagrangian Predictive Coding (PC-ALM) 기반 레이어 국소(Layer-Local) 학습 기술",
-          "business_insight": "초대형 AI 모델의 분산 학습 비용 절감 및 엣지 디바이스/차세대 하드웨어에서의 직접 학습 가능성 확보",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/14/sakana-ai-researchers-introduce-pc-alm-a-layer-local-alternative-to-backpropagation-that-trains-1000-layer-networks/",
-          "tags": [
-            "AI",
-            "Research",
-            "DeepLearning"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "엔비디아, 피지컬 AI 워크플로우 오케스트레이터 'OSMO' 오픈소스 전환",
-          "target_problem": "로보틱스 및 피지컬 AI 개발 시 파편화된 학습, 시뮬레이션, 하드웨어 테스트 워크플로우 통합",
-          "tech_applied": "쿠버네티스(Kubernetes) 네이티브 기반 단일 YAML 파이프라인 제어 구조",
-          "business_insight": "엔비디아 생태계(Isaac Sim, Project GR00T)의 오픈소스 오케스트레이션 표준 구축을 통한 피지컬 AI 시장 주도권 강화",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/14/nvidia-open-sources-osmo-one-yaml-orchestrates-physical-ai-training-simulation-and-robot-testing/",
-          "tags": [
-            "Robotics",
-            "OpenSource",
-            "PhysicalAI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "앤트로픽 'Pace the Frontier' 플랜 발표 및 빅테크 3사 동의 제휴",
-          "target_problem": "자율 AI 에이전트의 다중 협동 공격 및 통제 불능 위험에 대응하기 위한 프론티어 AI 안전 가이드라인 수립",
-          "tech_applied": "3단계 안전 통제 가이드라인 및 자율 에이전트 모니터링 프레임워크",
-          "business_insight": "글로벌 AI 주요 기업(OpenAI, xAI, Microsoft) 간 규제 프레임워크 표준화 및 안전 기준 마련",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/13/anthropics-3-step-pace-the-frontier-plan-wins-openai-xai-and-microsoft-support-is-it-too-late-to-slow-ai-down/",
-          "tags": [
-            "AIGovernance",
-            "Safety"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "프린스턴 연구진, 무한 시간 심도의 RLT(Recurrent Looped Transformer) 제안",
-          "target_problem": "트랜스포머 모델의 토큰 생성 간 컨텍스트 유지 제한 및 메모리 압박 문제 개선",
-          "tech_applied": "인코더-디코더 결합 및 순환(Recurrent) 슬라이딩 윈도우 어텐션 캐시 기법",
-          "business_insight": "장기 추론 및 실시간 대화형 AI 시스템의 컴퓨팅 자원 효율화 달성",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/13/a-princeton-researcher-proposes-recurrent-looped-transformer-rlt/",
-          "tags": [
-            "Transformer",
-            "Architecture",
-            "AI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "허깅페이스, NCCL 없는 비동기 GRPO LoRA 학습 방식 공유",
-          "target_problem": "분산 환경에서 복잡한 NCCL 인터커넥트 설정 및 클러스터 구축에 드는 고비용 구조",
-          "tech_applied": "버킷 기반 스토리지와 프록시 기반 데이터 전달 및 Async GRPO 알고리즘",
-          "business_insight": "독립적 클라우드 인스턴스(HF Jobs) 모음으로 비용 효율적인 오픈소스 강화학습 파이프라인 구성 가능",
-          "source_name": "Hugging Face Blog",
-          "source_url": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs",
-          "tags": [
-            "HuggingFace",
-            "ReinforcementLearning",
-            "LoRA"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "YuE2 전용 오디오 인코더 오픈소스 공개 및 커스텀 음원 입력 지원",
-          "target_problem": "오픈소스 음악 생성 모델 YuE2의 누락된 오디오 인코더로 인해 사용자 커스텀 음원 입력이 불가했던 점 해결",
-          "tech_applied": "시맨틱 토큰 변환용 오디오 인코더 역설계 및 재학습 기술",
-          "business_insight": "크리에이터가 자체 음원을 유기적으로 AI 생성 음악 생태계에 결합할 수 있는 오픈소스 오디오 파이프라인 완성",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wg4xne/i_trained_the_missing_encoder_for_yue2_so_we_can/",
-          "tags": [
-            "AudioAI",
-            "OpenSource",
-            "MusicGen"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "ComfyUI 기반 YuE2 LoRA 트레이너 노드 출시",
-          "target_problem": "음악 생성 AI 모델에 대한 맞춤형 학풍/스타일 학습(LoRA) 적용 복잡성 극복",
-          "tech_applied": "ComfyUI 맞춤 커스텀 노드 및 파이프라인 스크립트 연동",
-          "business_insight": "노코드/워크플로우 환경에서 서드파티 크리에이터들이 빠르게 맞춤형 음성/음악 LoRA 생태계를 구축할 수 있는 발판 제공",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wgcwjh/comfyui_yue2_lora_trainer_built_on_my_encoder_and/",
-          "tags": [
-            "ComfyUI",
-            "LoRA",
-            "CreatorTools"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "MiniMax 3 비디오 레퍼런스 교체 가이드 및 워크플로우 정립",
-          "target_problem": "비디오 대 비디오(Video-to-Video) 참조 변환 시 일관성 유지 및 모션 매칭의 어려움",
-          "tech_applied": "MiniMax 비디오 인퍼런스 프롬프팅 기법 및 Taomate LoRA 리파이너 4단계 워크플로우",
-          "business_insight": "저비용/고효율 AI 비디오 연출 및 기존 영상 자산의 정밀 스타일 변환 가능",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wfzeps/minimax_3_video_reference_replacement_tutorial/",
-          "tags": [
-            "VideoAI",
-            "MiniMax",
-            "Workflow"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "📱 Consumer App",
-          "title": "Naoma AI Demo Agent V2: 웹사이트 방문자 구매 전환 세일즈 에이전트",
-          "target_problem": "웹사이트 유입 트래픽의 낮은 미팅 전환율 및 리드 자격 검증 수작업 소요",
-          "tech_applied": "대화형 데모 진행 및 자격 검증(Qualified Lead) 자동화 세일즈 에이전트",
-          "business_insight": "B2B SaaS 기업의 inbound 리드 수집 자동화를 통한 영업 생산성 대폭 향상",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/naoma",
-          "tags": [
-            "B2BSaaS",
-            "SalesAgent",
-            "AI"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "Apple watchOS 27 공식 릴리즈 및 맞춤형 피트니스 기능 적용",
-          "target_problem": "애플워치 사용자 대상 최신 워크아웃 모니터링 및 생체 데이터 통합 서비스 제공",
-          "tech_applied": "watchOS 27 최신 펌웨어 기능 업데이트 및 알고리즘 고도화",
-          "business_insight": "기존 애플 웨어러블 사용자의 생태계 락인 효과 및 정밀 헬스케어 플랫폼화 가속",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/14/watchos-27-release-compatible-apple-watch-features/",
-          "tags": [
-            "Apple",
-            "watchOS",
-            "Wearables"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "애플워치 Ultra 4 및 Series 12 릴리즈 상세 비교 analysis",
-          "target_problem": "차세대 웨어러블 디바이스의 베젤 변경 및 심회복률(Recovery HRV) 추적 차별화 요구",
-          "tech_applied": "하드웨어 폼팩터 개선 및 Recovery HRV 대 Overall HRV 세분화 분석 센서 기술",
-          "business_insight": "전문 선수 및 일반 사용자 대상 헬스케어 메트릭 세분화 전략으로 고가형 및 일반형 시장 동시 공략",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/apple-watch-ultra4-series-12hands-on.html",
-          "tags": [
-            "AppleWatch",
-            "Fitness",
-            "HRV"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "구글 미스터리 손목 착용 웨어러블(G8BL6) IMDA 인증 확인",
-          "target_problem": "구글 웨어러블 라인업 확장을 위한 신규 폼팩터 및 헬스 디바이스 보급",
-          "tech_applied": "G8BL6 무선 인증 및 헬스 트래킹 스마트 밴드/워치 설계",
-          "business_insight": "픽셀 워치 라인업 외에 피트니스 중심 스마트밴드 시장 진입 가능성 확보",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/14/google-g8bl6-imda-wearable/",
-          "tags": [
-            "Google",
-            "Wearables",
-            "Hardware"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "가민, 출시 4개월 만에 포러너 70/170 첫 할인 세일 실시",
-          "target_problem": "엔트리 및 미드레인지 러너 대상 유저 기반 확대를 위한 가격 접근성 개선",
-          "tech_applied": "가민 생태계 기반 전용 GPS 러닝 워치 및 트레이닝 메트릭",
-          "business_insight": "신제품의 발빠른 할인 프로모션을 통한 러닝 웨어러블 점유율 수성 전략",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/13/garmin-forerunner-70-170-first-sale/",
-          "tags": [
-            "Garmin",
-            "Wearables",
-            "Sale"
           ]
         }
       ]
