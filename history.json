@@ -1,6 +1,202 @@
 {
-  "last_updated": "2026-09-23T08:39:19.206768+09:00",
+  "last_updated": "2026-09-24T08:41:56.183529+09:00",
   "digests": [
+    {
+      "date": "2026-09-24",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "구글, 프롬프트 기반 음성 설계 가공 'Gemini 3.8 Flash TTS' 발표",
+          "target_problem": "기존 TTS의 단조로운 음성 생성을 극복하고 자연어로 상세한 음성 톤 및 캐릭터를 직접 제어하려는 개발자 및 기업",
+          "tech_applied": "100개 이상의 언어를 지원하며 프롬프트 기반 음성 디자인 기능을 탑재한 Gemini 3.8 Flash TTS 및 Flash-Lite TTS 모델 제공",
+          "business_insight": "Gemini API 및 Google AI Studio를 통해 상용 서비스 구축 비용 절감과 음성 기반 인터랙티브 서비스 다양화 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/23/google-releases-gemini-3-8-flash-tts-and-flash-lite-tts-with-prompt-based-voice-design/",
+          "tags": [
+            "VoiceAI",
+            "TTS",
+            "Google",
+            "Gemini"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "엔비디아, 실시간 8인 화자 분리 오픈 모델 'Nemotron 3 Diarization' 공개",
+          "target_problem": "다중 화자 회의나 팟캐스트 및 음성 데이터에서 목소리가 겹칠 때 발화자를 정확히 분리하기 어려운 문제",
+          "tech_applied": "100M 파라미터 기반의 오픈웨이트 모델로 음성 중첩 구간을 포함해 최대 8명의 화자를 실시간 트래킹",
+          "business_insight": "Hugging Face에 오픈소스 가중치로 공개되어 엣지 디바이스 및 엔터프라이즈 음성 인프라 구축 비용을 획기적으로 낮춤",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/23/nvidia-releases-nemotron-3-diarization/",
+          "tags": [
+            "NVIDIA",
+            "OpenSource",
+            "AudioAI",
+            "Diarization"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "노키아, 추가 학습 없이 LLM을 의사결정 모델로 전환하는 'AnyJev' 오픈소스화",
+          "target_problem": "프로덕션 환경에서 오픈 LLM이 자유 형태의 문장 대신 정해진 옵션 중 하나를 안정적으로 선택하도록 제어하기 어려움",
+          "tech_applied": "학습 과정 없이 오픈 LLM 상단에 얹어 보정된 의사결정(Calibrated Decision) 출력을 유도하는 Python 라이브러리",
+          "business_insight": "추가 데이터 세트 파인튜닝 비용 없이 오분류 위험을 낮추어 금융, 의료, 고객지원 자동화 솔루션 적용 용이",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/23/nokia-open-sources-anyjev-a-training-free-layer-that-turns-any-open-llm-into-a-calibrated-decision-model/",
+          "tags": [
+            "Nokia",
+            "OpenSource",
+            "LLM",
+            "DecisionAI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Kyutai, 강화학습 기반 음성 전용 수학 해결 모델 'Voice of Reason' 발표",
+          "target_problem": "텍스트 변환(STT) 과정에서 발생하는 정보 손실 및 왜곡으로 인한 음성 기반 수학 계산 및 논리 추론 성능 저하",
+          "tech_applied": "GLM-4-Voice-9B 기반 Speech-Native 아키텍처 및 RL/SFT 기법 적용 (GSM8K 음성 정확도 27.3%에서 77.1%로 상승)",
+          "business_insight": "텍스트 LLM 거침없이 직접 음성 인터랙션을 처리하여 지연 시간을 단축하고 실시간 에듀테크 및 튜터링 서비스 구현 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/22/kyutai-releases-voice-of-reason-a-speech-native-model-that-solves-spoken-math-with-reinforcement-learning/",
+          "tags": [
+            "Kyutai",
+            "SpeechAI",
+            "ReinforcementLearning",
+            "OpenWeight"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "OpenAI, API 가격을 50% 인하한 'GPT-6 Sol' 및 'Luna' 정식 출시",
+          "target_problem": "고성능 프론티어 AI 모델 도입 시 발생하는 막대한 API 인프라 운영 비용",
+          "tech_applied": "GPT-6 Astra 학습 아키텍처를 경량화하여 $2/$10(Sol) 및 $0.10/$0.50(Luna) 수준의 토큰 비용 달성",
+          "business_insight": "API 및 ChatGPT Work/Codex 파이프라인에 대폭 낮아진 단가로 공급하여 엔터프라이즈 도입 장벽 대폭 증대",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/22/openai-releases-gpt-6-sol-and-luna-50-cheaper-api-pricing-and-benchmarks/",
+          "tags": [
+            "OpenAI",
+            "GPT6",
+            "API",
+            "CostReduction"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Qwen-Image-2.1 기반 4단계 고속 생성을 지원하는 Turbo LoRA 기술 공개",
+          "target_problem": "이미지 및 생성 AI 워크플로우에서 느린 생성 속도로 인한 생산성 저하",
+          "tech_applied": "Viggle에서 출시한 4-Step Turbo LoRA 스택으로 빠른 추론과 우수한 프롬프트 반영 성능 구현",
+          "business_insight": "생성 시간 대폭 단축을 통해 실시간 생성형 콘텐츠 제작 스튜디오 및 자동화 파이프라인 적용 가능성 확보",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wo6d82/qwen_image_21_4_steps_turbo_lora_is_here_by_viggle/",
+          "tags": [
+            "Qwen",
+            "TurboLoRA",
+            "ImageGen",
+            "Viggle"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "비디오 특정 영역 수정 및 캐릭터 삽입을 위한 V6 업데이트 워크플로우",
+          "target_problem": "기존 비디오 재편집 시 인물 재촬영 없이 캐릭터를 자연스럽게 합성하거나 국소 영역만 수정하기 어려움",
+          "tech_applied": "타겟팅 인페인팅 및 비디오 내 빈 공간 기반 신규 인물/캐릭터 인서트 알고리즘 적용",
+          "business_insight": "광고, 영화, 특수효과(VFX) 현장에서 재촬영 비용을 절감하고 빠른 PPL 및 캐릭터 교체 파이프라인 구축 가능",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wo8oqd/v6_update_newbie_modify_a_targeted_area_of_any/",
+          "tags": [
+            "VideoEditing",
+            "VFX",
+            "Inpainting",
+            "AIWorkflow"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Naise AI, 자율형 마케팅 실행 에이전트 서비스 출시",
+          "target_problem": "마케터가 멀티미디어 콘텐츠 제작부터 캠페인 실행까지 다중 툴을 수동 조작해야 하는 번거로움",
+          "tech_applied": "자율적으로 워크플로우를 생성하고 미디어 마케팅 캠페인을 자동 실행하는 에이전트 시스템",
+          "business_insight": "마케팅 스튜디오 및 소상공인의 자동화 캠페인 집행 솔루션으로 SaaS 형태의 구독 수익 모델 창출",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/naise-ai",
+          "tags": [
+            "MarketingAI",
+            "AutonomousAgent",
+            "SaaS"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "구글, 스마트워치용 초소형 혈압 측정 센서 특허 출원",
+          "target_problem": "기존 스마트워치 커프형 혈압계의 번거로움과 지속적 혈압 트래킹의 기술적 한계",
+          "tech_applied": "초소형 IPG 기반 감지 특허 기술을 활용하여 스마트워치 폼팩터 내에서 혈압 트렌드 추적",
+          "business_insight": "픽셀 워치 등 구글 웨어러블 라인업의 헬스케어 차별화 요소 확보 및 헬스케어 플랫폼 생태계 강화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/23/google-smartwatch-blood-pressure-ipg-patent/",
+          "tags": [
+            "Google",
+            "Smartwatch",
+            "BloodPressure",
+            "Patent"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Amazfit, 로드맵을 통해 개인화 AI 비서, MCP 및 웹 대시보드 공개 계획 발표",
+          "target_problem": "웨어러블 기기 내 수집 데이터의 파편화 및 통합 모니터링 환경 부재",
+          "tech_applied": "Zepp OS 연동 개인화 AI 아시안트, MCP(Model Context Protocol) 지원 및 종합 웹 대시보드 구축",
+          "business_insight": " 단순 기기 판매를 넘어 AI 중심의 건강 데이터 플랫폼 소프트웨어 생태계 구축으로 사용자 락인 강화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/23/amazfit-ai-assistant-mcp-web-dashboard/",
+          "tags": [
+            "Amazfit",
+            "ZeppHealth",
+            "AIAssistant",
+            "MCP"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "애플, 무선 스크린리스 피트니스 밴드 프로토타입 개발 추진",
+          "target_problem": "화면이 있는 스마트워치 착용이 부담스러운 운동 선수나 야간 수면 측정 사용자층의 불편함",
+          "tech_applied": "화면을 제거하고 생체 센서 중심의 초경량 디자인으로 지속적인 피트니스/회복 모니터링 수행 (Whoop 대항마)",
+          "business_insight": "애플 워치 외에 피트니스 전용 밴드 라인업을 다변화하여 스포츠 헬스케어 전문 시장 점유율 확대",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/22/apple-screenless-fitness-band-prototype/",
+          "tags": [
+            "Apple",
+            "FitnessBand",
+            "Wearable",
+            "WhoopRival"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Amazfit T-Rex Dual Solar 출시: AMOLED와 이중 태양광 충전 시스템 결합",
+          "target_problem": "고선명 AMOLED 디스플레이 장착 시 발생하는 야외 웨어러블의 배터리 조기 소모 문제",
+          "tech_applied": "2개의 서로 다른 태양광 패널 시스템과 AMOLED 디스플레이 기술을 통합 적용",
+          "business_insight": "아웃도어 탐험가 및 익스트림 스포츠 시장을 타겟으로 한 배터리 대용량 프리미엄 라인업 다변화",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/amazfit-t-rex-dual-solar-complete-solar-deep-dive.html",
+          "tags": [
+            "Amazfit",
+            "TRex",
+            "SolarPower",
+            "AMOLED"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-23",
       "items": [
@@ -1063,203 +1259,6 @@
             "AppleWatchUltra",
             "Wearable",
             "HeartRate"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-17",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "스탠퍼드 연구진, 연구 논문을 실행 가능한 AI 에이전트로 변환하는 'Paper2Agent' 공개",
-          "target_problem": "연구 논문의 정적 텍스트와 코드 분리로 인해 학술 연구 결과를 재현하고 신규 데이터셋에 적용하는 데 걸리는 시간과 비용 부담",
-          "tech_applied": "Nature지에 게재된 기술로, 논문을 검증된 MCP(Model Context Protocol) 도구로 변환하며 74개 논문 대상 300개 평가 항목에서 91.2%의 높은 실행 정확도 달성",
-          "business_insight": "학술 및 R&D 연구 자산을 자동으로 API 및 에이전트 도구로 전환함으로써 신기술의 상용화 속도를 대폭 가속화할 수 있는 B2B 파이프라인 구축 가능",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/16/stanford-researchers-release-paper2agent-turning-research-papers-into-ai-agents-that-reproduce-results-and-run-on-new-data/",
-          "tags": [
-            "AI Agents",
-            "MCP",
-            "Paper2Agent",
-            "Research Automation"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Knowledgator, 생성 과정 없이 중첩 JSON을 추출하는 575M 엔코더 'GLiFormer' 출시",
-          "target_problem": "생성형 LLM을 사용한 JSON 구조화 추출 시 발생하는 토큰 생성 지연, 높은 추론 비용, 소스 데이터 환각(Hallucination) 문제",
-          "tech_applied": "575M 파라미터 기반 인코더 모델로, 원문 스팬(span)에 값을 직접 바인딩하여 토큰 생성 없이 중첩 JSON 구조화 처리 (F1 점수 91.10 달성)",
-          "business_insight": "거대 언어 모델 대비 극도로 단가를 낮춘 경량 인코더를 통해 금융, 법률, 의료 문서 등 B2B 엔터프라이즈 데이터 추출 파이프라인 연산 비용 절감",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/16/knowledgator-releases-gliformer-a-575m-parameter-encoder-that-hits-91-10-f1-on-nested-json-extraction-without-generating-tokens/",
-          "tags": [
-            "GLiFormer",
-            "JSON Extraction",
-            "Encoder",
-            "Cost Optimization"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Prior Labs, Kaggle 우승 솔루션을 능가하는 정형 데이터 모델 'TabPFN-3.5' 발표",
-          "target_problem": "정형 데이터(Tabular Data) 분석 모델 구축 시 수반되는 피처 엔지니어링, 복잡한 전처리 및 하이퍼파라미터 튜닝의 번거로움",
-          "tech_applied": "합성 데이터(Synthetic Data)만으로 사전 학습된 테이블 전용 파운데이션 모델로, 기본 설정만으로 Otto Kaggle 대회 우승 솔루션 상회",
-          "business_insight": "별도의 정교한 머신러닝 튜닝 프로세스 없이도 정형 데이터 자동 분석 모델을 제품화하여 비즈니스 데이터 예측 자동화 SaaS 구현에 유리",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/15/prior-labs-releases-tabpfn-3-5-a-tabular-foundation-model-that-beats-the-winning-otto-kaggle-solution-with-default-settings/",
-          "tags": [
-            "TabPFN-3.5",
-            "Tabular Model",
-            "AutoML",
-            "Prior Labs"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Nums AI, TabArena 단일 모델 1위를 기록한 정형 파운데이션 모델 'Causilo' 공개",
-          "target_problem": "다양한 도메인의 정형 데이터 분류 및 회귀 문제에 매번 개별 ML 모델을 새로 학습시키며 생기는 개발 리소스 소모",
-          "tech_applied": "scikit-learn 인터페이스와 호환되는 사전 학습된 정형 데이터 모델로, Apache 라이선스 기반에 TabArena Elo 상위권 달성",
-          "business_insight": "기존 Python 머신러닝 에코시스템과 즉각 호환되는 오픈소스 파운데이션 모델을 통해 기업 내부 예측 분석 인프라 신속 구축",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/15/nums-ai-releases-causilo-a-tabular-foundation-model-that-tops-tabarena-among-single-models/",
-          "tags": [
-            "Causilo",
-            "Tabular AI",
-            "Open Source",
-            "Nums AI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "NVIDIA cuDNN Graph API: 커널 융합 및 메모리 오버헤드 최적화 기법 공개",
-          "target_problem": "딥러닝 추론 및 학습 과정에서 연산 레이어 간 메모리 이동 대역폭 부족으로 발생하는 GPU 병목 현상",
-          "tech_applied": "cuDNN Frontend Graph API를 활용한 커널 융합(Kernel Fusion), FP8 에필로그 처리, Scaled Dot-Product Attention 및 CUDA Graph Capture 기법",
-          "business_insight": "GPU 자원을 많이 소모하는 대규모 모델 서비스 기업이 추론 연산 효율을 증대시켜 서빙 인프라 비용을 대폭 낮출 수 있는 최적화 지침 제공",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/15/inside-nvidias-cudnn-graph-api-fusion-autotuning-and-plan-reuse-with-cudnn-frontend/",
-          "tags": [
-            "NVIDIA",
-            "cuDNN",
-            "GPU Optimization",
-            "Kernel Fusion"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Gemma 4와 Krea 2를 조합한 레퍼런스 이미지 기반 캐릭터 디자인 워크플로우",
-          "target_problem": "동물 및 사물 레퍼런스 이미지로부터 고품질 일관성을 유지하는 캐릭터 디자인 텍스트 프롬프트를 수동 작성하는 시간 지연",
-          "tech_applied": "입력 이미지를 Gemma 4 모델이 해석하여 캐릭터 디자인 프롬프트로 생성하고, 이를 Krea 2 생성을 통해 시각화하는 파이프라인 연동",
-          "business_insight": "게임 원화 및 멀티미디어 크리에이티브 파이프라인에서 컨셉 아트 구상 및 초기 시각화 업무를 자동화하는 유용한 사용 사례",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wi0vmw/reference_image_character_design/",
-          "tags": [
-            "Character Design",
-            "Gemma 4",
-            "Krea 2",
-            "Workflow"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "MiniMax 비디오 생성 AI 기반 360도 연속 카메라 회전 연출 가이드",
-          "target_problem": "3D 그래픽 자산이 없는 상태에서 AI 비디오 모델을 통해 캐릭터의 정지 상태 및 360도 카메라 궤도 샷 연출 구현의 난이도",
-          "tech_applied": "MiniMax 엔진 프롬프트 제어 기법을 활용하여 캐릭터 형태 변형 없이 동결 상태 유지 후 360도 카메라 궤도 회전 제어",
-          "business_insight": "광고 비주얼 및 VFX 프리비주얼라이제이션 기획 단계에서 고비용 3D 렌더링을 대체하는 신속한 프로토타이핑 도구로 활용 가능",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wi85by/for_anyone_wondering_how_i_manage_to_do_this/",
-          "tags": [
-            "MiniMax",
-            "Camera Movement",
-            "Video Generation",
-            "Prompts"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "초고속 비디오 추론을 위한 오픈 웨이트 'FastVideo FastH3 V2' 공개",
-          "target_problem": "영상 생성 AI 모델의 고비용 GPU 리소스 소모 및 추론 시간으로 인한 실시간 생성 서비스 적용의 한계",
-          "tech_applied": "8-Step 증류 기법이 적용된 FastH3 V2 오픈 웨이트 모델 및 ComfyUI용 Text-to-Video / Image-to-Video 워크플로우 템플릿",
-          "business_insight": "온프레미스 서빙 또는 초저지연 비디오 에이전트 제품을 구축하는 파트너사에게 로컬 인프라 기반 비용 절감 솔루션 제공",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1whh10i/open_weight_fastvideo_fasth3_v2/",
-          "tags": [
-            "FastVideo",
-            "Open Weight",
-            "ComfyUI",
-            "FastH3"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Krea 2 전용 해상도 맞춤형 픽셀 아트 LoRA (32x32 / 64x64 / 128x128)",
-          "target_problem": "AI 생성 이미지에서 픽셀 크기가 일정하지 않고 뭉개지는 일명 'Mixel' 현상으로 인한 픽셀 아트 품질 저하",
-          "tech_applied": "Krea 2 모델이 학습한 해상도별 픽셀 특성에 맞춘 고정 비율 LoRA (32x32, 64x64, 128x128 전용)",
-          "business_insight": "인디 게임 개발사 및 도트 그래픽 디자이너들을 위해 일관된 규격의 픽셀 리소스를 대량 생성하는 생산성 도구로 기여",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wi0mpd/krea_2_pixel_art_loras_32x32_64x64_128x128/",
-          "tags": [
-            "Pixel Art",
-            "LoRA",
-            "Krea 2",
-            "Game Assets"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "구글, 픽셀 워치 2·3·4 구형 모델 대상으로 'Smart Wake' 기능 소프트웨어 업데이트 제공",
-          "target_problem": "수면 주기 중 깊은 수면 상태에서 아침 알람이 울려 발생하는 사용자의 아침 피로감 및 개운함 저하",
-          "tech_applied": "사용자의 실시간 수면 단계를 모니터링하여 최적의 얕은 수면 상태에서 알람을 발생시키는 스마트 알람 알고리즘",
-          "business_insight": "하드웨어 교체 주기 없이 구형 스마트워치 사용자에게 웰니스 기능을 확충하여 픽셀 생태계 브랜드 충성도 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/16/pixel-watch-2-3-4-smart-wake-update/",
-          "tags": [
-            "Google",
-            "Pixel Watch",
-            "Smart Wake",
-            "Sleep Health"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "뮤즈(Muse) 뇌파 헤드밴드, REM 수면 감지 및 꿈 회상(Dream Recall) 기능 도입",
-          "target_problem": "기상 직후 빠르게 잊혀지는 REM 수면 중 꿈의 내용을 기록하고 모니터링하기 어려운 문제",
-          "tech_applied": "실시간 EEG(뇌파) 생체 신호 수집을 통해 REM 수면을 정확히 진단하고 적시에 기상 신호를 보조하는 기술",
-          "business_insight": "단순 수면 시간 측정을 넘어 뇌파 분석 웨어러블만의 독자적 수면 케어 영역 구축 및 프리미엄 수면 서비스 사업 기회 창출",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/15/muse-dream-recall-eeg-rem/",
-          "tags": [
-            "Muse",
-            "EEG",
-            "REM Sleep",
-            "Dream Recall"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "애플, 최신 기술을 탑재한 애플 워치 울트라 4 및 시리즈 12 실물 발표",
-          "target_problem": "고도화된 스포츠 선수 및 피트니스 사용자가 요구하는 정밀한 바이오 트래킹 및 확장된 하드웨어 성능 요구",
-          "tech_applied": "향상된 바이오 모니터링 센서, 내구성 높은 디자인 폼팩터 및 최신 건강 지표 분석 모듈",
-          "business_insight": "프리미엄 럭셔리 헬스케어 및 아웃도어 스포츠 웨어러블 시장에서 선두 지위 공고화 및 기기 교체 수요 자극",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/apple-watch-ultra4-series-12hands-on.html",
-          "tags": [
-            "Apple Watch",
-            "Wearable",
-            "Hardware",
-            "Fitness"
           ]
         }
       ]
