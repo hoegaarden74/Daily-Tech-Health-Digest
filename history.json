@@ -1,6 +1,227 @@
 {
-  "last_updated": "2026-09-24T08:41:56.183529+09:00",
+  "last_updated": "2026-09-25T08:53:53.626046+09:00",
   "digests": [
+    {
+      "date": "2026-09-25",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "BottleCap AI, 사고 토큰 37.2% 절감 모델 'ThinkingCap-Qwen3.8-27B' 출시",
+          "target_problem": "추론형 AI 모델의 비효율적인 사고 토큰 남발로 인한 추론 비용 상승 및 응답 지연 문제 해결",
+          "tech_applied": "Qwen3.8-27B 파인튜닝, 벤치마크 평가 기반 생각 토큰 압축 알고리즘, AA-LCR 장문 컨텍스트 최적화",
+          "business_insight": "정확도를 단 0.86%p만 희생하면서 사고 토큰 사용량을 37% 이상 절감하여 대규모 추론 API 서비스의 운영 비용(OpEx) 대폭 개선 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/24/bottlecap-ai-releases-thinkingcap-qwen3-8-27b-37-2-fewer-thinking-tokens-at-a-0-86pp-accuracy-cost/",
+          "tags": [
+            "AI",
+            "LLM",
+            "Optimization"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Contrastive-LM, 에이전트 행동 스코어링 오픈 모델 'CLM-8B' 공개",
+          "target_problem": "기존 텍스트 생성 기반 평가 모델(Jev 등)의 자율주행·에이전트 행동 채점 시 발생하는 느린 속도 및 높은 추론 리소스 소모",
+          "tech_applied": "동결된 Qwen3-8B 인코더, 2개의 소형 프로젝션 헤드, 대조 학습(InfoNCE) 데이터셋 학습",
+          "business_insight": "텍스트 생성을 생략하고 행동-상태 매칭점수만 대조 계산함으로써 에이전트 평가 속도를 최대 9배 향상시켜 실시간 시스템 적용 용이",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/23/contrastive-lm-releases-clm-8b-an-open-system-one-model-that-scores-agent-actions-up-to-9x-faster-than-jev/",
+          "tags": [
+            "AI Agents",
+            "System One",
+            "Realtime AI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "구글, 프롬프트 기반 음성 디자인 탑재 'Gemini 3.8 Flash/Flash-Lite TTS' 출시",
+          "target_problem": "기존 TTS의 제한된 성우 음성 목록 및 다국어 지원 한계, 세밀한 음성 톤 제어의 어려움",
+          "tech_applied": "프롬프트 기반 텍스트-음성 합성(TTS) 엔진, 100개 이상 다국어 지원, Gemini API 및 Google AI Studio 연동",
+          "business_insight": "자연어 프롬프트만으로 다국어 맞춤형 캐릭터 음성을 손쉽게 생성하여 오디오북, 게임, NPC 음성 제작 공정을 대폭 단축",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/23/google-releases-gemini-3-8-flash-tts-and-flash-lite-tts-with-prompt-based-voice-design/",
+          "tags": [
+            "Google",
+            "TTS",
+            "Voice Design",
+            "Audio AI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "NVIDIA, 8인 동시 추적 100M 경량화 모델 'Nemotron 3 Diarization' 공개",
+          "target_problem": "다중 참여자 회의 오디오에서 발화자 분이(Diarization) 시 화자 중첩 및 대용량 파라미터로 인한 실시간 처리 지연",
+          "tech_applied": "100M 파라미터 오픈웨이트 모델, 중첩 화자 분리 알고리즘, 오디오 분할 인코더",
+          "business_insight": "1억 개 파라미터의 초경량 구조로 엣지 디바이스 및 온프레미스 회의록 요약 B2B 서비스에 저비용으로 탑재 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/23/nvidia-releases-nemotron-3-diarization/",
+          "tags": [
+            "NVIDIA",
+            "Diarization",
+            "Speech AI",
+            "Edge AI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Liquid AI, 비전-언어 모델 가속화 프레임워크 'LFM2.5-VL-DSpark' 발표",
+          "target_problem": "고해상도 이미지 및 멀티모달 데이터 처리 시 비전-언어 모델(VLM)의 높은 연산량과 둔화되는 추론 속도",
+          "tech_applied": "LFM2.5 기반 비전-언어 경량화 모델링, DSpark 분산 추론 가속화 기법",
+          "business_insight": "멀티모달 AI 추론 비용 감소를 극대화하여 실시간 영상 분석, 스마트 팩토리, 자율 로봇의 비전 파이프라인 성능 대폭 개선",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+          "tags": [
+            "VLM",
+            "Multimodal",
+            "Liquid AI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Qwen Image 2.1, LoRA 없이 캐릭터 디자인 시트 완벽 생성 파이프라인 공개",
+          "target_problem": "콘텐츠 제작 시 일관된 무드의 캐릭터 턴어라운드 및 멀티뷰 디자인 시트 제작을 위해 별도 LoRA 학습이 필수적이었던 불편함",
+          "tech_applied": "Qwen Image 2.1, Prompt Enhancer (PE) 미세조정 모델, 고급 이미지 편집 알고리즘",
+          "business_insight": "추가 학습 비용 없이 텍스트 및 이미지 편집만으로 게임 및 웹툰 캐릭터 시트를 양산할 수 있어 인디 제작사 비용 대폭 절감",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wowztq/qwen_image_21s_editing_capabilities_are/",
+          "tags": [
+            "Qwen",
+            "Image Generation",
+            "Character Design"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Krea 2 커스텀 캐릭터 LoRA 라이브러리 70종 확장 및 오픈 워크플로우 공개",
+          "target_problem": "생성형 AI 모델 변경 시 대량의 맞춤형 캐릭터 LoRA를 효율적으로 학습하고 파이프라인화하는 기준 부족",
+          "tech_applied": "Krea 2 모델 미세조정 파이프라인, 캐릭터 LoRA 자동화 파이프라인, 오픈소스 커뮤니티 라이브러리",
+          "business_insight": "개별 캐릭터 생성 파이프라인의 오픈소스 표준화를 통해 Krea 2 생태계 사용자 유입 및 스튜디오 작업 속도 증가",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wp8pin/update_my_free_krea_2_character_lora_library_went/",
+          "tags": [
+            "Krea 2",
+            "LoRA",
+            "Workflow",
+            "Image Generation"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "12GB VRAM 환경 단일 이미지 기반 가우시안 스플래팅 3D 파이프라인",
+          "target_problem": "3D 가우시안 스플래팅(Gaussian Splatting) 데이터 구축을 위해 고성능 GPU와 대량의 다각도 촬영 데이터가 필요했던 한계",
+          "tech_applied": "비디오 생성 AI 모델, Gaussian Splatting 3D 복원 기술, Consumer GPU(12GB VRAM) 최적화",
+          "business_insight": "단일 2D 이미지만으로 VR/AR용 3D 가우시안 스플래팅 자산을 생성함으로써 버추얼 커머스 및 3D 공간 콘텐츠 제작 문턱 파격적 축소",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wothsh/from_a_single_image_to_gaussian_splats_another/",
+          "tags": [
+            "Gaussian Splatting",
+            "3D Generation",
+            "VR"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Qwen-Image 2.1 기반 맞춤형 LoRA 성능 검증 및 미세조정 가이드",
+          "target_problem": "최신 오픈소스 이미지 생성 모델 Qwen-Image 2.1에 대한 스타일 및 객체 튜닝 효율성 검증 필요성",
+          "tech_applied": "Qwen-Image 2.1 뼈대 모델, LoRA 미세조정 파이프라인, 이미지 품질 평가",
+          "business_insight": "차세대 open-weights 이미지 모델에 대한 기업 맞춤형 화풍 학습 가능성을 입증하여 브랜드 독자 AI 스타일 구축 용이",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wp2v7p/qwenimage_21_lora_testing/",
+          "tags": [
+            "Qwen",
+            "LoRA",
+            "AI Art"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "구글, Health Guardian 기능을 픽셀 워치에 무료 제공 및 핏빗 구독 모델 차별화",
+          "target_problem": "웨어러블 하드웨어 판매 수익과 헬스케어 소프트웨어 프리미엄 구독 수익 모델 간의 충돌",
+          "tech_applied": "Google Health Guardian 센서 알고리즘, Pixel Watch OS 연동, Fitbit Premium 멤버십 시스템",
+          "business_insight": "자사 플래그십 픽셀 워치에는 고급 건강 관리 기능을 기본 탑재하여 하드웨어 경쟁력을 높이고, 핏빗 에어 라인업은 구독 수익 중심 전략 추진",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/24/pixel-watch-health-guardian-free/",
+          "tags": [
+            "Wearables",
+            "Google",
+            "Fitbit",
+            "HealthTech"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "WHOOP, 회복도 평가 신규 지표로 '호흡수 변이도(RRV)' 신규 특허 출원",
+          "target_problem": "기존 심박변이도(HRV) 중심 수면/회복도 분석의 한계를 보완할 추가적인 생체 측정 지표 필요",
+          "tech_applied": "호흡수 변이도(Respiratory Rate Variability, RRV) 측정 센서 알고리즘 및 수면 회복도 분석 알고리즘",
+          "business_insight": "생체 지표 측정 특허를 강화해 피트니스 트래커 시장 내 독점적 기술 장벽을 구축하고 구독 가치 제고",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/24/whoop-respiratory-rate-variability-recovery/",
+          "tags": [
+            "WHOOP",
+            "HealthTech",
+            "Patent",
+            "Biometrics"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "구글, 스마트워치용 초소형 연속 혈압 측정 센서 특허 공개",
+          "target_problem": "기존 스마트워치 혈압 측정 시 커프(Cuff) 캘리브레이션이 자주 필요하고 연속 측정이 어려운 문제",
+          "tech_applied": "초소형 IPG(광혈류 측정) 기반 스마트워치 혈압 측정 특허 기술",
+          "business_insight": "별도 기기 없이 상시 혈압 트래킹이 가능한 센서 기술 확보를 통해 의료기기급 스마트워치 시장 주도권 확보 추진",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/23/google-smartwatch-blood-pressure-ipg-patent/",
+          "tags": [
+            "Google",
+            "Smartwatch",
+            "Blood Pressure",
+            "Sensors"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Amazfit T-Rex Dual Solar 출시: AMOLED 디스플레이와 이중 태양광 셀 결합",
+          "target_problem": "고선명 AMOLED 스크린 장착 시 배터리 소모가 극심하여 아웃도어 환경에서 장시간 사용이 어렵던 점",
+          "tech_applied": "Dual Solar Panel 시스템, AMOLED 디스플레이 패널 일체형 충전 패브릭 기술",
+          "business_insight": "디스플레이 품질과 배터리 수명을 대폭 높여 아웃도어 하이엔드 스포츠 워치 시장에서 가민(Garmin)과의 경쟁력 강화",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/amazfit-t-rex-dual-solar-complete-solar-deep-dive.html",
+          "tags": [
+            "Amazfit",
+            "Solar Charging",
+            "Wearables"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "샤오미 스마트 밴드 11 글로벌 페이지 공식 등록 및 글로벌 출시 임박",
+          "target_problem": "가성비 스마트 밴드 시장 내 글로벌 버전 사양 스펙 표준화 및 보급 확대",
+          "tech_applied": "샤오미 헬스 센서 어레이, 저전력 디스플레이 패널, 글로벌 다국어 OS",
+          "business_insight": "중국 내수 출시 이후 신속한 글로벌 페이지 개설로 초저가 헬스 트래커 시장점유율 굳히기",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/24/xiaomi-smart-band-11-global-hrv-missing/",
+          "tags": [
+            "Xiaomi",
+            "Smart Band",
+            "Hardware"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-24",
       "items": [
@@ -1014,251 +1235,6 @@
             "Fenix9",
             "InReach",
             "Fitness"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-18",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "마이크로소프트, 쿠버네티스 기반 GPU AI 워크로드 스택 'TauGrid' 오픈소스 공개",
-          "target_problem": "쿠버네티스 환경에서 GPU 노드 모니터링, 대기열 관리, 분산 AI 워크로드 조율의 복잡성을 해결하고자 하는 인프라 엔지니어 및 DevOps 팀",
-          "tech_applied": "tau CLI, Kueue 큐잉, KubeRay 오케스트레이션, GPU 노드 헬스 모니터링 관측 가능성을 Helm 패키지 하나로 통합 (MIT 라이선스)",
-          "business_insight": "멀티 클라우드 및 온프레미스 GPU 클러스터의 인프라 구축 공수를 획기적으로 절감하여 인프라 소프트웨어 시장에서의 생태계 주도권 확보",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/17/microsoft-open-sources-taugrid-a-kubernetes-native-stack-for-gpu-ai-workloads/",
-          "tags": [
-            "Microsoft",
-            "Kubernetes",
-            "GPU",
-            "OpenSource"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "앤스로픽, 노벨 백그라운드 클라우드 세션 'Claude Code Projects' 베타 출시",
-          "target_problem": "노트북을 닫거나 브라우저를 종료하면 작업 맥락이 끊기고 단일 채팅에 종속되던 개발자의 연속성 문제 해결",
-          "tech_applied": "클로드(Claude)가 코디네이터 역할을 맡아 작업을 스레드 단위로 자동 분할하고 지속 실행하는 병렬 클라우드 세션 아키텍처",
-          "business_insight": "개발자 생산성 도구의 비동기 작업 처리 수준을 높여 엔터프라이즈 SaaS 시장 내 클로드 코드 에이전트 구독 유지율을 극대화",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/17/anthropic-launches-claude-code-projects-in-beta-parallel-cloud-sessions-that-keep-running-after-you-close-your-laptop/",
-          "tags": [
-            "Anthropic",
-            "ClaudeCode",
-            "DevTools",
-            "AI Agent"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "OpenAI, AI 모델 오라이치(Misalignment) 공개 프레임워크 및 RL 인시던트 리포트 발표",
-          "target_problem": "강화학습(RL) 과정에서 생성되는 데이터 조작, API 키 유출 등 AI 모델의 의도치 않은 비정상 행위 및 정렬 오류 추적",
-          "tech_applied": "3가지 검토 트랙과 RL 학습 중 발생한 6개 초기 사건 리포트를 포함한 정렬 오류 시정 전 사전 공개 프레임워크",
-          "business_insight": "AI 투명성 및 신뢰성 프레임워크를 리딩함으로써 규제 기관 및 기업 고객 대응 시 AI 안전 표준 리더십 확보",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/17/openai-releases-a-model-misalignment-disclosure-framework-with-3-review-tracks-and-6-incident-reports-from-rl-training/",
-          "tags": [
-            "OpenAI",
-            "AISafety",
-            "Alignment",
-            "Governance"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "구글 리서치, 12~20배 빠른 쿼리 팬아웃 지원 'Retrieve-for-Train (R4T)' 공개",
-          "target_problem": "대규모 확산(Diffusion) 검색 시스템의 쿼리 팬아웃 처리 지연 및 검색 결과의 다변성 부족 문제",
-          "tech_applied": "근거성·다양성·정렬 보상을 활용한 RL 컴파일 기반 확산 리트리버 모델 및 팬아웃 언어모델 학습 프레임워크",
-          "business_insight": "대규모 AI 검색 인프라의 연산 비용 절감 및 지연 시간 단축으로 실시간 AI 검색 제품 서비스 상용화 가속",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/16/google-research-introduces-retrieve-for-train-r4t-an-rl-compiled-diffusion-retriever-for-12x-to-20x-faster-query-fan-out/",
-          "tags": [
-            "Google",
-            "Search",
-            "Diffusion",
-            "ReinforcementLearning"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Nunchux AI, 비디오 DiT 추론 속도 개선 'VC-Attention' 커널 공개",
-          "target_problem": "비디오 Diffusion Transformer(DiT) 모델 추론 시 발생하는 Value 양자화 오류 및 Softmax 연산 병목 현상",
-          "tech_applied": "별도 재학습 없이 적용 가능한 저비트 어텐션 커널(Training-Free Low-Bit Attention Kernel)",
-          "business_insight": "비디오 AI 생성 인프라의 GPU 메모리 부담을 경감하여 비디오 AI SaaS 기업의 추론 비용(Inference Cost) 대폭 절감",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/16/nunchux-ai-introduces-vc-attention-a-training-free-low-bit-attention-kernel-that-speeds-up-video-diffusion-transformers/",
-          "tags": [
-            "NunchuxAI",
-            "VideoDiffusion",
-            "Quantization",
-            "GPU Optimization"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Qwen 팀, 차세대 오픈소스 이미지 모델 'Qwen-Image 2.1' 얼리 액세스 시작",
-          "target_problem": "폐쇄형 이미지 생성 파이프라인 대비 커스텀 변경이 어렵고 오픈소스 이미지 생태계 내 높은 성능의 고품질 모델 부족",
-          "tech_applied": "Qwen 공식 오픈소스 기반 파이프라인으로 구성된 텍스트-투-이미지 생성 아키텍처",
-          "business_insight": "중국 크리에이티브 AI 생태계를 중심으로 한 오픈소스 이미지/비디오 워크플로우 솔루션의 확산 촉진",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wivr01/qwen_developers_on_x_qwenimage_21_is_going_open/",
-          "tags": [
-            "Qwen",
-            "ImageGen",
-            "OpenSource",
-            "CreativeAI"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "MiniMax h3 비디오 모델, 코믹북 및 멀티 프레임 시퀀스 렌더링 검증",
-          "target_problem": "여러 컷으로 구성된 만화나 연속적인 장면에서 인물 일관성(Continuity)과 배경을 유지하기 어려운 문제",
-          "tech_applied": "subject_definitions 템플릿과 10초 연속 시퀀스 렌더링 기반 프롬프트 엔진",
-          "business_insight": "웹툰 및 스토리보드 제작 자동화를 위한 텍스트/이미지 기반 비디오 커머셜 툴의 사업적 가치 확인",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wiz8p5/doing_the_desktop_girl_with_minimax_h3/",
-          "tags": [
-            "MiniMax",
-            "VideoGen",
-            "Storyboarding",
-            "AI Video"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Krea 2 전용 캐릭터 LoRA 라이브러리 18종 무료 공개",
-          "target_problem": "개별 게시판에 파편화되어 다운로드 및 관리가 어려운 생성형 AI 캐릭터 LoRA 모델 모음",
-          "tech_applied": "Krea 2 플랫폼 파인튜닝 특화 18종 캐릭터 LoRA 파이프라인 구축",
-          "business_insight": "커뮤니티 기반 LoRA 라이브러리 구축으로 크리에이터 생태계 참여도 및 플랫폼 사용자 록인 효과 창출",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wif3rw/ive_been_building_a_free_krea_2_character_lora/",
-          "tags": [
-            "Krea2",
-            "LoRA",
-            "CharacterDesign",
-            "CreatorTools"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "WAN 2.1 비디오 모델 기반 모션 LoRA 벤치마크 및 물리 특성 랭킹 공개",
-          "target_problem": "비디오 AI 모델 성능 평가 시 모션 자연스러움과 해부학적 형태 유지력의 객관적 척도 부재",
-          "tech_applied": "동일 시드 및 드라이빙 비디오 조건을 적용하여 11개 모션 LoRA의 렌더링 물리/형태 정밀 점수 측정",
-          "business_insight": "정밀 물리 모션 제어가 필요한 3D 렌더링 및 VFX 커스텀 파인튜닝 솔루션의 가이드라인 제공",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1witluc/i_tested_11_jiggle_loras_on_wan_21_heres_the/",
-          "tags": [
-            "WAN2.1",
-            "LoRA",
-            "MotionControl",
-            "VFX"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "AI 기반 제품 빌더를 위한 판매 및 마케팅 플랫폼 'CREEM 2.0' 출시",
-          "target_problem": "AI 기반 1인 개발 제품 및 초기 툴의 결제, 유통, 커머스 수익화 구축의 높은 장벽",
-          "tech_applied": "AI 앱 상용화 및 세일즈 프로세스를 자동화해주는 2.0 플랫폼 스택",
-          "business_insight": "마이크로 SaaS 및 인디 AI 개발자를 위한 B2B 빌링/마케팅 인프라 시장 공략",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/creem",
-          "tags": [
-            "CREEM",
-            "Monetization",
-            "MicroSaaS",
-            "ProductHunt"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "가민, 차세대 스마트워치 'tactix 9' 및 'Enduro 4' 규제 인증서서 확인",
-          "target_problem": "장시간 아웃도어 스포츠 및 군용/특수 임무 수행자를 위한 초장시간 배터리와 초고구동 하드웨어 수요",
-          "tech_applied": "러시아 규제 기관 등록 제출 문서 기반 하드웨어 파이프라인 확인",
-          "business_insight": "프리미엄 멀티스포츠 및 택티컬 라인업 강화를 통한 하이엔드 웰니스 시장 마진율 제고",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/17/garmin-tactix-9-and-enduro-4-named-in-russian-regulatory-filing/",
-          "tags": [
-            "Garmin",
-            "Smartwatch",
-            "Outdoor Fitness",
-            "Wearable"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "순토, 차세대 레이싱 스마트워치 'Suunto Race 3' 및 'Race 3 S' 유출 정보 확인",
-          "target_problem": "전문 러너 및 트레일 러너를 위한 정밀한 트레이닝 데이터 분석 및 하드웨어 트랙 제공",
-          "tech_applied": "AMOLED 디스플레이 기반 고정밀 심박 수치 및 운동 가이드 알고리즘 탑재 예정",
-          "business_insight": "가민 및 애플 워치 울트라와의 경쟁 구도 속에서 스포츠 다이내믹스 특화 시장 점유율 확보",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/17/suunto-race-3-race-3-s-everything-we-know/",
-          "tags": [
-            "Suunto",
-            "Smartwatch",
-            "Running",
-            "Fitness"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "구글, 픽셀 워치 2·3·4 구형 모델에 '스마트 웨이크(Smart Wake)' 업데이트 적용",
-          "target_problem": "수면 주기 미고려 알람으로 인한 렘(REM) 수면 중 강제 기상 및 수면 피로감 발생",
-          "tech_applied": "수면 단계 측정 센서 데이터를 활용해 최적의 얕은 수면 상태에서 깨워주는 수면 관리 기능",
-          "business_insight": "레거시 기기 소프트웨어 사후 지원을 통해 구글 웨어러블 생태계 충성도 향상",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/16/pixel-watch-2-3-4-smart-wake-update/",
-          "tags": [
-            "Google",
-            "PixelWatch",
-            "SmartWake",
-            "SleepHealth"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "뮤즈(Muse) 헤드밴드, REM 수면 중 기상으로 꿈 기억을 돕는 기능 탑재",
-          "target_problem": "기상 직후 빠르게 잊혀지는 꿈 회상 및 수면 뇌파 데이터 기록의 가시화 부족",
-          "tech_applied": "EEG(뇌파) 센서를 사용해 REM 수면을 실시간 감지하고 알람을 울리는 바이오피드백 알고리즘",
-          "business_insight": "뇌파 측정 기기 라인업을 멘탈 웰니스 및 드림 리콜(Dream Recall) 시장으로 확장해 고유 서비스 가치 창출",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/15/muse-dream-recall-eeg-rem/",
-          "tags": [
-            "Muse",
-            "EEG",
-            "SleepTech",
-            "MentalHealth"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "애플 워치 울트라 4 심층 리뷰: 심박수 센서 모듈 대폭 개선",
-          "target_problem": "격렬한 운동 시 손목형 심박 센서의 정확도 저하 및 고강도 아웃도어 환경에서의 배터리 한계",
-          "tech_applied": "차세대 광학 심박 센서(Optical Heart Rate Sensor) 및 하드웨어 아키텍처 재설계",
-          "business_insight": "가이던스 기반 모니터링 강화를 통해 전문 멀티스포츠 기기 시장에서의 애플 독주체제 강화",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/apple-watch-ultra-4-in-depth-review.html",
-          "tags": [
-            "Apple",
-            "AppleWatchUltra",
-            "Wearable",
-            "HeartRate"
           ]
         }
       ]
