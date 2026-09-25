@@ -1,6 +1,218 @@
 {
-  "last_updated": "2026-09-25T08:53:53.626046+09:00",
+  "last_updated": "2026-09-26T08:57:59.900808+09:00",
   "digests": [
+    {
+      "date": "2026-09-26",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Liquid AI, VLM 추론 속도를 3.13배 향상시키는 LFM2.5-VL-3B-DSpark 공개",
+          "target_problem": "시각-언어 모델(VLM)의 고비용·고지연 추론 문제를 해결하여 실시간 비전 AI 응용 확대를 도모함",
+          "tech_applied": "279.5M 파라미터 드래프트 모델 기반의 투기적 해독(Speculative Decoding) 기술 적용",
+          "business_insight": "Apple M5 Max에서 최대 3.13배, Nvidia H100에서 2.66배 속도 향상을 달성하여 엣지 및 클라우드 AI 연산 비용 대폭 절감 기대",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/25/liquid-ai-releases-lfm2-5-vl-3b-dspark-speculative-decoding-for-vision-language-models-with-up-to-3-13x-faster-decoding/",
+          "tags": [
+            "AI",
+            "VLM",
+            "EdgeAI",
+            "SpeculativeDecoding"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Aikido Security, 328GB 오픈웨이트 보안 특화 모델 Altar-1 출시",
+          "target_problem": "기업 내 온프레미스/사설 인프라 환경에서 기밀 유출 없이 보안 취약점을 자율 검증 및 침투 테스트할 수 있는 AI 모델 필요성",
+          "tech_applied": "GLM-5.3 기반 경량화/프루닝(Pruning) 공정을 거친 328GB 오픈웨이트 모델",
+          "business_insight": "자율 모의 침투 플랫폼 Aikido Machine의 핵심 엔진으로 활용되며, 보안 기밀성이 높은 B2B 고객 대상 온프레미스 인프라 제공 전략",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/25/aikido-security-releases-altar-1-an-open-weight-security-model-pruned-from-glm-5-3-to-328-gb/",
+          "tags": [
+            "Cybersecurity",
+            "B2B",
+            "OpenWeight",
+            "AI-Agent"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Perplexity, 실제 실패 세션 학습을 위한 힌트 기반 자가 증류 기술 도입",
+          "target_problem": "컴퓨터 제어 AI 에이전트의 실질적 태스크 성공률 향상 및 사용자 지시 이탈 방지",
+          "tech_applied": "Rejection Sampling 미세조정과 힌트 기반 자가 증류(Hint-Guided Self-Distillation) 결합",
+          "business_insight": "라이브 서비스 A/B 테스트 환경에서 실제 사용자의 실패 세션을 데이터 자산화하여 에이전트 성능을 지속 고도화하는 데이터 피드백 루프 구축",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/25/perplexity-trains-its-computer-agent-on-real-mistakes-with-hint-guided-self-distillation/",
+          "tags": [
+            "AI-Agent",
+            "Perplexity",
+            "PostTraining",
+            "RLHF"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Fastino, CPU 환경에서 작동하는 340M 의사결정 모델 GLiNER2.5-Decide 발표",
+          "target_problem": "고비용 GPU 없이 일반 온프레미스/CPU 서버 환경에서 구조화된 의사결정 추출 및 확률 기반 데이터 분류 필요",
+          "tech_applied": "340M 파라미터 경량 오픈웨이트 모델, 타입 질문 스키마 기반 신뢰도 점수 및 정량 메트릭 출력",
+          "business_insight": "GPU 인프라 부담 없이 저비용 CPU 서버에서 대규모 정형 의사결정 파이프라인 구축 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/24/fastino-releases-gliner2-5-decide-a-340m-open-weight-decision-model-that-runs-on-cpu/",
+          "tags": [
+            "CPU Inference",
+            "Decision Model",
+            "OpenWeight",
+            "SaaS"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Black Forest Labs, 로봇 제어용 7B 월드 액션 모델 FLUX 3 Action 공개",
+          "target_problem": "로보틱스 제어 시 정교한 시각 프레임 분석과 시각적 예측 기반 이동 명령 생성을 단일 모델로 통합",
+          "tech_applied": "7B 파라미터 World Action Model (WAM), 카메라 프레임·로봇 상태·텍스트 지시 통합 처리",
+          "business_insight": "RoboLab-120 벤치마크 최고 성능 기록하며 자율주행 및 물리 AI(Physical AI) 시장 진입 발판 마련",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/24/black-forest-labs-releases-flux-3-action-a-7b-open-weights-world-action-model-that-tops-robolab-120/",
+          "tags": [
+            "Robotics",
+            "Physical AI",
+            "WAM",
+            "OpenSource"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Intel Arc Pro GPU 환경에서의 MiniMax H3 실시간 대화형 아바타 파이프라인 구현",
+          "target_problem": "기존 비디오 생성 모델의 긴 생성 대기 시간을 극복하여 실시간 양방향 대화 아바타 서비스 구현",
+          "tech_applied": "MiniMax H3 모델과 Intel Arc Pro B70s 하드웨어 최적화 실시간 스트리밍 워크플로우",
+          "business_insight": "비디오 생성 기술을 일방향 콘텐츠 제작에서 실시간 AI 고객응대(NPC, 디지털 휴먼) 영역으로 확장",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wpjjcd/minimax_h3_running_as_a_realtime_interactive/",
+          "tags": [
+            "MiniMax",
+            "InteractiveAvatar",
+            "RealtimeAI",
+            "DigitalHuman"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Qwen Image 2.1 기반 BFS LoRA를 활용한 고정밀 헤드 스왑 워크플로우",
+          "target_problem": "이미지 및 영상 생성 워크플로우에서 피사체 얼굴 교체 시 발생하는 경계선 불일치 및 디테일 저하 해결",
+          "tech_applied": "Qwen Image 2.1 모델 기반 Best Face Swap (BFS) LoRA 스태킹 기술",
+          "business_insight": "버추얼 모델 및 디지털 마케팅 이미지 제작 시 인물 일관성을 최적화하여 상업용 가공 시간 단축",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wpt3lp/qwen_image_21_new_bsf_lora_head_swap_test_results/",
+          "tags": [
+            "Qwen",
+            "LoRA",
+            "FaceSwap",
+            "AIGC"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "MiniMax H3 프롬프팅을 활용한 섬세한 미세 감정 표현 프롬프트 기법",
+          "target_problem": "AI 영상 합성 모델에서 과장되거나 어색한 인물 표정 연출을 극복하고 미세한 감정 표현 확보",
+          "tech_applied": "MiniMax H3 감정 키워드 뒤 'Micro Expressions' 레이어드 프롬프트 엔지니어링",
+          "business_insight": "뮤직비디오 및 영화적 비주얼 연출 시 섬세한 연기 디렉팅으로 시네마틱 AI 영상 프론티어 적용 가능",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wpmy2n/h3_micro_expressions/",
+          "tags": [
+            "MiniMax",
+            "PromptEngineering",
+            "VideoGen",
+            "CinematicAI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "KREA 2 Turbo 스타일 갤러리 397개 스타일 프롬프트 수정 업데이트",
+          "target_problem": "KREA 2 생성 엔진 환경에서 렌더링 스타일 불일치 및 기존 프롬프트 오류 수정",
+          "tech_applied": "KREA 2 Turbo 프롬프트 튜닝 및 397종 스타일 재렌더링 데이터베이스",
+          "business_insight": "크리에이터 및 디자인 에이전시의 일관된 비주얼 콘셉트 도출 속도 향상",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wpzc8b/update_to_the_krea_2_turbo_style_gallery_397/",
+          "tags": [
+            "KREA",
+            "StyleGallery",
+            "DesignTools"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "애플, 애플워치 시리즈 12 및 울트라 4 재부팅 오류 해결을 위한 watchOS 27.0.1 배포",
+          "target_problem": "신규 플래그십 롤아웃 직후 발생한 애플워치 시리즈 12/울트라 4 디바이스의 간헐적 무작위 재부팅 문제",
+          "tech_applied": "watchOS 27.0.1 긴급 펌웨어 핫픽스 패치",
+          "business_insight": "플래그십 헬스케어 디바이스 초기 구매자 사용자 경험 보장 및 생체 데이터 측정 연속성 유지",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/25/apple-watch-series-12-ultra-4-reboot-fix/",
+          "tags": [
+            "AppleWatch",
+            "watchOS",
+            "Wearables",
+            "OSUpdate"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "구글, Pixel Watch에 Health Guardian 기능 무료 제공 vs Fitbit Air 차별화",
+          "target_problem": "동일 센서 생태계 내 자사 하드웨어(Pixel)와 자회사 하드웨어(Fitbit) 간 수익화 전략의 상충",
+          "tech_applied": "Google Health Guardian 센싱 헬스케어 알고리즘 및 Fitbit Premium 구독 인프라",
+          "business_insight": "Pixel Watch 사용자에겐 무료 기능 제공으로 하드웨어 경쟁력을 높이고, Fitbit Air는 프리미엄 구독 서비스 결합으로 ARR 증대 도모",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/24/pixel-watch-health-guardian-free/",
+          "tags": [
+            "Google",
+            "PixelWatch",
+            "Fitbit",
+            "Monetization"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "Speediance Strap, 스크린리스 웰니스 밴드 시장에서 Whoop에 도전장",
+          "target_problem": "화면 없는 헬스 트래커 시장에서 차별화된 피트니스·회복 측정 포인트 제시",
+          "tech_applied": "스크린리스 센서 스트랩 기술 및 고유 회복 트래킹 알고리즘",
+          "business_insight": "Whoop 중심의 구독형 회복 트래커 독점 구조를 깨기 위한 가격 및 기능 차별화 전략 실행",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/25/speediance-strap-vs-whoop/",
+          "tags": [
+            "Speediance",
+            "Whoop",
+            "Wearables",
+            "Fitness"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "WHOOP, 차세대 회복 지표로 호흡률 변동성(RRV) 특허 출원",
+          "target_problem": "기존 심박변동성(HRV) 중심 수면·회복 지표의 한계를 보완할 신규 바이오메트릭 파라미터 필요성",
+          "tech_applied": "호흡률 변동성(Respiratory Rate Variability, RRV) 센싱 및 회복 예측 알고리즘",
+          "business_insight": "신규 바이오 특허 확보로 선두 웨어러블 웰니스 브랜드로서의 기술 장벽 구축 및 수면 분석 기능 고도화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/24/whoop-respiratory-rate-variability-recovery/",
+          "tags": [
+            "Whoop",
+            "RRV",
+            "Biometrics",
+            "Patent"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-25",
       "items": [
@@ -1056,185 +1268,6 @@
             "Fenix9",
             "Wearable",
             "Outdoor"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-19",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Jina AI, 저예산 GPU용 문서 파싱 MoE 모델 'jina-ocr-v1' 공개",
-          "target_problem": "고비용 HW 자원 없이 PDF, 스캔 문서, 표, 차트, 영수증 등 복잡한 비정형 문서를 빠르게 Markdown으로 전환하려는 연구자 및 개발자",
-          "tech_applied": "3.4B 총 파라미터(토큰당 약 570M 활성화)의 MoE 구조, DeepSeek-OCR 기반, 추측 디코딩(FastMTP) 내장",
-          "business_insight": "저비용 GPU 환경에서도 고성능 OCR 파이프라인을 운영할 수 있어 온프레미스 및 에지 문서 처리 온보딩 비용을 대폭 절감",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/18/jina-ai-releases-jina-ocr-v1-a-3-4b-moe-document-parser-with-built-in-speculative-decoding-for-low-budget-gpus/",
-          "tags": [
-            "OCR",
-            "MoE",
-            "DocumentParser",
-            "JinaAI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "PrismML, 5.9GB 용량의 3치 양산 모델 'Ternary Bonsai 2 27B' 출시",
-          "target_problem": "대용량 LLM(Qwen3.8 27B)의 FP16 용량 부담(53.8GB)을 대폭 줄여 제한된 메모리 환경에서 구동하려는 디바이스/클라우드 환경",
-          "tech_applied": "Ternary Weight(3치 가중치) 양자화 기술 적용, Apache 2.0 라이선스, 20개 벤치마크 평균 원본의 98.2% 성능 유지",
-          "business_insight": "메모리 풋프린트를 약 90% 축소하여 엣지 및 인프라 운영 비용을 획기적으로 낮추면서 고성능 AI 모델 배포 가능",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/18/prismml-releases-ternary-bonsai-2-27b-a-5-9-gb-apache-2-0-model-retaining-98-2-of-qwen3-8-27b-performance/",
-          "tags": [
-            "Quantization",
-            "Ternary",
-            "OpenSource",
-            "PrismML"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "알리바바, 1M 컨텍스트 오디오-비디오 에이전트 'Qwen3.8-Omni-Flash' 공개",
-          "target_problem": "긴 비디오/오디오 입력에 대한 에이전틱 이해, 태스크 계획 및 도구 활용에 따른 고비용·고지연 토큰 처리 문제",
-          "tech_applied": "Omni-Modal(음성·영상 통합) 아키텍처, 1M 토큰 멀티모달 컨텍스트 창, OmniVideoBench 기준 45.7% 토큰 소비 감소",
-          "business_insight": "긴 영상 분석 및 에이전틱 툴 사용 시 토큰 비용을 절반 수준으로 감축하여 실시간 멀티모달 SaaS 서비스 경쟁력 제고",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/18/alibaba-qwen-releases-qwen3-8-omni-flash/",
-          "tags": [
-            "Qwen",
-            "OmniModal",
-            "AgenticAI",
-            "Alibaba"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "마이크로소프트, 쿠버네티스 네이티브 GPU AI 스택 'TauGrid' 오픈소스 공개",
-          "target_problem": "쿠버네티스 환경에서 GPU AI 워크로드 스케줄링, 잡 큐 관리, 노드 헬스 모니터링 구축 및 복잡성 해결",
-          "tech_applied": "tau CLI, Kueue 큐잉, KubeRay 오케스트레이션, GPU 모니터링/가시성 원스톱 헬름 패키지, MIT 라이선스",
-          "business_insight": "기업 인프라 팀이 k8s 상에서 GPU AI 클러스터를 손쉽게 인프라스트럭처로 관리할 수 있도록 오버헤드 감소",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/17/microsoft-open-sources-taugrid-a-kubernetes-native-stack-for-gpu-ai-workloads/",
-          "tags": [
-            "Kubernetes",
-            "GPU",
-            "Microsoft",
-            "OpenSource"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Anthropic, 브라우저를 닫아도 백그라운드 작업이 지속되는 'Claude Code Projects' 베타 출시",
-          "target_problem": "개발자의 로컬 환경 세션에 종속되던 코딩 에이전트 작업 제한과 장시간 소요 작업의 세션 단절 문제",
-          "tech_applied": "병렬 클라우드 세션 연동 및 Claude 총괄 코디네이터 아키텍처, 다중 스레드 자율 분업 체계",
-          "business_insight": "비동기 대규모 코드베이스 리팩토링 및 테스트 작업을 클라우드로 이관하여 개발자 생산성 대폭 향상",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/17/anthropic-launches-claude-code-projects-in-beta-parallel-cloud-sessions-that-keep-running-after-you-close-your-laptop/",
-          "tags": [
-            "Anthropic",
-            "ClaudeCode",
-            "DevTools",
-            "AI Agent"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "MiniMax H3용 최신 Kijai VAE 업데이트, VRAM 사용량 대폭 절감",
-          "target_problem": "MiniMax H3 고해상도 생성 시 비디오 생성 VRAM 부족으로 인한 1MP 10초 영상 세션 생성 불가 이슈",
-          "tech_applied": "Kijai 경량화 VAE 모듈 업데이트, 품질 저하 없는 저전력 VRAM 압축 알고리즘",
-          "business_insight": "로컬 및 하위 사양 GPU 사용자의 프레임/해상도 생성 한계 확장으로 크리에이터 진입 장벽 완화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wjlflm/kijai_latest_mh3_vae_is_great_and_use_less_vram/",
-          "tags": [
-            "MiniMax",
-            "VAE",
-            "VRAM",
-            "VideoGen"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "VC-Attention 기술 적용으로 MiniMax H3 주의력 연산 속도 최대 3.58배 향상",
-          "target_problem": "고해상도 비디오 생성 모델의 어텐션 레이어 연산 병목 및 랜더링 시간 과다",
-          "tech_applied": "VC-Attention 논문 구현 적용, 1344x768 해상도 1.6배 향상, RTX 5090 환경 어텐션 연산 최대 3.58배 고속화",
-          "business_insight": "차세대 그래픽카드 기반 비디오 렌더링 파이프라인 성능을 대폭 끌어올려 AI 비디오 SaaS 서비스의 서버 비용 단축",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wjniii/vcattention_for_minimax_h3_looks_very_promising/",
-          "tags": [
-            "VCAttention",
-            "MiniMaxH3",
-            "GPU Optimization"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "YUE2 음악 AI 모델 기반 인더스트리얼 록 스타일 LoRA 학습 사례 공유",
-          "target_problem": "오디오/음악 생성 AI 모델의 특정 장르 및 세부 질감 표현력 부족",
-          "tech_applied": "YUE2 커스텀 스타일 LoRA 파인튜닝 기법",
-          "business_insight": "음악 생성 모델 시장에서도 장르별 커스텀 LoRA 생태계 확장 가능성 확인",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wjb3n9/i_trained_an_industrial_rock_lora_for_yue2/",
-          "tags": [
-            "YUE2",
-            "AudioGen",
-            "LoRA",
-            "MusicAI"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "삼성 갤럭시 워치9 클래식, 규제 기관 인증서로 재등장 확인",
-          "target_problem": "7월 신제품 라인업에서 누락되었던 물리 베젤 탑재 클래식 모델을 기다리는 타겟 소비자층 요구",
-          "tech_applied": "회전식 물리 베젤 폼팩터, 최신 헬스 트래킹 센서 및 웨어러블 OS 스택",
-          "business_insight": "전통적인 시계 디자인과 물리 조작감을 선호하는 세그먼트를 공략하는 프리미엄 제품군 라인업 보완",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/18/samsung-galaxy-watch9-classic-russian-filing/",
-          "tags": [
-            "Samsung",
-            "GalaxyWatch",
-            "Wearable"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "가민, tactix 9 및 Enduro 4 전파 규제 인증 데이터 유출 확인",
-          "target_problem": "전술 전용 기능 및 울트라 마라톤용 고지속 배터리를 요구하는 전문 아웃도어 유저층",
-          "tech_applied": "초장시간 배터리 수명, 전술 특화 GPS 및 고도화된 아웃도어 센서 스택",
-          "business_insight": "프리미엄 틈새시장(전술/초장거리 아웃도어) 수요에 맞춘 플래그십 웨어러블 신제품 출시 임박",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/17/garmin-tactix-9-and-enduro-4-named-in-russian-regulatory-filing/",
-          "tags": [
-            "Garmin",
-            "Tactix9",
-            "Enduro4",
-            "OutdoorWearable"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "가민 Fenix 9 시리즈 심층 리뷰: 하드웨어 및 소프트웨어 업그레이드 분석",
-          "target_problem": "기존 Fenix 8 유저의 업그레이드 당위성 판단 및 InReach 위성 통신 및 태양광 충전 통합 효과 검증",
-          "tech_applied": "Pro InReach 위성 통신 내장, Solar 태양광 충전 패널, 정밀 센서 및 차세대 지형 맵핑 스펙",
-          "business_insight": "단순 헬스케어 추적을 넘어 독자적인 위성 통신 서비스 및 솔라 충전 중심의 고마진 아웃도어 생태계 강화",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/garmin-fenix9-series-pro-inreach-solar-in-depth-review.html",
-          "tags": [
-            "Garmin",
-            "Fenix9",
-            "InReach",
-            "Fitness"
           ]
         }
       ]
