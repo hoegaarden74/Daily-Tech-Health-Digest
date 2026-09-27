@@ -1,6 +1,221 @@
 {
-  "last_updated": "2026-09-27T08:38:04.916628+09:00",
+  "last_updated": "2026-09-28T08:49:13.529699+09:00",
   "digests": [
+    {
+      "date": "2026-09-28",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Exa, 대규모 리서치 및 목록 구축용 'Agent Ultra' API 출시",
+          "target_problem": "수천 개의 출처를 동시 조사하고 정교한 리스트 및 엔티티 보강 작업을 수행해야 하는 엔터프라이즈 리서치 문제",
+          "tech_applied": "서브에이전트 스웜(Subagent Swarm) 오케스트레이션 및 Exa Agent API의 최고 연산 모드 적용",
+          "business_insight": "심층 조사 자동화 B2B API 시장에서 고성능 서브에이전트 스웜 구조를 통해 차별화된 가치 제공",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/26/exa-launches-agent-ultra-a-subagent-swarm-deep-research-api-built-for-exhaustive-list-building/",
+          "tags": [
+            "AI Agent",
+            "API",
+            "Deep Research"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Sarvam AI, 인도의 22개 공식 언어를 지원하는 음성-텍스트 모델 'Saaras V4' 공개",
+          "target_problem": "다국어 및 다중 방언 환경인 인도 시장에서 단일 모델 기반의 고성능 STT 서비스 제공의 어려움",
+          "tech_applied": "오디오 인코더와 3B 하이브리드 스테이트-스페이스(State-Space) 디코더 결합, 최대 50개 키워드 프롬프팅 및 5가지 출력 모드 지원",
+          "business_insight": "신흥 시장 언어 데이터 특화 B2B API 과금 및 현지 맞춤형 AI 인프라 구축 솔루션 활용 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/26/sarvam-ai-releases-saaras-v4-a-speech-to-text-model-for-all-22-indian-languages-and-global-english/",
+          "tags": [
+            "STT",
+            "Speech AI",
+            "Multilingual"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Supersonic Labs, CPU에서 구동되는 144M 의사결정 모델 'Julia 1' 출시",
+          "target_problem": "고비용 GPU 인프라 없이 경량화된 환경에서 실시간 의사결정 및 분류 추론 처리",
+          "tech_applied": "mmBERT-small 기반의 144.3M 파라미터 경량 오픈 모델, 맥락과 질문 및 2~20개 선택지 기반 확률 계산",
+          "business_insight": "온디바이스 및 CPU 단독 온프레미스 인프라 환경 구축을 통한 엣지 AI 도입 비용 절감 효과",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/26/supersonic-labs-releases-julia-1-a-144-3m-parameter-open-decision-model-that-runs-on-a-cpu/",
+          "tags": [
+            "Decision Model",
+            "CPU Inference",
+            "Open Source"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "구글 리서치 MSEB 기반 사운드 인코더 평가 가이드 공개",
+          "target_problem": "음향 데이터의 분류, 클러스터링, 검색, 세그멘테이션 등 다중 태스크 벤치마킹 표준화 부족",
+          "tech_applied": "Massive Sound Embedding Benchmark(MSEB) 프레임워크 및 파이썬 코딩 구현체",
+          "business_insight": "오디오 파이프라인 개발 공정 절감 및 다양한 음향 기반 AI 서비스의 임베딩 성능 표준 제공",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/09/26/a-coding-guide-to-google-researchs-mseb-writing-sound-encoders-to-the-benchmark-contract-and-scoring-them-across-classification-clustering-retrieval-and-segmentation/",
+          "tags": [
+            "Audio AI",
+            "Embedding",
+            "Benchmark"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "LFM2.5-VL-DSpark를 활용한 비전-언어 모델 가속화 기법 발표",
+          "target_problem": "고해상도 비전-언어 모델(VLM) 추론 시 발생하는 느린 처리 속도 및 높은 연산 자원 소모",
+          "tech_applied": "LFM2.5-VL-DSpark 추론 가속 파이프라인 및 최적화 아키텍처",
+          "business_insight": "VLM 기반 실시간 이미지 분석 서비스의 호스팅 및 추론 단가를 낮추어 SaaS 사업성 제고",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+          "tags": [
+            "VLM",
+            "Inference Speed",
+            "Optimization"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Minimax H3 기반 일관된 캐릭터 가상 모델 '.char' 파이프라인 실증",
+          "target_problem": "AI 생성 이미지/비디오 내 동일 인물의 얼굴, 체형, 의상 유지 및 일관성 확보의 난제",
+          "tech_applied": "Minimax H3 워크플로우 및 참조 인코딩 기반 `.char` 캐릭터 컨텍스트 모델링",
+          "business_insight": "버추얼 인플루언서, 디지털 아바타 및 멀티미디어 콘텐츠 제작 비용의 극대화된 절감 효과",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wrm7gt/one_char_model_consistent_face_body_cloths/",
+          "tags": [
+            "Image Generation",
+            "Character Consistency",
+            "Minimax"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Krea 2 전용 '스마트폰 카메라 질감' 사실주의 LoRA 모델 커뮤니티 공개",
+          "target_problem": "생성형 AI 특유의 지나치게 매끄러운 질감을 피하고 정교한 실제 사진 느낌 연출 필요성",
+          "tech_applied": "Krea 2 모델 대상 Phone Camera 스타일의 커스텀 미세조정 LoRA 기술",
+          "business_insight": "리얼리즘 중심 상업용 제품 렌더링 및 광고 스틸컷 커스텀 생성을 위한 크리에이터 도구로 활용",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wrd580/yet_another_1girl_realism_lora_for_krea_2_details/",
+          "tags": [
+            "Krea 2",
+            "LoRA",
+            "Photorealism"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "애니메이션 이미지 생성 모델 'Anima'의 구도 및 프롬프트 가이드 제작",
+          "target_problem": "컨트롤넷 없이 프롬프트만으로 복잡한 구성과 인물 표현을 제어하기 힘든 문제",
+          "tech_applied": "Anima 생성 모델 맞춤형 프롬프트 구조화 및 구도 제어 워크플로우",
+          "business_insight": "크리에이터 유저층의 인앱 정착률 향상 및 커뮤니티 기반 워크플로우 오픈소스 확산 효과",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wru8v0/all_guides_for_anima_were_underwhelming_so_i_made/",
+          "tags": [
+            "Anime AI",
+            "Prompt Engineering",
+            "Anima"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "Krea 2, 풀 HD 실사 이미지 생성 커뮤니티 호평 지속",
+          "target_problem": "초고화질 및 물리 엔진을 반영한 카메라 수준 이미지의 실시간 파이프라인 구현",
+          "tech_applied": "Krea 2의 물리 파라미터 보정 및 HD 이미지 인퍼런스 엔진",
+          "business_insight": "웹 기반 그래픽 툴 시장에서 프롬미엄(Freemium) 크레딧 판매 방식의 B2C 수익 창출",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wr820b/for_me_krea_2_is_still_the_best_model_out_there/",
+          "tags": [
+            "Image Generation",
+            "Krea 2",
+            "HD Image"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "샤오미 HyperOS 4 업데이트, 애플워치-안드로이드 스마트폰 연동 지원",
+          "target_problem": "애플워치 사용자의 안드로이드 스마트폰 생태계 전환 방해 및 호환성 제약",
+          "tech_applied": "HyperOS 4 기반 연동 시스템 및 애플워치 다이렉트 통신 프로토콜",
+          "business_insight": "타사 웨어러블 사용자를 자사 스마트폰 생태계로 유입시키는 하드웨어 파편화 해소 전략",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/26/xiaomi-apple-watch-hyperos-4-support/",
+          "tags": [
+            "Xiaomi",
+            "Apple Watch",
+            "HyperOS"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "화웨이, 4년 연구 끝에 지속적 혈당 측정 장치 개발 발표",
+          "target_problem": "침습적 채혈 없이 혈당 변화를 모니터링해야 하는 당뇨 및 건강 관리 수요",
+          "tech_applied": "비침습/광학 센서 기반의 독자적 혈당 측정 웨어러블 하드웨어",
+          "business_insight": "디지털 헬스케어 및 메디컬 웨어러블 시장 내 고부가가치 헬스 모니터링 구독 모델 기반 마련",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/26/huawei-blood-sugar-testing-device/",
+          "tags": [
+            "Huawei",
+            "Blood Sugar",
+            "Healthcare"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "구글 헬스, 가민 및 타사 웨어러블의 Cardio Load 연동 격차 해결",
+          "target_problem": "가민 등 서드파티 디바이스 운동 데이터가 구글 헬스의 심장 강화 운동 측정치에 누락되는 문제",
+          "tech_applied": "Google Health API의 타사 웨어러블 운동 데이터 동기화 알고리즘 개선",
+          "business_insight": "플랫폼 간 데이터 단절을 해소하여 통합 헬스케어 빅데이터 생태계의 주도권 강화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/26/google-health-cardio-load-garmin-apple-watch/",
+          "tags": [
+            "Google Health",
+            "Garmin",
+            "Cardio Load"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "어메이즈핏 치타 2 울트라, UTM/MGRS 등 7가지 고성능 좌표 포맷 지원",
+          "target_problem": "아웃도어 및 특수 환경에서의 단순 위도/경도 외 전문적 야외 내비게이션 좌표 체계 필요성",
+          "tech_applied": "펌웨어 6.4.16 업데이트를 통한 UTM, MGRS 등 7개 위성 좌표 변환 엔진 탑재",
+          "business_insight": "전문 아웃도어 및 트레일 러닝 유저층을 위한 틈새 시장 프리미엄 기능 강화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/27/amazfit-cheetah-2-ultra-utm-mgrs-coordinates/",
+          "tags": [
+            "Amazfit",
+            "Wearable",
+            "GPS"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "애플워치 울트라 4 vs 시리즈 12 심층 비교 및 차이점 분석",
+          "target_problem": "구매자의 사용 목적(배터리, 위성 메시징, 스펙)에 따른 최적의 기기 선택 가이드 필요",
+          "tech_applied": "대용량 배터리, 정밀 GPS, 위성 비상 메시징 시스템 및 고급 디스플레이 사양",
+          "business_insight": "플래그십 울트라 라인업을 통한 고마진 하드웨어 판매 증대 및 위성 통신 서비스 생태계 구축",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/09/applewatch-series12-vs-apple-watch-ultra4-in-depth-review-comparison.html",
+          "tags": [
+            "Apple Watch",
+            "Ultra 4",
+            "Hardware Review"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-27",
       "items": [
@@ -1171,154 +1386,6 @@
             "ZeppHealth",
             "Privacy",
             "DataSecurity"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-21",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Flet 1.0 출시: 파이썬만으로 크로스 플랫폼 웹·데스크톱·모바일 앱 개발 지원",
-          "target_problem": "파이썬 개발자가 프론트엔드 언어(JavaScript/Dart 등)를 별도로 배우지 않고 고성능 프로덕션 앱을 구축하기 어려움",
-          "tech_applied": "Flutter 기반 UI 엔진, 파이썬 3.12/3.13/3.14 번들링, 계층형 CI 패키징 제품군 및 100개 이상의 모바일 컨트롤 제공",
-          "business_insight": "파이썬 생태계 내 풀스택 개발 장벽을 크게 낮추어, 내부 AI 도구 및 B2B SaaS 앱의 신속한 프로토타이핑 및 출시 가능",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/20/flet-1-0-released-build-production-web-desktop-and-mobile-apps-in-python-only/",
-          "tags": [
-            "Python",
-            "App Development",
-            "Cross Platform",
-            "Flet"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "알리바바 Qwen 팀, 60개 국어 지연시간 2.3초 대 실시간 통역 모델 Qwen3.8-LiveTranslate 공개",
-          "target_problem": "다국어 동시통역 시 발생하는 지연 시간 및 화자 분리(Diarization) 불안정성 문제",
-          "tech_applied": "신규 인터리브(Interleave) 아키텍처 기반 real-time simultaneous interpretation 모델 및 화자 분리 알고리즘",
-          "business_insight": "평균 지연시간을 2.3초로 단축하여 글로벌 화상회의, 국제 컨퍼런스, 크로스보더 커머스 CS 등 글로벌 B2B 서비스 적용성 강화",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/19/alibaba-qwen-team-releases-qwen3-8-livetranslate/",
-          "tags": [
-            "AI",
-            "Translation",
-            "Qwen",
-            "Realtime AI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "TypeSafe AI, 텍스트 대신 확률 기반 타입을 반환하는 모델 'Jev' 출시",
-          "target_problem": "기존 LLM의 비확정적 텍스트 출력으로 인한 B2B 시스템 연동 오류 및 보일러플레이트 파싱 부담",
-          "tech_applied": "System One 아키텍처 기반의 보정된(Calibrated) 확률 타입 결정 모델 API",
-          "business_insight": "입력 토큰당 $0.042/1M 가격 체계 및 출력 토큰 무료 정책으로, 자동화 의사결정 워크플로우 운영 비용을 유의미하게 절감",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/19/typesafe-ai-releases-jev/",
-          "tags": [
-            "AI",
-            "API",
-            "TypeSafe",
-            "System One"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Linkup Research, 1억 4,900만 파라미터 오픈소스 희소 임베딩 모델 'SPARSEUP' 공개",
-          "target_problem": "150M 미만 소형 모델 규격에서 베이직 검색 성능(BEIR 벤치마크) 및 효율성 저하 문제",
-          "tech_applied": "ModernBERT 백본 기반의 Sparse Embedding 모델, BEIR-13에서 56.4 nDCG@10 달성",
-          "business_insight": "저비용 경량화 오픈소스 모델을 활용하여 실시간 검색 시스템(RAG) 인프라 구축 비용 대폭 줄임",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/19/linkup-research-releases-sparseup/",
-          "tags": [
-            "Embedding",
-            "OpenSource",
-            "RAG",
-            "BERT"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Qwen-Image-2.1 가중치 공개 및 ComfyUI 워크플로우 지원 시작",
-          "target_problem": "이미지 생성 및 일관성 유지 작업 시 고품질 오픈소스 모델의 부재 및 복잡한 적용 과정",
-          "tech_applied": "Qwen-Image-2.1 오픈 가중치, ComfyUI 통합 워크플로우 및 Hugging Face/ModelScope 배포",
-          "business_insight": "오픈소스 가중치 공개로 크리에이터 생태계 및 AI 이미지/비디오 제작 파이프라인의 접근성과 커스텀 제작 자유도 증대",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wlgh7c/qwenimage21_weights_are_available_on_hugging_face/",
-          "tags": [
-            "AI Image",
-            "Qwen",
-            "ComfyUI",
-            "Open Source"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Minicart: AI 기반 스토어 운영 자동화 솔루션 출시",
-          "target_problem": "전자상거래 스토어 오픈 후 단순 반복적 관리 업무(Busywork)로 인한 운영 효율 감소",
-          "tech_applied": "이커머스 업무 자동화 AI 에이전트 서비스",
-          "business_insight": "1인 창업가 및 중소상공인의 개설 및 운영 진입장벽을 낮춰 구독형 SaaS 과금 모델 수립에 유용한 유즈케이스 제공",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/minicart",
-          "tags": [
-            "E-commerce",
-            "AI Agent",
-            "SaaS"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "Amazfit, Zepp 앱 내 클라우드 데이터 전송 선택권 도입 예정",
-          "target_problem": "웨어러블 사용자들의 개인 건강 데이터 클라우드 동기화에 따른 프라이버시 우려",
-          "tech_applied": "Zepp 헬스 플랫폼 프라이버시 제어 및 선택적 클라우드 동기화 온디바이스 기능",
-          "business_insight": "데이터 프라이버시 규제 강화 흐름 속에서 사용자가 데이터 동기화 범위를 지정하게 함으로써 데이터 신뢰성 확보",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/20/amazfit-zepp-cloud-sync-privacy-controls/",
-          "tags": [
-            "Wearables",
-            "Privacy",
-            "Amazfit",
-            "HealthTech"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "OPPO Watch S2 사전 유출: FatMax 측정, 심전도(ECG) 및 10일 배터리 탑재",
-          "target_problem": "짧은 배터리 수명과 심도 있는 운동 생체 지표(최대 지방 산화율 등) 측정 기능의 부재",
-          "tech_applied": "FatMax 측정 센서, ECG(심전도) 센서 및 저전력 배터리 관리 시스템",
-          "business_insight": "전문 훈련용 생체 지표인 FatMax와 긴 배터리 수명을 대중적인 스마트워치 레이블로 가져와 피트니스 관여도가 높은 사용자층 공략",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/19/oppo-watch-s2/",
-          "tags": [
-            "Smartwatch",
-            "OPPO",
-            "ECG",
-            "Fitness"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "Garmin Fenix 9 심층 리뷰: 심층 하드웨어·소프트웨어 업데이트 및 inReach 통합",
-          "target_problem": "아웃도어 워치 사용자의 위성 통신 제약 및 복합 스포츠 트래킹 요구",
-          "tech_applied": "inReach 위성 기술 통합, 태양광 충전 기술, 업그레이드된 트래킹 소프트웨어",
-          "business_insight": "프리미엄 아웃도어 스마트워치 시장의 입지를 강화하며 위성 통신 솔루션을 통합해 추가 서비스 수익(MRR) 창출 기회 확보",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/garmin-fenix9-series-pro-inreach-solar-in-depth-review.html",
-          "tags": [
-            "Garmin",
-            "Fenix9",
-            "Wearable",
-            "Outdoor"
           ]
         }
       ]
