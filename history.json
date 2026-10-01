@@ -1,6 +1,221 @@
 {
-  "last_updated": "2026-09-30T09:26:54.480945+09:00",
+  "last_updated": "2026-10-01T09:33:07.143206+09:00",
   "digests": [
+    {
+      "date": "2026-10-01",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "NVIDIA Kumo Tabular: 정형 데이터 예측 성능 및 효율성 혁신",
+          "target_problem": "기존 정형 데이터 예측 모델의 비효율적인 연산과 정확도 한계 극복",
+          "tech_applied": "NVIDIA의 신규 Kumo Tabular 아키텍처 및 고성능 정형 데이터 학습 파이프라인",
+          "business_insight": "기업 내 DB 및 엔터프라이즈 정형 데이터 분석 워크플로우의 가속화 및 분석 비용 절감",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/nvidia/kumo-tabular",
+          "tags": [
+            "NVIDIA",
+            "TabularAI",
+            "Enterprise"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Holo4: 범용 컴퓨터 조작(Computer-Use) AI 에이전트 구동",
+          "target_problem": "다양한 OS 환경에서 인간처럼 자율적으로 소프트웨어를 조작하는 에이전트 구축의 어려움",
+          "tech_applied": "Hcompany의 Holo4 범용 에이전트 모델 및 멀티모달 액션 파이프라인",
+          "business_insight": "RPA 시장 대체 및 백오피스 단순 자동화 업무의 차세대 표준 제시",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/Hcompany/holo4",
+          "tags": [
+            "ComputerUse",
+            "Agent",
+            "Automation"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "MCP 에이전트를 위한 출처 인식형 검증(Source-Aware Verification)",
+          "target_problem": "AI 에이전트가 환각(Hallucination) 없이 검증된 출처 기반으로 사실을 추론하도록 지원",
+          "tech_applied": "Multiverse Computing의 출처 인식 검증 알고리즘 및 MCP(Model Context Protocol) 연동",
+          "business_insight": "금융/법률 등 가짜 정보 위험이 큰 분야에서 에이전트 도입 안정성 및 신뢰도 증대",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+          "tags": [
+            "MCP",
+            "Verification",
+            "TrustworthyAI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "LFM2.5-VL-DSpark를 활용한 비전-언어 모델(VLM) 추론 가속화",
+          "target_problem": "고해상도 이미지/비디오를 처리하는 VLM의 과도한 연산량과 높은 추론 지연 시간",
+          "tech_applied": "Liquid AI의 LFM2.5-VL 모델 및 DSpark 연산 가속 엔진 최적화",
+          "business_insight": "온디바이스 및 실시간 영상 분석 서비스의 운영 인프라 비용 획기적 절감",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+          "tags": [
+            "VLM",
+            "Optimization",
+            "LiquidAI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "📊 Benchmark",
+          "title": "Open TTS Leaderboard: 다국어 음성합성 및 음성 복제 벤치마크 오픈",
+          "target_problem": "다국어 TTS 및 음성 복제 모델의 품질과 자연스러움을 객관적으로 비교할 표준 부재",
+          "tech_applied": "확장 가능한 다국어 음성합성/클로닝 자동 평가 메트릭 프레임워크",
+          "business_insight": "오디오 AI 서비스 개발사들의 모델 선정 기준 및 정량적 기술 검증 비용 절감",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/open-tts-leaderboard",
+          "tags": [
+            "TTS",
+            "VoiceCloning",
+            "Benchmark"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "개선된 H3 Refmods & MiniMax-H3 프롬프트 빌더 공개",
+          "target_problem": "비디오 생성 및 편집 시 적은 이미지로 정체성(Identity)을 유지하면서 정밀하게 편집하기 어려움",
+          "tech_applied": "ComfyUI 커스텀 노드, 비디오 편집용 에디트 마스킹 및 MiniMax-H3 프롬프트 빌더",
+          "business_insight": "AI 영상 제작 커뮤니티의 워크플로우 효율화 및 오프라인/로컬 영상 편집 파이프라인 고도화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wtu82e/improved_h3_refmods_better_accuracy_and_low/",
+          "tags": [
+            "ComfyUI",
+            "VideoEdit",
+            "MiniMax"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Ideogram 4.5 모델 발표 (편집 기능 탑재 및 오픈소스화 예정)",
+          "target_problem": "이미지 및 텍스트 랜더링 정확도 향상 및 국소 영역 수정(Edit) 기능 필요",
+          "tech_applied": "Ideogram 4.5 확산 모델 및 영역 지정 인페인팅/편집 파이프라인",
+          "business_insight": "디자인 및 로고/텍스트 기반 마케팅 에셋 생성 시장에서의 강력한 오픈소스 대안 제공",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wu98xe/new_model_ideogram_45_with_edit_open_source_soon/",
+          "tags": [
+            "Ideogram",
+            "ImageGen",
+            "OpenSource"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Wulver v0.5 출시: 애니메이션/캐릭터 특화 Krea 2 파인튜닝 모델",
+          "target_problem": "다중 캐릭터 상호작용 및 애니메이션 스타일 구현 시 발생하는 디테일 붕괴 현상 해결",
+          "tech_applied": "12.8B DiT 기반 Krea 2 Raw 전역 풀 파인튜닝(Full Fine-tune)",
+          "business_insight": "서브컬처 콘텐츠 제작 아티스트 및 게임 자산 제작사의 생성 효율 증대",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wu721p/released_wulver_v05_our_krea_2_finetune_for_anime/",
+          "tags": [
+            "Krea2",
+            "FineTune",
+            "AnimeAI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Klein9B용 UltraReal 업스케일링 LoRA (V5) 공개",
+          "target_problem": "AI 생성 이미지 특유의 매끄럽고 플라스틱 같은 질감을 제거하고 사실적인 질감 구현",
+          "tech_applied": "Klein9B 최적화 업스케일링 LoRA 학습 및 자연스러운 텍스처 보정 파이프라인",
+          "business_insight": "고품질 상업용 실사 이미지 제작 시 리터칭 시간 단축 및 완성도 향상",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wtx71n/ultrareal_upscaling_lora_for_klein9b_new_version/",
+          "tags": [
+            "LoRA",
+            "Upscale",
+            "Photorealism"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "로컬 단일 이미지-to-3D 파이프라인: 세부 디테일 유지 및 픽셀 매칭 지원",
+          "target_problem": "2D 이미지를 3D로 변환 시 텍스트, 로고 등 세부 디테일이 뭉개지거나 왜곡되는 문제",
+          "tech_applied": "Pixel Match 기술, 리토폴로지 최적화 (900k 면 -> 5k 면 감소), NVIDIA/Mac 교차 지원",
+          "business_insight": "게임 개발 및 AR/VR 파이프라인에서 저용량 3D 에셋 생성 속도 극대화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wucthp/local_image_to_3d_high_quality_low_poly_preserve/",
+          "tags": [
+            "ImageTo3D",
+            "LowPoly",
+            "PixelMatch"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "Polar, 스마트워치 6종 대상 Firmware 6.0.18 대규모 업데이트 배포",
+          "target_problem": "기존 워치 사용자들의 헬스케어 데이터 시각화 및 운동 분석 기능 개선 요청",
+          "tech_applied": "새로운 건강 분석 그래프 엔진 및 온디바이스 펌웨어 데이터 처리 최적화",
+          "business_insight": "기존 플래그십 제품군의 소프트웨어 경험 강화를 통한 고객 락인(Lock-in) 전략",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/30/polar-firmware-6-0-18-update/",
+          "tags": [
+            "Polar",
+            "Smartwatch",
+            "Firmware"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "화웨이 워치 GT 7, 일부 국가에서 당뇨병 위험도 측정 서비스 시작",
+          "target_problem": "채혈 없는 비침습 방식의 당뇨 위험도 조기 선별 필요성",
+          "tech_applied": "Huawei GT 7 / GT 7 Pro 광학 센서 기반 Diabetes Risk Study 바이오 알고리즘",
+          "business_insight": "웨어러블 기기의 웰니스 영역을 넘어선 예방 의학/선별 진단 영역 진출",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/30/huawei-watch-gt-7-diabetes-risk-study/",
+          "tags": [
+            "Huawei",
+            "Diabetes",
+            "HealthTech"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "QALO, 스마트 링 연동 전용 화면 없는 핏밴드 'SL-1' 출시",
+          "target_problem": "스마트 링 착용자가 격렬한 운동 중 링 손상을 방지하고 정밀 측정을 보완할 손목 디바이스 필요",
+          "tech_applied": "디스플레이리스(Screenless) 슬림 폼팩터 및 스마트 링 데이터 동기화 알고리즘",
+          "business_insight": "스마트 링 + 핏밴드 번들 생태계 구축을 통한 유저당 매출(ARPU) 증대",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/29/qalo-sport-loop-1/",
+          "tags": [
+            "QALO",
+            "SmartRing",
+            "FitnessBand"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "가민, 근소산소 센서 기업 'Moxy Monitor' 인수",
+          "target_problem": "운동 선수를 위한 실시간 근육 산소 포화도 및 고도화된 스태미나 측정 기능 탑재",
+          "tech_applied": "Moxy의 근소산소 측정(Muscle Oxygen) 센서 기술 및 가민 Muscle Battery 알고리즘 통합",
+          "business_insight": "프리미엄 피트니스 시장에서의 독보적 기술 격차 확보 및 스포츠 과학 분야 선점",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/09/28/garmin-acquires-moxy-muscle-battery/",
+          "tags": [
+            "Garmin",
+            "Moxy",
+            "Acquisition"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-30",
       "items": [
@@ -1184,202 +1399,6 @@
             "Xiaomi",
             "Smart Band",
             "Hardware"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-24",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "구글, 프롬프트 기반 음성 설계 가공 'Gemini 3.8 Flash TTS' 발표",
-          "target_problem": "기존 TTS의 단조로운 음성 생성을 극복하고 자연어로 상세한 음성 톤 및 캐릭터를 직접 제어하려는 개발자 및 기업",
-          "tech_applied": "100개 이상의 언어를 지원하며 프롬프트 기반 음성 디자인 기능을 탑재한 Gemini 3.8 Flash TTS 및 Flash-Lite TTS 모델 제공",
-          "business_insight": "Gemini API 및 Google AI Studio를 통해 상용 서비스 구축 비용 절감과 음성 기반 인터랙티브 서비스 다양화 가능",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/23/google-releases-gemini-3-8-flash-tts-and-flash-lite-tts-with-prompt-based-voice-design/",
-          "tags": [
-            "VoiceAI",
-            "TTS",
-            "Google",
-            "Gemini"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "엔비디아, 실시간 8인 화자 분리 오픈 모델 'Nemotron 3 Diarization' 공개",
-          "target_problem": "다중 화자 회의나 팟캐스트 및 음성 데이터에서 목소리가 겹칠 때 발화자를 정확히 분리하기 어려운 문제",
-          "tech_applied": "100M 파라미터 기반의 오픈웨이트 모델로 음성 중첩 구간을 포함해 최대 8명의 화자를 실시간 트래킹",
-          "business_insight": "Hugging Face에 오픈소스 가중치로 공개되어 엣지 디바이스 및 엔터프라이즈 음성 인프라 구축 비용을 획기적으로 낮춤",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/23/nvidia-releases-nemotron-3-diarization/",
-          "tags": [
-            "NVIDIA",
-            "OpenSource",
-            "AudioAI",
-            "Diarization"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "노키아, 추가 학습 없이 LLM을 의사결정 모델로 전환하는 'AnyJev' 오픈소스화",
-          "target_problem": "프로덕션 환경에서 오픈 LLM이 자유 형태의 문장 대신 정해진 옵션 중 하나를 안정적으로 선택하도록 제어하기 어려움",
-          "tech_applied": "학습 과정 없이 오픈 LLM 상단에 얹어 보정된 의사결정(Calibrated Decision) 출력을 유도하는 Python 라이브러리",
-          "business_insight": "추가 데이터 세트 파인튜닝 비용 없이 오분류 위험을 낮추어 금융, 의료, 고객지원 자동화 솔루션 적용 용이",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/23/nokia-open-sources-anyjev-a-training-free-layer-that-turns-any-open-llm-into-a-calibrated-decision-model/",
-          "tags": [
-            "Nokia",
-            "OpenSource",
-            "LLM",
-            "DecisionAI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Kyutai, 강화학습 기반 음성 전용 수학 해결 모델 'Voice of Reason' 발표",
-          "target_problem": "텍스트 변환(STT) 과정에서 발생하는 정보 손실 및 왜곡으로 인한 음성 기반 수학 계산 및 논리 추론 성능 저하",
-          "tech_applied": "GLM-4-Voice-9B 기반 Speech-Native 아키텍처 및 RL/SFT 기법 적용 (GSM8K 음성 정확도 27.3%에서 77.1%로 상승)",
-          "business_insight": "텍스트 LLM 거침없이 직접 음성 인터랙션을 처리하여 지연 시간을 단축하고 실시간 에듀테크 및 튜터링 서비스 구현 가능",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/22/kyutai-releases-voice-of-reason-a-speech-native-model-that-solves-spoken-math-with-reinforcement-learning/",
-          "tags": [
-            "Kyutai",
-            "SpeechAI",
-            "ReinforcementLearning",
-            "OpenWeight"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "OpenAI, API 가격을 50% 인하한 'GPT-6 Sol' 및 'Luna' 정식 출시",
-          "target_problem": "고성능 프론티어 AI 모델 도입 시 발생하는 막대한 API 인프라 운영 비용",
-          "tech_applied": "GPT-6 Astra 학습 아키텍처를 경량화하여 $2/$10(Sol) 및 $0.10/$0.50(Luna) 수준의 토큰 비용 달성",
-          "business_insight": "API 및 ChatGPT Work/Codex 파이프라인에 대폭 낮아진 단가로 공급하여 엔터프라이즈 도입 장벽 대폭 증대",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/22/openai-releases-gpt-6-sol-and-luna-50-cheaper-api-pricing-and-benchmarks/",
-          "tags": [
-            "OpenAI",
-            "GPT6",
-            "API",
-            "CostReduction"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Qwen-Image-2.1 기반 4단계 고속 생성을 지원하는 Turbo LoRA 기술 공개",
-          "target_problem": "이미지 및 생성 AI 워크플로우에서 느린 생성 속도로 인한 생산성 저하",
-          "tech_applied": "Viggle에서 출시한 4-Step Turbo LoRA 스택으로 빠른 추론과 우수한 프롬프트 반영 성능 구현",
-          "business_insight": "생성 시간 대폭 단축을 통해 실시간 생성형 콘텐츠 제작 스튜디오 및 자동화 파이프라인 적용 가능성 확보",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wo6d82/qwen_image_21_4_steps_turbo_lora_is_here_by_viggle/",
-          "tags": [
-            "Qwen",
-            "TurboLoRA",
-            "ImageGen",
-            "Viggle"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "비디오 특정 영역 수정 및 캐릭터 삽입을 위한 V6 업데이트 워크플로우",
-          "target_problem": "기존 비디오 재편집 시 인물 재촬영 없이 캐릭터를 자연스럽게 합성하거나 국소 영역만 수정하기 어려움",
-          "tech_applied": "타겟팅 인페인팅 및 비디오 내 빈 공간 기반 신규 인물/캐릭터 인서트 알고리즘 적용",
-          "business_insight": "광고, 영화, 특수효과(VFX) 현장에서 재촬영 비용을 절감하고 빠른 PPL 및 캐릭터 교체 파이프라인 구축 가능",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wo8oqd/v6_update_newbie_modify_a_targeted_area_of_any/",
-          "tags": [
-            "VideoEditing",
-            "VFX",
-            "Inpainting",
-            "AIWorkflow"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Naise AI, 자율형 마케팅 실행 에이전트 서비스 출시",
-          "target_problem": "마케터가 멀티미디어 콘텐츠 제작부터 캠페인 실행까지 다중 툴을 수동 조작해야 하는 번거로움",
-          "tech_applied": "자율적으로 워크플로우를 생성하고 미디어 마케팅 캠페인을 자동 실행하는 에이전트 시스템",
-          "business_insight": "마케팅 스튜디오 및 소상공인의 자동화 캠페인 집행 솔루션으로 SaaS 형태의 구독 수익 모델 창출",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/naise-ai",
-          "tags": [
-            "MarketingAI",
-            "AutonomousAgent",
-            "SaaS"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "구글, 스마트워치용 초소형 혈압 측정 센서 특허 출원",
-          "target_problem": "기존 스마트워치 커프형 혈압계의 번거로움과 지속적 혈압 트래킹의 기술적 한계",
-          "tech_applied": "초소형 IPG 기반 감지 특허 기술을 활용하여 스마트워치 폼팩터 내에서 혈압 트렌드 추적",
-          "business_insight": "픽셀 워치 등 구글 웨어러블 라인업의 헬스케어 차별화 요소 확보 및 헬스케어 플랫폼 생태계 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/23/google-smartwatch-blood-pressure-ipg-patent/",
-          "tags": [
-            "Google",
-            "Smartwatch",
-            "BloodPressure",
-            "Patent"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "Amazfit, 로드맵을 통해 개인화 AI 비서, MCP 및 웹 대시보드 공개 계획 발표",
-          "target_problem": "웨어러블 기기 내 수집 데이터의 파편화 및 통합 모니터링 환경 부재",
-          "tech_applied": "Zepp OS 연동 개인화 AI 아시안트, MCP(Model Context Protocol) 지원 및 종합 웹 대시보드 구축",
-          "business_insight": " 단순 기기 판매를 넘어 AI 중심의 건강 데이터 플랫폼 소프트웨어 생태계 구축으로 사용자 락인 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/23/amazfit-ai-assistant-mcp-web-dashboard/",
-          "tags": [
-            "Amazfit",
-            "ZeppHealth",
-            "AIAssistant",
-            "MCP"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "애플, 무선 스크린리스 피트니스 밴드 프로토타입 개발 추진",
-          "target_problem": "화면이 있는 스마트워치 착용이 부담스러운 운동 선수나 야간 수면 측정 사용자층의 불편함",
-          "tech_applied": "화면을 제거하고 생체 센서 중심의 초경량 디자인으로 지속적인 피트니스/회복 모니터링 수행 (Whoop 대항마)",
-          "business_insight": "애플 워치 외에 피트니스 전용 밴드 라인업을 다변화하여 스포츠 헬스케어 전문 시장 점유율 확대",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/22/apple-screenless-fitness-band-prototype/",
-          "tags": [
-            "Apple",
-            "FitnessBand",
-            "Wearable",
-            "WhoopRival"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "Amazfit T-Rex Dual Solar 출시: AMOLED와 이중 태양광 충전 시스템 결합",
-          "target_problem": "고선명 AMOLED 디스플레이 장착 시 발생하는 야외 웨어러블의 배터리 조기 소모 문제",
-          "tech_applied": "2개의 서로 다른 태양광 패널 시스템과 AMOLED 디스플레이 기술을 통합 적용",
-          "business_insight": "아웃도어 탐험가 및 익스트림 스포츠 시장을 타겟으로 한 배터리 대용량 프리미엄 라인업 다변화",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/09/amazfit-t-rex-dual-solar-complete-solar-deep-dive.html",
-          "tags": [
-            "Amazfit",
-            "TRex",
-            "SolarPower",
-            "AMOLED"
           ]
         }
       ]
