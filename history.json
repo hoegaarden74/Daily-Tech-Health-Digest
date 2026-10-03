@@ -1,6 +1,171 @@
 {
-  "last_updated": "2026-10-03T09:30:12.573154+09:00",
+  "last_updated": "2026-10-04T08:47:21.434860+09:00",
   "digests": [
+    {
+      "date": "2026-10-04",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "IBM, 온프레미스 및 에어갭 환경 지원 에이전트 개발 플랫폼 'Bob' 정식 출시",
+          "target_problem": "보안 규정 및 데이터 프라이버시로 인해 외부 클라우드로 소스 코드를 전송할 수 없는 기업의 AI 에이전트 개발 제약",
+          "tech_applied": "온프레미스, 사설 클라우드, 망분리(Air-gapped) 환경 구축 및 NVIDIA 인프라 기반 자사 보유 모델(BYOM) 연동 지원",
+          "business_insight": "소스 코드 유출 위험 없이 엔터프라이즈 환경 내 독립적인 에이전트 소프트웨어 개발 및 라이선스 모델 구축 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/02/ibm-brings-bob-to-self-hosted-and-air-gapped-environments/",
+          "tags": [
+            "IBM",
+            "AgenticAI",
+            "Enterprise",
+            "OnPremise"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Prime Intellect, Blackwell 기반 초고속 오픈 모델 서빙 플랫폼 'Prime Inference' 출시",
+          "target_problem": "최신 프론티어 오픈 소스 LLM을 고성능·저비용으로 실시간 서비스하기 위한 추론 인프라의 부재",
+          "tech_applied": "NVIDIA Blackwell, Dynamo, vLLM, NVFP4 KV 압축 기법을 결합해 프리필 그룹당 66개 세션을 초당 101토큰(tok/s) 속도로 처리",
+          "business_insight": "서버리스 및 전용 인프라 형태의 OpenAI 호환 API 제공으로 고성능 오픈 모델 API 서비스 상용화 가속",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/02/prime-intellect-launches-prime-inference-serverless-and-reserved-serving-for-frontier-open-models/",
+          "tags": [
+            "PrimeIntellect",
+            "Inference",
+            "Blackwell",
+            "OpenSource"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "마이크로소프트 AI, 1위 성능의 실시간 음성 인식 모델 'MAI-Transcribe-2-Streaming' 공개",
+          "target_problem": "실시간 자막 및 음성 AI 에이전트 구현 시 발생하는 높은 지연 시간과 오인식 문제",
+          "tech_applied": "Artificial Analysis AA-WER 스트리밍 벤치마크 1위 기록, 0.12~0.13초 초저지연 및 단어 오류율(WER) 2.5% 달성",
+          "business_insight": "실시간 회의록 작성, 콜센터 음성 분석, 실시간 통번역 서비스의 사용자 경험 단축 및 서비스 품질 극대화",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/02/microsoft-ai-releases-mai-transcribe-2-streaming-1-real-time-speech-to-text-model-on-artificial-analysis/",
+          "tags": [
+            "Microsoft",
+            "SpeechToText",
+            "STT",
+            "RealTime"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "NVIDIA, 로컬 AI 에이전트 개발용 1-PetaFLOP 데스크톱 'DGX Spark 64GB' 발표",
+          "target_problem": "개발자가 온디바이스 환경에서 대형 AI 모델을 독립적으로 연구, 미세조정, 추론할 수 있는 고성능 워크스테이션 필요",
+          "tech_applied": "Grace Blackwell (GB10) 기반 데스크톱 AI 시스템, 64GB 메모리 제공 및 2대 클러스터링 확장 지원",
+          "business_insight": "하드웨어 판매 파트너십(Acer, ASUS, Dell, HP 등)을 통한 데스크톱 AI 워크스테이션 시장 선점 및 로컬 에이전트 생태계 확장",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/02/nvidia-announces-dgx-spark-64gb-a-1-petaflop-grace-blackwell-desktop-for-local-ai-agents-fine-tuning-and-inference/",
+          "tags": [
+            "NVIDIA",
+            "Hardware",
+            "DesktopAI",
+            "EdgeAI"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "ComfyUI용 H3 기반 화질 저하 없는 무한 비디오 연장 노드 기법 공개",
+          "target_problem": "생성형 AI 비디오 확장 시 클립이 늘어날수록 화질이 저하되거나 씬 전환이 끊기는 문제",
+          "tech_applied": "Latent 공간 내에서 H3 비디오를 연속적으로 무한 연장 및 연결하는 커스텀 노드 파이프라인 구축",
+          "business_insight": "AI 기반 롱폼 비디오 콘텐츠 제작 시 발생하는 화질 손상 방지 및 연출 연속성 확보로 제작 효율성 대폭 향상",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wwlhud/h3_infinite_video_extending_version_2_no_visual/",
+          "tags": [
+            "StableDiffusion",
+            "ComfyUI",
+            "VideoExtender",
+            "H3"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Minimax H3 및 RefMod를 활용한 AI 비디오 배경 장소 일관성 유지 기법",
+          "target_problem": "AI 생성 영상에서 여러 씬을 연속 생성할 때 동일 공간 배경이 일정하게 유지되지 않고 일그러지는 현상",
+          "tech_applied": "실제 장소를 연속 촬영한 20장의 연결 사진을 RefMod 레퍼런스로 결합하는 공간 캡처 워크플로우",
+          "business_insight": "동일 공간 배경 연출이 필수적인 광고, 영화, 애니메이션 기획 시 AI 생성 비디오의 시각적 안정성 제공",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wwyva2/minimax_h3_refmod_consistent_location_trick/",
+          "tags": [
+            "MinimaxH3",
+            "RefMod",
+            "VideoGeneration",
+            "Consistency"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Qwen-Image-2.1-viggle-turbo 모델 기반 경량 캐릭터 시트 생성 워크플로우",
+          "target_problem": "캐릭터 일관성 설정을 위한 다각도 캐릭터 시트 제작 과정의 높은 리소스 소모 및 연산 시간",
+          "tech_applied": "7.26GB 규격의 Qwen-Image-2.1-viggle-turbo 모델 및 텍스처 보정 VAE 기반 6스텝 int8 고속 추론",
+          "business_insight": "게임 아트 및 웹툰/애니메이션 제작사에서 저사양 인프라로도 신속하게 멀티 뷰 캐릭터 자산 생성 가능",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wwddm2/use_qwenimage21viggleturbo_to_generate_character/",
+          "tags": [
+            "Qwen",
+            "ComfyUI",
+            "CharacterSheet",
+            "ImageGen"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "가민 페닉스 8, 소프트웨어 23.39 업데이트 후 심박수 센서 작동 불능 현상 발생",
+          "target_problem": "스마트워치 펌웨어 업데이트로 인한 광학 심박수 센서(PPG) 비활성화 및 핵심 피트니스 데이터 측정 오류",
+          "tech_applied": "Garmin Fenix 8 OS 소프트웨어 버전 23.39 배포 후 하드웨어 센서 드라이버 충돌 문제",
+          "business_insight": "헬스케어 기기의 펌웨어 안정성 제어 및 리스크 관리의 중요성 증대, 빠른 파치 업데이트 대응 필요",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/03/garmin-fenix-8-23-39-heart-rate-sensor/",
+          "tags": [
+            "Garmin",
+            "Fenix8",
+            "FirmwareIssue",
+            "Wearables"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "구글, 스마트워치를 이용한 심방세동(AFib) 발작 사전 예측 특허 및 기술 개발",
+          "target_problem": "기존 스마트워치 헬스케어 기능이 사후 심방세동 감지에 머물러 있어 사전 예방적 의료 조치가 어려운 점",
+          "tech_applied": "스마트워치의 심전도(ECG) 및 심박 변이도(HRV) 데이터를 생체 패턴 알고리즘으로 분석해 발작 발생 전 예측",
+          "business_insight": "단순 상태 모니터링을 넘어 선제적 진단 및 질환 예방형 디지털 헬스케어 구독 서비스로 발전 가능성",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/03/google-smartwatch-predict-afib-patent/",
+          "tags": [
+            "Google",
+            "AFib",
+            "HeartHealth",
+            "PredictiveHealth"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "오우라 링 연구, 수면 및 HRV 연속 데이터 기반 우울증·불안증 연관성 확인",
+          "target_problem": "우울증 및 불안 장애 등 정신 건강 상태 측정 시 주관적 설문조사에 의존하여 객관성 부족",
+          "tech_applied": "오우라 링으로 수집한 수면 연속성, 수면 단계 및 야간 심박변이도(HRV) 변화 데이터 기반 머신러닝 연관성 분석",
+          "business_insight": "정신건강 상태를 객관적 생체 데이터로 추적함으로써 원격 의료 및 정신 건강 관리 플랫폼과의 연계 비즈니스 모델 창출",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/01/oura-ring-depression-anxiety-study/",
+          "tags": [
+            "OuraRing",
+            "MentalHealth",
+            "HRV",
+            "SleepTracking"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-03",
       "items": [
@@ -1230,190 +1395,6 @@
             "Apple Watch",
             "Ultra 4",
             "Hardware Review"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-27",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Sarvam AI, 인도 22개 언어 및 전 세계 영어 지원 음성 인식 모델 'Saaras V4' 공개",
-          "target_problem": "인도 다국어 환경에서의 정확한 음성-텍스트 변환 및 실시간 스트리밍 처리 문제 해결",
-          "tech_applied": "오디오 인코더와 3B 하이브리드 스테이트-스페이스 디코더 결합, 최대 50개 키용어 프롬프팅 지원",
-          "business_insight": "인도 시장 내 음성 기반 B2B SaaS 및 현지화 고객 서비스 시장 선점 기회 창출",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/26/sarvam-ai-releases-saaras-v4-a-speech-to-text-model-for-all-22-indian-languages-and-global-english/",
-          "tags": [
-            "STT",
-            "SarvamAI",
-            "Multilingual"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Supersonic Labs, CPU에서 실행 가능한 1.44억 파라미터 의사결정 모델 'Julia 1' 출시",
-          "target_problem": "고비용 GPU 인프라 없이 일반 CPU 환경에서 효율적인 선택 및 옵션 추론 실행",
-          "tech_applied": "mmBERT-small 기반 144.3M 파라미터, Apache 2.0 오픈소스 라이선스, 컨텍스트 기반 2~20개 선택지 확률 도출",
-          "business_insight": "에지 컴퓨팅 및 온프레미스 저비용 의사결정 엔진 구축에 활용 가능",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/26/supersonic-labs-releases-julia-1-a-144-3m-parameter-open-decision-model-that-runs-on-a-cpu/",
-          "tags": [
-            "OpenSource",
-            "CPUInference",
-            "DecisionModel"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Exa, 데이터 수집 및 엔티티 확장 특화 심층 리서치 API 'Agent Ultra' 출시",
-          "target_problem": "수천 개 데이터 소스를 탐색하여 대규모 목록을 작성하고 정보를 보강하는 리서치 작업의 자동화",
-          "tech_applied": "서브에이전트 스웜(Subagent Swarm) 아키텍처 기반 Exa Agent API 최상위 모드",
-          "business_insight": "기업용 심층 조사 및 데이터 마이닝 파이프라인 구축을 위한 B2B API 과금 모델 구축",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/26/exa-launches-agent-ultra-a-subagent-swarm-deep-research-api-built-for-exhaustive-list-building/",
-          "tags": [
-            "AgentAPI",
-            "DeepResearch",
-            "B2B"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Liquid AI, VLM 추론 속도를 최대 3.13배 향상시키는 'LFM2.5-VL-3B-DSpark' 공개",
-          "target_problem": "시각-언어 모델(VLM) 추론 시 발생하는 높은 지연 시간과 컴퓨팅 자원 소모 문제",
-          "tech_applied": "2억 7,950만 파라미터 드래프트 모델 기반 Speculative Decoding, Apple M5 Max 및 H100 가속 최적화",
-          "business_insight": "온디바이스 및 에지 디바이스 환경에서 실시간 VLM 서비스 서빙 비용을 획기적으로 절감",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/25/liquid-ai-releases-lfm2-5-vl-3b-dspark-speculative-decoding-for-vision-language-models-with-up-to-3-13x-faster-decoding/",
-          "tags": [
-            "VLM",
-            "SpeculativeDecoding",
-            "LiquidAI"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "소형 미검열 이미지 생성 오픈소스 모델 'Nanosaur 2' 정식 출시",
-          "target_problem": "작은 경량화 모델 체급에서 제약 없는 이미지 생성 자유도 및 높은 프롬프트 추종성 제공",
-          "tech_applied": "소형 파라미터 최적화 이미지 생성 아키텍처",
-          "business_insight": "오픈소스 크리에이터 커뮤니티 파급력 확보 및 맞춤형 베이스 모델 제공",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wqh0ti/new_uncensored_image_model_nanosaur_2_full_release/",
-          "tags": [
-            "ImageGen",
-            "OpenSource"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Blender 3D 카메라 무빙과 MiniMax H3를 결합한 ComfyUI 파이프라인 공개",
-          "target_problem": "AI 생성 비디오에서 정밀한 카메라 구도 연출 및 캐릭터 일관성 유지의 어려움 극복",
-          "tech_applied": "Blender 3D 캐릭터 무브먼트 렌더링 + 캐릭터 레퍼런스 시트 + MiniMax H3 (ref2vid) ComfyUI 워크플로우",
-          "business_insight": "기존 3D 애니메이션 렌더링 기법과 생성형 AI 비디오 모델 연동을 통한 비주얼 스튜디오 제작비 절감",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wqydpg/blender_camera_motion_minimax_h3_ref2vid_in/",
-          "tags": [
-            "ComfyUI",
-            "MiniMaxH3",
-            "3DPipeline"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "356개 실사 인물 기반 초상화 세부 특징 제어 Krea 2 LoRA 공개",
-          "target_problem": "패션 및 에디토리얼 이미지 생성 시 일률적이고 인위적인 정형화된 얼굴 생성 한계",
-          "tech_applied": "다중 파라미터 얼굴 어휘집(Face Vocabulary) 기반 356개 데이터셋 파인튜닝, 프롬프트 기반 세부 이목구비 조절",
-          "business_insight": "패션 브랜드 및 마케팅 에이전시의 커스텀 모델 파라미터 기반 시각 자료 생산 자동화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wqmsmn/i_trained_a_krea_2_lora_on_356_real_portraits/",
-          "tags": [
-            "LoRA",
-            "Krea2",
-            "FashionAI"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "📱 Consumer App",
-          "title": "Cartesia 음성 엔진 기반 무료 TTS 서비스 'Lisen' 출시",
-          "target_problem": "기존 텍스트 음성 변환(TTS) 서비스의 인위적인 음색과 유료 결제 장벽 완화",
-          "tech_applied": "Cartesia 고품질 음성 합성 모델 API 연동",
-          "business_insight": "무료 낭독 앱으로 B2C 유저 확보 후 프리미엄 대시보드 및 API 연동 유료화 모델 전환 가능성",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/lisen",
-          "tags": [
-            "TTS",
-            "VoiceAI",
-            "ProductHunt"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "화웨이, 4년 연구 끝에 독자 개발한 혈당 측정 기기 출시 예정 발표",
-          "target_problem": "당뇨 환자 및 건강 관리자의 지속적 채혈 측정 불편함과 비용 부담 해소",
-          "tech_applied": "생체 센서 및 전용 추적 알고리즘 기반 혈당 모니터링",
-          "business_insight": "스마트워치 생태계와 연동된 비침습/예측형 헬스케어 디바이스 시장 경쟁 가속화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/26/huawei-blood-sugar-testing-device/",
-          "tags": [
-            "BloodSugar",
-            "Huawei",
-            "Wearable"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "샤오미, HyperOS 4를 통해 안드로이드 스마트폰과 애플워치 직접 연결 지원",
-          "target_problem": "애플워치 사용자가 안드로이드 스마트폰으로 기기 변경 시 발생하는 웨어러블 호환성 장벽",
-          "tech_applied": "HyperOS 4 크로스 플랫폼 스마트폰-웨어러블 연동 데이터 통신 체계",
-          "business_insight": "타사 웨어러블 사용자까지 자사 안드로이드 생태계로 흡수하는 유저 확보 전략",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/26/xiaomi-apple-watch-hyperos-4-support/",
-          "tags": [
-            "Xiaomi",
-            "AppleWatch",
-            "HyperOS4"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "구글 헬스, 가민 및 타사 웨어러블 데이터의 심장 강화 부하(Cardio Load) 반영 지원",
-          "target_problem": "서로 다른 브랜드의 웨어러블을 혼용할 때 운동 부하 데이터가 파편화되는 문제 해소",
-          "tech_applied": "구글 헬스 데이터 수집 API 확장 및 타사 기기 운동 데이터 통합 산출 알고리즘",
-          "business_insight": "종합 헬스 플랫폼으로서 안드로이드 기반 건강 데이터 허브 입지 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/26/google-health-cardio-load-garmin-apple-watch/",
-          "tags": [
-            "GoogleHealth",
-            "Garmin",
-            "FitnessData"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "애플, 애플워치 시리즈 12 및 울트라 4의 무작위 재부팅 오류 수정 (watchOS 27.0.1)",
-          "target_problem": "최신 애플워치 모델에서 발생하던 간헐적 시스템 무작위 재부팅 현상 해결",
-          "tech_applied": "watchOS 27.0.1 소프트웨어 긴급 업데이트 및 OS 안정화 패치",
-          "business_insight": "신제품 사용자 경험 유지 및 하드웨어 교환 요청 방지를 통한 CS 비용 절감",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/25/apple-watch-series-12-ultra-4-reboot-fix/",
-          "tags": [
-            "AppleWatch",
-            "watchOS",
-            "Update"
           ]
         }
       ]
