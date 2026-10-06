@@ -1,6 +1,155 @@
 {
-  "last_updated": "2026-10-05T08:58:19.057172+09:00",
+  "last_updated": "2026-10-06T10:45:54.756844+09:00",
   "digests": [
+    {
+      "date": "2026-10-06",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "투게더 AI, 개발 도구 내 오픈 모델 연동 CLI 'Together Link' 무료 공개",
+          "target_problem": "Claude Code, Codex 등 기존 개발 환경에서 외부 오픈소스 AI 모델(Kimi K3, GLM 5.3 등)을 직접 연동하고 전환하여 사용하는 과정의 번거로움",
+          "tech_applied": "MIT 라이선스 기반의 CLI 도구로, 단일 명령어로 설치 가능하며 Claude/ChatGPT 데스크톱 및 코딩 툴에 자동 라우터를 통합하여 오픈 모델 호스팅 연동",
+          "business_insight": "개발 도구 생태계 락인을 해제하고 다중 AI 모델을 유연하게 활용할 수 있는 라우팅 레이어를 제공함으로써 개발자들의 인프라 전환 비용 감소 및 Together AI API 사용 유도",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/05/meet-together-link-a-free-cli-that-runs-open-models-like-kimi-k3-and-glm-5-3-inside-claude-code-codex-and-opencode/",
+          "tags": [
+            "AI",
+            "CLI",
+            "OpenModel",
+            "TogetherAI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "리플렉션 AI, 501B 파라미터 오픈웨이트 MoE 모델 'Beam' 발표",
+          "target_problem": "코딩 및 에이전트 작업 실행 시 요구되는 추론 성능 향상과 고비용 추론 인프라 부담 완화",
+          "tech_applied": "501B 총 파라미터 중 23B 파라미터만 활성화하는 MoE(Mixture-of-Experts) 아키텍처 적용, GLM-5.2 수준의 추론 성능 구현",
+          "business_insight": "활성 파라미터 수 감소로 추론 비용을 3~4배 절감하여 복잡한 에이전틱 워크플로우 운영을 위한 경제성 확보",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/05/reflection-ai-introduces-beam-a-501b-open-weight-moe-model-with-23b-active-parameters-for-coding-and-agentic-workloads/",
+          "tags": [
+            "AI",
+            "MoE",
+            "OpenSource",
+            "CodingAgent"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "얀덱스, 다단계 추천 파이프라인 대체하는 생성형 추천 모델 'Sona' 공개",
+          "target_problem": "기존 추천 시스템의 수동 피처 엔지니어링 및 복잡한 복수 단계 추천 캐스케이드로 인한 유지보수 효율 저하",
+          "tech_applied": "단일 트랜스포머 아키텍처 기반으로 후보 추출과 랭킹 평가를 동시에 수행하는 전단 생성형 추천 모델",
+          "business_insight": "A/B 테스트 결과 좋아요 수 11.42% 증가 달성. 추천 파이프라인 단일화로 머신러닝 인프라 절감 및 플랫폼 전환율 향상",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/05/yandex-introduces-sona-a-single-generative-recommender-that-replaces-entire-recommendation-cascade/",
+          "tags": [
+            "AI",
+            "Recommender",
+            "Yandex",
+            "Transformer"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "LTX-2.5 기반 고해상도 VFX 및 합성 오픈웨이트 도구 7종 출시",
+          "target_problem": "고해상도(4K/8K) 영상 편집, CG 가이드 복합 합성, HDR 적용 등 전문 VFX 작업 시 AI 툴 활용의 한계",
+          "tech_applied": "LTX-2.5 파이프라인 기반의 3D 레이아웃 파싱, 복원, CG 기반 가이드 생성 및 4K/8K 플레이트 원본 해상도 편집 기술",
+          "business_insight": "영화 및 영상 제작 스튜디오에 오픈웨이트 기반 VFX AI 파이프라인을 도입하여 특수효과 및 합성 제작 공정 대폭 단축",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wya9r3/from_3d_layout_to_compositing_new_ltx_vfx_tools/",
+          "tags": [
+            "AI Video",
+            "VFX",
+            "OpenSource",
+            "LTX"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "Qwen Image 2.1 및 MiniMax H3 지원 VNCCS 3.2.0 업데이트",
+          "target_problem": "서브컬처 캐릭터 콘텐츠 및 비디오 업계에서 정교한 2D/3D 스프라이트 생성 및 캐릭터 제작 환경 부족",
+          "tech_applied": "최신 Qwen Image 2.1 및 MiniMax H3 비디오 모델과 투명 배경 스프라이트 제어, 파라미터형 캐릭터 크리에이터 엔진 결합",
+          "business_insight": "게임 및 애니메이션 크리에이터 대상의 이미지/비디오 워크플로우 통합으로 팬덤 기반 워크벤치 생태계 확장",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wxziy4/vnccs_320_released_with_qwen_image_21_and_minimax/",
+          "tags": [
+            "AI Video",
+            "Qwen",
+            "MiniMax",
+            "CharacterCreator"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Fizgig 7 출시: SDXL 및 Anima 지원과 유저 드라이버 파인튜닝 통합",
+          "target_problem": "다양한 이미지 생성 모델별로 파라미터 파인튜닝, LoRA/LoKR 학습 인프라가 파편화된 문제",
+          "tech_applied": "드라이버 아키텍처를 도입해 단일 파일 체크포인트를 지원하고 Repair Studio, Profiler 등 파인튜닝 워크벤치 제공",
+          "business_insight": "커뮤니티 중심의 모델 호환 구조 구축을 통해 오프라인 환경에서도 고성능 LoRA 파인튜닝 및 복구 툴 세트 고도화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wyfwdc/fizgig_7_anima_and_sdxl_arrive_finetuning_for/",
+          "tags": [
+            "AI Video",
+            "SDXL",
+            "FineTuning",
+            "LoRA"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "4개월 배터리 수명의 초경량 가슴 스트랩 'Frontier X3' 출시",
+          "target_problem": "기존 가슴 스트랩 착용감의 불편함 및 심박·트레이닝 모니터링 시 자주 발생하는 짧은 배터리 수명",
+          "tech_applied": "경량화 하드웨어 설계 및 고효율 센서를 통해 4개월 연속 사용 배터리 수명 제공, 회복 모니터링 알고리즘 내장",
+          "business_insight": "지속적인 바이오데이터 수집이 필수적인 전문 선수 및 고강도 트레이닝 시장을 겨냥한 프리미엄 수면·회복 데이터 서비스 연결",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/05/frontier-x3-release/",
+          "tags": [
+            "Wearables",
+            "FrontierX3",
+            "Fitness",
+            "HeartRate"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "구글, 낙상 발생 위험을 사전 예측하는 웨어러블 특허 출원",
+          "target_problem": "낙상 발생 후 반응하는 기존 웨어러블 감지 기능의 한계 및 노약자 낙상 사고 예방 공백",
+          "tech_applied": "보행 센서 데이터 기반 획득 패턴을 실시간 분석하여 낙상 위험 가능성을 사전에 감지 및 경고하는 AI 알고리즘",
+          "business_insight": "단순 헬스 트래킹을 넘어 노인 복지 및 헬스케어 보음 상품과 연계 가능한 예방 중심의 디지털 헬스 솔루션 제시",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/04/google-wearable-fall-risk-patent/",
+          "tags": [
+            "Wearables",
+            "Google",
+            "FallRisk",
+            "Healthcare"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "스피디언스 Strap Pro, 체온 모니터링 기반 회복 트래킹 기능 선보여",
+          "target_problem": "기존 스마트 밴드의 단조로운 운동 측정에서 벗어나 정밀한 체온 변화 및 종합 회복 지수 요구 증가",
+          "tech_applied": "실시간 피부 온도 변화 추적 모니터링 센서와 회복 분석 알고리즘이 적용된 맞춤형 웨어러블 밴드",
+          "business_insight": "홈 피트니스 생태계와 개인별 하드웨어 트래커를 연동하여 개인 맞춤형 피트니스 구독 서비스 가치 고도화",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/05/speediance-strap-pro-review/",
+          "tags": [
+            "Wearables",
+            "Speediance",
+            "Recovery",
+            "Fitness"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-05",
       "items": [
@@ -1180,161 +1329,6 @@
             "Oura",
             "IPO",
             "Business"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-29",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "NVIDIA, 엔비디아 오픈 에이전트 세이프티 플랫폼 공개",
-          "target_problem": "자율 실행 AI 에이전트의 오작동 및 보안 위협을 에이전트 외부 영역에서 실시간 샌드박스로 통제하려는 니즈",
-          "tech_applied": "Vera CPU 상의 OpenShell(YAML 정책 기반 런타임) 및 BlueField-4 Watchdog 센트리(Sentry) 격리 시스템",
-          "business_insight": "엔터프라이즈 AI 에이전트 도입 장벽을 낮추고, 가상화/하드웨어 보안 기술을 결합하여 엔비디아 에코시스템 강화",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/28/nvidia-launches-open-agent-safety-platform/",
-          "tags": [
-            "AI Agent",
-            "Security",
-            "NVIDIA"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Fireworks AI, 토큰 소비량을 40% 절감한 Ember-1 추론 모델 출시",
-          "target_problem": "심도 있는 추론을 수행할 때 발생하는 과도한 생각 과정(Reasoning Trace) 토큰으로 인한 높은 비용 및 속도 지연",
-          "tech_applied": "Kimi K3 모델 사후 학습(Post-Training) 기법을 통한 고효율 단축 추론 경로 생성 기술",
-          "business_insight": "추론 성능 감소 없이 과금 토큰을 40% 감축함으로써 B2B LLM API 운영 비용과 레이턴시 혁신적 절감",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/28/fireworks-ai-releases-ember-1-a-post-trained-kimi-k3-that-uses-about-40-fewer-tokens/",
-          "tags": [
-            "LLM",
-            "Cost Optimization",
-            "Fireworks AI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "TypeSafe AI, 타입 정형화 의사결정 모델 Jev 구축",
-          "target_problem": "자유 텍스트 생성 대신 보정된 확률과 구조화된 규격의 결정을 즉각적으로 리턴받아야 하는 에이전트 워크플로우",
-          "tech_applied": "텍스트 생성 과정을 생략하고 타입 지정 결정(Typed Decisions) 및 라우팅/게이팅 결정을 직접 도출하는 아키텍처",
-          "business_insight": "입력 1백만 토큰당 $0.042 및 출력 비용 무료 과금 정책으로 고성능 에이전트 오케스트레이션 B2B 비용 극소화",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/27/20-agentic-use-cases-of-typesafe-ais-jev/",
-          "tags": [
-            "Agent Architecture",
-            "B2B SaaS",
-            "Cost Efficiency"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Hugging Face, 범용 컴퓨터 이용 에이전트 모델 Holo4 공개",
-          "target_problem": "데스크톱 및 웹 인터페이스 환경에서 사람을 대신해 복잡한 시스템 과업을 실행하는 일반화 에이전트 필요성",
-          "tech_applied": "컴퓨터 이용(Computer-Use) 멀티모달 인식 및 시스템 제어 최적화 아키텍처",
-          "business_insight": "RPA 및 업무 자동화 분야에서 오픈소스 기반 범용 Computer-Use 에이전트 표준 수립 시도",
-          "source_name": "Hugging Face Blog",
-          "source_url": "https://huggingface.co/blog/Hcompany/holo4",
-          "tags": [
-            "Computer-Use",
-            "Hugging Face",
-            "Agent"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "MiniMax H3 REF + Fizgig Nodes 기반 고해상도 AI 이미지 에디팅 지원",
-          "target_problem": "생성형 이미지 편집 시 해상도 제약 및 프롬프트/공간 이해도 부족으로 인한 비품질 현상",
-          "tech_applied": "ComfyUI Fizgig 커스텀 노드 및 MiniMax H3 아키텍처 결합, 4096x1536 해상도 1분 내 파이프라인 처리",
-          "business_insight": "고해상도 커머셜 아트워크 및 영상용 레퍼런스 이미지 생성 생산성을 크게 끌어올리는 오픈소스 환경 구축",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wsb4h3/minimax_h3_ref_fizgig_nodes_as_sota_ref2img/",
-          "tags": [
-            "ComfyUI",
-            "MiniMax",
-            "Image Editing"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "AI 합성 및 타임라인 편집 전문 오픈소스 비디오 에디터 Vlo 0.3 출시",
-          "target_problem": "기존 비디오 편집 도구에서 타임라인 상의 특정 구간 프레임 인페인팅 및 AI 비디오 레퍼런스 연동 불연속성",
-          "tech_applied": "타임라인 프레임 인터랙티브 AI 인페인팅 및 비디오 레퍼런스 자동 추출 파이프라인",
-          "business_insight": "AI 영상 제작 커뮤니티 및 크리에이터 워크플로우를 타임라인 기반으로 포섭하는 확장형 편집 프레임워크 제공",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wsmat4/vlo_03_an_open_source_extensible_video_editor_and/",
-          "tags": [
-            "Video Editor",
-            "AI Compositing",
-            "Open Source"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Qwen 2.1 편집 시 픽셀 드리프트 보정 ComfyUI 커스텀 노드 개발",
-          "target_problem": "생성형 AI 모델 기반 이미지/비디오 편집 작업 시 발생하는 픽셀 위치 왜곡 및 색상 변형 현상",
-          "tech_applied": "4포인트 스트레치&핏 조정 및 스마트 마스킹/색상 보정 기반 픽셀 보정 알고리즘",
-          "business_insight": "AI 프레임 편집 시 시각적 일관성을 확보하여 영상 제작 파이프라인의 완성도 보장",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1ws3oy0/two_nodes_to_fix_qwen_21_pixel_drift_during_edit/",
-          "tags": [
-            "ComfyUI",
-            "Video Workflow",
-            "Pixel Fix"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "가민, Moxy Monitor 인수하며 '근육 배터리(Muscle Battery)' 스택 확보",
-          "target_problem": "심박수 기반의 고전적 피로도 측정 한계를 넘어 근육 산소 포화도(SmO2) 중심의 정밀 운동 상태 파악 필요성",
-          "tech_applied": "근육 산소 포화도 측정 하드웨어 센서 기술 및 생체 데이터 실시간 트래킹 알고리즘",
-          "business_insight": "가민의 독점적 스포츠 테크 기능 강화 및 프리미엄 웨어러블 디바이스 진입 장벽 구축",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/28/garmin-acquires-moxy-muscle-battery/",
-          "tags": [
-            "Garmin",
-            "Wearable",
-            "Health Tech"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "아너 워치 6 프로, 심정지 감지 및 자동 긴급 구조 요청 탑재",
-          "target_problem": "갑작스러운 심정지 발생 시 골든타임 내 자동 구조 신호 발송 체계 부재",
-          "tech_applied": "고정밀 바이오 센싱 기반 심정지 상태 판별 알고리즘 및 긴급 커뮤니케이션 연결",
-          "business_insight": "응급 의료 세이프티 기능을 스마트워치에 통합함으로써 시니어 및 건강 고위험군 레이어 공략",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/28/honor-watch-6-pro-cardiac-arrest-emergency-help/",
-          "tags": [
-            "Smartwatch",
-            "Emergency Health",
-            "Honor"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "폴라, Polar Flow 앱 신규 유출로 Loop Gen 3 및 360 Gen 2 준비 포착",
-          "target_problem": "피트니스 트래커 시장에서의 하드웨어 라인업 노후화 및 다양화된 웨어러블 수요 대응",
-          "tech_applied": "앱 동기화 파이프라인 및 차세대 생체 센싱 통합 프레임워크",
-          "business_insight": "신규 폼팩터 및 업그레이드 트래커 출시를 통해 링/밴드 웨어러블 시장 경쟁 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/28/polar-loop-gen-3-360-gen-2-flow-app/",
-          "tags": [
-            "Polar",
-            "Wearables",
-            "Hardware"
           ]
         }
       ]
