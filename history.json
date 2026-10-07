@@ -1,6 +1,171 @@
 {
-  "last_updated": "2026-10-06T10:45:54.756844+09:00",
+  "last_updated": "2026-10-07T09:42:09.102015+09:00",
   "digests": [
+    {
+      "date": "2026-10-07",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "구글 딥마인드, Gemma 4 기반 740M 멀티모달 임베딩 모델 'EmbeddingGemma 2' 공개",
+          "target_problem": "텍스트, 이미지 등 다양한 형태의 데이터 검색 및 멀티모달 RAG 구축 시 높은 연산 자원과 복잡성이 발생하는 문제 해결",
+          "tech_applied": "5가지 입력 유형을 하나의 768차원 공간으로 맵핑하는 740M 파라미터 크기의 Gemma 4 기반 오픈 멀티모달 임베딩 기술 (Apache 2.0 라이선스)",
+          "business_insight": "경량화된 오픈소스 오픈 벡터 임베딩 모델 제공으로 엣지 디바이스 및 엔터프라이즈 멀티모달 검색 솔루션 구축 비용의 대폭 절감 기대",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/06/google-deepmind-releases-embeddinggemma-2-a-740m-open-multimodal-embedding-model-built-on-gemma-4/",
+          "tags": [
+            "Google",
+            "Embedding",
+            "Multimodal",
+            "OpenSource"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "미스트랄 AI, 1.05조 파라미터 멀티모달 MoE 모델 'Mistral Large 4 (Le Chonk)' 공개",
+          "target_problem": "초대형 파라미터 기반의 고성능 멀티모달 추론 및 긴 컨텍스트 처리가 필요한 엔터프라이즈 AI 워크로드 대응",
+          "tech_applied": "1.05조 전체 파라미터 중 활성 파라미터 49B의 MoE 아키텍처, 네이티브 이미지 입력 지원 및 100만 토큰 컨텍스트 윈도우 제공",
+          "business_insight": "오픈 웨이트 기반의 대용량 MoE 모델을 통해 프라이빗 클라우드 및 온프레미스 환경에서 독자적인 고성능 LLM 인프라 구축 가능성 제시",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/",
+          "tags": [
+            "MistralAI",
+            "MoE",
+            "OpenWeight",
+            "Multimodal"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "레카, 비디오 생성부터 로봇 제어까지 수행하는 19B 통합 추론 모델 'Rho-1' 발표",
+          "target_problem": "텍스트, 이미지, 비디오 이해/생성 및 로보틱스 동작 제어를 개별 모델로 분리하여 처리할 때 발생하는 비효율과 지연 문제 해결",
+          "tech_applied": "공유 KV 캐시 기반 단일 네트워크 구조, 스크래치 학습 기반 19B 옴니 모델 및 5.3초 비디오 클립을 1초 내 생성하는 증류(Distilled) 변형 모델 적용",
+          "business_insight": "단일 멀티모달 모델로 피지컬 AI 및 피지컬 로보틱스 제어를 통합하여 파이프라인 구조 단순화 및 에이전트 서비스 확장 촉진",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/05/reka-releases-rho-1-a-19b-omni-reasoning-model-that-understands-generates-video-and-outputs-robot-actions-in-one/",
+          "tags": [
+            "Reka",
+            "OmniModel",
+            "Robotics",
+            "VideoGen"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "투게더 AI, Claude Code 및 Codex 연동 오픈 모델 CLI 'Together Link' 출시",
+          "target_problem": "Claude Code, Codex 등 상용 코딩 에이전트 내에서 외부 오픈소스 모델(Kimi K3, GLM 5.3 등)을 직접 연동 및 라우팅하기 어려운 문제 해결",
+          "tech_applied": "CLI 명령어 기반 설치, 오토 라우터(Auto Router)를 통한 코딩 환경과 오픈 모델 간 연동 체계 구축 (MIT 라이선스 무료 제공)",
+          "business_insight": "독점적 코딩 에이전트 생태계에 오픈소스 LLM 라우팅 층을 형성하여 엔터프라이즈 단위의 개발비 절감 및 라우팅 기반 수익화 모색 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/05/meet-together-link-a-free-cli-that-runs-open-models-like-kimi-k3-and-glm-5-3-inside-claude-code-codex-and-opencode/",
+          "tags": [
+            "TogetherAI",
+            "CLI",
+            "DeveloperTools",
+            "CodingAgent"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "ComfyUI, 80B 규모 HunyuanImage 3.0 단일 GPU 네이티브 지원 파이프라인 구현",
+          "target_problem": "초대형 이미지/비디오 생성 모델을 일반 단일 GPU(12–24GB VRAM) 환경에서 프레임워크 래퍼 없이 직접 구동하기 어려운 제약 극복",
+          "tech_applied": "Tencent HunyuanImage 3.0(80B MoE, 스텝당 13B 활성화)의 ComfyUI KSampler 네이티브 통합 및 메모리 최적화 기법",
+          "business_insight": "고성능 오픈 렌더링 파이프라인의 로컬 구동 장벽을 낮춤으로써 크리에이터 및 AI 스튜디오의 GPU 인프라 대여 비용 절감 방안 제시",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wzclz5/hunyuanimage_30_80b_running_natively_in_comfyui/",
+          "tags": [
+            "ComfyUI",
+            "HunyuanImage",
+            "TextToImage",
+            "OpenSource"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "AI 이미지 보정 및 ComfyUI 워크플로우 유지 메타데이터 편집기 'TinyLuma' 공개",
+          "target_problem": "무거운 전문 보정 소프트웨어를 켜지 않고도 AI 생성 이미지의 조명/색감을 빠르게 편집하고 메타데이터를 유지하고자 하는 필요성",
+          "tech_applied": "8MB 경량 용량, 일괄 편집(Batch Editing), LUT 전용 색상 보정, ComfyUI PNG 워크플로우 메타데이터 보존 기술 지원",
+          "business_insight": "AI 아티스트 전용 경량 툴킷을 오픈소스로 제공하여 고속 작업 흐름 확보 및 크리에이터 커뮤니티 접점 확대",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wz0t47/i_made_a_tiny_8mb_photo_editor_for_ai_images_with/",
+          "tags": [
+            "ImageEditor",
+            "ComfyUI",
+            "OpenSource",
+            "CreatorTools"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Minimax H3 기반 일관된 외형 및 오디오 동기화 캐릭터 생성 워크플로우 개발",
+          "target_problem": "AI 비디오 생성 시 캐릭터의 얼굴, 의상, 체형뿐만 아니라 일관된 음성을 유지하기 어려운 한계점 해결",
+          "tech_applied": "단 몇 초의 오디오 샘플 입력을 통한 캐릭터 일관 음성 생성 및 Minimax H3 모델 기반 ComfyUI 캐릭터 파이프라인 구축",
+          "business_insight": "디지털 휴먼 및 버추얼 크리에이터 비디오 제작 시 인물/음성 일관성을 손쉽게 보장하여 상업용 마케팅 콘텐츠 표준화 기여",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wz42o6/omni_charsame_face_cloths_body_now_with/",
+          "tags": [
+            "MinimaxH3",
+            "Avatar",
+            "VoiceSynthesis",
+            "VideoGen"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "가민, 용량 2배 확장 및 51mm 울트라 엔듀런스 스마트워치 'Enduro 4' 공식 출시",
+          "target_problem": "울트라 마라톤 및 장시간 트레일 러닝 시 필요한 대용량 맵 저장 공간 및 배터리 지속성 확보 필요성",
+          "tech_applied": "51mm 규격 폼팩터 유지, 내부 스토리지 2배 확장, 고효율 폼팩터 설계 및 아웃도어 트래킹 내장 센서 업그레이드",
+          "business_insight": "고가 하이엔드 울트라 스포츠 웨어러블 라인업 강화를 통해 전문 아웃도어 및 트레일 러너 층의 교체 수요 흡수",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/06/garmin-enduro-4-launch-specs-enduro-3/",
+          "tags": [
+            "Garmin",
+            "Enduro4",
+            "Wearable",
+            "FitnessTech"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "포스프론티어, 4개월 배터리 라이프 지원 가슴 스트랩 심박계 'Frontier X3' 출시",
+          "target_problem": "운동 중 정확한 심지전도 및 트레이닝 회복 데이터를 정밀 측정하면서도 잦은 충전 번거로움을 최소화하려는 요구",
+          "tech_applied": "경량화된 가슴 스트랩 하드웨어 설계, 최대 4개월 지속 배터리 기술, 운동 분석 및 회복 지수 전용 센서 모듈",
+          "business_insight": "전통적인 스마트워치 방식 대신 초정밀 데이터 측정과 극단적인 배터리 효율을 요구하는 전문 선수 및 피트니스 마니아 시장 공략",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/05/frontier-x3-release/",
+          "tags": [
+            "FrontierX3",
+            "HeartRate",
+            "FitnessTech",
+            "Wearables"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "핏빗 Edge출시 예정 및 Charge 6 대비 약 €179 가격 경쟁력 비교",
+          "target_problem": "가성비 기반의 건강 관리 피트니스 트래커와 프리미엄급 스마트 밴드 간 선택지 제공 필요성",
+          "tech_applied": "구글 생태계 연동 기반 피트니스 밴드 디바이스 센서 튜닝 및 가격대비 기능 최적화",
+          "business_insight": "기존 Charge 6 라인업 가격대 근접 조정을 통해 구글 핏빗 생태계의 신규 신체 데이터 수집 인스톨 베이스 확장 전략 추진",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/06/fitbit-edge-vs-charge-6/",
+          "tags": [
+            "Fitbit",
+            "Wearables",
+            "Google",
+            "FitnessTracker"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-06",
       "items": [
@@ -1129,206 +1294,6 @@
             "Garmin",
             "Moxy",
             "Acquisition"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-30",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Liquid AI, 출력 토큰 없이 확률값을 반환하는 의사결정 모델 'd1' 공개",
-          "target_problem": "기존 텍스트 생성 중심 LLM의 불필요한 토큰 소비와 구조화된 의사결정 시 추론 지연 및 예측 정확도 저하 문제 해결",
-          "tech_applied": "단일 호출로 고정된 결과 집합에 대한 보정된 확률 분포(Calibrated Probabilities)를 즉시 출력하는 텍스트 미생성 구조",
-          "business_insight": "실시간 거래, 분류, 리스크 평가 등 빠른 응답과 엄격한 결과 보정이 필요한 B2B 파이프라인의 추론 비용 및 지연 시간 획기적 절감",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/29/liquid-ai-releases-d1-a-decision-model-that-returns-calibrated-probabilities-with-zero-output-tokens/",
-          "tags": [
-            "AI",
-            "DecisionModel",
-            "InferenceOptimization"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "OpenAI, 클라우드 PC 기반 항시 작동 에이전트 'dots' (GPT-6 Astra) 발표",
-          "target_problem": "사용자 세션 종료 시 작업이 중단되는 기존 AI 챗봇의 한계 극복 및 장시간 복합 작업 자동화 필요성 대응",
-          "tech_applied": "GPT-6 Astra 기반 독자적인 클라우드 컴퓨팅 및 가상 브라우저 환경 제공, 4,000개 이상의 ChatGPT 플러그인 연동",
-          "business_insight": "백그라운드에서 상시 작업이 가능한 자율 실행형 AI 에이전트 시장 선점 및 SaaS 워크플로우 대폭 개선",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/29/openai-launches-dots-always-on-gpt-6-astra-agents-that-work-from-their-own-cloud-computers/",
-          "tags": [
-            "OpenAI",
-            "AIAgent",
-            "Automation"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "구글 리서치, 모델 과적합 없는 에이전트 자가 개선 프레임워크 'RRSI' 오픈소스화",
-          "target_problem": "AI 에이전트의 프롬프트와 도구 활용 체계를 자동 개선할 때 특정 데이터에 과적합되어 범용성이 떨어지는 문제 해결",
-          "tech_applied": "모델 가중치를 동결한 상태에서 누출 비평가(Leakage Critic), 노이즈 플로어, 비용 규칙을 활용해 에이전트 하네스 자가 재작성",
-          "business_insight": "LLM 재학습 비용 없이도 에이전트 성능을 최적화할 수 있어 기업용 프롬프트 엔지니어링 자동화 플랫폼 구축 가능",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/29/google-research-open-sources-rrsi-ai-agents-that-improve-their-own-harness-without-overfitting/",
-          "tags": [
-            "Google",
-            "OpenSource",
-            "AIAgent"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "H Company, 멀티플랫폼 컴퓨터 제어 오픈 가중치 모델 'Holo4' 출시",
-          "target_problem": "데스크톱, 웹, 모바일, API 등 다양한 환경을 오가는 복합 UI/코드 작업 시 독립적인 파이프라인 구축의 고비용 문제",
-          "tech_applied": "27B Dense 및 35B-A3B MoE 구조 지원, 화면 클릭/타이핑 및 코드 작성, MCP/API 도구 호출 통합 수행",
-          "business_insight": "오픈 가중치 기반으로 온프레미스 환경 구축이 가능하여 기업 내 보안 강화 및 자율 작업 자동화 솔루션 도입 용이",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/09/29/h-company-releases-holo4-open-weight-computer-use-models-that-click-code-and-call-tools-across-desktop-web-android-and-apis/",
-          "tags": [
-            "HCompany",
-            "ComputerUse",
-            "OpenSource"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "NVIDIA, 정형 데이터 예측 고도화 모델 'Kumo Tabular' 공개",
-          "target_problem": "금융, 이커머스 등 표 형태(Tabular) 데이터 예측 모델의 계산 효율성 감소 및 정확도 한계 극복",
-          "tech_applied": "정형 데이터 예측에 특화된 딥러닝 아키텍처 기반 파이프라인으로 정확도 대비 추론 효율성 대폭 증대",
-          "business_insight": "엔터프라이즈 데이터 분석 및 머신러닝 예측 파이프라인 가속화를 통한 비즈니스 예측 서비스 성능 향상",
-          "source_name": "Hugging Face Blog",
-          "source_url": "https://huggingface.co/blog/nvidia/kumo-tabular",
-          "tags": [
-            "NVIDIA",
-            "TabularAI",
-            "Enterprise"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "📱 Consumer App",
-          "title": "ComfyUI-Continuity 워크플로우 공개: 일관성 있는 미디어 컷 및 캐스트 관리 지원",
-          "target_problem": "AI 생성 영상에서 캐릭터 일관성 유지 및 장면 전환 시의 끊김 현상 문제",
-          "tech_applied": "ComfyUI 커스텀 노드 기반 Cast Management, RefMod 저장, 프레임 최적화 및 이음새 없는 연속 렌더링",
-          "business_insight": "오픈소스 파이프라인을 통한 롱폼 영상 제작 생태계 확대 및 콘텐츠 크리에이터의 연산 리소스 절감",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wtfglg/h3update_comfyuicontinuity_cast_management_refmod/",
-          "tags": [
-            "ComfyUI",
-            "AIVideo",
-            "ContentCreation"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Refmod 기술, 기존 LoRA 및 다중 참조 이미지 대체 솔루션으로 부상",
-          "target_problem": "LoRA 학습 과정의 과도한 시간 소요 및 9장 이상의 다중 참조 이미지 스캔에 따른 생성 속도 저하",
-          "tech_applied": "초단위 Refmod 생성 및 참조 데이터 빠른 스캔 방식을 통해 스타일 및 캐릭터 렌더링 속도 개선",
-          "business_insight": "추가 학습 비용 없이 즉각적인 캐릭터 모듈 전환이 가능해 상용 비디오 파이프라인 생산성 극대화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wtjny9/refmod_is_so_good_way_better_then_loras_or_using/",
-          "tags": [
-            "AIVideo",
-            "Refmod",
-            "Workflow"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Qwen 2.1 기반 LoRA 없는 2x2 그리드 캐릭터 얼굴 일관성 프롬프트 기법",
-          "target_problem": "캐릭터 일관성을 고수하기 위해 별도의 LoRA 파인튜닝을 거쳐야 했던 복잡함과 비용 문제",
-          "tech_applied": "2x2 그리드 형태의 레퍼런스 이미지 배치(obvpm 노드 활용)와 Qwen 2.1 멀티모달 프롬프트 조합",
-          "business_insight": "웹소설 및 웹툰 콘티 등 2D/3D 이미지 캐릭터 제작 진입장벽 하락 및 생산성 향상",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wt6gbh/qwen_21_easy_way_to_create_a_consistent_face/",
-          "tags": [
-            "Qwen",
-            "ImageGeneration",
-            "OpenSource"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Hopscotch AI, 단일 API 기반 500개 이상 AI 모델통합 서비스 출시",
-          "target_problem": "다양한 파운데이션 생성 모델을 개별 연동 및 관리해야 하는 개발 파이프라인의 복잡성",
-          "tech_applied": "500개 이상의 이미지, 비디오, 텍스트 AI 모델을 하나의 라우팅 API 인터페이스로 제공",
-          "business_insight": "멀티 모델 기반 서비스 개발사의 유지보수 비용 감축 및 유연한 모델 전환 지원 SaaS 사업 모델",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/hopscotch-7",
-          "tags": [
-            "MultiModel",
-            "API",
-            "SaaS"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "QALO, 스마트 링 연동 무스크린 운동용 밴드 'SL-1' 출시",
-          "target_problem": "격렬한 운동 시 스마트 링의 손상 우려 및 화면이 있는 핏니스 트래커의 산만함 해결",
-          "tech_applied": "디스플레이를 제거한 경량화 밴드 디바이스로, 기존 스마트 링 앱과의 헬스케어 데이터 연동",
-          "business_insight": "스마트 링의 보완 디바이스로 액세서리 라인업을 확장하며 서브스크립션 생태계 강화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/29/qalo-sport-loop-1/",
-          "tags": [
-            "Wearable",
-            "SmartRing",
-            "Fitness"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Garmin, Moxy Monitor 인수 통해 근육 산소 모니터링 기술 확보",
-          "target_problem": "기존 피트니스 웨어러블의 심박수 위주 측정 한계를 넘어선 실시간 근육 수준 산소 포화도 측정 필요성",
-          "tech_applied": "근적외선 분광법(NIRS) 기반 Moxy의 근육 산소(Smo2) 센싱 기술 및 'Muscle Battery' 지표 개발",
-          "business_insight": "전문 스포츠 선수 및 하이엔드 피트니스 시장을 타깃으로 한 차별화된 바이오메트릭 데이터 경쟁력 구축",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/28/garmin-acquires-moxy-muscle-battery/",
-          "tags": [
-            "Garmin",
-            "Acquisition",
-            "BioTech"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "Honor Watch 6 Pro, 심장정지 감지 및 자동 긴급 구조 요청 기능 탑재",
-          "target_problem": "갑작스러운 심장정지 등 응급 상황 시 자가 신고가 불가능한 골든타임 놓침 문제",
-          "tech_applied": "심장 상태 실시간 모니터링 알고리즘 기반 고도화 생체 측정 및 비상 연락망/구급대 자동 연결 시스템",
-          "business_insight": "스마트워치를 단순 피트니스용에서 생명 구호 안전 디바이스로 포지셔닝하여 실버 케어 시장 공략",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/28/honor-watch-6-pro-cardiac-arrest-emergency-help/",
-          "tags": [
-            "Honor",
-            "Smartwatch",
-            "HealthTech"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Oura, 22억 달러 규모 상장(IPO) 연기 발표",
-          "target_problem": "스마트 링 시장 경쟁 심화 및 기업 가치 평가 변동에 따른 상장 일정 조정 필요성",
-          "tech_applied": "스마트 링 헬스케어 알고리즘 및 유료 구독 모델 연계 디바이스 비즈니스",
-          "business_insight": "웨어러블 헬스케어 시장의 경쟁 격화 속에서 수익성 재검증 및 커머셜 전략 재정비 신호",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/29/oura-ipo-postponed/",
-          "tags": [
-            "Oura",
-            "IPO",
-            "Business"
           ]
         }
       ]
