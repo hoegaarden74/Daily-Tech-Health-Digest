@@ -1,6 +1,145 @@
 {
-  "last_updated": "2026-10-07T09:42:09.102015+09:00",
+  "last_updated": "2026-10-08T10:00:28.246302+09:00",
   "digests": [
+    {
+      "date": "2026-10-08",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Liquid AI, 텍스트 출력 없는 멀티모달 결정 모델 'Open d1' (d1-3B, d1-omni-600M) 공개",
+          "target_problem": "엣지 환경에서 대규모 텍스트 생성 없이 빠르고 정확한 멀티모달 판단 및 분류가 필요한 기업",
+          "tech_applied": "오픈웨이트 멀티모달 아키텍처, 텍스트 및 이미지/오디오 입력 기반 정밀 타이핑 답변(출력 토큰 제로)",
+          "business_insight": "텍스트 생성 비용을 없애고 엣지 디바이스에서 직접 구동되는 고속 판단 엔진으로 임베디드 AI 시장 선점",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/07/liquid-ai-releases-open-weight-d1-3b-and-d1-omni-600m-multimodal-decision-models-with-zero-output-tokens/",
+          "tags": [
+            "AI Models",
+            "Edge AI",
+            "Multimodal"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Meta AI, 일 4천만 건의 트래픽 배치를 처리하는 C++ 할당 솔버 'Rebalancer' 오픈소스화",
+          "target_problem": "대규모 분산 서버 환경에서 샤드, 서버, 네트워크 트래픽 최적 배치 문제로 인한 리소스 낭비",
+          "tech_applied": "C++ 및 Python 기반 로컬 검색 및 MIP 솔버(Gurobi, FICO Xpress, HiGHS 연동)",
+          "business_insight": "인프라 자원 최적화 자동화를 통해 대규모 클라우드 및 데이터센터 운영 비용의 극단적 절감",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/06/meta-ai-open-sources-rebalancer-a-c-assignment-solver-that-runs-about-40-million-placement-problems-a-day/",
+          "tags": [
+            "Open Source",
+            "Infrastructure",
+            "Optimization"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Google DeepMind, Gemma 4 기반 740M 멀티모달 임베딩 모델 'EmbeddingGemma 2' 출시",
+          "target_problem": "다양한 형태(5가지)의 멀티모달 데이터를 단일 고성능 벡터 공간으로 통합하고자 하는 검색 및 RAG 시스템",
+          "tech_applied": "Gemma 4 기반 아키텍처, 768차원 단일 벡터 공간 매핑, Apache 2.0 라이선스",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/06/google-deepmind-releases-embeddinggemma-2-a-740m-open-multimodal-embedding-model-built-on-gemma-4/",
+          "tags": [
+            "Embedding",
+            "Google DeepMind",
+            "Multimodal"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Mistral AI, 1.05T 파라미터 멀티모달 MoE 모델 'Mistral Large 4 (Le Chonk)' 공개",
+          "target_problem": "초대형 컨텍스트(100만 토큰)와 네이티브 이미지 입력을 지원하는 최고 성능의 오픈웨이트 인프라 수요",
+          "tech_applied": "1.05조 파라미터 Mixture of Experts(활성 49B), 100만 토큰 컨텍스트 윈도우",
+          "business_insight": "초대규모 엔터프라이즈 업무 자동화 및 심층 문서 분석을 위한 자체 호스팅 프레임워크 제공",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/",
+          "tags": [
+            "Mistral AI",
+            "MoE",
+            "LLM"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "ComfyUI용 MiniMax H3 'VEDA Sparse Attention' 사용자 노드 공개",
+          "target_problem": "고해상도 영상 생성 시 메모리 한계와 연산 속도 저하를 겪는 로컬 크리에이터",
+          "tech_applied": "VEDA Sparse Attention 알고리즘 최적화, ComfyUI 커스텀 노드 구현",
+          "business_insight": "로컬 환경(RTX 4090 등)에서의 AI 비디오 생성 효율 극대화 및 하드웨어 제약 완화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wzskwy/veda_sparse_attention_is_now_available_for/",
+          "tags": [
+            "ComfyUI",
+            "MiniMax H3",
+            "Video Generation"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Lightricks Refine-Details IC-LoRA 적용 LTX-2.5 4K 업스케일 워크플로우 'ReDetail 2.0'",
+          "target_problem": "소프트 클립 업스케일링 과정에서 발생하는 디테일 손실, 얼굴 및 프레임 왜곡 문제",
+          "tech_applied": "IC-LoRA 디테일 리빌드 알고리즘, CLI 및 ComfyUI 통합 워크플로우",
+          "business_insight": "고품질 4K AI 영상 프로덕션 파이프라인의 완성도 제고 및 후가공 공수 단축",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wzo33v/redetail_20_ltx25s_refine_details_lora_to_4k/",
+          "tags": [
+            "LTX-2.5",
+            "LoRA",
+            "Upscale"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "오픈 소스 이미지 편집기 'ImageFlow': AI 기능 탑재 포토샵급 웹 에디터",
+          "target_problem": "고비용 구독형 그래픽 편집 툴을 대체할 수 있는 무료 기반 고성능 AI 이미지 편집 솔루션 부재",
+          "tech_applied": "웹 기반 이미지 처리 엔진, 생성형 AI 편집 파이프라인 통합",
+          "business_insight": "디자이너 및 크리에이터를 위한 진입 장벽 없는 AI 기반 비주얼 편집 툴 생태계 확장",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/imageflow-6",
+          "tags": [
+            "Image Editor",
+            "Product Hunt",
+            "SaaS"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "가민(Garmin), 저장 용량을 두 배로 늘린 울트라 엔듀런스 워치 'Enduro 4' 공식 출시",
+          "target_problem": "장거리 아웃도어 활동 및 울트라 마라톤에서 데이터 저장 용량과 배터리 지속성에 한계를 느끼는 사용자",
+          "tech_applied": "51mm 폼팩터 유지 및 온보드 스토리지 2배 확장 구조",
+          "business_insight": "고가 프리미엄 스포츠 웨어러블 시장에서 입지를 공고히 하고 하드웨어 마이너 업그레이드를 통한 충성 고객 유지",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/06/garmin-enduro-4-launch-specs-enduro-3/",
+          "tags": [
+            "Garmin",
+            "Wearable",
+            "Smartwatch"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "핏비트(Fitbit) 신형 'Edge' 및 기존 모델 할인 공세로 스마트밴드 시장 경쟁 심화",
+          "target_problem": "합리적인 가격대에 고기능 헬스케어 트래커를 구매하고자 하는 대중 소비자의 예산 제약",
+          "tech_applied": "경량 헬스케어 센서 모듈, 구글 에코시스템 연동 최적화",
+          "business_insight": "아마존 프라임데이 등 대형 이벤트와 맞물린 공격적 가격 책정을 통해 보급형 웨어러블 점유율 방어",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/06/fitbit-edge-vs-charge-6/",
+          "tags": [
+            "Fitbit",
+            "Smart Band",
+            "E-commerce"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-07",
       "items": [
@@ -1079,221 +1218,6 @@
             "Moxy",
             "Acquisition",
             "SportsTech"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-10-01",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "NVIDIA Kumo Tabular: 정형 데이터 예측 성능 및 효율성 혁신",
-          "target_problem": "기존 정형 데이터 예측 모델의 비효율적인 연산과 정확도 한계 극복",
-          "tech_applied": "NVIDIA의 신규 Kumo Tabular 아키텍처 및 고성능 정형 데이터 학습 파이프라인",
-          "business_insight": "기업 내 DB 및 엔터프라이즈 정형 데이터 분석 워크플로우의 가속화 및 분석 비용 절감",
-          "source_name": "Hugging Face Blog",
-          "source_url": "https://huggingface.co/blog/nvidia/kumo-tabular",
-          "tags": [
-            "NVIDIA",
-            "TabularAI",
-            "Enterprise"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Holo4: 범용 컴퓨터 조작(Computer-Use) AI 에이전트 구동",
-          "target_problem": "다양한 OS 환경에서 인간처럼 자율적으로 소프트웨어를 조작하는 에이전트 구축의 어려움",
-          "tech_applied": "Hcompany의 Holo4 범용 에이전트 모델 및 멀티모달 액션 파이프라인",
-          "business_insight": "RPA 시장 대체 및 백오피스 단순 자동화 업무의 차세대 표준 제시",
-          "source_name": "Hugging Face Blog",
-          "source_url": "https://huggingface.co/blog/Hcompany/holo4",
-          "tags": [
-            "ComputerUse",
-            "Agent",
-            "Automation"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "MCP 에이전트를 위한 출처 인식형 검증(Source-Aware Verification)",
-          "target_problem": "AI 에이전트가 환각(Hallucination) 없이 검증된 출처 기반으로 사실을 추론하도록 지원",
-          "tech_applied": "Multiverse Computing의 출처 인식 검증 알고리즘 및 MCP(Model Context Protocol) 연동",
-          "business_insight": "금융/법률 등 가짜 정보 위험이 큰 분야에서 에이전트 도입 안정성 및 신뢰도 증대",
-          "source_name": "Hugging Face Blog",
-          "source_url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
-          "tags": [
-            "MCP",
-            "Verification",
-            "TrustworthyAI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "LFM2.5-VL-DSpark를 활용한 비전-언어 모델(VLM) 추론 가속화",
-          "target_problem": "고해상도 이미지/비디오를 처리하는 VLM의 과도한 연산량과 높은 추론 지연 시간",
-          "tech_applied": "Liquid AI의 LFM2.5-VL 모델 및 DSpark 연산 가속 엔진 최적화",
-          "business_insight": "온디바이스 및 실시간 영상 분석 서비스의 운영 인프라 비용 획기적 절감",
-          "source_name": "Hugging Face Blog",
-          "source_url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
-          "tags": [
-            "VLM",
-            "Optimization",
-            "LiquidAI"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "📊 Benchmark",
-          "title": "Open TTS Leaderboard: 다국어 음성합성 및 음성 복제 벤치마크 오픈",
-          "target_problem": "다국어 TTS 및 음성 복제 모델의 품질과 자연스러움을 객관적으로 비교할 표준 부재",
-          "tech_applied": "확장 가능한 다국어 음성합성/클로닝 자동 평가 메트릭 프레임워크",
-          "business_insight": "오디오 AI 서비스 개발사들의 모델 선정 기준 및 정량적 기술 검증 비용 절감",
-          "source_name": "Hugging Face Blog",
-          "source_url": "https://huggingface.co/blog/open-tts-leaderboard",
-          "tags": [
-            "TTS",
-            "VoiceCloning",
-            "Benchmark"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "개선된 H3 Refmods & MiniMax-H3 프롬프트 빌더 공개",
-          "target_problem": "비디오 생성 및 편집 시 적은 이미지로 정체성(Identity)을 유지하면서 정밀하게 편집하기 어려움",
-          "tech_applied": "ComfyUI 커스텀 노드, 비디오 편집용 에디트 마스킹 및 MiniMax-H3 프롬프트 빌더",
-          "business_insight": "AI 영상 제작 커뮤니티의 워크플로우 효율화 및 오프라인/로컬 영상 편집 파이프라인 고도화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wtu82e/improved_h3_refmods_better_accuracy_and_low/",
-          "tags": [
-            "ComfyUI",
-            "VideoEdit",
-            "MiniMax"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Ideogram 4.5 모델 발표 (편집 기능 탑재 및 오픈소스화 예정)",
-          "target_problem": "이미지 및 텍스트 랜더링 정확도 향상 및 국소 영역 수정(Edit) 기능 필요",
-          "tech_applied": "Ideogram 4.5 확산 모델 및 영역 지정 인페인팅/편집 파이프라인",
-          "business_insight": "디자인 및 로고/텍스트 기반 마케팅 에셋 생성 시장에서의 강력한 오픈소스 대안 제공",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wu98xe/new_model_ideogram_45_with_edit_open_source_soon/",
-          "tags": [
-            "Ideogram",
-            "ImageGen",
-            "OpenSource"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Wulver v0.5 출시: 애니메이션/캐릭터 특화 Krea 2 파인튜닝 모델",
-          "target_problem": "다중 캐릭터 상호작용 및 애니메이션 스타일 구현 시 발생하는 디테일 붕괴 현상 해결",
-          "tech_applied": "12.8B DiT 기반 Krea 2 Raw 전역 풀 파인튜닝(Full Fine-tune)",
-          "business_insight": "서브컬처 콘텐츠 제작 아티스트 및 게임 자산 제작사의 생성 효율 증대",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wu721p/released_wulver_v05_our_krea_2_finetune_for_anime/",
-          "tags": [
-            "Krea2",
-            "FineTune",
-            "AnimeAI"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Klein9B용 UltraReal 업스케일링 LoRA (V5) 공개",
-          "target_problem": "AI 생성 이미지 특유의 매끄럽고 플라스틱 같은 질감을 제거하고 사실적인 질감 구현",
-          "tech_applied": "Klein9B 최적화 업스케일링 LoRA 학습 및 자연스러운 텍스처 보정 파이프라인",
-          "business_insight": "고품질 상업용 실사 이미지 제작 시 리터칭 시간 단축 및 완성도 향상",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wtx71n/ultrareal_upscaling_lora_for_klein9b_new_version/",
-          "tags": [
-            "LoRA",
-            "Upscale",
-            "Photorealism"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "로컬 단일 이미지-to-3D 파이프라인: 세부 디테일 유지 및 픽셀 매칭 지원",
-          "target_problem": "2D 이미지를 3D로 변환 시 텍스트, 로고 등 세부 디테일이 뭉개지거나 왜곡되는 문제",
-          "tech_applied": "Pixel Match 기술, 리토폴로지 최적화 (900k 면 -> 5k 면 감소), NVIDIA/Mac 교차 지원",
-          "business_insight": "게임 개발 및 AR/VR 파이프라인에서 저용량 3D 에셋 생성 속도 극대화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wucthp/local_image_to_3d_high_quality_low_poly_preserve/",
-          "tags": [
-            "ImageTo3D",
-            "LowPoly",
-            "PixelMatch"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "Polar, 스마트워치 6종 대상 Firmware 6.0.18 대규모 업데이트 배포",
-          "target_problem": "기존 워치 사용자들의 헬스케어 데이터 시각화 및 운동 분석 기능 개선 요청",
-          "tech_applied": "새로운 건강 분석 그래프 엔진 및 온디바이스 펌웨어 데이터 처리 최적화",
-          "business_insight": "기존 플래그십 제품군의 소프트웨어 경험 강화를 통한 고객 락인(Lock-in) 전략",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/30/polar-firmware-6-0-18-update/",
-          "tags": [
-            "Polar",
-            "Smartwatch",
-            "Firmware"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "화웨이 워치 GT 7, 일부 국가에서 당뇨병 위험도 측정 서비스 시작",
-          "target_problem": "채혈 없는 비침습 방식의 당뇨 위험도 조기 선별 필요성",
-          "tech_applied": "Huawei GT 7 / GT 7 Pro 광학 센서 기반 Diabetes Risk Study 바이오 알고리즘",
-          "business_insight": "웨어러블 기기의 웰니스 영역을 넘어선 예방 의학/선별 진단 영역 진출",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/30/huawei-watch-gt-7-diabetes-risk-study/",
-          "tags": [
-            "Huawei",
-            "Diabetes",
-            "HealthTech"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "QALO, 스마트 링 연동 전용 화면 없는 핏밴드 'SL-1' 출시",
-          "target_problem": "스마트 링 착용자가 격렬한 운동 중 링 손상을 방지하고 정밀 측정을 보완할 손목 디바이스 필요",
-          "tech_applied": "디스플레이리스(Screenless) 슬림 폼팩터 및 스마트 링 데이터 동기화 알고리즘",
-          "business_insight": "스마트 링 + 핏밴드 번들 생태계 구축을 통한 유저당 매출(ARPU) 증대",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/29/qalo-sport-loop-1/",
-          "tags": [
-            "QALO",
-            "SmartRing",
-            "FitnessBand"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "가민, 근소산소 센서 기업 'Moxy Monitor' 인수",
-          "target_problem": "운동 선수를 위한 실시간 근육 산소 포화도 및 고도화된 스태미나 측정 기능 탑재",
-          "tech_applied": "Moxy의 근소산소 측정(Muscle Oxygen) 센서 기술 및 가민 Muscle Battery 알고리즘 통합",
-          "business_insight": "프리미엄 피트니스 시장에서의 독보적 기술 격차 확보 및 스포츠 과학 분야 선점",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/09/28/garmin-acquires-moxy-muscle-battery/",
-          "tags": [
-            "Garmin",
-            "Moxy",
-            "Acquisition"
           ]
         }
       ]
