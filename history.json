@@ -1,6 +1,235 @@
 {
-  "last_updated": "2026-10-09T10:15:10.451893+09:00",
+  "last_updated": "2026-10-10T09:50:45.794615+09:00",
   "digests": [
+    {
+      "date": "2026-10-10",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "알리바바 Qwen, 8단계 노이즈 제거 방식의 Qwen-Image-2.1-Turbo 공개",
+          "target_problem": "기존 40단계 디노이징 모델의 높은 연산 소요 시간 및 생성 지연 문제 해결",
+          "tech_applied": "7B 비주얼 생성 아키텍처 기반 8단계 고속 가속 체크포인트 기술",
+          "business_insight": "이미지 생성 및 편집 추론 속도를 획기적으로 개선하여 딜레이가 적은 실시간 AI 디자인 서비스 서비스화 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/09/alibaba-qwen-releases-qwen-image-2-1-turbo-an-8-step-7b-image-model/",
+          "tags": [
+            "Alibaba",
+            "Qwen",
+            "Image Generation",
+            "Open Weights"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "OpenAI, 10배 빠른 타입 응답을 지원하는 Decisions API 공개 베타 출시",
+          "target_problem": "기존 Responses API의 높은 비용과 비교적 느린 구조화 분류 및 평가 추론 속도 문제",
+          "tech_applied": "GPT-6 Luna 기반의 타입 확률 및 결정 스코어 추출 추론 파이프라인",
+          "business_insight": "입력 토큰 100만 개당 $0.10 비용 및 출력 비용 무료 정책으로 B2B 라우팅 및 빠른 판단 자동화 시스템 구축 용이",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/09/openai-decisions-api-hits-public-beta-with-10x-faster-typed-answers/",
+          "tags": [
+            "OpenAI",
+            "API",
+            "GPT-6",
+            "Enterprise"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Saluki 27B: 툴 호출 성능을 향상시킨 2비트 Qwen3.8 경량화 모델",
+          "target_problem": "고성능 LLM의 대용량 용량으로 인한 로컬 및 온디바이스 배포 한계",
+          "tech_applied": "Qwen3.8-27B 모델을 7.89GB 용량의 2비트 GGUF 양자화 적용 (Apache 2.0)",
+          "business_insight": "용량을 대폭 낮추면서도 원본 54GB 모델보다 높은 툴 호출 능력을 확보하여 엣지 컴퓨팅 기반 에이전트 구축 가능",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/09/meet-the-underdog-saluki-27b-a-2-bit-qwen3-8-27b-that-beats-the-original-at-tool-calling/",
+          "tags": [
+            "Quantization",
+            "Qwen",
+            "Edge AI",
+            "Tool Calling"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "구글 클라우드, 기업용 통합 AI 에이전트 'Gemini Agent' 출시",
+          "target_problem": "기업 업무 생산성 도구 분산 및 코드 작성, 미디어 생성, 지식 작업 처리의 단절",
+          "tech_applied": "구글 클라우드 기반 올인원 멀티모달 자율 에이전트 오케스트레이션",
+          "business_insight": "기업 내 질문 답변부터 코드 실행 및 미디어 생성까지 일률화된 단일 에이전트로 단달하여 구글 클라우드 SaaS 생태계 강화",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/08/google-cloud-launches-gemini-agent-one-universal-agent-for-enterprise-work/",
+          "tags": [
+            "Google Cloud",
+            "Gemini",
+            "AI Agent",
+            "Enterprise"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "JetBrains, 코딩 에이전트 전용 12B MoE 모델 'Mellum2.1' 오픈소스 공개",
+          "target_problem": "일반 LLM이 실제 복잡한 소프트웨어 리포지토리 환경에서 겪는 낮은 코딩 문제 해결 능력",
+          "tech_applied": "2.5B 활성 파라미터를 갖는 12B MoE 구조 및 실제 리포지토리 강화학습(RL)",
+          "business_insight": "SWE-bench Verified 점수를 2.0에서 47.0으로 대폭 올리며 개발 도구 상용화 및 오픈소스 개발 생태계 주도권 확보",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/08/jetbrains-releases-mellum2-1-a-12b-moe-open-model-for-coding-agents/",
+          "tags": [
+            "JetBrains",
+            "Coding Agent",
+            "MoE",
+            "Open Source"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "MiniMax 비디오 생성 시 리퍼런스 영상을 활용한 자연스러운 연기 연출",
+          "target_problem": "AI 비디오 생성 모델에서 캐릭터의 세밀한 일관성 및 자연스러운 연기 표정 연출의 일관성 부족",
+          "tech_applied": "MiniMax 비디오 생성 엔진 내 Reference Video 입력 파이프라인 제어",
+          "business_insight": "실제 연기자의 비디오 참조를 통해 크리에이터가 의도한 연기 정밀도를 비디오 씬 단위로 정확하게 제어 가능",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x1umis/the_power_of_reference_videos_for_believable/",
+          "tags": [
+            "MiniMax",
+            "Video Gen",
+            "Prompt Engineering",
+            "Creator Tools"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "MiniMax H3 REF + Fizgig 커스텀 노드를 통한 고속 비주얼 노벨 캐릭터 생성",
+          "target_problem": "다양한 표정 및 포즈를 가진 캐릭터 스프라이트를 대량 생성할 때의 시간 지연과 일관성 저하",
+          "tech_applied": "ComfyUI Fizgig 커스텀 노드, Ref2Img / Img2Img 파이프라인, 4000px급 초고해상도 다중 생성 Workflow",
+          "business_insight": "2분 만에 8개 캐릭터 표정 스프라이트를 일괄 생성하여 게임/웹툰 제작사 생산 비용 대폭 절감",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x1mp6o/minimax_h3_ref_fizgig_nodes_as_blitz_visual_novel/",
+          "tags": [
+            "ComfyUI",
+            "MiniMax",
+            "Game Dev",
+            "Workflow"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "vlo 0.3.1: ComfyUI 연동 라이브 브릿지를 지원하는 오픈소스 비디오 편집 툴",
+          "target_problem": "비디오 편집 프로그램과 ComfyUI 복합 생성 워크플로우 간의 번거로운 파일 전환 절차",
+          "tech_applied": "오픈소스 비디오 에디터와 ComfyUI 백엔드 간 라이브 브릿지(Live Bridge) 연동",
+          "business_insight": "영상 편집 환경 내에서 AI 생성을 즉시 병행하여 콘텐츠 제작자 업무 절차 단축",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x1q4ph/workflows_for_control_and_consistency_vlo_031/",
+          "tags": [
+            "vlo",
+            "Video Editing",
+            "ComfyUI",
+            "Open Source"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Odyssey 3: 실시간 물리 시뮬레이션을 지원하는 월드 모델",
+          "target_problem": "기존 비디오 시뮬레이션의 비물리적 현상 및 실시간 대화형 상호작용 한계",
+          "tech_applied": "실시간 물리 엔진 제어 기반 그래픽스-AI 융합 월드 모델(World Model)",
+          "business_insight": "게임 개발, 가상 환경 상호작용, 인터랙티브 3D 콘텐츠 제작 생태계에 새로운 기반 엔진 제공",
+          "source_name": "Product Hunt AI",
+          "source_url": "https://www.producthunt.com/products/odyssey-3",
+          "tags": [
+            "Odyssey",
+            "World Model",
+            "Physics",
+            "Real-time"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "구글 Pixel Watch 5 근력 운동 트래킹 기능 메커니즘 공개",
+          "target_problem": "스마트워치 사용자들의 정밀한 근력 운동 반복 횟수 및 세트 인식 요구",
+          "tech_applied": "모션 센서 데이터 및 근력 운동 동작 분류 알고리즘",
+          "business_insight": "구글 픽셀 웨어러블 생태계 내 피트니스 헬스케어 차별화 기능 강화를 통한 유저 락인",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/09/pixel-watch-5-strength-training-how-it-works/",
+          "tags": [
+            "Pixel Watch",
+            "Google",
+            "Fitness",
+            "Wearable"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "미공 신경 자극(VNS)을 통한 신규 기술 학습 효과 및 기억 고착화 향상",
+          "target_problem": "연습 및 학습 후 시간이 지남에 따라 급격히 감소하는 기억 및 기술 유지율",
+          "tech_applied": "학습 직후 미공 신경(Vagus Nerve) 전기 자극 모듈 및 신경가소성 연구 기술",
+          "business_insight": "웨어러블 바이오 스티뮬레이션 장치 시장의 학습 및 메모리 케어 기능으로 확장 가능성",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/08/vagus-nerve-stimulation-learning-memory-study/",
+          "tags": [
+            "VNS",
+            "Biohacking",
+            "Neuroscience",
+            "HealthTech"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "가민, Fenix 8 디스플레이 배터리 누수 버그 공식 확인",
+          "target_problem": "실내 진입 후에도 디스플레이가 지속 점등되어 고속 배터리 소모가 발생하는 현상",
+          "tech_applied": "조도 센서 및 스마트워치 디스플레이 펌웨어 제어",
+          "business_insight": "플래그십 럭셔리 스포츠 워치 유저층 신뢰성 유지를 위한 펌웨어 패치 대응 시급성",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/08/garmin-confirms-fenix-8-screen-bug/",
+          "tags": [
+            "Garmin",
+            "Fenix 8",
+            "Bug Fix",
+            "Wearable"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "일본 SOXAI Ring X, 킥스타터를 통한 글로벌 스마트 링 시장 진출",
+          "target_problem": "Oura 및 RingConn 위주의 글로벌 스마트 링 시장 내 폼팩터 및 헬스 트래킹 선택지 부족",
+          "tech_applied": "초경량 바이오센서 링 설계 및 건강 지표 모니터링",
+          "business_insight": "글로벌 크라우드펀딩을 기반으로 브랜드 인지도 제고 및 아시아 시장 외 영미권 신규 침투 도모",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/08/soxai-ring-x-kickstarter-global-launch/",
+          "tags": [
+            "SOXAI",
+            "Smart Ring",
+            "Kickstarter",
+            "Wearable"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "가민, Fenix 9 및 Enduro 4 최신 울트라 퍼포먼스 라인업 발표",
+          "target_problem": "아웃도어 및 트레일 러너들을 위한 극한 조건에서의 장시간 배터리 및 정밀 내비게이션 수요",
+          "tech_applied": "Fenix 9 플랫폼 기반 디스플레이 개선 및 고효율 소모 전력 최적화 설계",
+          "business_insight": "프리미엄 아웃도어 스포츠 스마트워치 시장 지배력 지속 및 교체 수요 자극",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/10/garmin-enduro-4-vs-fenix9-vs-enduro3-detailed-comparison-review.html",
+          "tags": [
+            "Garmin",
+            "Enduro 4",
+            "Fenix 9",
+            "Outdoor"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-09",
       "items": [
@@ -983,242 +1212,6 @@
             "MentalHealth",
             "HRV",
             "SleepTracking"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-10-03",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "엔비디아, 로컬 AI 에이전트 및 추론용 DGX Spark 64GB 데스크톱 발표",
-          "target_problem": "로컬 환경에서 AI 에이전트 구축, 미세조정, 고성능 추론을 수행하려는 개발자의 인프라 성능 부족 문제",
-          "tech_applied": "GB10 기반 Grace Blackwell 데스크톱 아키텍처, 1-PetaFLOP 연산 성능, 2대 클러스터링 확장 지원",
-          "business_insight": "Acer, ASUS, Dell, HP 등 하드웨어 파트너 에코시스템을 통해 온프레미스/데스크톱 온디바이스 AI 개발 시장 표준 선점 도모",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/02/nvidia-announces-dgx-spark-64gb-a-1-petaflop-grace-blackwell-desktop-for-local-ai-agents-fine-tuning-and-inference/",
-          "tags": [
-            "NVIDIA",
-            "Hardware",
-            "Local AI",
-            "Agents"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "AWS Strands Labs, 115ms 응답 속도의 오프닝 결정 모델 Strands Decider 2B 공개",
-          "target_problem": "기존 LLM의 텍스트 생성 기반 의사결정 방식에서 발생하는 지연 시간 및 비정형 출력 제어의 어려움",
-          "tech_applied": "Qwen3.5-2B-Base 기반, 단일 포워드 패스로 선택지 확률 및 점수 도출, Apache-2.0 오픈소스",
-          "business_insight": "텍스트 생성을 우회하여 115ms 수준의초저지연 워크플로우 제어를 가능케 함으로써 에이전틱 시스템의 효율성 대폭 향상",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/01/aws-strands-labs-releases-strands-decider-2b/",
-          "tags": [
-            "AWS",
-            "OpenSource",
-            "Decision Model",
-            "Agents"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "클라우드플레어, 타입화된 확률을 반환하는 오픈 웨이트 결정 모델 Clef & Clef-flash 출시",
-          "target_problem": "엣지 워커(Workers AI) 상에서 텍스트 응답 분석 없이 정확한 확률 기반 판단을 필요로 하는 애플리케이션 요구",
-          "tech_applied": "Clef(27B), Clef-flash(9B) 오픈 웨이트, 이미지 입력 지원, Jev-API 호환, 최소 38.8ms 레이턴시",
-          "business_insight": "엣지 컴퓨팅 기반 초저지연 의사결정 API로 워커스 AI 생태계의 유료 워크로드 확장 유도",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/01/cloudflare-releases-clef-and-clef-flash/",
-          "tags": [
-            "Cloudflare",
-            "Edge AI",
-            "Workers AI",
-            "LLM"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "DataLab, 데이터 추출 벤치마크 편향 수정을 위한 OmniExtractBench 발표",
-          "target_problem": "기존 정보 추출 벤치마크의 불투명성 및 모호한 검증 규칙으로 인한 평가 신뢰도 저하",
-          "tech_applied": "콘텐츠 기반 행 매칭, 값별 6가지 판정 알고리즘, Null 규칙 기반 감사 시스템",
-          "business_insight": "데이터 추출 AI 솔루션의 客觀的 성능 검증 표준 제시를 통한 엔터프라이즈 B2B 평가 신뢰성 확보",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/02/datalab-introduces-omniextractbench-to-fix-bias-and-opacity-in-extraction-benchmarks/",
-          "tags": [
-            "Benchmark",
-            "Data Extraction",
-            "DataLab"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "AllenAI, 고속 리포트 생성 모델 AstaBrief 오픈소스 공개",
-          "target_problem": "방대한 문헌 및 수집 데이터로부터 신속하게 요약 보고서를 작성해야 하는 연구자 및 분석가의 생산성 병목",
-          "tech_applied": "Asta 플랫폼 핵심 요약 및 보고서 생성 맞춤형 경량화 파인튜닝 파이프라인",
-          "business_insight": "오픈소스 모델 공개를 통한 오픈 연구 생태계 기여 및 Asta 분석 플랫폼으로의 유저 유입 가속화",
-          "source_name": "Hugging Face Blog",
-          "source_url": "https://huggingface.co/blog/allenai/astabrief",
-          "tags": [
-            "AllenAI",
-            "OpenSource",
-            "Report Generation"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "바이트댄스, Minimax-h3 전용 4단계 생성 알고리즘 DMAD 발표",
-          "target_problem": "비디오 생성 모델의 긴 추론 시간 및 높은 컴퓨팅 자원 소비 문제",
-          "tech_applied": "DMAD (Distribution Matching as Adversarial Distillation), 4-Step 증류 기법",
-          "business_insight": "적은 스텝 수로 고품질 영상 생성을 가능하게 하여 생성 비용 절감 및 실시간 비디오 워크플로우 보급 가속",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1ww13p5/bytedance_release_4step_for_minimaxh3_dmad/",
-          "tags": [
-            "ByteDance",
-            "Video AI",
-            "Distillation",
-            "Minimax"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Lightricks, 로컬 SDR-to-HDR 변환 워크플로우 및 LoRA 모듈 출시",
-          "target_problem": "일반 SDR AI 영상의 표준 명암비 한계 및 고품질 HDR 프로덕션 환경과의 통합 디그레이데이션 문제",
-          "tech_applied": "SDR to HDR LoRA 커스텀 워크플로우, 32-bit 비트레이트 변환 지원, 오디오/비디오 후처리 연동",
-          "business_insight": "로컬 기반 고해상도 색보정 및 VFX 파이프라인 수용성을 높여 미디어 크리에이터 툴 시장 경쟁력 강화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wvsg1q/hdr_locally_now/",
-          "tags": [
-            "Lightricks",
-            "HDR",
-            "Video Workflow",
-            "LoRA"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "화질 저하 없는 연속 비디오 결합 워크플로우 v7.1 공개",
-          "target_problem": "AI 생성 비디오 씬 결합 시 발생하는 경계면 품질 저하 및 프레임 간 불일치 문제",
-          "tech_applied": "Minimax Workflow v7.1, Seamless Video Combiner, Continuous Audio Splitter 오픈소스 툴셋",
-          "business_insight": "롱폼 AI 비디오 제작에 필요한 툴셋 커뮤니티 공유로 숏폼을 넘어선 롱폼 콘텐츠 제작 장벽 축소",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1ww6j88/seamless_continuation_no_degradation_proof_at_the/",
-          "tags": [
-            "Video Workflow",
-            "OpenSource",
-            "Seamless Integration"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Krea 2 vs Ming 0.1 vs Qwen 2.1: 192개 프롬프트 비교 벤치마크 공개",
-          "target_problem": "이미지 및 비디오 생성 모델 간 프롬프트 준수율 및 스타일 표현력 객관적 비교 부재",
-          "tech_applied": "ImageBench 기반 192개 멀티 프롬프트 사이드 바이 사이드 렌더링 평가",
-          "business_insight": "최신 이미지/비디오 프론티어 모델 성능 지표 공개를 통해 창작자의 모델 선택 및 파이프라인 구축 최적화 지원",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wvmpm9/krea_2_vs_ming_01_vs_qwen_21_192_prompt_side_by/",
-          "tags": [
-            "Benchmark",
-            "Image Generation",
-            "Krea",
-            "Qwen"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "📱 Consumer App",
-          "title": "Never Boring AI: 사용자 톤앤매너를 학습하는 링크드인 작성 에이전트",
-          "target_problem": "비즈니스 소셜 미디어 포스팅 시 상투적인 AI 문체 탈피 및 개별 톤앤매너 유지의 어려움",
-          "tech_applied": "사용자 보이스 프로파일링 기반 자동 텍스트 및 미디어 콘텐츠 생성 튜닝 에이전트",
-          "business_insight": "개인 브랜딩 및 B2B 마케팅 도구로서 구독형 SaaS 모델을 통한 파워 유저 및 B2B 소모 시간 절감 제공",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/never-boring-ai",
-          "tags": [
-            "LinkedIn",
-            "AI Agent",
-            "Content Creation"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "순토 Race 3S 유출: 10월 중순 출시 및 배터리 성능 대폭 업그레이드 예고",
-          "target_problem": "아웃도어 멀티스포츠 스마트워치의 짧은 배터리 수명 및 야외 활동 시 전력 관리 제약",
-          "tech_applied": "개선된 전력 효율 아키텍처, 3S 시리즈 배터리 셀 개선 및 경량화 하우징",
-          "business_insight": "가민과의 아웃도어 스포츠 스마트워치 시장 점유율 경쟁에서 가성비 및 배터리 타임 강점으로 고객 유입 도모",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/02/suunto-race-3s-leak-specs-launch-price/",
-          "tags": [
-            "Suunto",
-            "Smartwatch",
-            "Hardware"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "가민, 출시 18개월 만에 페닉스 6 베타 29.02 소프트웨어 업데이트 전격 실시",
-          "target_problem": "구형 플래그십 기기 사용자의 신규 피트니스 예측 알고리즘 미지원 불만",
-          "tech_applied": "Race Predictor 알고리즘 백포팅 및 기존 HW 플랫폼 최적화 펌웨어(Beta 29.02)",
-          "business_insight": "레거시 기기 지속 지원을 통한 브랜드 충성도 제고 및 고객 잔존율(Retention) 유지 전략",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/02/garmin-fenix-6-beta-29-02-race-predictor/",
-          "tags": [
-            "Garmin",
-            "Software Update",
-            "Fitness"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "오우라 링 연구: 수면 및 HRV 변화와 우울증·불안장애 간의 직접적 상관관계 입증",
-          "target_problem": "정신 건강 질환의 조기 진단 어려움 및 수면/자율신경계 생체 데이터 기반 정량적 관찰 필요성",
-          "tech_applied": "Oura Ring 수면 모니터링 및 심박변이도(HRV) 다변량 데이터 바이오마커 분석",
-          "business_insight": "웨어러블 링의 기능을 단순 피트니스 트래킹에서 멘탈 헬스 모니터링 및 헬스케어 B2B 연계 서비스로 확장",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/01/oura-ring-depression-anxiety-study/",
-          "tags": [
-            "Oura",
-            "Mental Health",
-            "Biometrics"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "카시오 G-Shock 머드맨 GDG-B100: MIP 디스플레이 및 블루투스 탑재",
-          "target_problem": "기존 터프니스 워치의 가독성 한계 및 스마트폰 연동 기능 부재",
-          "tech_applied": "MIP(Memory-in-Pixel) 고대비 디스플레이, Bluetooth 스마트폰 연동 (Tough Solar 제거)",
-          "business_insight": "디지털 기능성 강화 및 가독성 확보를 위해 일부 전통 기능을 배제하는 과감한 라인업 개편 시도",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/01/casio-mudman/",
-          "tags": [
-            "Casio",
-            "G-Shock",
-            "Wearables"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "애플워치 시리즈 12 심층 리뷰: 역대 최대 규모의 진화 평가",
-          "target_problem": "기존 애플워치 폼팩터 지속에 따른 유저들의 업그레이드 명분 부족",
-          "tech_applied": "내부 하드웨어 아키텍처 재설계, 신규 헬스 센서 및 인텔리전스능 통합",
-          "business_insight": "외형 변화 보다는 하드웨어 내실 및 건강 트래킹 기능 고도화를 통해 기존 애플워치 유저의 교체 수요 자극",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/10/apple-watch-series12-in-depth-review-worth-upgrade.html",
-          "tags": [
-            "Apple",
-            "AppleWatch",
-            "Hardware Review"
           ]
         }
       ]
