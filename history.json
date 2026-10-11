@@ -1,6 +1,171 @@
 {
-  "last_updated": "2026-10-10T09:50:45.794615+09:00",
+  "last_updated": "2026-10-11T09:15:15.444630+09:00",
   "digests": [
+    {
+      "date": "2026-10-11",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Sakana AI, 논문 오열 오류의 73%를 잡아내는 다층 LLM 동료 평가 시스템 발표",
+          "target_problem": "학술 논문 및 AI 생성 연구 보고서 내 핵심 주장(Core-Claim) 논리적 모순과 오류 검증의 한계",
+          "tech_applied": "Claude 기반 3개 에이전트 다층 리뷰(MLR) 구조 및 1,164개 오류로 구성된 모순 벤치마크(Contradiction Benchmark) 적용",
+          "business_insight": "기존 평가 시스템(14.81% 감지) 대비 73.43%라는 압도적 성능으로 연구 자동화 및 Enterprise 논문/보고서 검증 SaaS 분야의 새로운 표준 제시",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/10/sakana-ais-llm-peer-review-system-catches-73-of-core-claim-errors/",
+          "tags": [
+            "AI",
+            "PeerReview",
+            "LLM",
+            "Research"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "마이크로소프트, 라우팅 및 에이전트 제어용 의사결정 모델 'Microsoft-Decision-1' 공개",
+          "target_problem": "텍스트 생성이 아닌 라우팅, 분류, 에이전트 제어 시 정밀한 보정 확률(Calibrated Probability) 산출의 어려움",
+          "tech_applied": "Qwen3.5-9B 기반 아키텍처, 고정 선택지에 대한 보정된 확률 점수 단일 패스 반환 메커니즘",
+          "business_insight": "에이전틱 워크플로우 내 다중 경로 분류 및 의사결정을 저비용·고속으로 처리하는 인프라급 모델로 B2B 에이전트 시장 선점 노림",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/09/microsoft-ai-releases-microsoft-decision-1-a-qwen3-5-9b-decision-scoring-model/",
+          "tags": [
+            "AI",
+            "Microsoft",
+            "Agent Control",
+            "Decision Model"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Nace AI, 1회 순방향 패스로 옵션별 확률을 스코어링하는 Drex 1.5 (9B) 오픈소스 공개",
+          "target_problem": "복잡한 파이프라인에서 긴 문맥 내 복수 선택지의 확률을 빠른 연산으로 스코어링하는 요구",
+          "tech_applied": "128K 컨텍스트 지원, 1회 Forward Pass 내 모든 선택지 확률 계산, Decision Index 0.3.1 점수 58.08 기록",
+          "business_insight": "텍스트 생성을 거치지 않고 실시간 옵션 평가만 수행하여 추론 비용 감소 및 추천/검색 에이전트 가속화 제공",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/09/nace-ai-open-sources-drex-1-5-a-9b-decision-model-that-scores-options-not-text/",
+          "tags": [
+            "AI",
+            "OpenSource",
+            "Decision Scoring",
+            "NaceAI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "⚡ API & Infra",
+          "title": "OpenAI, 10배 빠른 타입 지정 응답 지원 'Decisions API' 공용 베타 출시",
+          "target_problem": "기존 LLM의 텍스트 생성 기반 선택지 결정 시 발생하는 지연 시간 및 과도한 출력 토큰 비용 발생",
+          "tech_applied": "GPT-6 Luna 기반, Typed Probabilities & Choices 즉각 산출 구조",
+          "business_insight": "출력 토큰 비용 0원, 입력 토큰 1M당 $0.10 과금 체계로 기존 Responses API 대비 비용 및 속도 측면에서 대규모 자동화 전환 유도",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/09/openai-decisions-api-hits-public-beta-with-10x-faster-typed-answers/",
+          "tags": [
+            "OpenAI",
+            "Decisions API",
+            "GPT-6 Luna",
+            "API"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "ComfyUI 상에서 비디오 내 인물을 제거하는 MiniMax H3 워크플로우",
+          "target_problem": "영상 편집 및 제작 과정에서 복잡한 프레임별 누끼/인물 제거 작업에 소요되는 과도한 공수",
+          "tech_applied": "MiniMax H3 모델 기반 비디오 인페인팅 및 ComfyUI 커스텀 노드 결합",
+          "business_insight": "크리에이터 및 외주 제작사의 비디오 후가공 생산성을 획기적으로 개선하며 open-source 노드 생태계 확장 견인",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x2481c/minimax_h3_remove_people_from_videos_in_comfyui/",
+          "tags": [
+            "AI Video",
+            "ComfyUI",
+            "MiniMax H3",
+            "Inpainting"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "알리바바 Qwen, 8단계 디노이징으로 고속 이미지 생성 가능한 Qwen-Image-2.1-Turbo 공개",
+          "target_problem": "기존 40단계 생성 모델의 느린 생성 속도로 인한 실시간 영상/이미지 서비스 적용 한계",
+          "tech_applied": "7B 규모 오픈웨이트 모델, 8Denoising Steps 가속화 체크포인트 기술",
+          "business_insight": "생성 시간 절반 이하 축소로 인프라 운영비 단감 및 실시간 생성 에이전트/영상 콘텐츠 제작 툴 통합 용이",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/09/alibaba-qwen-releases-qwen-image-2-1-turbo-an-8-step-7b-image-model/",
+          "tags": [
+            "Image Generation",
+            "Qwen",
+            "Alibaba",
+            "Turbo Model"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "VAE 없이 모든 피셀을 직접 렌더링하는 30억 파라미터(3B) 이미지 생성 모델 모색",
+          "target_problem": "VAE 엔코더/디코더 과정에서 발생하는 복원 손실 및 디테일 뭉개짐 문제",
+          "tech_applied": "3B 파라미터 기반 Direct Pixel Painting 아키텍처 (Non-VAE)",
+          "business_insight": "초고해상도 그래픽 및 픽셀 단위 디테일이 중요한 게임/시각 디자이너 대상 타겟 파이프라인 형성 가능성",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x2bsk1/a_3billionparameter_model_that_paints_every_pixel/",
+          "tags": [
+            "AI Model",
+            "StableDiffusion",
+            "Non-VAE",
+            "Image Generation"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "구글 자회사 베릴리(Verily), 눈꺼풀 안쪽 밀착형 비침습 혈당 센서 특허 출원",
+          "target_problem": "채혈 또는 피부 찌름 방식의 Continuous Glucose Monitor(CGM) 사용 시 통증 및 불편함",
+          "tech_applied": "눈꺼풀 내부 장착형 초소형 미세기반 혈당 측정 센서 특허 기술",
+          "business_insight": "당뇨 환자 및 헬스케어 소비자를 위한 '완전 비침습' 혈당 측정 시장 선점을 향한 기술적 거점 확보",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/10/verily-under-eyelid-glucose-sensor-patent/",
+          "tags": [
+            "HealthTech",
+            "Google",
+            "Verily",
+            "Glucose Sensor"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "학습 후 미침 신경 자극(VNS)을 통한 신규 기술 습득 및 기억 정착 효과 연구 결과 발표",
+          "target_problem": "운동 및 신체 기술 훈련 후 익힌 기억의 빠른 단기 손실 및 신경 장기 강화(LTP)의 어려움",
+          "tech_applied": "학습 직후 미침 신경(Vagus Nerve) 전기 자극 모듈 기반 기억 정착 촉진",
+          "business_insight": "피트니스 및 스포츠 웨어러블 디바이스와 연동되는 바이오해킹 및 재활 치료용 구독형 HW/SW 시장 가능성",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/08/vagus-nerve-stimulation-learning-memory-study/",
+          "tags": [
+            "HealthTech",
+            "Neuroscience",
+            "VagusNerve",
+            "Wearables"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "가민(Garmin), Enduro 3 및 Fenix 9 요소 결합한 'Enduro 4' 공식 상세 비교 공개",
+          "target_problem": "울트라 마라톤 및 익스트림 스포츠 선수를 위한 장시간 배터리 및 정밀 멀티스포츠 트래킹 수요",
+          "tech_applied": "Fenix 9 플랫폼 기반 아키텍처 및 초저전력 디스플레이/태양광 충전 기술",
+          "business_insight": "프리미엄 아웃도어 하이엔드 스마트워치 라인업 개편을 통한 서브스크립션 생태계 및 고마진 하드웨어 판매 강화",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/10/garmin-enduro-4-vs-fenix9-vs-enduro3-detailed-comparison-review.html",
+          "tags": [
+            "Garmin",
+            "Wearables",
+            "Enduro4",
+            "Fitness"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-10",
       "items": [
@@ -1047,171 +1212,6 @@
             "Hardware",
             "Bluetooth",
             "Wearable"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-10-04",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "IBM, 온프레미스 및 에어갭 환경 지원 에이전트 개발 플랫폼 'Bob' 정식 출시",
-          "target_problem": "보안 규정 및 데이터 프라이버시로 인해 외부 클라우드로 소스 코드를 전송할 수 없는 기업의 AI 에이전트 개발 제약",
-          "tech_applied": "온프레미스, 사설 클라우드, 망분리(Air-gapped) 환경 구축 및 NVIDIA 인프라 기반 자사 보유 모델(BYOM) 연동 지원",
-          "business_insight": "소스 코드 유출 위험 없이 엔터프라이즈 환경 내 독립적인 에이전트 소프트웨어 개발 및 라이선스 모델 구축 가능",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/02/ibm-brings-bob-to-self-hosted-and-air-gapped-environments/",
-          "tags": [
-            "IBM",
-            "AgenticAI",
-            "Enterprise",
-            "OnPremise"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Prime Intellect, Blackwell 기반 초고속 오픈 모델 서빙 플랫폼 'Prime Inference' 출시",
-          "target_problem": "최신 프론티어 오픈 소스 LLM을 고성능·저비용으로 실시간 서비스하기 위한 추론 인프라의 부재",
-          "tech_applied": "NVIDIA Blackwell, Dynamo, vLLM, NVFP4 KV 압축 기법을 결합해 프리필 그룹당 66개 세션을 초당 101토큰(tok/s) 속도로 처리",
-          "business_insight": "서버리스 및 전용 인프라 형태의 OpenAI 호환 API 제공으로 고성능 오픈 모델 API 서비스 상용화 가속",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/02/prime-intellect-launches-prime-inference-serverless-and-reserved-serving-for-frontier-open-models/",
-          "tags": [
-            "PrimeIntellect",
-            "Inference",
-            "Blackwell",
-            "OpenSource"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "마이크로소프트 AI, 1위 성능의 실시간 음성 인식 모델 'MAI-Transcribe-2-Streaming' 공개",
-          "target_problem": "실시간 자막 및 음성 AI 에이전트 구현 시 발생하는 높은 지연 시간과 오인식 문제",
-          "tech_applied": "Artificial Analysis AA-WER 스트리밍 벤치마크 1위 기록, 0.12~0.13초 초저지연 및 단어 오류율(WER) 2.5% 달성",
-          "business_insight": "실시간 회의록 작성, 콜센터 음성 분석, 실시간 통번역 서비스의 사용자 경험 단축 및 서비스 품질 극대화",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/02/microsoft-ai-releases-mai-transcribe-2-streaming-1-real-time-speech-to-text-model-on-artificial-analysis/",
-          "tags": [
-            "Microsoft",
-            "SpeechToText",
-            "STT",
-            "RealTime"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "NVIDIA, 로컬 AI 에이전트 개발용 1-PetaFLOP 데스크톱 'DGX Spark 64GB' 발표",
-          "target_problem": "개발자가 온디바이스 환경에서 대형 AI 모델을 독립적으로 연구, 미세조정, 추론할 수 있는 고성능 워크스테이션 필요",
-          "tech_applied": "Grace Blackwell (GB10) 기반 데스크톱 AI 시스템, 64GB 메모리 제공 및 2대 클러스터링 확장 지원",
-          "business_insight": "하드웨어 판매 파트너십(Acer, ASUS, Dell, HP 등)을 통한 데스크톱 AI 워크스테이션 시장 선점 및 로컬 에이전트 생태계 확장",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/02/nvidia-announces-dgx-spark-64gb-a-1-petaflop-grace-blackwell-desktop-for-local-ai-agents-fine-tuning-and-inference/",
-          "tags": [
-            "NVIDIA",
-            "Hardware",
-            "DesktopAI",
-            "EdgeAI"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "ComfyUI용 H3 기반 화질 저하 없는 무한 비디오 연장 노드 기법 공개",
-          "target_problem": "생성형 AI 비디오 확장 시 클립이 늘어날수록 화질이 저하되거나 씬 전환이 끊기는 문제",
-          "tech_applied": "Latent 공간 내에서 H3 비디오를 연속적으로 무한 연장 및 연결하는 커스텀 노드 파이프라인 구축",
-          "business_insight": "AI 기반 롱폼 비디오 콘텐츠 제작 시 발생하는 화질 손상 방지 및 연출 연속성 확보로 제작 효율성 대폭 향상",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wwlhud/h3_infinite_video_extending_version_2_no_visual/",
-          "tags": [
-            "StableDiffusion",
-            "ComfyUI",
-            "VideoExtender",
-            "H3"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Minimax H3 및 RefMod를 활용한 AI 비디오 배경 장소 일관성 유지 기법",
-          "target_problem": "AI 생성 영상에서 여러 씬을 연속 생성할 때 동일 공간 배경이 일정하게 유지되지 않고 일그러지는 현상",
-          "tech_applied": "실제 장소를 연속 촬영한 20장의 연결 사진을 RefMod 레퍼런스로 결합하는 공간 캡처 워크플로우",
-          "business_insight": "동일 공간 배경 연출이 필수적인 광고, 영화, 애니메이션 기획 시 AI 생성 비디오의 시각적 안정성 제공",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wwyva2/minimax_h3_refmod_consistent_location_trick/",
-          "tags": [
-            "MinimaxH3",
-            "RefMod",
-            "VideoGeneration",
-            "Consistency"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Qwen-Image-2.1-viggle-turbo 모델 기반 경량 캐릭터 시트 생성 워크플로우",
-          "target_problem": "캐릭터 일관성 설정을 위한 다각도 캐릭터 시트 제작 과정의 높은 리소스 소모 및 연산 시간",
-          "tech_applied": "7.26GB 규격의 Qwen-Image-2.1-viggle-turbo 모델 및 텍스처 보정 VAE 기반 6스텝 int8 고속 추론",
-          "business_insight": "게임 아트 및 웹툰/애니메이션 제작사에서 저사양 인프라로도 신속하게 멀티 뷰 캐릭터 자산 생성 가능",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wwddm2/use_qwenimage21viggleturbo_to_generate_character/",
-          "tags": [
-            "Qwen",
-            "ComfyUI",
-            "CharacterSheet",
-            "ImageGen"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "가민 페닉스 8, 소프트웨어 23.39 업데이트 후 심박수 센서 작동 불능 현상 발생",
-          "target_problem": "스마트워치 펌웨어 업데이트로 인한 광학 심박수 센서(PPG) 비활성화 및 핵심 피트니스 데이터 측정 오류",
-          "tech_applied": "Garmin Fenix 8 OS 소프트웨어 버전 23.39 배포 후 하드웨어 센서 드라이버 충돌 문제",
-          "business_insight": "헬스케어 기기의 펌웨어 안정성 제어 및 리스크 관리의 중요성 증대, 빠른 파치 업데이트 대응 필요",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/03/garmin-fenix-8-23-39-heart-rate-sensor/",
-          "tags": [
-            "Garmin",
-            "Fenix8",
-            "FirmwareIssue",
-            "Wearables"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "구글, 스마트워치를 이용한 심방세동(AFib) 발작 사전 예측 특허 및 기술 개발",
-          "target_problem": "기존 스마트워치 헬스케어 기능이 사후 심방세동 감지에 머물러 있어 사전 예방적 의료 조치가 어려운 점",
-          "tech_applied": "스마트워치의 심전도(ECG) 및 심박 변이도(HRV) 데이터를 생체 패턴 알고리즘으로 분석해 발작 발생 전 예측",
-          "business_insight": "단순 상태 모니터링을 넘어 선제적 진단 및 질환 예방형 디지털 헬스케어 구독 서비스로 발전 가능성",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/03/google-smartwatch-predict-afib-patent/",
-          "tags": [
-            "Google",
-            "AFib",
-            "HeartHealth",
-            "PredictiveHealth"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "오우라 링 연구, 수면 및 HRV 연속 데이터 기반 우울증·불안증 연관성 확인",
-          "target_problem": "우울증 및 불안 장애 등 정신 건강 상태 측정 시 주관적 설문조사에 의존하여 객관성 부족",
-          "tech_applied": "오우라 링으로 수집한 수면 연속성, 수면 단계 및 야간 심박변이도(HRV) 변화 데이터 기반 머신러닝 연관성 분석",
-          "business_insight": "정신건강 상태를 객관적 생체 데이터로 추적함으로써 원격 의료 및 정신 건강 관리 플랫폼과의 연계 비즈니스 모델 창출",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/01/oura-ring-depression-anxiety-study/",
-          "tags": [
-            "OuraRing",
-            "MentalHealth",
-            "HRV",
-            "SleepTracking"
           ]
         }
       ]
