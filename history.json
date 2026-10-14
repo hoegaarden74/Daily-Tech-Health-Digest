@@ -1,6 +1,146 @@
 {
-  "last_updated": "2026-10-14T09:18:03.149335+09:00",
+  "last_updated": "2026-10-15T08:55:25.458459+09:00",
   "digests": [
+    {
+      "date": "2026-10-15",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Fish Audio, 35B 오픈웨이트 MoE 텍스트 투 스피치(TTS) 모델 'Drama 3' 출시",
+          "target_problem": "다국어 및 자연스러운 뉘앙스의 고품질 음성 합성 필요성",
+          "tech_applied": "35B Mixture-of-Experts (MoE) 구조 (활성 매개변수 3B), 자연어 디렉션 처리",
+          "business_insight": "수익 제한형 커뮤니티 라이선스로 개방하여 생태계 확장과 수익화를 동시에 도모",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/14/fish-audio-drama-3-open-weight-tts-model/",
+          "tags": [
+            "AI Models",
+            "TTS",
+            "MoE"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "2026년 상용화된 주요 9대 AI 게이트웨이 비교 분석 (Bifrost, Portkey 등)",
+          "target_problem": "기업용 LLM 도입 시 지연 시간, 가격, 거버넌스 및 배포 관리의 복잡성",
+          "tech_applied": "멀티 LLM 라우팅, 레이턴시 최적화 및 거버넌스 통합 컨트롤",
+          "business_insight": "엔터프라이즈 멀티클라우드 환경에서 API 비용 절감 및 인프라 안정성 확보 필수 도구 부상",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/14/best-ai-gateways-2026/",
+          "tags": [
+            "AI Gateways",
+            "SaaS",
+            "Enterprise"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Liquid AI, 온디바이스 에이전트를 위한 24B MoE 모델 'LFM2.5-24B-A2B' 공개",
+          "target_problem": "로컬 디바이스 환경에서 고성능 추론 및 빠른 응답 속도 구현",
+          "tech_applied": "24B MoE 구조 (활성 2B), Apple M5 Max 기반 토큰 디코딩 최적화",
+          "business_insight": "로컬 에이전트 구동에 최적화된 저전력·고속 처리로 엣지 AI 상용화 가속",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/14/liquid-ai-lfm2-5-24b-a2b/",
+          "tags": [
+            "On-Device AI",
+            "MoE",
+            "Liquid AI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Meta, 1M 컨텍스트 에이전트 모델 'Muse Wonder' 및 'Wonder Full' 출시",
+          "target_problem": "대규모 코드베이스 분석 및 복잡한 소프트웨어 엔지니어링 자동화",
+          "tech_applied": "1백만 토큰 컨텍스트 윈도우, DeepSWE 및 SWE-Marathon 리딩 성능",
+          "business_insight": "Meta Model API 및 Muse Code 플랜 기반 과금 모델을 통한 개발자 생산성 도구 시장 공략",
+          "source_name": "MarkTechPost",
+          "source_url": "https://www.marktechpost.com/2026/10/13/meta-muse-wonder-muse-wonder-full-release/",
+          "tags": [
+            "Meta",
+            "Agent Models",
+            "Code Intelligence"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "Minimax H3 캐릭터 스왑 가속화 방식별 소요 시간 및 성능 테스트",
+          "target_problem": "AI 비디오 생성 및 캐릭터 스왑 워크플로우의 긴 렌더링 시간과 비용",
+          "tech_applied": "Turbo LoRA, Sol, Spark-H3, VEDA 등 가속화 스킴 비교 최적화",
+          "business_insight": "비디오 생성 파이프라인의 효율성 개선을 통한 제작 비용 절감 및 처리량 극대화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x5olxa/minimax_h3_character_swap_time_consumption_and/",
+          "tags": [
+            "AI Video",
+            "Character Swap",
+            "Workflow"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "📱 Consumer App",
+          "title": "Arthemy Krea-2 Tuner 및 ComfyUI v0.40.0 워크플로우 릴리즈",
+          "target_problem": "최신 이미지/비디오 생성 모델(Krea-2, Chroma)의 커스텀 워크플로우 구축",
+          "tech_applied": "ComfyUI 기반 노드형 파이프라인, 파라미터 튜닝 및 업스케일 통합",
+          "business_insight": "크리에이터 중심의 오픈소스 툴링 생태계 확장을 통한 고품질 콘텐츠 제작 민주화",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x5vy46/taking_krea2_apart_one_piece_at_a_time/",
+          "tags": [
+            "ComfyUI",
+            "Krea-2",
+            "Content Creation"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "Intervals Pro, 가민(Garmin)의 트레이닝 데이터 접근 제한으로 서비스 종료",
+          "target_problem": "서드파티 AI 코칭 앱의 공식 플랫폼 API 종속성 및 정책 리스크",
+          "tech_applied": "Garmin API 및 Intervals.icu 데이터 연동 중단",
+          "business_insight": "피트니스 플랫폼의 생태계 폐쇄화 정책이 서드파티 SaaS 비즈니스에 미치는 치명적 영향 시사",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/14/garmin-api-intervals-pro-shutdown/",
+          "tags": [
+            "Garmin",
+            "Fitness API",
+            "SaaS Shutdown"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "Muse, 기존 헤드밴드 제품군에 AI 기반 뇌 나이(Brain Age) 트래킹 기능 추가",
+          "target_problem": "단순 신체 피트니스를 넘어선 인지 건강 및 뇌 기능 정량화 수요",
+          "tech_applied": "EEG(뇌전도) 센서 데이터 기반 AI 분석 알고리즘",
+          "business_insight": "웨어러블 헬스케어 시장이 뇌 건강 및 인지 능력 관리 영역으로 확장됨을 보여주는 사례",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://www.gadgetsandwearables.com/2026/10/13/muse-brain-age-eeg-tracking/",
+          "tags": [
+            "Wearables",
+            "EEG",
+            "Brain Health"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "🚀 New Product",
+          "title": "가민, 프리미엄 스마트워치 'MARQ Gen 3' 공식 출시 (시작 가격 $2,500)",
+          "target_problem": "럭셔리 시계 시장과 최첨단 아웃도어 스포츠 트래킹 기능의 결합 요구",
+          "tech_applied": "대화형 디스플레이, 고정밀 생체 및 위치 센서 통합",
+          "business_insight": "고가 하이엔드 라인업 강화를 통한 브랜드 프리미엄화 및 마진 극대화 전략",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://www.gadgetsandwearables.com/2026/10/13/garmin-marq-gen-3-launch-price-specs/",
+          "tags": [
+            "Garmin",
+            "Smartwatch",
+            "Hardware"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-14",
       "items": [
@@ -1069,145 +1209,6 @@
             "Sports Watch",
             "Pace 4 Pro",
             "Review"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-10-08",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Liquid AI, 텍스트 출력 없는 멀티모달 결정 모델 'Open d1' (d1-3B, d1-omni-600M) 공개",
-          "target_problem": "엣지 환경에서 대규모 텍스트 생성 없이 빠르고 정확한 멀티모달 판단 및 분류가 필요한 기업",
-          "tech_applied": "오픈웨이트 멀티모달 아키텍처, 텍스트 및 이미지/오디오 입력 기반 정밀 타이핑 답변(출력 토큰 제로)",
-          "business_insight": "텍스트 생성 비용을 없애고 엣지 디바이스에서 직접 구동되는 고속 판단 엔진으로 임베디드 AI 시장 선점",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/07/liquid-ai-releases-open-weight-d1-3b-and-d1-omni-600m-multimodal-decision-models-with-zero-output-tokens/",
-          "tags": [
-            "AI Models",
-            "Edge AI",
-            "Multimodal"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Meta AI, 일 4천만 건의 트래픽 배치를 처리하는 C++ 할당 솔버 'Rebalancer' 오픈소스화",
-          "target_problem": "대규모 분산 서버 환경에서 샤드, 서버, 네트워크 트래픽 최적 배치 문제로 인한 리소스 낭비",
-          "tech_applied": "C++ 및 Python 기반 로컬 검색 및 MIP 솔버(Gurobi, FICO Xpress, HiGHS 연동)",
-          "business_insight": "인프라 자원 최적화 자동화를 통해 대규모 클라우드 및 데이터센터 운영 비용의 극단적 절감",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/06/meta-ai-open-sources-rebalancer-a-c-assignment-solver-that-runs-about-40-million-placement-problems-a-day/",
-          "tags": [
-            "Open Source",
-            "Infrastructure",
-            "Optimization"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Google DeepMind, Gemma 4 기반 740M 멀티모달 임베딩 모델 'EmbeddingGemma 2' 출시",
-          "target_problem": "다양한 형태(5가지)의 멀티모달 데이터를 단일 고성능 벡터 공간으로 통합하고자 하는 검색 및 RAG 시스템",
-          "tech_applied": "Gemma 4 기반 아키텍처, 768차원 단일 벡터 공간 매핑, Apache 2.0 라이선스",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/06/google-deepmind-releases-embeddinggemma-2-a-740m-open-multimodal-embedding-model-built-on-gemma-4/",
-          "tags": [
-            "Embedding",
-            "Google DeepMind",
-            "Multimodal"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Mistral AI, 1.05T 파라미터 멀티모달 MoE 모델 'Mistral Large 4 (Le Chonk)' 공개",
-          "target_problem": "초대형 컨텍스트(100만 토큰)와 네이티브 이미지 입력을 지원하는 최고 성능의 오픈웨이트 인프라 수요",
-          "tech_applied": "1.05조 파라미터 Mixture of Experts(활성 49B), 100만 토큰 컨텍스트 윈도우",
-          "business_insight": "초대규모 엔터프라이즈 업무 자동화 및 심층 문서 분석을 위한 자체 호스팅 프레임워크 제공",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/",
-          "tags": [
-            "Mistral AI",
-            "MoE",
-            "LLM"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "ComfyUI용 MiniMax H3 'VEDA Sparse Attention' 사용자 노드 공개",
-          "target_problem": "고해상도 영상 생성 시 메모리 한계와 연산 속도 저하를 겪는 로컬 크리에이터",
-          "tech_applied": "VEDA Sparse Attention 알고리즘 최적화, ComfyUI 커스텀 노드 구현",
-          "business_insight": "로컬 환경(RTX 4090 등)에서의 AI 비디오 생성 효율 극대화 및 하드웨어 제약 완화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wzskwy/veda_sparse_attention_is_now_available_for/",
-          "tags": [
-            "ComfyUI",
-            "MiniMax H3",
-            "Video Generation"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "Lightricks Refine-Details IC-LoRA 적용 LTX-2.5 4K 업스케일 워크플로우 'ReDetail 2.0'",
-          "target_problem": "소프트 클립 업스케일링 과정에서 발생하는 디테일 손실, 얼굴 및 프레임 왜곡 문제",
-          "tech_applied": "IC-LoRA 디테일 리빌드 알고리즘, CLI 및 ComfyUI 통합 워크플로우",
-          "business_insight": "고품질 4K AI 영상 프로덕션 파이프라인의 완성도 제고 및 후가공 공수 단축",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1wzo33v/redetail_20_ltx25s_refine_details_lora_to_4k/",
-          "tags": [
-            "LTX-2.5",
-            "LoRA",
-            "Upscale"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "📱 Consumer App",
-          "title": "오픈 소스 이미지 편집기 'ImageFlow': AI 기능 탑재 포토샵급 웹 에디터",
-          "target_problem": "고비용 구독형 그래픽 편집 툴을 대체할 수 있는 무료 기반 고성능 AI 이미지 편집 솔루션 부재",
-          "tech_applied": "웹 기반 이미지 처리 엔진, 생성형 AI 편집 파이프라인 통합",
-          "business_insight": "디자이너 및 크리에이터를 위한 진입 장벽 없는 AI 기반 비주얼 편집 툴 생태계 확장",
-          "source_name": "Product Hunt AI",
-          "source_url": "https://www.producthunt.com/products/imageflow-6",
-          "tags": [
-            "Image Editor",
-            "Product Hunt",
-            "SaaS"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "가민(Garmin), 저장 용량을 두 배로 늘린 울트라 엔듀런스 워치 'Enduro 4' 공식 출시",
-          "target_problem": "장거리 아웃도어 활동 및 울트라 마라톤에서 데이터 저장 용량과 배터리 지속성에 한계를 느끼는 사용자",
-          "tech_applied": "51mm 폼팩터 유지 및 온보드 스토리지 2배 확장 구조",
-          "business_insight": "고가 프리미엄 스포츠 웨어러블 시장에서 입지를 공고히 하고 하드웨어 마이너 업그레이드를 통한 충성 고객 유지",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/06/garmin-enduro-4-launch-specs-enduro-3/",
-          "tags": [
-            "Garmin",
-            "Wearable",
-            "Smartwatch"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "핏비트(Fitbit) 신형 'Edge' 및 기존 모델 할인 공세로 스마트밴드 시장 경쟁 심화",
-          "target_problem": "합리적인 가격대에 고기능 헬스케어 트래커를 구매하고자 하는 대중 소비자의 예산 제약",
-          "tech_applied": "경량 헬스케어 센서 모듈, 구글 에코시스템 연동 최적화",
-          "business_insight": "아마존 프라임데이 등 대형 이벤트와 맞물린 공격적 가격 책정을 통해 보급형 웨어러블 점유율 방어",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/06/fitbit-edge-vs-charge-6/",
-          "tags": [
-            "Fitbit",
-            "Smart Band",
-            "E-commerce"
           ]
         }
       ]
