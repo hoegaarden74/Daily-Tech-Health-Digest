@@ -1,6 +1,139 @@
 {
-  "last_updated": "2026-10-15T08:55:25.458459+09:00",
+  "last_updated": "2026-10-16T08:41:35.819606+09:00",
   "digests": [
+    {
+      "date": "2026-10-16",
+      "items": [
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Meta, 816B 파라미터 기반 오픈웨이트 멀티모달 모델 'Muse Spark Open' 공개",
+          "target_problem": "상용 닫힌(Closed) AI 모델 수준의 성능을 유지하면서, 고성능 멀티모달 모델의 연구 및 상용화를 자체 인프라에서 수행하고자 하는 개발자 니즈 해결",
+          "tech_applied": "8160억 개의 파라미터를 갖춘 전문가 혼합(MoE) 아키텍처 및 멀티모달 오픈 웨이트",
+          "business_insight": "빅테크 기업 중심의 폐쇄형 모델 생태계에 대응하여 오픈소스 커뮤니티 주도권을 확보하고 관련 하드웨어/클라우드 파트너 생태계 확장 모색",
+          "source_name": "AlphaSignal",
+          "source_url": "https://alphasignal.ai/",
+          "tags": [
+            "Meta",
+            "OpenSource",
+            "MoE",
+            "Multimodal"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "IBM, 단일 엔드포인트에서 채팅·의사결정·음성을 통합 처리하는 'Granite Switch 4.1' 발표",
+          "target_problem": "기업용 AI 파이프라인 구축 시 대화, 데이터 분석, 음성 처리를 위해 개별 API를 다중 호출함에 따른 서비스 지연 및 인프라 파편화 해결",
+          "tech_applied": "단일 통합 엔드포인트 파이프라인 및 멀티모달 작업 스위칭 추론 아키텍처",
+          "business_insight": "엔터프라이즈 고객의 AI 아키텍처 복잡도와 TCO를 절감시켜 enterprise B2B 통합 솔루션 시장에서의 점유율 확대",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1",
+          "tags": [
+            "IBM",
+            "Granite",
+            "Enterprise",
+            "UnifiedAI"
+          ]
+        },
+        {
+          "category_id": "ai_models",
+          "type_badge": "🚀 New Product",
+          "title": "Liquid AI, 온디바이스 에이전트를 위한 경량 프레임워크 'LFM2.5-24B-A2B' 공개",
+          "target_problem": "클라우드 연결 없이 기기 내부에서 고속·프라이빗으로 동작하는 로컬 AI 에이전트 구축의 어려움 해결",
+          "tech_applied": "24B 파라미터 규모의 온디바이스 최적화 비액시스(Non-Transformer 계열) 비선형 모델 및 온디바이스 추론 최적화",
+          "business_insight": "개인정보 보호가 중요한 엣지 디바이스 및 모바일 환경을 타깃으로 한 차세대 온디바이스 AI 시장 선점 전략",
+          "source_name": "Hugging Face Blog",
+          "source_url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+          "tags": [
+            "LiquidAI",
+            "OnDevice",
+            "Privacy",
+            "Agent"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "🚀 New Product",
+          "title": "Black Forest Labs, 오픈웨이트 이미지 생성 및 편집 모델 'FLUX 3 Image Klein' 출시",
+          "target_problem": "단순 이미지 생성을 넘어 전문적인 이미지 수정 및 편집을 원스톱으로 지원하는 고성능 오픈소스 비주얼 모델 수요 충족",
+          "tech_applied": "Diffusers 파이프라인과 완벽히 호환되는 오픈 웨이트 비주얼 생성·인페인팅 파이프라인",
+          "business_insight": "크리에이터 소프트웨어 및 로컬 기반 생성형 툴 생태계에서 디폴트 인프라로 자리잡아 차세대 비주얼 AI 시장의 주도권 확보",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x6od1u/flux_3_image_klein_open_weights_image_generation/",
+          "tags": [
+            "FLUX",
+            "BlackForestLabs",
+            "ImageGen",
+            "OpenSource"
+          ]
+        },
+        {
+          "category_id": "ai_video",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "MiniMax H3 기반 3분 롱테이크 AI 영상 연속 생성 워크플로우 'LongTakeNoCuts' 공개",
+          "target_problem": "비디오 AI 모델 생성 시 일관성이 저하되거나 영상 길이가 단편적으로 제한되던 기존 파이프라인의 한계 극복",
+          "tech_applied": "ComfyUI 기반 H3 모델 연동 커스텀 노드 및 라텐트 일관성 유지 보정 알고리즘",
+          "business_insight": "컷 편집 없이 길게 이어지는 시네마틱 숏폼 및 광고 제작 공정을 자동화하여 미디어 제작사의 연출 효율성 증대",
+          "source_name": "Reddit r/StableDiffusion",
+          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x6jui1/h3_longtakenocuts_straight_3mins_video_case_study/",
+          "tags": [
+            "MiniMax",
+            "AIVideo",
+            "LongForm",
+            "ComfyUI"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "📱 Consumer App",
+          "title": "순토(Suunto), 실리콘-카본 배터리와 AI 코칭 적용 'Suunto Race 3S' 출시",
+          "target_problem": "아웃도어 스마트워치의 짧은 배터리 수명 및 개인화된 실시간 피트니스 코칭 데이터 부족 문제 해결",
+          "tech_applied": "고밀도 실리콘-카본 배터리, 오프라인 음악 스토리지 및 AI 기반 운동 코칭 알고리즘",
+          "business_insight": "하드웨어 혁신과 구독형 서비스(Suunto Plus)를 결합하여 유저 LTV(고객 생애 가치)를 증대시키는 복합 수익 구조 구축",
+          "source_name": "DC Rainmaker",
+          "source_url": "https://www.dcrainmaker.com/2026/10/suunto-race-3s-in-depth-review-upgrade.html",
+          "tags": [
+            "Suunto",
+            "Wearable",
+            "AICoaching",
+            "Smartwatch"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💼 B2B / SaaS",
+          "title": "가민(Garmin)의 서드파티 데이터 API 제한으로 AI 훈련 솔루션 'Intervals Pro' 종료",
+          "target_problem": "빅테크 플랫폼의 유저 운동 데이터 접근 통제 강화로 인한 서드파티 헬스케어 SaaS 서비스의 생존 위기",
+          "tech_applied": "Garmin/Intervals.icu 데이터 파이프라인 연동 기반 AI 훈련 플랜 생성 파이프라인",
+          "business_insight": "웨어러블 제조사의 데이터 독점 전략 심화에 따라, 자체 데이터 수집 채널 및 멀티 플랫폼 호환성 확보가 필수적임을 시사",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/14/garmin-api-intervals-pro-shutdown/",
+          "tags": [
+            "Garmin",
+            "APIPolicy",
+            "Healthcare",
+            "DataPrivacy"
+          ]
+        },
+        {
+          "category_id": "health_fitness",
+          "type_badge": "💡 Use-Case & BM",
+          "title": "태그호이어(TAG Heuer), Connected 스마트워치 생산 전면 중단 및 라인업 철수",
+          "target_problem": "명품 시계 브랜드가 지닌 빠른 전자제품 감가상각과 지속적인 소프트웨어 파편화 대응 부담",
+          "tech_applied": "럭셔리 아날로그 디자인 하우징과 스마트워치 OS의 하이브리드 설계",
+          "business_insight": "소프트웨어 중심 웨어러블 시장에서 명품 브랜드의 기술 대응 한계를 인정하고, 고마진 아날로그 전통 시계 사업으로 역량을 재집중",
+          "source_name": "Gadgets & Wearables",
+          "source_url": "https://gadgetsandwearables.com/2026/10/15/tag-heuer-connected-smartwatch-production-ends/",
+          "tags": [
+            "TAGHeuer",
+            "Luxury",
+            "Smartwatch",
+            "Pivot"
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-15",
       "items": [
@@ -996,219 +1129,6 @@
             "Enduro 4",
             "Fenix 9",
             "Outdoor"
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-10-09",
-      "items": [
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "JetBrains, 코딩 에이전트를 위한 12B MoE 오픈 모델 'Mellum2.1' 출시",
-          "target_problem": "복잡한 실제 코드베이스 환경에서 코딩 에이전트의 성능 한계와 높은 추론 비용 문제 해결",
-          "tech_applied": "Apache 2.0 라이선스, 12B 혼합 전문가(MoE) 구조, 2.5B 활성 파라미터, 실제 저장소 기반 강화학습(RL)",
-          "business_insight": "개발자 생산성 도구 생태계에서 자체 오픈 모델을 활용해 코딩 에이전트 성능(SWE-bench 47.0 달성)을 극대화하고 기업용 제품 경쟁력을 강화함",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/08/jetbrains-releases-mellum2-1-a-12b-moe-open-model-for-coding-agents/",
-          "tags": [
-            "AI Models",
-            "Coding Agent",
-            "Open Source",
-            "JetBrains"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Architect, 실시간 LLM 추론 마켓플레이스 'Liquid Inference' 런칭",
-          "target_problem": "LLM 추론 요청마다 공급자와 바이어 간 최적의 가격 및 성능 매칭 부재 문제",
-          "tech_applied": "실시간 경매 시스템(Real-time Auction), LLM 라우터 아키텍처",
-          "business_insight": "AI 인프라 비용 최적화를 위한 경매 기반 마켓플레이스를 도입하여 바이어가 가장 낮은 비용으로 고성능 추론을 이용할 수 있도록 비즈니스 모델 다각화",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/08/architect-launches-liquid-inference-a-real-time-auction-for-llm-inference/",
-          "tags": [
-            "LLM Inference",
-            "Marketplace",
-            "B2B SaaS",
-            "Cost Optimization"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "NVIDIA, 멀티턴 AI 에이전트의 핵심 실수 복구를 돕는 'PivotOPD' 공개",
-          "target_problem": "멀티턴 작업 중 초기 단계의 사소한 실수가 전체 에이전트의 실패로 이어지는 현상",
-          "tech_applied": "온정책 증류(On-policy distillation) 방식, 다중 에이전트 훈련 알고리즘",
-          "business_insight": "에이전트 신뢰성과 자율성을 크게 높여 복잡한 워크플로우 자동화 시장에서 엔터프라이즈 솔루션 채택을 가속화함",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/08/nvidia-pivotopd-teaches-multi-turn-ai-agents-to-recover-from-pivotal-mistakes/",
-          "tags": [
-            "NVIDIA",
-            "AI Agents",
-            "Reinforcement Learning",
-            "Distillation"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "🚀 New Product",
-          "title": "Perplexity AI, 엣지용 0.6B 및 MADQA 고득점 9B 임베딩 모델 출시",
-          "target_problem": "엣지 디바이스 환경에서의 경량화된 검색 성능 부족 및 고품질 인덱싱 구축의 한계",
-          "tech_applied": "MIT 라이선스, 0.6B 엣지 모델 및 9B 고성능 인덱싱 모델(pplx-embed-v2-late)",
-          "business_insight": "온디바이스 AI와 대규모 데이터 인덱싱을 모두 아우르는 고성능 모델 공급으로 검색 및 RAG(검색 증강 생성) 시장 내 입지 강화",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/07/perplexity-ai-releases-pplx-embed-v2-late-a-0-6b-edge-model-and-a-9b-model-scoring-92-4-on-madqa/",
-          "tags": [
-            "Perplexity",
-            "Embedding",
-            "Edge AI",
-            "RAG"
-          ]
-        },
-        {
-          "category_id": "ai_models",
-          "type_badge": "💼 B2B / SaaS",
-          "title": "Unsloth Studio, 실행 전 모델 레포지토리 검증 및 보안 강화",
-          "target_problem": "오픈소스 모델 레포지토리 변조 및 악성 코드 실행에 따른 보안 위협",
-          "tech_applied": "코드, 가중치, 패키지 실시간 검사, 핑거프린트 기반 승인 바인딩, 악성 파일 로드 패스 차단",
-          "business_insight": "AI 모델 파인튜닝 및 배포 플랫폼에서 보안 검증 자동화를 통해 기업 고객의 신뢰를 확보하고 안전한 MLOps 환경 구축",
-          "source_name": "MarkTechPost",
-          "source_url": "https://www.marktechpost.com/2026/10/07/what-happens-when-a-trusted-model-repo-changes-unsloth-studio-re-checks-before-it-runs/",
-          "tags": [
-            "Unsloth",
-            "Security",
-            "MLOps",
-            "Model Verification"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "MiniMax H3 기반 캐릭터 스왑 및 인물 제거용 'Person Remover LoRA' 출시",
-          "target_problem": "비디오 생성 과정에서 원치 않는 인물 제거 및 정교한 캐릭터 데이터셋 구축의 어려움",
-          "tech_applied": "MiniMax H3 오픈소스 모델 연동, LoRA(Low-Rank Adaptation) 파인튜닝",
-          "business_insight": "오픈소스 크리에이터 생태계의 빠른 모듈 확장을 통해 비디오 생성 및 편집 툴의 사용자 제작 콘텐츠(UGC) 생산성 향상",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x0kokb/minimax-h3-person-remover-lora-is_out/",
-          "tags": [
-            "MiniMax H3",
-            "LoRA",
-            "Video Generation",
-            "Open Source"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "💡 Use-Case & BM",
-          "title": "Krea 2 캐릭터 재현력 최적화를 위한 100+ LoRA 학습 인사이트 공유",
-          "target_problem": "무조건적인 학습량 증가가 캐릭터 유사도 향상으로 이어지지 않는 문제",
-          "tech_applied": "Krea 2 아키텍처 기반 다중 캐릭터 LoRA 학습 방법론 최적화",
-          "business_insight": "고품질 생성형 AI 콘텐츠 제작을 위한 프롬프트 및 데이터셋 엔지니어링 노하우 공유로 크리에이터 워크플로우 효율화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x0imbp/ive_trained_100_krea_2_character_loras_heres_what/",
-          "tags": [
-            "Krea 2",
-            "LoRA",
-            "Character Likeness",
-            "Prompt Engineering"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "MiniMax H3 + VDN 최적화 모델 'VELA H3 1.0' 공식 출시",
-          "target_problem": "MiniMax H3 및 VDN 파이프라인의 성능 한계와 최적화 부족 문제",
-          "tech_applied": "VELA 최적화 알고리즘, MiniMax H3 / VDN 아키텍처 결합",
-          "business_insight": "오픈소스 비디오 생성 모델의 연산 효율성 및 출력 품질을 높여 개인 크리에이터와 중소 스튜디오의 진입 장벽 완화",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x0j4ld/i_spent_weeks_optimizing_minimax_h3_vdn_vela_10/",
-          "tags": [
-            "MiniMax H3",
-            "VELA 1.0",
-            "Optimization",
-            "Video AI"
-          ]
-        },
-        {
-          "category_id": "ai_video",
-          "type_badge": "🚀 New Product",
-          "title": "언센서드 및 뛰어난 프롬프트 추종력 갖춘 'Kroma 0.3.1' 공개",
-          "target_problem": "기존 텍스트-투-이미지(T2I) 모델의 엄격한 검열 및 프롬프트 불일치 문제",
-          "tech_applied": "Krea 2 파인튜닝, 언센서드(Uncensored) 프롬프트 처리 엔진",
-          "business_insight": "자유도 높은 창작 환경을 요구하는 이미지 생성 크리에이터들에게 대안적인 고성능 오픈 모델 옵션 제공",
-          "source_name": "Reddit r/StableDiffusion",
-          "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1x0nb34/kroma-031-is_really_good/",
-          "tags": [
-            "Kroma",
-            "Krea 2",
-            "Text-to-Image",
-            "Open Source"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "일본 연구팀, 연습 후 미주신경 자극(VNS)이 새로운 기술 습득에 기여",
-          "target_problem": "학습 후 수면 및 휴식 과정에서 발생하는 기억 소실 및 기술 습득 효율 저하",
-          "tech_applied": "미주신경 자극(Vagus Nerve Stimulation, VNS) 기술, 뇌 신경 가소성 촉진 프로토콜",
-          "business_insight": "웨어러블 헬스케어 기기 및 뉴로테크놀로지 분야에서 학습 효율 증대 목적의 신규 기능 및 서비스 결합 가능성 제시",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/08/vagus-nerve-stimulation-learning-memory-study/",
-          "tags": [
-            "Neurotech",
-            "VNS",
-            "Health & Fitness",
-            "Learning"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "가민(Garmin), Fenix 8 스마트워치 배터리 소모 유발 화면 버그 공식 확인",
-          "target_problem": "실내 진입 시 화면이 불필요하게 켜지며 배터리가 급격히 소모되는 현상",
-          "tech_applied": "웨어러블 펌웨어 디스플레이 제어 로직 패치",
-          "business_insight": "고가 스마트워치 라인업의 품질 관리(QA) 중요성 및 신속한 펌웨어 업데이트를 통한 고객 만족도 유지",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/08/garmin-confirms-fenix-8-screen-bug/",
-          "tags": [
-            "Garmin",
-            "Fenix 8",
-            "Smartwatch",
-            "Bug Fix"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "🚀 New Product",
-          "title": "일본 스마트링 브랜드 SOXAI, 글로벌 런칭 위한 'SOXAI Ring X' 공개",
-          "target_problem": "오우라(Oura) 및 링컨(RingConn)이 주도하는 글로벌 스마트링 시장의 독점 구도",
-          "tech_applied": "초소형 생체 센서 패키징, 헬스케어 데이터 트래킹 알고리즘",
-          "business_insight": "일본 시장에서 검증된 폼팩터를 바탕으로 글로벌 스마트링 시장에 진출하여 헬스케어 웨어러블 경쟁 심화",
-          "source_name": "Gadgets & Wearables",
-          "source_url": "https://gadgetsandwearables.com/2026/10/08/soxai-ring-x-kickstarter-global-launch/",
-          "tags": [
-            "Smart Ring",
-            "SOXAI",
-            "Wearables",
-            "Global Launch"
-          ]
-        },
-        {
-          "category_id": "health_fitness",
-          "type_badge": "📱 Consumer App",
-          "title": "COROS Pace 4 Pro 심층 리뷰: 프리미엄 소재와 가성비의 조화",
-          "target_problem": "스포츠 워치 시장에서 프리미엄 소재 채택 시 발생하는 과도한 가격 인상 문제",
-          "tech_applied": "프리미엄 소재 하드웨어 빌드, 코로스 스포츠 트래킹 소프트웨어",
-          "business_insight": "합리적인 가격대에 프리미엄 감성을 더한 업셀링 전략으로 스포츠 웨어러블 소비자층 공략",
-          "source_name": "DC Rainmaker",
-          "source_url": "https://www.dcrainmaker.com/2026/10/coros-pace-4-pro-in-depth-review.html",
-          "tags": [
-            "COROS",
-            "Sports Watch",
-            "Pace 4 Pro",
-            "Review"
           ]
         }
       ]
